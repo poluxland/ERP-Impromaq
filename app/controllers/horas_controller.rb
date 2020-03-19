@@ -28,7 +28,7 @@ class HorasController < ApplicationController
 
     respond_to do |format|
       if @hora.save
-        format.html { redirect_to @hora, notice: 'Hora was successfully created.' }
+        format.html { redirect_to @hora, notice: 'El registro ha sido creado.' }
         format.json { render :show, status: :created, location: @hora }
       else
         format.html { render :new }
