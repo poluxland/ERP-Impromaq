@@ -1,0 +1,73 @@
+
+
+<%= simple_form_for(@hora) do |f| %>
+
+
+<%= f.error_notification %>
+<%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+
+<div class="form-inputs offset-md-1">
+
+  <div class="row">
+    <div class="col-md-3 mb-3 ">
+      <%= f.input :ot %>
+    </div>
+    <div class="col-md-3 mb-3 ">
+      <%= f.input :estado, collection: [ "Pendiente revisión", "Aprobada", "Rechazada"] %>
+    </div>
+    <div class="col-md-3 mb-3">
+      <%= f.input :he %>
+    </div>
+
+  </div>
+
+  <div class="row">
+    <div class="col-md-3 mb-3">
+      <%= f.input :fecha,order: [:day, :month, :year] %>
+    </div>
+    <div class="col-md-3 mb-3">
+      <%= f.input :inicio %>
+    </div>
+    <div class="col-md-3 mb-3">
+      <%= f.input :termino %>
+    </div>
+
+
+
+  </div>
+
+  <div class="row">
+    <div class="col-md-3 mb-3">
+      <%= f.input :area, collection: [ "Servicios", "Mecánica", "Operador"] %>
+    </div>
+    <div class="col-md-3 mb-3">
+      <%= f.input :traslado %>
+    </div>
+    <div class="col-md-3 mb-3">
+      <%= f.input :lugar %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-9 mb-9">
+      <%= f.input :personal %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-9 mb-9">
+      <%= f.input :descripcion, as: :text %>
+    </div>
+    </div>
+    <div class="row">
+      <div class="col-md-9 mb-9 ">
+        <%= f.input :mandante, label: 'Comentarios mandante' %>
+      </div>
+    </div>
+
+
+
+
+<div class="form-actions">
+  <%= f.button :submit, class: "btn-primary" %>
+</div>
+<% end %>

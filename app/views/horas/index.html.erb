@@ -1,0 +1,49 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Horas</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Fecha</th>
+      <th>Descripcion</th>
+      <th>Area</th>
+      <th>Personal</th>
+      <th>Inicio</th>
+      <th>Termino</th>
+      <th>He</th>
+      <th>Ot</th>
+      <th>Traslado</th>
+      <th>Lugar</th>
+      <th>Mandante</th>
+      <th>Estado</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @horas.each do |hora| %>
+      <tr>
+        <td><%= hora.fecha %></td>
+        <td><%= hora.descripcion %></td>
+        <td><%= hora.area %></td>
+        <td><%= hora.personal %></td>
+        <td><%= hora.inicio %></td>
+        <td><%= hora.termino %></td>
+        <td><%= hora.he %></td>
+        <td><%= hora.ot %></td>
+        <td><%= hora.traslado %></td>
+        <td><%= hora.lugar %></td>
+        <td><%= hora.mandante %></td>
+        <td><%= hora.estado %></td>
+        <td><%= link_to 'Show', hora %></td>
+        <td><%= link_to 'Edit', edit_hora_path(hora) %></td>
+        <td><%= link_to 'Destroy', hora, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Hora', new_hora_path %>

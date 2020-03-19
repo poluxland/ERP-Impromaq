@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :horas
   resources :trabajos
   devise_for :users
   root to: 'pages#home'

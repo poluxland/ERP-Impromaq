@@ -10,10 +10,27 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20200317192410) do
+ActiveRecord::Schema.define(version: 20200319154857) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "horas", force: :cascade do |t|
+    t.date "fecha"
+    t.string "descripcion"
+    t.string "area"
+    t.string "personal"
+    t.time "inicio"
+    t.time "termino"
+    t.float "he"
+    t.integer "ot"
+    t.string "traslado"
+    t.string "lugar"
+    t.string "mandante"
+    t.string "estado"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "trabajos", force: :cascade do |t|
     t.string "planta"
