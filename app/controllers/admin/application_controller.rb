@@ -10,7 +10,12 @@ module Admin
 
     def authenticate_admin
       # TODO Add authentication logic here.
-    end
+      if current_user == nil
+        redirect_to root_path
+      elsif current_user.superadmin_role? == false
+          redirect_to root_path
+        end
+      end
 
     # Override this value to specify the number of elements to display at a time
     # on index pages. Defaults to 20.
