@@ -1,4 +1,12 @@
 Rails.application.routes.draw do
+  namespace :admin do
+    resources :users
+    resources :horas
+    resources :trabajos
+
+    root to: "users#index"
+  end
+
   resources :horas
   resources :trabajos
   devise_for :users
