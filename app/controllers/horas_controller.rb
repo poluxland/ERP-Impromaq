@@ -22,32 +22,28 @@ class HorasController < ApplicationController
   end
 
   # POST /horas
-  # POST /horas.json
+
   def create
     @hora = Hora.new(hora_params)
 
-    respond_to do |format|
-      if @hora.save
-        format.html { redirect_to @hora, notice: 'El registro ha sido creado.' }
-        format.json { render :show, status: :created, location: @hora }
-      else
-        format.html { render :new }
-        format.json { render json: @hora.errors, status: :unprocessable_entity }
-      end
+    if @hora.save
+      redirect_to action: "index", notice: 'El registro ha sido creado.'
+    else
+      render :new
+
     end
   end
 
   # PATCH/PUT /horas/1
-  # PATCH/PUT /horas/1.json
+
   def update
-    respond_to do |format|
-      if @hora.update(hora_params)
-        format.html { redirect_to @hora, notice: 'Hora was successfully updated.' }
-        format.json { render :show, status: :ok, location: @hora }
-      else
-        format.html { render :edit }
-        format.json { render json: @hora.errors, status: :unprocessable_entity }
-      end
+
+    if @hora.update(hora_params)
+      redirect_to @hora, notice: 'Registro modificado con exito.'
+    else
+      render :edit
+
+
     end
   end
 
@@ -56,7 +52,7 @@ class HorasController < ApplicationController
   def destroy
     @hora.destroy
     respond_to do |format|
-      format.html { redirect_to horas_url, notice: 'Hora was successfully destroyed.' }
+      format.html { redirect_to horas_url, notice: 'Registro eliminado.' }
       format.json { head :no_content }
     end
   end

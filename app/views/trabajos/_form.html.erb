@@ -1,48 +1,51 @@
 
 <%= simple_form_for(@trabajo) do |f| %>
-  <%= f.error_notification %>
-  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+<%= f.error_notification %>
+<%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 
-  <div class="form-inputs">
+<div class="form-inputs">
+  <div class="row">
     <%= f.input :planta %>
     <%= f.input :ito %>
+    <%= f.input :centro_costo %>
+    <%= f.input :supervisor %>
+  </div>
+
+  <div class="row">
     <%= f.input :descripcion %>
-    <%= f.input :total %>
-    <%= f.input :fecha_termino %>
     <%= f.input :avance %>
     <%= f.input :op %>
     <%= f.input :factura %>
-    <%= f.input :observaciones %>
-    <%= f.input :i1 %>
-    <%= f.input :i2 %>
-    <%= f.input :i3 %>
-    <%= f.input :i4 %>
-    <%= f.input :i5 %>
-    <%= f.input :i6 %>
-    <%= f.input :i7 %>
-    <%= f.input :i8 %>
-    <%= f.input :i9 %>
-    <%= f.input :i10 %>
-    <%= f.input :i11 %>
-    <%= f.input :i12 %>
-    <%= f.input :v1 %>
-    <%= f.input :v2 %>
-    <%= f.input :v3 %>
-    <%= f.input :v4 %>
-    <%= f.input :v5 %>
-    <%= f.input :v6 %>
-    <%= f.input :v7 %>
-    <%= f.input :v8 %>
-    <%= f.input :v9 %>
-    <%= f.input :v10 %>
-    <%= f.input :v11 %>
-    <%= f.input :v12 %>
-    <%= f.input :centro_costo %>
-    <%= f.input :supervisor %>
-    <%= f.input :otros %>
   </div>
 
-  <div class="form-actions">
-    <%= f.button :submit %>
+  <div class="row">
+    <%= f.input :observaciones %>
   </div>
+
+  <div class="row">
+  <%= f.input :i1, label: false %>
+  <%= f.input :v1, label: false %>
+  </div>
+
+  </div>
+  <div class="row"><%= f.input :i2, label: false %> <%= f.input :v2, label: false %></div>
+  <div class="row"><%= f.input :i3, label: false %> <%= f.input :v3, label: false %></div>
+  <div class="row"><%= f.input :i4, label: false %> <%= f.input :v4, label: false %></div>
+  <div class="row"><%= f.input :i5, label: false %> <%= f.input :v5, label: false %></div>
+  <div class="row"><%= f.input :i6, label: false %> <%= f.input :v6, label: false %></div>
+  <div class="row"><%= f.input :i7, label: false %> <%= f.input :v7, label: false %></div>
+  <div class="row"><%= f.input :i8, label: false %> <%= f.input :v8, label: false %></div>
+  <div class="row"><%= f.input :i9, label: false %> <%= f.input :v9, label: false %></div>
+  <div class="row"><%= f.input :i10, label: false %> <%= f.input :v10, label: false %></div>
+  <div class="row"><%= f.input :i11, label: false %> <%= f.input :v11, label: false %></div>
+  <div class="row"><%= f.input :i12, label: false %> <%= f.input :v12, label: false %></div>
+  <%= f.input :total %>
+
+  <%= f.input :otros %>
+  <%= f.input :fecha_termino %>
+</div>
+
+<div class="form-actions">
+  <%= f.button :submit %>
+</div>
 <% end %>
