@@ -12,12 +12,16 @@
     <div class="col-md-3 mb-3 ">
       <%= f.input :ot %>
     </div>
+
     <% if current_user.superadmin_role? || current_user.supervisor_role? %>
     <div class="col-md-3 mb-3 ">
-      <%= f.input :estado, collection: [ "Pendiente revisión", "Aprobada", "Rechazada"] %>
+      <%= f.input :estado, collection: [ "Pendiente revisión", "Aprobada", "Rechazada"], selected: "Pendiente revisión"%>
+    </div>
+    <% else %>
+    <div class="col-md-3 mb-3 ">
+      <%= f.input :estado, collection: [ "Pendiente revisión" ], selected: "Pendiente revisión"%>
     </div>
     <% end %>
-
     <div class="col-md-3 mb-3">
       <%= f.input :he, label: 'Total Horas extraordinarias' %>
     </div>
