@@ -15,7 +15,7 @@
 
     <% if current_user.superadmin_role? || current_user.supervisor_role? %>
     <div class="col-md-3 mb-3 ">
-      <%= f.input :estado, collection: [ "Pendiente revisión", "Aprobada", "Rechazada"], selected: "Pendiente revisión"%>
+      <%= f.input :estado, collection: [ "Pendiente revisión", "Aprobada", "Rechazada"]%>
     </div>
     <% else %>
     <div class="col-md-3 mb-3 ">
