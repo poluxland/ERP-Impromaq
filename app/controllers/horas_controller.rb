@@ -7,6 +7,13 @@ class HorasController < ApplicationController
     @horas = Hora.all
   end
 
+  def mec
+    @horas = Hora.where(mandante: "Martin Llancafil")
+  end
+
+  def serv
+    @horas = Hora.where(mandante: "Cesar Hernandez")
+  end
   # GET /horas/1
   # GET /horas/1.json
   def show

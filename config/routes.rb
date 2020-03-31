@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :gastos
   namespace :admin do
     resources :users
     resources :horas
@@ -8,6 +9,8 @@ Rails.application.routes.draw do
   end
 
   resources :horas
+  get 'mec', to: 'horas#mec'
+  get 'serv', to: 'horas#serv'
   resources :trabajos
   devise_for :users
   root to: 'pages#home'

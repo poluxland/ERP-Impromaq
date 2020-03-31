@@ -22,7 +22,7 @@
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
           <li class="nav-item has-treeview">
-            <a href="/#" class="nav-link">
+            <a href="/" class="nav-link">
               <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>
                 Reportes
@@ -38,16 +38,34 @@
               </p>
             </a>
           </li>
+
           <li class="nav-item has-treeview">
-            <a href="horas" class="nav-link">
+            <a href="#" class="nav-link">
               <i class="nav-icon fas fa-copy"></i>
               <p>
                 Horas extraordinarias
               </p>
             </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="/horas" class="nav-link">
+                  <p>&emsp; HE Indice</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="serv" class="nav-link">
+                  <p>&emsp; HE Servicios PTM</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="mec" class="nav-link">
+                  <p>&emsp; HE Mecanicas PTM</p>
+                </a>
+              </li>
+            </ul>
           </li>
           <li class="nav-item has-treeview">
-            <a href="trabajos" class="nav-link">
+            <a href="#" class="nav-link">
               <i class="nav-icon fas fa-chart-pie"></i>
               <p>
                 Graficos
@@ -55,10 +73,10 @@
             </a>
           </li>
           <li class="nav-item has-treeview">
-            <a href="#" class="nav-link">
+            <a href="gatos" class="nav-link">
               <i class="nav-icon fas fa-tree"></i>
               <p>
-                Elementos
+                Gastos
               </p>
             </a>
 
@@ -227,6 +245,7 @@
 
 <!-- jQuery -->
 <!-- <script src="../../plugins/jquery/jquery.min.js"></script> -->
+
 <!-- Bootstrap 4 -->
 <!-- <script src="../../plugins/bootstrap/js/bootstrap.bundle.min.js"></script> -->
 <!-- overlayScrollbars -->
@@ -235,3 +254,15 @@
 <!-- <script src="../../dist/js/adminlte.min.js"></script> -->
 
 </body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+<script>
+  const hasTree  = $('.has-treeview');
+
+  $.each(hasTree,function(){
+      $(this).click(function(){
+          $(this).children('.nav-treeview').slideToggle();
+      });
+  });
+
+</script>

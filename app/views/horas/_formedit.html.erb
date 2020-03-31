@@ -17,7 +17,7 @@
     <div class="col-md-3 mb-3 ">
       <%= f.input :estado, collection: [ "Pendiente revisión", "Aprobada", "Rechazada"]%>
     </div>
-  
+
     <% end %>
     <div class="col-md-3 mb-3">
       <%= f.input :he, label: 'Total Horas extraordinarias' %>
@@ -64,9 +64,10 @@
     </div>
     </div>
     <div class="row">
-      <div class="col-md-9 mb-9 ">
-        <%= f.input :mandante, label: 'Comentarios mandante' %>
+      <div class="col-md-5 mb-5 ">
+        <%= f.input :mandante, label: 'ITO', collection: ["Martin Llancafil", "Cesar Hernandez"] %>
       </div>
+
     </div>
 
 
