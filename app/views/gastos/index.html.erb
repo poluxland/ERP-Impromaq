@@ -1,0 +1,70 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Gastos</h1>
+
+<table class="table table-striped table-bordered table-sm shadow" cellspacing="0" width="100%">
+  <thead>
+    <tr>
+      <th>Fecha</th>
+      <th>Rend</th>
+      <th>Tipo</th>
+      <th>Num</th>
+      <th>Descripcion</th>
+      <th>Valor</th>
+      <th>Iva</th>
+      <th>Neto</th>
+      <th>Cc</th>
+      <th>Resp</th>
+      <th>Familia</th>
+      <th>Tipo</th>
+      <th>Cot</th>
+      <th>Aprobado</th>
+      <th>Estado</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @gastos.each do |gasto| %>
+      <tr>
+        <td><%= gasto.fecha %></td>
+        <td><%= gasto.rend %></td>
+        <td><%= gasto.tipo %></td>
+        <td><%= gasto.num %></td>
+        <td><%= gasto.descripcion %></td>
+        <td><%= gasto.valor %></td>
+        <td><%= gasto.iva %></td>
+        <td><%= gasto.neto %></td>
+        <td><%= gasto.cc %></td>
+        <td><%= gasto.resp %></td>
+        <td><%= gasto.familia %></td>
+        <td><%= gasto.tipo %></td>
+        <td><%= gasto.cot %></td>
+        <td><%= gasto.aprobado %></td>
+        <td><%= gasto.estado %></td>
+        <td class="text-center">
+          <button type="button" class="btn btn-sm btn-secondary mr-2 command-edit shadow p-1 mb-1 rounded">
+          <%= link_to "", gasto, class: 'fa fa-eye fa-fw text-light'%>
+          </button>
+          <button type="button" class="btn btn-sm btn-success mr-2 command-edit shadow p-1 mb-1 rounded">
+          <%= link_to "", edit_hora_path(gasto), class: "fa fa-edit fa-fw text-light"%>
+          </button>
+
+          <% if current_user.superadmin_role? %>
+          <button type="button" class="btn btn-sm btn-danger command-delete shadow p-1 mb-1 rounded">
+            <%= link_to "", gasto, method: :delete, data: { confirm: "Are you sure?" }, class: "fa fa-trash fa-fw text-light" %>
+          </button>
+
+          <% end %>
+
+
+          </td>
+
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Nuevo Gasto', new_gasto_path, class: "btn btn-primary shadow" %>
