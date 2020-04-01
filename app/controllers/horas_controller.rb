@@ -8,11 +8,14 @@ class HorasController < ApplicationController
   end
 
   def mec
-    @horas = Hora.where(mandante: "Martin Llancafil")
+    # @horas = Hora.where(mandante: "Martin Llancafil")
+
+    @horas = Hora.where("mandante LIKE (?)", "%M%")
   end
 
   def serv
-    @horas = Hora.where(mandante: "Cesar Hernandez")
+    # @horas = Hora.where(mandante: "Cesar Hernandez")
+    @horas = Hora.where("mandante LIKE (?)", "%C%")
   end
   # GET /horas/1
   # GET /horas/1.json
