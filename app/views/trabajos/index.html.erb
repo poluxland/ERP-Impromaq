@@ -24,7 +24,7 @@
         <td><%= trabajo.planta %></td>
         <td><%= trabajo.ito %></td>
         <td><%= trabajo.descripcion %></td>
-        <td><%= trabajo.total %></td>
+        <td><%= number_to_currency(trabajo.total, delimiter: ".", precision: 0) %></td> </td>
         <td><%= trabajo.fecha_termino %></td>
         <td><%= trabajo.op %></td>
         <td><%= trabajo.factura %></td>

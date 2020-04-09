@@ -28,7 +28,7 @@ class TrabajosController < ApplicationController
 
     respond_to do |format|
       if @trabajo.save
-        format.html { redirect_to @trabajo, notice: 'Trabajo was successfully created.' }
+        format.html { redirect_to @trabajo, notice: 'Cotización creada con exito.' }
         format.json { render :show, status: :created, location: @trabajo }
       else
         format.html { render :new }
@@ -42,7 +42,7 @@ class TrabajosController < ApplicationController
   def update
     respond_to do |format|
       if @trabajo.update(trabajo_params)
-        format.html { redirect_to @trabajo, notice: 'Trabajo was successfully updated.' }
+        format.html { redirect_to @trabajo, notice: 'Cotización actualizada.' }
         format.json { render :show, status: :ok, location: @trabajo }
       else
         format.html { render :edit }
@@ -56,7 +56,7 @@ class TrabajosController < ApplicationController
   def destroy
     @trabajo.destroy
     respond_to do |format|
-      format.html { redirect_to trabajos_url, notice: 'Trabajo was successfully destroyed.' }
+      format.html { redirect_to trabajos_url, notice: 'Cotización eliminada.' }
       format.json { head :no_content }
     end
   end
