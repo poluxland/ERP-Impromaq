@@ -1,6 +1,6 @@
 
 
-<h1>Trabajos</h1>
+<h1>Cotizaciones</h1>
 
 <table id="myTable" class="table table-striped table-bordered table-sm shadow" cellspacing="0" width="100%">
 
@@ -11,10 +11,8 @@
       <th>Descripcion</th>
       <th>Total</th>
       <th>Termino</th>
-      <th>Avance</th>
       <th>Op</th>
       <th>Factura</th>
-      <th>Obs</th>
       <th>CC</th>
       <th>Acciones</th>
     </tr>
@@ -28,10 +26,8 @@
         <td><%= trabajo.descripcion %></td>
         <td><%= trabajo.total %></td>
         <td><%= trabajo.fecha_termino %></td>
-        <td><%= trabajo.avance %></td>
         <td><%= trabajo.op %></td>
         <td><%= trabajo.factura %></td>
-        <td><%= trabajo.observaciones %></td>
         <td><%= trabajo.centro_costo %></td>
 
 
@@ -53,8 +49,23 @@
       </tr>
     <% end %>
   </tbody>
+
+  <tfoot>
+            <tr>
+                <th>Planta</th>
+      <th>Ito</th>
+      <th>Descripcion</th>
+      <th>Total</th>
+      <th>Termino</th>
+      <th>Op</th>
+      <th>Factura</th>
+      <th>CC</th>
+      <th>Acciones</th>
+
+            </tr>
+        </tfoot>
 </table>
 
 <br>
 
-<%= link_to 'New Trabajo', new_trabajo_path, class: "btn btn-primary shadow" %>
+<%= link_to 'Crear cotización', new_trabajo_path, class: "btn btn-primary shadow" %>

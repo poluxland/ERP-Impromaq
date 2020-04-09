@@ -1,184 +1,156 @@
-<p id="notice"><%= notice %></p>
+<br>
 
-<p>
-  <strong>Planta:</strong>
-  <%= @trabajo.planta %>
-</p>
+<div class="invoice-box" style="min-height:900px;">
+  <table cellpadding="0" cellspacing="0">
+    <tr class="top">
+      <td colspan="4">
+        <table>
+          <tr><td class="title"><img src="/logo.png" style="width:100%; max-width:80px;"></td>
+            <td>
+            
+            
+        </table>
+      </td>
+    </tr>
+    <tr class="information">
+      <td colspan="4">
+        <table>
+          <tr>
+            <td>Servicios Industriales Impromaq Ltda<br> Viana 345 depto 14<br> Viña del Mar</td>
+            <td>Casa matriz La Calera +56 33 2294680 <i class="fas fa-phone-square-alt"></i>
+            <br>Puerto Montt +56 65 2223714 <i class="fas fa-phone-square-alt"></i>
+            <br>Ventanas +56 9 68780133 <i class="fas fa-phone-square-alt"></i>
+            <br></td>
+          </tr>
+        </table>
+        <h2>Cotización Nº <%= @trabajo.id %> <br> <%= @trabajo.descripcion.capitalize %></h2><br>
+      </td>
+    </tr>
+    <tr class="heading">
+      <td>Planta</td>
+      <td>Solicita</td>
+      <td>Fecha Cotización</td>
+      <td>Actualización</td>  
+    </tr>
+    
+    <tr>
+      <td><%= @trabajo.planta %></td>
+      <td><%= @trabajo.ito %></td>
+      <td><%= @trabajo.created_at.strftime("%d-%m-%Y") %></td>
+      <td><%= @trabajo.updated_at.strftime("%d-%m-%Y") %></td>
+    </tr>
+    
+    </table>
+    <table>
+    <br>
+    <tr class="heading">
+      <td>Descripción</td>
+      <td>Precio unitario</td>
+      <td>Cantidad</td>
+      <td>Subtotal</td>
+    </tr>
+    <tr class="item">
+      <td style="width: 50%;"><%= @trabajo.i1 %></td>
+      <td style="direction: rtl;"><%= @trabajo.v1 %></td>
+      <td style="direction: rtl;"><%= @trabajo.q1 %></td>
+      <td style="width: 20%;"> <%= number_to_currency(@trabajo.v1.to_i * @trabajo.q1.to_i, delimiter: ".", precision: 0) unless @trabajo.q1.to_i == 0 %></td></td>
+    </tr>
+    <tr class="item">
+      <td><%= @trabajo.i2 %></td>
+      <td style="direction: rtl;"><%= @trabajo.v2 %></td>
+      <td style="direction: rtl;"><%= @trabajo.q2 %></td>
+      <td><%= number_to_currency(@trabajo.v2.to_i * @trabajo.q2.to_i, delimiter: ".", precision: 0) unless @trabajo.q2.to_i == 0 %></td>
+    </tr>
+    <tr class="item">
+      <td><%= @trabajo.i3 %></td>
+      <td style="direction: rtl;"><%= @trabajo.v3 %></td>
+      <td style="direction: rtl;"><%= @trabajo.q3 %></td>
+      <td><%= number_to_currency(@trabajo.v3.to_i * @trabajo.q3.to_i, delimiter: ".", precision: 0) unless @trabajo.q3.to_i == 0 %></td>
+    </tr>
+    <tr class="item">
+      <td><%= @trabajo.i4 %></td>
+      <td style="direction: rtl;"><%= @trabajo.v4 %></td>
+      <td style="direction: rtl;"><%= @trabajo.q4 %></td>
+      <td><%= number_to_currency(@trabajo.v4.to_i * @trabajo.q4.to_i, delimiter: ".", precision: 0) unless @trabajo.q4.to_i == 0 %></td>
+    </tr>
+    <tr class="item">
+      <td><%= @trabajo.i5 %></td>
+      <td style="direction: rtl;"><%= @trabajo.v5 %></td>
+      <td style="direction: rtl;"><%= @trabajo.q5 %></td>
+      <td><%= number_to_currency(@trabajo.v5.to_i * @trabajo.q5.to_i, delimiter: ".", precision: 0) unless @trabajo.q5.to_i == 0 %></td>
+    </tr>
+    <tr class="item">
+      <td><%= @trabajo.i6 %></td>
+      <td style="direction: rtl;"><%= @trabajo.v6 %></td>
+      <td style="direction: rtl;"><%= @trabajo.q6 %></td>
+      <td><%= number_to_currency(@trabajo.v6.to_i * @trabajo.q6.to_i, delimiter: ".", precision: 0) unless @trabajo.q6.to_i == 0 %></td>
+    </tr>
+    <tr class="item">
+      <td><%= @trabajo.i7 %></td>
+      <td style="direction: rtl;"><%= @trabajo.v7 %></td>
+      <td style="direction: rtl;"><%= @trabajo.q7 %></td>
+      <td><%= number_to_currency(@trabajo.v7.to_i * @trabajo.q7.to_i, delimiter: ".", precision: 0) unless @trabajo.q7.to_i == 0 %></td>
+    </tr>
+    <tr class="item">
+      <td><%= @trabajo.i8 %></td>
+      <td style="direction: rtl;"><%= @trabajo.v8 %></td>
+      <td style="direction: rtl;"><%= @trabajo.q8 %></td>
+      <td><%= number_to_currency(@trabajo.v8.to_i * @trabajo.q8.to_i, delimiter: ".", precision: 0) unless @trabajo.q8.to_i == 0 %></td>
+    </tr>
+    <tr class="item">
+      <td><%= @trabajo.i9 %></td>
+      <td style="direction: rtl;"><%= @trabajo.v9 %></td>
+      <td style="direction: rtl;"><%= @trabajo.q9 %></td>
+      <td><%= number_to_currency(@trabajo.v9.to_i * @trabajo.q9.to_i, delimiter: ".", precision: 0) unless @trabajo.q9.to_i == 0 %></td>
+    </tr>
+    <tr class="item">
+      <td><%= @trabajo.i10 %></td>
+      <td style="direction: rtl;"><%= @trabajo.v10 %></td>
+      <td style="direction: rtl;"><%= @trabajo.q10 %></td>
+      <td><%= number_to_currency(@trabajo.v10.to_i * @trabajo.q10.to_i, delimiter: ".", precision: 0) unless @trabajo.q10.to_i == 0 %></td>
+    </tr>
+    <tr class="item">
+      <td><%= @trabajo.i11 %></td>
+      <td style="direction: rtl;"><%= @trabajo.v11 %></td>
+      <td style="direction: rtl;"><%= @trabajo.q11 %></td>
+      <td><%= number_to_currency(@trabajo.v11.to_i * @trabajo.q11.to_i, delimiter: ".", precision: 0) unless @trabajo.q11.to_i == 0 %></td>
+    </tr>
+    <tr class="item">
+      <td><%= @trabajo.i12 %></td>
+      <td style="direction: rtl;"><%= @trabajo.v12 %></td>
+      <td style="direction: rtl;"><%= @trabajo.q12 %></td>
 
-<p>
-  <strong>Ito:</strong>
-  <%= @trabajo.ito %>
-</p>
+      <td><%= number_to_currency(@trabajo.v12.to_i * @trabajo.q12.to_i, delimiter: ".", precision: 0) unless @trabajo.q12.to_i == 0 %></td>
+    </tr>
+    <tr class="total">
+    <td colspan="3"></td>
+    <td>Total: <%=  number_to_currency(@trabajo.total, delimiter: ".", precision: 0)  %> </td>
+    </tr>
+    <tr class="heading"><td colspan="4">Observaciones</td></tr>
+    <tr class="details">
+    <td colspan="3"><%= @trabajo.observaciones %><%= @trabajo.otros %></td>
+    </tr>
+    
+  </table>
+  
+<br><div  style="font-size: 12px;">
+Validez de la oferta: 15 Dias<br>
+El valor de la oferta considera:<br>
+Herramientas: Set estándar y asociados a la tarea<br>
+EPP : Básicos y aosicados a la tarea<br>
+Supervisión y prevención de riesgos<br>
+Planificación, Evaluación y desarrollo de la tarea<br></div>
+</div>
 
-<p>
-  <strong>Descripcion:</strong>
-  <%= @trabajo.descripcion %>
-</p>
 
-<p>
-  <strong>Total:</strong>
-  <%= @trabajo.total %>
-</p>
 
-<p>
-  <strong>Fecha termino:</strong>
-  <%= @trabajo.fecha_termino %>
-</p>
-
-<p>
-  <strong>Avance:</strong>
-  <%= @trabajo.avance %>
-</p>
-
-<p>
-  <strong>Op:</strong>
-  <%= @trabajo.op %>
-</p>
-
-<p>
-  <strong>Factura:</strong>
-  <%= @trabajo.factura %>
-</p>
-
-<p>
-  <strong>Observaciones:</strong>
-  <%= @trabajo.observaciones %>
-</p>
-
-<p>
-  <strong>I1:</strong>
-  <%= @trabajo.i1 %>
-</p>
-
-<p>
-  <strong>I2:</strong>
-  <%= @trabajo.i2 %>
-</p>
-
-<p>
-  <strong>I3:</strong>
-  <%= @trabajo.i3 %>
-</p>
-
-<p>
-  <strong>I4:</strong>
-  <%= @trabajo.i4 %>
-</p>
-
-<p>
-  <strong>I5:</strong>
-  <%= @trabajo.i5 %>
-</p>
-
-<p>
-  <strong>I6:</strong>
-  <%= @trabajo.i6 %>
-</p>
-
-<p>
-  <strong>I7:</strong>
-  <%= @trabajo.i7 %>
-</p>
-
-<p>
-  <strong>I8:</strong>
-  <%= @trabajo.i8 %>
-</p>
-
-<p>
-  <strong>I9:</strong>
-  <%= @trabajo.i9 %>
-</p>
-
-<p>
-  <strong>I10:</strong>
-  <%= @trabajo.i10 %>
-</p>
-
-<p>
-  <strong>I11:</strong>
-  <%= @trabajo.i11 %>
-</p>
-
-<p>
-  <strong>I12:</strong>
-  <%= @trabajo.i12 %>
-</p>
-
-<p>
-  <strong>V1:</strong>
-  <%= @trabajo.v1 %>
-</p>
-
-<p>
-  <strong>V2:</strong>
-  <%= @trabajo.v2 %>
-</p>
-
-<p>
-  <strong>V3:</strong>
-  <%= @trabajo.v3 %>
-</p>
-
-<p>
-  <strong>V4:</strong>
-  <%= @trabajo.v4 %>
-</p>
-
-<p>
-  <strong>V5:</strong>
-  <%= @trabajo.v5 %>
-</p>
-
-<p>
-  <strong>V6:</strong>
-  <%= @trabajo.v6 %>
-</p>
-
-<p>
-  <strong>V7:</strong>
-  <%= @trabajo.v7 %>
-</p>
-
-<p>
-  <strong>V8:</strong>
-  <%= @trabajo.v8 %>
-</p>
-
-<p>
-  <strong>V9:</strong>
-  <%= @trabajo.v9 %>
-</p>
-
-<p>
-  <strong>V10:</strong>
-  <%= @trabajo.v10 %>
-</p>
-
-<p>
-  <strong>V11:</strong>
-  <%= @trabajo.v11 %>
-</p>
-
-<p>
-  <strong>V12:</strong>
-  <%= @trabajo.v12 %>
-</p>
-
-<p>
-  <strong>Centro costo:</strong>
-  <%= @trabajo.centro_costo %>
-</p>
-
-<p>
-  <strong>Supervisor:</strong>
-  <%= @trabajo.supervisor %>
-</p>
-
-<p>
-  <strong>Otros:</strong>
-  <%= @trabajo.otros %>
-</p>
-
-<%= link_to 'Edit', edit_trabajo_path(@trabajo), class: "btn btn-primary shadow" %> |
-<%= link_to 'Back', trabajos_path, class: "btn btn-primary shadow" %>
+<br>
+<div class="botones">
+<div class="d-flex justify-content-center">
+<%= link_to 'Editar', edit_trabajo_path(@trabajo), class: "btn btn-primary shadow" %>&nbsp;  
+<%= link_to 'Volver', trabajos_path, class: "btn btn-primary shadow" %>   &nbsp; 
+<%= link_to "Imprimir", '#', class: "btn btn-primary shadow", onclick: "printpage()" %> 
+<br>
+</div>
+</div>
+<br>
