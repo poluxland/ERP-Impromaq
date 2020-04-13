@@ -1,0 +1,205 @@
+<div class="page-wrapper chiller-theme toggled">
+  <a id="show-sidebar" class="btn btn-sm btn-dark" href="#">
+    <i class="fas fa-bars"></i>
+  </a>
+  <nav id="sidebar" class="sidebar-wrapper">
+    <div class="sidebar-content">
+      <div class="sidebar-brand">
+        <a href="<%= root_path %>">Impromaq ERP</a>
+        <div id="close-sidebar">
+          <i class="fas fa-times"></i>
+        </div>
+      </div>
+      <div class="sidebar-header">
+        
+        <div class="user-info">
+            <% if user_signed_in? %>
+            <div class="user-pic">
+            <a href="<%= root_path %>">
+          <img class="img-responsive img-rounded" src="/logo.png" alt="User picture">
+          </a>
+        </div>
+            <span class="user-status">
+            <%= current_user.email %><br>
+            <i class="fa fa-circle"></i>
+            <span>Online</span><br>
+            <span>
+            <%= link_to "Log out", destroy_user_session_path, method: :delete %>
+            <% else %>
+            <strong>Usuario</strong>
+          </span>
+            <span class="user-status">
+            <i class="fa fa-circle text-danger"></i>
+            <span>Offline</span><br>
+            <span>
+            <%= link_to "Login", new_user_session_path %>
+            <% end %></span>
+          </span>
+        </div>
+      </div>
+      <!-- sidebar-header  -->
+      
+      <!-- sidebar-search  -->
+      <div class="sidebar-menu">
+        <ul>
+          <li class="header-menu">
+            <span>General</span>
+          </li>
+          <li class="sidebar-dropdown">
+            <a href="#">
+              <i class="fa fa-tachometer-alt"></i>
+              <span>Reportes</span>
+            </a>
+            <div class="sidebar-submenu">
+              <ul>
+                <li>
+                  <a href="#">Producción</a>
+                </li>
+                <li>
+                  <a href="#">Gastos</a>
+                </li>
+                <li>
+                  <a href="#">Cotizaciones</a>
+                </li>
+              </ul>
+            </div>
+          </li>
+          <li class="sidebar-dropdown">
+            <a href="#">
+              <i class="fa fa-shopping-cart"></i>
+              <span>Cotizaciones</span></a>
+            <div class="sidebar-submenu">
+              <ul><li><a href="<%= trabajos_path %>">Indice</a></li>
+                  <li><a href="<%= lca_path %>">Cotizaciones LCA</a></li>
+                <li><a href="<%= vts_path %>">Cotizaciones VTS</a></li>
+                <li><a href="<%= ptm_path %>">Cotizaciones PTM</a></li>
+                <li><a href="<%= par_path %>">Cotizaciones PAR</a></li>
+                <li><a href="<%= vts_path %>">Pendientes LCA</a></li>
+                <li><a href="<%= vts_path %>">Pendientes VTS</a></li>
+                <li><a href="<%= vts_path %>">Pendientes PTM</a></li>
+                <li><a href="<%= vts_path %>">Pendientes PAR</a></li>
+              </ul>
+            </div>
+          </li>
+          <li class="sidebar-dropdown">
+            <a href="#">
+              <i class="far fa-gem"></i>
+              <span>Horas Extra</span>
+            </a>
+            <div class="sidebar-submenu">
+              <ul>
+                <li>
+                  <a href="<%= horas_path %>">Indice</a>
+                </li>
+                <li>
+                  <a href="<%= serv_path %>">HE Serv. PTM</a>
+                </li>
+                <li>
+                  <a href="<%= mec_path %>">HE Mant. PTM</a>
+                </li>
+              </ul>
+            </div>
+          </li>
+          <li class="sidebar-dropdown">
+            <a href="#">
+              <i class="fa fa-chart-line"></i>
+              <span>Gastos</span>
+            </a>
+            <div class="sidebar-submenu">
+              <ul>
+                <li>
+                  <a href="<%= gastos_path %>">Gastos</a>
+                </li>
+                <li>
+                  <a href="#">Ordenes de Compra</a>
+                </li>
+                <li>
+                  <a href="#">Guias de despacho</a>
+                </li>
+              </ul>
+            </div>
+          </li>
+          <li class="sidebar-dropdown">
+            <a href="#">
+              <i class="fa fa-globe"></i>
+              <span>Maps</span>
+            </a>
+            <div class="sidebar-submenu">
+              <ul>
+                <li>
+                  <a href="#">Google maps</a>
+                </li>
+                <li>
+                  <a href="#">Open street map</a>
+                </li>
+              </ul>
+            </div>
+          </li>
+          <li class="header-menu">
+            <span>Extra</span>
+          </li>
+          <li>
+            <a href="#">
+              <i class="fa fa-book"></i>
+              <span>Documentation</span>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <i class="fa fa-calendar"></i>
+              <span>Calendar</span>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <i class="fa fa-folder"></i>
+              <span>Examples</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <!-- sidebar-menu  -->
+    </div>
+
+  </nav> 
+  
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+<script>
+$(".sidebar-dropdown > a").click(function() {
+  $(".sidebar-submenu").slideUp(200);
+  if (
+    $(this)
+      .parent()
+      .hasClass("active")
+  ) {
+    $(".sidebar-dropdown").removeClass("active");
+    $(this)
+      .parent()
+      .removeClass("active");
+  } else {
+    $(".sidebar-dropdown").removeClass("active");
+    $(this)
+      .next(".sidebar-submenu")
+      .slideDown(200);
+    $(this)
+      .parent()
+      .addClass("active");
+  }
+});
+
+$("#close-sidebar").click(function() {
+  $(".page-wrapper").removeClass("toggled");
+});
+$("#show-sidebar").click(function() {
+  $(".page-wrapper").addClass("toggled");
+});
+
+
+
+
+</script>
+

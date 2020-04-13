@@ -30,20 +30,54 @@
             </a>
 
           </li>
-          <li class="nav-item">
-            <a href="<%= trabajos_path %>" class="nav-link">
+          <li class="nav-item has-treeview">
+            <a href="#" class="nav-link">
               <i class="nav-icon fas fa-th"></i>
               <p>
-                Trabajos
+                Cotizaciones
+                 <i class="right fas fa-angle-left"></i>
               </p>
             </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="<%= trabajos_path %>" class="nav-link">
+                  <p>&emsp; Indice</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="<%= serv_path %>" class="nav-link">
+                  <p>&emsp; LCA Cotizado</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="<%= mec_path %>" class="nav-link">
+                  <p>&emsp; LCA Pendiente pago</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="<%= mec_path %>" class="nav-link">
+                  <p>&emsp; LCA Facturado</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="<%= mec_path %>" class="nav-link">
+                  <p>&emsp; VTS Cotizado</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="<%= mec_path %>" class="nav-link">
+                  <p>&emsp; HE Mantención PTM</p>
+                </a>
+              </li>
+            </ul>
           </li>
 
           <li class="nav-item has-treeview">
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-copy"></i>
               <p>
-                Horas extraordinarias
+                Horas extra
+                <i class="right fas fa-angle-left"></i>
               </p>
             </a>
             <ul class="nav nav-treeview">
@@ -105,6 +139,35 @@
                 Calendario
               </p>
             </a>
+          </li>
+              <li class="nav-item has-treeview">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-tachometer-alt"></i>
+              <p>
+                Dashboard
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="../../index.html" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Dashboard v1</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="../../index2.html" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Dashboard v2</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="../../index3.html" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Dashboard v3</p>
+                </a>
+              </li>
+            </ul>
           </li>
           <li class="nav-item">
             <a href="../gallery.html" class="nav-link">
@@ -241,17 +304,7 @@
   </aside>
 
 </div>
-<!-- ./wrapper -->
 
-<!-- jQuery -->
-<!-- <script src="../../plugins/jquery/jquery.min.js"></script> -->
-
-<!-- Bootstrap 4 -->
-<!-- <script src="../../plugins/bootstrap/js/bootstrap.bundle.min.js"></script> -->
-<!-- overlayScrollbars -->
-<!-- <script src="../../plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script> -->
-<!-- AdminLTE App -->
-<!-- <script src="../../dist/js/adminlte.min.js"></script> -->
 
 </body>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>

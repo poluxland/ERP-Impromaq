@@ -38,13 +38,13 @@
     </tr>
     <tr class="heading">
       <td>Termino</td>
-      <td>Avance</td>
+      <td>Estado</td>
       <td>OP</td>
       <td>Factura</td>
     </tr>
     <tr class>
-        <td><%= f.input :fecha_termino, label: false, collection: ["Abr20", "May20", "Jun20", "Jul20", "Ago20", "Sep20", "Oct20", "Nov20", "Dic20"] %></td>
-        <td><%= f.input :avance, label: false, collection: [0, 25, 50, 100], selected: 0 %></td>
+        <td><%= f.input :fecha_termino, label: false, collection: ["Abr-20", "May-20", "Jun-20", "Jul-20", "Ago-20", "Sep-20", "Oct-20", "Nov-20", "Dic-20"] %></td>
+        <td><%= f.input :avance, label: false, collection: ["Cotizada", "Aprobada", "En ejecucción", "Finalizada", "Cancelada"], selected: "Cotizada" %></td>
         <td><%= f.input :op, label: false %></td>
         <td><%= f.input :factura, label: false %></td>
     </tr>

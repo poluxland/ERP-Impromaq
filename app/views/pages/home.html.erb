@@ -1,56 +1,16 @@
 
-
 <% if current_user.superadmin_role?  %>
-	<p>Visible solo para ciertos usuarios </p>
-
-
-<!-- Content Wrapper. Contains page content -->
-  <div>
-    <!-- Content Header (Page header) -->
-    <div class="content-header">
-      <div class="container-fluid">
-        <div class="row mb-2">
-          <div class="col-sm-6">
-            <h1 class="m-0 text-dark">Reportes</h1>
-          </div><!-- /.col -->
-
-        </div><!-- /.row -->
-      </div><!-- /.container-fluid -->
-    </div>
-    <!-- /.content-header -->
-
     <!-- Main content -->
     <section>
       <div class="container-fluid">
         <!-- Info boxes -->
-
-
         <div class="row">
           <div class="col-md-12">
             <div class="card">
               <div class="card-header">
-                <h5 class="card-title">Monthly Recap Report</h5>
+                <h4 class="card-title">Producción sacos por turno</h5>
 
-                <div class="card-tools">
-                  <button type="button" class="btn btn-tool" data-card-widget="collapse">
-                    <i class="fas fa-minus"></i>
-                  </button>
-                  <div class="btn-group">
-                    <button type="button" class="btn btn-tool dropdown-toggle" data-toggle="dropdown">
-                      <i class="fas fa-wrench"></i>
-                    </button>
-                    <div class="dropdown-menu dropdown-menu-right" role="menu">
-                      <a href="#" class="dropdown-item">Action</a>
-                      <a href="#" class="dropdown-item">Another action</a>
-                      <a href="#" class="dropdown-item">Something else here</a>
-                      <a class="dropdown-divider"></a>
-                      <a href="#" class="dropdown-item">Separated link</a>
-                    </div>
-                  </div>
-                  <button type="button" class="btn btn-tool" data-card-widget="remove">
-                    <i class="fas fa-times"></i>
-                  </button>
-                </div>
+             
               </div>
               <!-- /.card-header -->
               <div class="card-body">
@@ -153,255 +113,7 @@
           </div>
           <!-- /.col -->
         </div>
-        <!-- /.row -->
-				<div class="row">
-					<div class="col-12 col-sm-6 col-md-3">
-						<div class="info-box">
-							<span class="info-box-icon bg-info elevation-1"><i class="fas fa-cog"></i></span>
-
-							<div class="info-box-content">
-								<span class="info-box-text">Compras facturadas</span>
-								<span class="info-box-number">
-									$35.426.188
-									<small></small>
-								</span>
-							</div>
-							<!-- /.info-box-content -->
-						</div>
-						<!-- /.info-box -->
-					</div>
-					<!-- /.col -->
-					<div class="col-12 col-sm-6 col-md-3">
-						<div class="info-box mb-3">
-							<span class="info-box-icon bg-danger elevation-1"><i class="fas fa-thumbs-up"></i></span>
-
-							<div class="info-box-content">
-								<span class="info-box-text">Pagado</span>
-								<span class="info-box-number">25.426.188</span>
-							</div>
-							<!-- /.info-box-content -->
-						</div>
-						<!-- /.info-box -->
-					</div>
-					<!-- /.col -->
-
-					<!-- fix for small devices only -->
-					<div class="clearfix hidden-md-up"></div>
-
-					<div class="col-12 col-sm-6 col-md-3">
-						<div class="info-box mb-3">
-							<span class="info-box-icon bg-success elevation-1"><i class="fas fa-shopping-cart"></i></span>
-
-							<div class="info-box-content">
-								<span class="info-box-text">Por pagar</span>
-								<span class="info-box-number">10.000.000</span>
-							</div>
-							<!-- /.info-box-content -->
-						</div>
-						<!-- /.info-box -->
-					</div>
-					<!-- /.col -->
-					<div class="col-12 col-sm-6 col-md-3">
-						<div class="info-box mb-3">
-							<span class="info-box-icon bg-warning elevation-1"><i class="fas fa-users"></i></span>
-
-							<div class="info-box-content">
-								<span class="info-box-text">Compras no facturadas</span>
-								<span class="info-box-number">13.471.222</span>
-							</div>
-							<!-- /.info-box-content -->
-						</div>
-						<!-- /.info-box -->
-					</div>
-					<!-- /.col -->
-				</div>
-				<!-- /.row -->
-				<!-- /.row -->
-				<div class="row">
-					<div class="col-12 col-sm-6 col-md-3">
-						<div class="info-box">
-							<span class="info-box-icon bg-info elevation-1"><i class="fas fa-cog"></i></span>
-
-							<div class="info-box-content">
-								<span class="info-box-text">Ventas La Calera</span>
-								<span class="info-box-number">53.222.111<small></small></span>
-							</div>
-							<!-- /.info-box-content -->
-						</div>
-						<!-- /.info-box -->
-					</div>
-					<!-- /.col -->
-					<div class="col-12 col-sm-6 col-md-3">
-						<div class="info-box mb-3">
-							<span class="info-box-icon bg-danger elevation-1"><i class="fas fa-thumbs-up"></i></span>
-
-							<div class="info-box-content">
-								<span class="info-box-text">Pendiente OP LCA</span>
-								<span class="info-box-number">25.426.188</span>
-							</div>
-							<!-- /.info-box-content -->
-						</div>
-						<!-- /.info-box -->
-					</div>
-					<!-- /.col -->
-
-					<!-- fix for small devices only -->
-					<div class="clearfix hidden-md-up"></div>
-
-					<div class="col-12 col-sm-6 col-md-3">
-						<div class="info-box mb-3">
-							<span class="info-box-icon bg-success elevation-1"><i class="fas fa-shopping-cart"></i></span>
-
-							<div class="info-box-content">
-								<span class="info-box-text">Con OP</span>
-								<span class="info-box-number">10.000.000</span>
-							</div>
-							<!-- /.info-box-content -->
-						</div>
-						<!-- /.info-box -->
-					</div>
-					<!-- /.col -->
-					<div class="col-12 col-sm-6 col-md-3">
-						<div class="info-box mb-3">
-							<span class="info-box-icon bg-warning elevation-1"><i class="fas fa-users"></i></span>
-
-							<div class="info-box-content">
-								<span class="info-box-text">Facturado LCA</span>
-								<span class="info-box-number">13.471.222</span>
-							</div>
-							<!-- /.info-box-content -->
-						</div>
-						<!-- /.info-box -->
-					</div>
-					<!-- /.col -->
-				</div>
-				<!-- /.row -->
-				<!-- /.row -->
-				<div class="row">
-					<div class="col-12 col-sm-6 col-md-3">
-						<div class="info-box">
-							<span class="info-box-icon bg-info elevation-1"><i class="fas fa-cog"></i></span>
-
-							<div class="info-box-content">
-								<span class="info-box-text">Ventas Puerto Montt</span>
-								<span class="info-box-number">
-										23.422.111
-									<small></small>
-								</span>
-							</div>
-							<!-- /.info-box-content -->
-						</div>
-						<!-- /.info-box -->
-					</div>
-					<!-- /.col -->
-					<div class="col-12 col-sm-6 col-md-3">
-						<div class="info-box mb-3">
-							<span class="info-box-icon bg-danger elevation-1"><i class="fas fa-thumbs-up"></i></span>
-
-							<div class="info-box-content">
-								<span class="info-box-text">Pendiente OP PTM</span>
-								<span class="info-box-number">25.426.188</span>
-							</div>
-							<!-- /.info-box-content -->
-						</div>
-						<!-- /.info-box -->
-					</div>
-					<!-- /.col -->
-
-					<!-- fix for small devices only -->
-					<div class="clearfix hidden-md-up"></div>
-
-					<div class="col-12 col-sm-6 col-md-3">
-						<div class="info-box mb-3">
-							<span class="info-box-icon bg-success elevation-1"><i class="fas fa-shopping-cart"></i></span>
-
-							<div class="info-box-content">
-								<span class="info-box-text">Con OP</span>
-								<span class="info-box-number">10.000.000</span>
-							</div>
-							<!-- /.info-box-content -->
-						</div>
-						<!-- /.info-box -->
-					</div>
-					<!-- /.col -->
-					<div class="col-12 col-sm-6 col-md-3">
-						<div class="info-box mb-3">
-							<span class="info-box-icon bg-warning elevation-1"><i class="fas fa-users"></i></span>
-
-							<div class="info-box-content">
-								<span class="info-box-text">Facturado VTS</span>
-								<span class="info-box-number">13.471.222</span>
-							</div>
-							<!-- /.info-box-content -->
-						</div>
-						<!-- /.info-box -->
-					</div>
-					<!-- /.col -->
-				</div>
-				<!-- /.row -->
-				<!-- /.row -->
-				<div class="row">
-					<div class="col-12 col-sm-6 col-md-3">
-						<div class="info-box">
-							<span class="info-box-icon bg-info elevation-1"><i class="fas fa-cog"></i></span>
-
-							<div class="info-box-content">
-								<span class="info-box-text">Ventas Ventanas</span>
-								<span class="info-box-number">
-2.345.200
-									<small></small>
-								</span>
-							</div>
-							<!-- /.info-box-content -->
-						</div>
-						<!-- /.info-box -->
-					</div>
-					<!-- /.col -->
-					<div class="col-12 col-sm-6 col-md-3">
-						<div class="info-box mb-3">
-							<span class="info-box-icon bg-danger elevation-1"><i class="fas fa-thumbs-up"></i></span>
-
-							<div class="info-box-content">
-								<span class="info-box-text">Pendiente OP VTS</span>
-								<span class="info-box-number">25.426.188</span>
-							</div>
-							<!-- /.info-box-content -->
-						</div>
-						<!-- /.info-box -->
-					</div>
-					<!-- /.col -->
-
-					<!-- fix for small devices only -->
-					<div class="clearfix hidden-md-up"></div>
-
-					<div class="col-12 col-sm-6 col-md-3">
-						<div class="info-box mb-3">
-							<span class="info-box-icon bg-success elevation-1"><i class="fas fa-shopping-cart"></i></span>
-
-							<div class="info-box-content">
-								<span class="info-box-text">Con OP</span>
-								<span class="info-box-number">10.000.000</span>
-							</div>
-							<!-- /.info-box-content -->
-						</div>
-						<!-- /.info-box -->
-					</div>
-					<!-- /.col -->
-					<div class="col-12 col-sm-6 col-md-3">
-						<div class="info-box mb-3">
-							<span class="info-box-icon bg-warning elevation-1"><i class="fas fa-users"></i></span>
-
-							<div class="info-box-content">
-								<span class="info-box-text">Facturado PTM</span>
-								<span class="info-box-number">13.471.222</span>
-							</div>
-							<!-- /.info-box-content -->
-						</div>
-						<!-- /.info-box -->
-					</div>
-					<!-- /.col -->
-				</div>
-				<!-- /.row -->
+		<br>
 
 
             <!-- TABLE: LATEST ORDERS -->
@@ -410,12 +122,7 @@
                 <h3 class="card-title h2"><strong>Trabajos en ejecución</strong></h3>
 
                 <div class="card-tools">
-                  <button type="button" class="btn btn-tool" data-card-widget="collapse">
-                    <i class="fas fa-minus"></i>
-                  </button>
-                  <button type="button" class="btn btn-tool" data-card-widget="remove">
-                    <i class="fas fa-times"></i>
-                  </button>
+                 
                 </div>
               </div>
               <!-- /.card-header -->
@@ -499,24 +206,16 @@
             <!-- /.card -->
           </div>
           <!-- /.col -->
-
-
-
   <!-- /.content-wrapper -->
-
-
+ </main>
+  <!-- page-content" -->
+</div>
+<!-- page-wrapper -->
+</div>
 
 
   <% end %>
-	<!-- <script
-  src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.3.0/raphael.min.js"
-  crossorigin="anonymous"></script>
-	<script
-  src="https://code.jquery.com/jquery-3.4.1.slim.js"
-  integrity="sha256-BTlTdQO9/fascB1drekrDVkaKd9PkwBymMlHOiG+qLI="
-  crossorigin="anonymous"></script>
-	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery-mapael/2.2.0/js/jquery.mapael.min.js"></script>
-	<script src="//cdn.jsdelivr.net/npm/jquery-mapael@2.2.0/js/jquery.mapael.min.js"></script> -->
+
 	<script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
 
 
