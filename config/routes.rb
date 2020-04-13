@@ -12,6 +12,10 @@ Rails.application.routes.draw do
   get 'mec', to: 'horas#mec'
   get 'serv', to: 'horas#serv'
   resources :trabajos
+  get 'lca', to: 'trabajos#lca'
+  get 'vts', to: 'trabajos#vts'
+  get 'ptm', to: 'trabajos#ptm'
+  get 'par', to: 'trabajos#par'
   devise_for :users
   root to: 'pages#home'
 

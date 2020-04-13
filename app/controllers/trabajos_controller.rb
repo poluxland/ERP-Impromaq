@@ -7,6 +7,24 @@ class TrabajosController < ApplicationController
     @trabajos = Trabajo.all
   end
 
+
+  def lca 
+    # @trabajos = Trabajo.where(planta: "La Calera")
+    @trabajos = Trabajo.where("planta LIKE (?)", "L%")
+  end
+
+  def vts
+    @trabajos = Trabajo.where("planta LIKE (?)", "V%")
+  end
+
+  def ptm 
+    @trabajos = Trabajo.where("planta LIKE (?)", "P.M%")
+  end
+
+  def par 
+    @trabajos = Trabajo.where("planta LIKE (?)", "P.A%")
+  end
+
   # GET /trabajos/1
   # GET /trabajos/1.json
   def show
