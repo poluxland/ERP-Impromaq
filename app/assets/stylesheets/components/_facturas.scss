@@ -104,10 +104,13 @@
 
 
 
-@media print {
-  div.botones, div#botones {
-    display: none;
-  }
+
+
+  @media print {
+    .sidebar-wrapper, .botones
+     {
+      display: none !important;
+    }
 
 
   .invoice-box {
