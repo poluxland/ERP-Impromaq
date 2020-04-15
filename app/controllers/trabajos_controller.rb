@@ -25,7 +25,7 @@ class TrabajosController < ApplicationController
   end
 
   def indexejec
-    @trabajos = Trabajo.where("avance LIKE (?)", "Terminado")
+    @trabajos = Trabajo.where(avance: "En ejecucción")
   end
 
 
