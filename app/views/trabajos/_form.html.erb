@@ -31,9 +31,9 @@
     </tr>
 
     <tr>
-      <td><%= f.input :planta, label: false, collection: [ "La Calera", "Ventanas", "P.Montt", "P.Arenas"], selected: "La Calera" %></td>
+      <td><%= f.input :planta, label: false, collection: [ "La Calera", "Ventanas", "P.Montt", "P.Arenas"] %></td>
       <td><%= f.input :ito, label: false %></td>
-      <td><%= f.input :centro_costo, label: false, collection: [ "Cmec", "Horno", "Ser", "Trans", "Env", "Vts", "Ext Vts", "Adm", "Ptm", "Ext Ptm", "Ngp", "Otro"], selected: "La Calera" %></td>
+      <td><%= f.input :centro_costo, label: false, collection: [ "Cmec", "Horno", "Ser", "Trans", "Env", "Vts", "Ext Vts", "Adm", "Ptm", "Ext Ptm", "Ngp", "Otro"] %></td>
       <td><%= f.input :supervisor, label: false %></td>
     </tr>
     <tr class="heading">
@@ -44,7 +44,7 @@
     </tr>
     <tr class>
         <td><%= f.input :fecha_termino, label: false, collection: ["Abr-20", "May-20", "Jun-20", "Jul-20", "Ago-20", "Sep-20", "Oct-20", "Nov-20", "Dic-20"] %></td>
-        <td><%= f.input :avance, label: false, collection: ["Cotizada", "Aprobada", "En ejecucción", "Finalizada", "Cancelada"], selected: "Cotizada" %></td>
+        <td><%= f.input :avance, label: false, collection: ["Cotizada", "Aprobada", "En ejecucción", "Terminado", "Facturado", "Cancelada"] %></td>
         <td><%= f.input :op, label: false %></td>
         <td><%= f.input :factura, label: false %></td>
     </tr>

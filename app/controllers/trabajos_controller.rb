@@ -7,7 +7,6 @@ class TrabajosController < ApplicationController
     @trabajos = Trabajo.all
   end
 
-
   def lca 
     # @trabajos = Trabajo.where(planta: "La Calera")
     @trabajos = Trabajo.where("planta LIKE (?)", "L%")
@@ -24,6 +23,70 @@ class TrabajosController < ApplicationController
   def par 
     @trabajos = Trabajo.where("planta LIKE (?)", "P.A%")
   end
+
+  def indexejec
+    @trabajos = Trabajo.where("avance LIKE (?)", "Terminado")
+  end
+
+
+  def lcaejec
+    @trabajos = Trabajo.where(avance: "En ejecucción").where(planta: "La Calera")
+  end
+
+  def vtsejec
+    @trabajos = Trabajo.where(avance: "En ejecucción").where(planta: "Ventanas")
+  end
+
+  def ptmejec
+    @trabajos = Trabajo.where(avance: "En ejecucción").where(planta: "P.Montt")
+  end
+
+  def parejec
+    @trabajos = Trabajo.where(avance: "En ejecucción").where(planta: "P.Arenas")
+  end
+
+  def indexop
+    @trabajos = Trabajo.where(avance: "Terminado")
+  end
+
+  def lcaop
+    @trabajos = Trabajo.where(avance: "Terminado").where(planta: "La Calera")
+  end
+
+  def vtsop
+    @trabajos = Trabajo.where(avance: "Terminado").where(planta: "Ventanas")
+  end
+
+  def ptmop
+    @trabajos = Trabajo.where(avance: "Terminado").where(planta: "P.Montt")
+  end
+
+  def parop
+    @trabajos = Trabajo.where(avance: "Terminado").where(planta: "P.Arenas")
+  end
+
+  def indexfact
+    @trabajos = Trabajo.where(avance: "Facturado")
+  end
+
+  def lcafact
+    @trabajos = Trabajo.where(avance: "Facturado").where(planta: "La Calera")
+  end
+
+  def vtsfact
+    @trabajos = Trabajo.where(avance: "Facturado").where(planta: "Ventanas")
+  end
+
+  def ptmfact
+    @trabajos = Trabajo.where(avance: "Facturado").where(planta: "P.Montt")
+  end
+
+  def parfact
+    @trabajos = Trabajo.where(avance: "Facturado").where(planta: "P.Arenas")
+  end
+
+
+
 
   # GET /trabajos/1
   # GET /trabajos/1.json
