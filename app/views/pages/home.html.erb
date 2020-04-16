@@ -1,12 +1,81 @@
 
 <% if current_user.superadmin_role?  %>
+
+<div class="card-deck">
+  <div class="card shadow">
+    <img class="card-img-top" style="max-height: 140px;" src="/lca.jpeg" alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title">La Calera</h5>
+      <h3><%= number_to_currency(Trabajo.where(avance: "Terminado").where(planta: "La Calera").sum(:total), delimiter: ".", precision: 0)%>
+      <i class="far fa-credit-card text-success"></i>
+      </h3>
+      <p class="card-text">
+        <%= number_to_currency(Trabajo.where(avance: "Terminado").where(planta: "La Calera").where(op: [nil, ""]).sum(:total), delimiter: ".", precision: 0) %> Sin OP<br>
+        <%= number_to_currency(Trabajo.where(avance: "Terminado").where(planta: "La Calera").where.not(op: [nil, ""]).sum(:total), delimiter: ".", precision: 0) %> Con OP
+      </p>
+    </div>
+    <div class="card-footer">
+      <small class="text-muted">Actualizado <%= Date.today.to_s(:long)%></small>
+    </div>
+  </div>
+  <div class="card shadow">
+    <img class="card-img-top" style="max-height: 140px;" src="/vts.jpeg" alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title">Ventanas</h5>
+      <h3>
+        <%= number_to_currency(Trabajo.where(avance: "Terminado").where(planta: "Ventanas").sum(:total), delimiter: ".", precision: 0)%>
+        <i class="fas fa-file-invoice text-success"></i>
+      </h3>
+      <p class="card-text">
+        <%= number_to_currency(Trabajo.where(avance: "Terminado").where(planta: "Ventanas").where(op: [nil, ""]).sum(:total), delimiter: ".", precision: 0) %> Sin OP<br>
+        <%= number_to_currency(Trabajo.where(avance: "Terminado").where(planta: "Ventanas").where.not(op: [nil, ""]).sum(:total), delimiter: ".", precision: 0) %> Con OP
+      </p>
+    </div>
+    <div class="card-footer">
+      <small class="text-muted">Actualizado <%= Date.today.to_s(:long)%></small>
+    </div>
+  </div>
+  <div class="card shadow">
+    <img class="card-img-top" style="max-height: 140px;" src="/ptm.jpg" alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title">Puerto Montt</h5>
+      <h3>
+      <%= number_to_currency(Trabajo.where(avance: "Terminado").where(planta: "P.Montt").sum(:total), delimiter: ".", precision: 0)%>
+      <i class="fas fa-chart-pie text-success"></i>
+      </h3>
+      <p class="card-text">
+        <%= number_to_currency(Trabajo.where(avance: "Terminado").where(planta: "P.Montt").where(op: [nil, ""]).sum(:total), delimiter: ".", precision: 0) %> Sin OP<br>
+        <%= number_to_currency(Trabajo.where(avance: "Terminado").where(planta: "P.Montt").where.not(op: [nil, ""]).sum(:total), delimiter: ".", precision: 0) %> Con OP
+      </p>
+    </div>
+    <div class="card-footer">
+      <small class="text-muted">Actualizado <%= Date.today.to_s(:long)%></small>
+    </div>
+  </div>
+  <div class="card shadow">
+    <img class="card-img-top" style="max-height: 140px;" src="/pam.jpg" alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title">Punta Arenas </h5>
+      <h3><%= number_to_currency(Trabajo.where(avance: "Terminado").where(planta: "P.Arenas").sum(:total), delimiter: ".", precision: 0)%> 
+      <i class="fas fa-poll text-success"></i></h3>
+      <p class="card-text">
+        <%= number_to_currency(Trabajo.where(avance: "Terminado").where(planta: "P.Arenas").where(op: [nil, ""]).sum(:total), delimiter: ".", precision: 0) %> Sin OP<br>
+        <%= number_to_currency(Trabajo.where(avance: "Terminado").where(planta: "P.Arenas").where.not(op: [nil, ""]).sum(:total), delimiter: ".", precision: 0) %> Con OP
+      </p>
+    </div>
+    <div class="card-footer">
+      <small class="text-muted">Actualizado <%= Date.today.to_s(:long)%></small>
+    </div>
+  </div>
+</div>
+
     <!-- Main content -->
     <section>
       <div class="container-fluid">
         <!-- Info boxes -->
         <div class="row">
           <div class="col-md-12">
-            <div class="card">
+            <div class="card shadow">
               <div class="card-header">
                 <h4 class="card-title">Producción sacos por turno</h5>
 
@@ -71,7 +140,7 @@
                 <div class="row">
                   <div class="col-sm-3 col-6">
                     <div class="description-block border-right">
-                      <span class="description-percentage text-success"><i class="fas fa-caret-up"></i> 17%</span>
+                      <span class="description-percentage text-success"><i class="fas fa-caret-up "></i> 17%</span>
                       <h5 class="description-header">1.200 t</h5>
                       <span class="description-text">Stock promedio</span>
                     </div>
