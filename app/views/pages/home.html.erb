@@ -1,5 +1,5 @@
 
-<% if current_user.superadmin_role?  %>
+
 
 <div class="card-deck">
   <div class="card shadow">
@@ -68,7 +68,7 @@
     </div>
   </div>
 </div>
-
+<% if current_user.superadmin_role?  %>
     <!-- Main content -->
     <section>
       <div class="container-fluid">
