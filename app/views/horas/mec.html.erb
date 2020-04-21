@@ -7,54 +7,7 @@
     <h4><span class="label label-primary"> </span></h4>
   </div>
 </div>
-<div class="container-fluid">
-  <!-- <table class="table table-striped"> -->
-    <table id="myTable" class="table table-striped table-bordered table-sm shadow" cellspacing="0" width="100%">
-    <thead>
-      <tr>
-        <th>Fecha</th>
-        <th>Area</th>
-        <th>He</th>
-        <th>Ot</th>
-        <th>Lugar</th>
-        <th>Estado</th>
-        <th>Acciones</th>
-      </tr>
-    </thead>
-    <tbody>
-      <% @horas.each do |hora| %>
-      <tr>
-        <td><%= hora.fecha %></td>
-        <td><%= hora.area %></td>
-        <td><%= hora.he %></td>
-        <td><%= hora.ot %></td>
-        <td><%= hora.lugar %></td>
-        <td><%= hora.estado %></td>
-        <td class="text-center">
-          <button type="button" class="btn btn-sm btn-secondary mr-2 command-edit shadow p-1 mb-1 rounded">
-          <%= link_to "", hora, class: 'fa fa-eye fa-fw text-light'%>
-          </button>
-          <button type="button" class="btn btn-sm btn-success mr-2 command-edit shadow p-1 mb-1 rounded">
-          <%= link_to "", edit_hora_path(hora), class: "fa fa-edit fa-fw text-light"%>
-          </button>
-
-          <% if current_user.superadmin_role? %>
-          <button type="button" class="btn btn-sm btn-danger command-delete shadow p-1 mb-1 rounded">
-            <%= link_to "", hora, method: :delete, data: { confirm: "Are you sure?" }, class: "fa fa-trash fa-fw text-light" %>
-          </button>
-
-          <% end %>
-
-
-
-
-
-          </td>
-
-        </tr>
-      <% end %>
-    </tbody>
-  </table>
+<%= render 'table', hora: @hora %>
 <%= link_to 'Nuevo registro', new_hora_path, class: "btn btn-primary shadow" %>
 
 

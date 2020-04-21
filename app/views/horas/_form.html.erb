@@ -19,7 +19,7 @@
     </div>
     <% else %>
     <div class="col-md-3 mb-3 ">
-      <%= f.input :estado, collection: [ "Pendiente revisión" ], selected: "Pendiente revisión"%>
+      <%= f.input :estado, collection: [ "Pendiente revisión" ] %>
     </div>
     <% end %>
     <div class="col-md-3 mb-3">
@@ -68,7 +68,10 @@
     </div>
     <div class="row">
       <div class="col-md-5 mb-5 ">
-        <%= f.input :mandante, label: 'ITO', collection: ["Martin Llancafil", "Cesar Hernandez"] %>
+        <%= f.input :mandante, label: 'ITO', collection: ["Martin Llancafil", "Cesar Hernandez", "Jorge Vyhmeister", "Johnny Rute"] %>
+      </div>
+      <div class="col-md-4 mb-4 ">
+        <%= f.input :ep, label: 'Estado de pago', collection: ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"] %>
       </div>
 
     </div>

@@ -1,3 +1,4 @@
+require 'date'
 class HorasController < ApplicationController
   before_action :set_hora, only: [:show, :edit, :update, :destroy]
 
@@ -8,14 +9,22 @@ class HorasController < ApplicationController
   end
 
   def mec
-    # @horas = Hora.where(mandante: "Martin Llancafil")
+    #@horas = Hora.where(mandante: "Martin Llancafil")
+    if Date.today.day > 20
+      @horas = Hora.where(mandante: ["Martin Llancafil", "Jorge Vyhmeister", "Johnny Rute"]).where(created_at: ((Date.new((Date.today.year),(Date.today.month),21)))..Date.today)
+    else
+      @horas = Hora.where(mandante: ["Martin Llancafil", "Jorge Vyhmeister", "Johnny Rute"]).where(created_at: ((Date.new((Date.today.year),(Date.today.month),21)) - 1.month)..Date.today)
+    end
 
-    @horas = Hora.where("mandante LIKE (?)", "%M%")
+    #@horas = Hora.where("mandante LIKE (?)", "%M%")
   end
 
   def serv
-    # @horas = Hora.where(mandante: "Cesar Hernandez")
-    @horas = Hora.where("mandante LIKE (?)", "%C%")
+    if Date.today.day > 20
+      @horas = Hora.where(mandante: "Cesar Hernandez").where(created_at: ((Date.new((Date.today.year),(Date.today.month),21)))..Date.today)
+    else
+      @horas = Hora.where(mandante: "Cesar Hernandez").where(created_at: ((Date.new((Date.today.year),(Date.today.month),21)) - 1.month)..Date.today)
+    end
   end
   # GET /horas/1
   # GET /horas/1.json
