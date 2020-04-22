@@ -11,9 +11,9 @@ class HorasController < ApplicationController
   def mec
     #@horas = Hora.where(mandante: "Martin Llancafil")
     if Date.today.day > 20
-      @horas = Hora.where(mandante: ["Martin Llancafil", "Jorge Vyhmeister", "Johnny Rute"]).where(created_at: (Date.new((Date.today.year),(Date.today.month),20))..(Date.today + 1.day))
+      @horas = Hora.where(mandante: ["Martin Llancafil", "Jorge Vyhmeister", "Johnny Rute"]).where(fecha: (Date.new((Date.today.year),(Date.today.month),20))..(Date.today + 1.day))
     else
-      @horas = Hora.where(mandante: ["Martin Llancafil", "Jorge Vyhmeister", "Johnny Rute"]).where(created_at: ((Date.new((Date.today.year),(Date.today.month),20)) - 1.month)..(Date.today + 1.day))
+      @horas = Hora.where(mandante: ["Martin Llancafil", "Jorge Vyhmeister", "Johnny Rute"]).where(fecha: ((Date.new((Date.today.year),(Date.today.month),20)) - 1.month)..(Date.today + 1.day))
     end
 
     #@horas = Hora.where("mandante LIKE (?)", "%M%")
@@ -21,9 +21,9 @@ class HorasController < ApplicationController
 
   def serv
     if Date.today.day > 20
-      @horas = Hora.where(mandante: "Cesar Hernandez").where(created_at: ((Date.new((Date.today.year),(Date.today.month),20)))..(Date.today + 1.day))
+      @horas = Hora.where(mandante: "Cesar Hernandez").where(fecha: ((Date.new((Date.today.year),(Date.today.month),20)))..(Date.today + 1.day))
     else
-      @horas = Hora.where(mandante: "Cesar Hernandez").where(created_at: ((Date.new((Date.today.year),(Date.today.month),20)) - 1.month)..(Date.today + 1.day))
+      @horas = Hora.where(mandante: "Cesar Hernandez").where(fecha: ((Date.new((Date.today.year),(Date.today.month),20)) - 1.month)..(Date.today + 1.day))
     end
   end
   # GET /horas/1
