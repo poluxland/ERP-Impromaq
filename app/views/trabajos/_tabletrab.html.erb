@@ -6,6 +6,7 @@
     <tr>
       <th>Id</th>
       <th>Planta</th>
+      <th>Solicita</th>
       <th>Descripcion</th>
       <th>Total</th>
       <th>Termino</th>
@@ -21,6 +22,7 @@
       <tr>
         <td><%= trabajo.id %></td>
         <td><%= trabajo.planta %></td>
+        <td><%= trabajo.ito %></td>
         <td><%= trabajo.descripcion %></td>
         <td><%= number_to_currency(trabajo.total, delimiter: ".", precision: 0) %></td> </td>
         <td><%= trabajo.fecha_termino %></td>
