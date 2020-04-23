@@ -19,7 +19,7 @@
     <tbody>
       <% @horas.each do |hora| %>
       <tr>
-        <td><%= hora.fecha %></td>
+        <td><%= hora.fecha.strftime('%d-%m-%y') %></td>
         <td><%= hora.area %></td>
         <td><%= hora.mandante %></td>
         <td><%= hora.he %></td>
