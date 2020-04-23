@@ -1,7 +1,7 @@
 
-<table id="myTable" class="table table-striped table-bordered shadow" cellspacing="0" width="100%">
+<%# <table id="myTable" class="table table-striped table-bordered shadow" cellspacing="0" width="100%"> %>
 
-
+ <table id="myTable" class="table table-striped table-bordered table-sm shadow" cellspacing="0" width="100%">
   <thead>
     <tr>
       <th>Id</th>
@@ -31,14 +31,14 @@
 
 
         <td class="text-center">
-          <button type="button" class="btn btn-sm btn-secondary mr-2 command-edit shadow p-1 mb-1 rounded">
+          <button type="button" class="btn btn-sm btn-secondary command-edit shadow p-1 rounded">
           <%= link_to "", trabajo, class: 'fa fa-eye fa-fw text-light'%>
           </button>
-          <button type="button" class="btn btn-sm btn-success mr-2 command-edit shadow p-1 mb-1 rounded">
+          <button type="button" class="btn btn-sm btn-success command-edit shadow p-1 rounded">
           <%= link_to "", edit_trabajo_path(trabajo), class: "fa fa-edit fa-fw text-light"%>
           </button>
           <% if current_user.superadmin_role? %>
-          <button type="button" class="btn btn-sm btn-danger command-delete shadow p-1 mb-1 rounded">
+          <button type="button" class="btn btn-sm btn-danger command-delete shadow p-1 rounded">
             <%= link_to "", trabajo, method: :delete, data: { confirm: "Are you sure?" }, class: "fa fa-trash fa-fw text-light" %>
           </button>
           <% end %>
