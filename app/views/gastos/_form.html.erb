@@ -1,27 +1,72 @@
 
 <%= simple_form_for(@gasto) do |f| %>
-  <%= f.error_notification %>
-  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+ 
+<div class="form-inputs offset-md-1">
 
-  <div class="form-inputs">
-    <%= f.input :fecha %>
-    <%= f.input :rend %>
-    <%= f.input :tipo %>
-    <%= f.input :num %>
-    <%= f.input :descripcion %>
-    <%= f.input :valor %>
-    <%= f.input :iva %>
-    <%= f.input :neto %>
-    <%= f.input :cc %>
-    <%= f.input :resp %>
-    <%= f.input :familia %>
-    <%= f.input :tipo %>
-    <%= f.input :cot %>
-    <%= f.input :aprobado %>
-    <%= f.input :estado %>
+  <div class="row">
+    <div class="col-md-3 mb-3 ">
+      <%= f.input :fecha %>
+    </div>
+    <div class="col-md-3 mb-3 ">
+      <%= f.input :rend %>
+    </div>
+    <div class="col-md-3 mb-3 ">
+      <%= f.input :tipo %>
+    </div>
   </div>
 
-  <div class="form-actions">
-    <%= f.button :submit %>
+  <div class="row">
+    <div class="col-md-3 mb-3">
+      <%= f.input :descripcion %>
+    </div>
+    <div class="col-md-3 mb-3">
+     <%= f.input :valor %>
+    </div>
+    <div class="col-md-3 mb-3">
+     <%= f.input :iva %>
+    </div>
   </div>
+
+  <div class="row">
+    <div class="col-md-3 mb-3">
+      <%= f.input :neto %>
+    </div>
+    <div class="col-md-3 mb-3">
+      <%= f.input :cc, collection: [ "Cmec", "Horno", "Ser", "Trans", "Env", "Vts", "Ext Vts", "Adm", "Ptm", "Ext Ptm", "Ngp", "Otro"] %>
+    </div>
+    <div class="col-md-3 mb-3">
+     <%= f.input :resp %> 
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-3 mb-3">
+      <%= f.input :familia %>
+    </div>
+    <div class="col-md-3 mb-3">
+       <%= f.input :aprobado %>
+    </div>
+    <div class="col-md-3 mb-3">
+     <%= f.input :estado %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-3 mb-3">
+      <%= f.input :tipo %>
+    </div>
+     <div class="col-md-3 mb-3">
+      <%= f.input :num %>
+    </div>
+    <div class="col-md-3 mb-3">
+      <%= f.input :cot %>
+    </div>
+  </div>
+
+
+
+
+<div class="form-actions">
+  <%= f.button :submit, "Agregar a registro", class: "btn-primary", label: 'Total' %>
+</div>
 <% end %>
