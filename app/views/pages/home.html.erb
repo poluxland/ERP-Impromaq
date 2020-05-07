@@ -91,7 +91,7 @@
       </p>
     </div>
     <div class="card-footer">
-      <small class="text-muted">Ultimo checklist <%= Equipo.where(c17: "VTS").last.created_at.strftime("%d-%m-%Y") %> </small>
+      <small class="text-muted">Ultimo checklist <%= Equipo.where(c17: "VTS")&.last&.created_at&.strftime("%d-%m-%Y") %> </small>
     </div>
   </div>
   <div class="card shadow">
@@ -99,19 +99,19 @@
       <h5 class="card-title"><i class="fas fa-wrench text-success"></i> Puerto Montt </h5>
       <p class="card-text">
         <i class="far fa-clock"></i>
-        <%= Equipo.where(nombre: "HQPTA31").last.horometro %>
+        <%= Equipo.where(nombre: "HQPTA31")&.last&.horometro %>
         <strong> HQPTA31 7t</strong>
         <i class="fas fa-cog"></i> 0 <br>
         <i class="far fa-clock"></i>
-        <%= Equipo.where(nombre: "HQPTA32").last.horometro %>
+        <%= Equipo.where(nombre: "HQPTA32")&.last&.horometro %>
         <strong> HQPTA32 7t</strong>
         <i class="fas fa-cog"></i> 0 <br>
         <i class="far fa-clock"></i>
-        <%= Equipo.where(nombre: "HQPTA33").last.horometro %>
+        <%= Equipo.where(nombre: "HQPTA33")&.last&.horometro %>
         <strong> HQPTA33 3t</strong>
         <i class="fas fa-cog"></i> 0 <br>
         <i class="far fa-clock"></i>
-        <%= Equipo.where(nombre: "OL03").last.horometro %>
+        <%= Equipo.where(nombre: "OL03")&.last&.horometro %>
         <strong> OL03</strong>
         <i class="fas fa-cog"></i> 0 <br>
         <!-- <%= number_to_currency(Trabajo.where(avance: "Terminado").where(planta: "P.Montt").where(op: [nil, ""]).sum(:total), delimiter: ".", precision: 0) %> Sin OP<br>
@@ -119,7 +119,7 @@
       </p>
     </div>
     <div class="card-footer">
-      <small class="text-muted">Ultimo checklist <%= Equipo.where(c17: "PTM").last.created_at.strftime("%d-%m-%Y") %></small>
+      <small class="text-muted">Ultimo checklist <%= Equipo.where(c17: "PTM")&.last&.created_at&.strftime("%d-%m-%Y") %></small>
 
     </div>
   </div>
