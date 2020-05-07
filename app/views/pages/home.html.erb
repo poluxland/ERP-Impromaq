@@ -83,7 +83,7 @@
       <h5 class="card-title"><i class="fas fa-wrench text-success"></i> Ventanas </h5>
       <p class="card-text">
         <i class="far fa-clock"></i>
-        <%= Equipo.where(nombre: "BRR17").last.horometro %>
+        <%= Equipo.where(nombre: "BRR17")&.last&.horometro %>
         <strong> BRR17</strong>
         <i class="fas fa-cog"></i> 0
         <!-- <%= number_to_currency(Trabajo.where(avance: "Terminado").where(planta: "Ventanas").where(op: [nil, ""]).sum(:total), delimiter: ".", precision: 0) %> Sin OP<br>
