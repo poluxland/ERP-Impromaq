@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :equipos
   resources :gastos
   namespace :admin do
     resources :users
