@@ -10,10 +10,49 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_04_163026) do
+ActiveRecord::Schema.define(version: 2020_05_07_201743) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "equipos", force: :cascade do |t|
+    t.string "nombre"
+    t.string "operador"
+    t.integer "horometro"
+    t.string "c1"
+    t.string "c2"
+    t.string "c3"
+    t.string "c4"
+    t.string "c5"
+    t.string "c6"
+    t.string "c7"
+    t.string "c8"
+    t.string "c9"
+    t.string "c10"
+    t.string "c11"
+    t.string "c12"
+    t.string "c13"
+    t.string "c14"
+    t.string "c15"
+    t.string "c16"
+    t.string "c17"
+    t.string "c18"
+    t.string "c19"
+    t.string "c20"
+    t.string "c21"
+    t.string "c22"
+    t.string "c23"
+    t.string "c24"
+    t.string "c25"
+    t.string "c26"
+    t.string "c27"
+    t.string "c28"
+    t.string "c29"
+    t.string "c30"
+    t.text "comentarios"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "gastos", force: :cascade do |t|
     t.date "fecha"
