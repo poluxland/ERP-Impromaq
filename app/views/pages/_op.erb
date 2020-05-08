@@ -1,0 +1,69 @@
+
+
+<!-- Cards OPs -->
+<div class="card-deck">
+  <div class="card shadow">
+    <img class="card-img-top" style="max-height: 140px;" src="/lca.jpeg" alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title"><i class="fas fa-poll text-success"></i> La Calera </h5>
+      <h4><%= number_to_currency(Trabajo.where(avance: "Terminado").where(planta: "La Calera").sum(:total), delimiter: ".", precision: 0)%>
+
+      </h4>
+      <p class="card-text">
+        <%= number_to_currency(Trabajo.where(avance: "Terminado").where(planta: "La Calera").where(op: [nil, ""]).sum(:total), delimiter: ".", precision: 0) %> Sin OP<br>
+        <%= number_to_currency(Trabajo.where(avance: "Terminado").where(planta: "La Calera").where.not(op: true).sum(:total), delimiter: ".", precision: 0) %> Con OP
+      </p>
+    </div>
+    <div class="card-footer">
+      <small class="text-muted">Pendiente de pago al <%= Date.today.to_s(:long)%></small>
+    </div>
+  </div>
+  <div class="card shadow">
+    <img class="card-img-top" style="max-height: 140px;" src="/vts.jpeg" alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title"><i class="fas fa-poll text-success"></i> Ventanas </h5>
+      <h4>
+        <%= number_to_currency(Trabajo.where(avance: "Terminado").where(planta: "Ventanas").sum(:total), delimiter: ".", precision: 0)%>
+      </h4>
+      <p class="card-text">
+        <%= number_to_currency(Trabajo.where(avance: "Terminado").where(planta: "Ventanas").where(op: [nil, ""]).sum(:total), delimiter: ".", precision: 0) %> Sin OP<br>
+        <%= number_to_currency(Trabajo.where(avance: "Terminado").where(planta: "Ventanas").where.not(op: true).sum(:total), delimiter: ".", precision: 0) %> Con OP
+      </p>
+    </div>
+    <div class="card-footer">
+      <small class="text-muted">Pendiente de pago al <%= Date.today.to_s(:long)%></small>
+    </div>
+  </div>
+  <div class="card shadow">
+    <img class="card-img-top" style="max-height: 140px;" src="/ptm.jpg" alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title"><i class="fas fa-poll text-success"></i> Puerto Montt </h5>
+      <h4>
+        <%= number_to_currency(Trabajo.where(avance: "Terminado").where(planta: "P.Montt").sum(:total), delimiter: ".", precision: 0)%>
+      </h4>
+      <p class="card-text">
+        <%= number_to_currency(Trabajo.where(avance: "Terminado").where(planta: "P.Montt").where(op: [nil, ""]).sum(:total), delimiter: ".", precision: 0) %> Sin OP<br>
+        <%= number_to_currency(Trabajo.where(avance: "Terminado").where(planta: "P.Montt").where.not(op: true).sum(:total), delimiter: ".", precision: 0) %> Con OP
+      </p>
+    </div>
+    <div class="card-footer">
+      <small class="text-muted">Pendiente de pago al <%= Date.today.to_s(:long)%></small>
+    </div>
+  </div>
+  <div class="card shadow">
+    <img class="card-img-top" style="max-height: 140px;" src="/pam.jpg" alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title"><i class="fas fa-poll text-success"></i> Punta Arenas </h5>
+      <h4>
+        <%= number_to_currency(Trabajo.where(avance: "Terminado").where(planta: "P.Arenas").sum(:total), delimiter: ".", precision: 0)%>
+      </h4>
+      <p class="card-text">
+        <%= number_to_currency(Trabajo.where(avance: "Terminado").where(planta: "P.Arenas").where(op: [nil, ""]).sum(:total), delimiter: ".", precision: 0) %> Sin OP<br>
+        <%= number_to_currency(Trabajo.where(avance: "Terminado").where(planta: "P.Arenas").where.not(op: true).sum(:total), delimiter: ".", precision: 0) %> Con OP
+      </p>
+    </div>
+    <div class="card-footer">
+      <small class="text-muted">Pendiente de pago al <%= Date.today.to_s(:long)%></small>
+    </div>
+  </div>
+</div>

@@ -32,9 +32,12 @@
           <button type="button" class="btn btn-sm btn-secondary command-edit shadow p-1 rounded">
           <%= link_to "", hora, class: 'fa fa-eye fa-fw text-light'%>
           </button>
+
+          <% if hora.estado != "Aprobada" %>
           <button type="button" class="btn btn-sm btn-success command-edit shadow p-1 rounded">
           <%= link_to "", edit_hora_path(hora), class: "fa fa-edit fa-fw text-light"%>
           </button>
+          <% end %>
 
           <!-- <% if current_user.superadmin_role? %>
           <button type="button" class="btn btn-sm btn-danger command-delete shadow p-1 rounded">

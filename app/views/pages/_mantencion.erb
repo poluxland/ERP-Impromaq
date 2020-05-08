@@ -1,0 +1,69 @@
+<!-- Mantencion -->
+<div class="card-deck">
+  <div class="card shadow">
+    <div class="card-body">
+      <h5 class="card-title"><i class="fas fa-wrench text-success"></i> La Calera </h5>
+
+    </div>
+    <div class="card-footer">
+      <small class="text-muted">Ultimo checklist realizado <%#= Date.today.to_s(:long)%></small>
+    </div>
+  </div>
+  <div class="card shadow">
+    <div class="card-body">
+      <h5 class="card-title"><i class="fas fa-wrench text-success"></i> Ventanas </h5>
+      <p class="card-text">
+        <i class="far fa-clock"></i>
+        <%= Equipo.where(nombre: "BRR17")&.last&.horometro %>
+        <strong> BRR17</strong>
+        <i class="fas fa-cog"></i> 0
+        <!-- <%= number_to_currency(Trabajo.where(avance: "Terminado").where(planta: "Ventanas").where(op: [nil, ""]).sum(:total), delimiter: ".", precision: 0) %> Sin OP<br>
+        <%= number_to_currency(Trabajo.where(avance: "Terminado").where(planta: "Ventanas").where.not(op: true).sum(:total), delimiter: ".", precision: 0) %> Con OP -->
+      </p>
+    </div>
+    <div class="card-footer">
+      <small class="text-muted">Ultimo checklist <%= Equipo.where(c17: "VTS")&.last&.created_at&.strftime("%d-%m-%Y") %> </small>
+    </div>
+  </div>
+  <div class="card shadow">
+    <div class="card-body">
+      <h5 class="card-title"><i class="fas fa-wrench text-success"></i> Puerto Montt </h5>
+      <p class="card-text">
+        <i class="far fa-clock"></i>
+        <%= Equipo.where(nombre: "HQPTA31")&.last&.horometro %>
+        <strong> HQPTA31 7t</strong>
+        <i class="fas fa-cog"></i> 0 <br>
+        <i class="far fa-clock"></i>
+        <%= Equipo.where(nombre: "HQPTA32")&.last&.horometro %>
+        <strong> HQPTA32 7t</strong>
+        <i class="fas fa-cog"></i> 0 <br>
+        <i class="far fa-clock"></i>
+        <%= Equipo.where(nombre: "HQPTA33")&.last&.horometro %>
+        <strong> HQPTA33 3t</strong>
+        <i class="fas fa-cog"></i> 0 <br>
+        <i class="far fa-clock"></i>
+        <%= Equipo.where(nombre: "OL03")&.last&.horometro %>
+        <strong> OL03</strong>
+        <i class="fas fa-cog"></i> 0 <br>
+        <!-- <%= number_to_currency(Trabajo.where(avance: "Terminado").where(planta: "P.Montt").where(op: [nil, ""]).sum(:total), delimiter: ".", precision: 0) %> Sin OP<br>
+        <%= number_to_currency(Trabajo.where(avance: "Terminado").where(planta: "P.Montt").where.not(op: true).sum(:total), delimiter: ".", precision: 0) %> Con OP -->
+      </p>
+    </div>
+    <div class="card-footer">
+      <small class="text-muted">Ultimo checklist <%= Equipo.where(c17: "PTM")&.last&.created_at&.strftime("%d-%m-%Y") %></small>
+
+    </div>
+  </div>
+  <div class="card shadow">
+    <div class="card-body">
+      <h5 class="card-title"><i class="fas fa-wrench text-success"></i> Punta Arenas </h5>
+      <p class="card-text">
+        <!-- <%= number_to_currency(Trabajo.where(avance: "Terminado").where(planta: "P.Arenas").where(op: [nil, ""]).sum(:total), delimiter: ".", precision: 0) %> Sin OP<br>
+        <%= number_to_currency(Trabajo.where(avance: "Terminado").where(planta: "P.Arenas").where.not(op: true).sum(:total), delimiter: ".", precision: 0) %> Con OP -->
+      </p>
+    </div>
+    <div class="card-footer">
+      <small class="text-muted">Ultimo checklist realizado <%#= Date.today.to_s(:long)%></small>
+    </div>
+  </div>
+</div>
