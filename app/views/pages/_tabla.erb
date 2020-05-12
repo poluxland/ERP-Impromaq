@@ -1,98 +1,93 @@
 
-
-        <!-- TABLE: LATEST ORDERS -->
         <div class="card">
           <div class="card-header border-transparent">
-            <h3 class="card-title h2"><strong>Trabajos en ejecución</strong></h3>
-
+            <h5 class="card-title h2"><strong>Equipos moviles</strong></h5>
             <div class="card-tools">
-
             </div>
           </div>
-          <!-- /.card-header -->
           <div class="card-body p-0">
             <div class="table-responsive">
               <table class="table m-0">
                 <thead>
                 <tr>
-                  <th>OT</th>
-                  <th>Descripcion</th>
+                  <th>Codigo</th>
+                  <th>Equipo</th>
                   <th>Status</th>
-                  <th>Otros</th>
+                  <th>Ultima Mantención</th>
+                  <th>Ultimo Checklist</th>
                 </tr>
                 </thead>
                 <tbody>
                 <tr>
-                  <td><a href="pages/examples/invoice.html">OR9842</a></td>
-                  <td>Fabricacion tolva</td>
-                  <td><span class="badge badge-success">Programado</span></td>
+                  <td><a href="pages/examples/invoice.html">BRR17</a></td>
+                  <td>Barredora Ventanas</td>
+                  <td><span class="badge badge-success">Operativo</span></td>
+                  <td></td>
                   <td>
-                    <div class="sparkbar" data-color="#00a65a" data-height="20">Alzahombre programado</div>
+                      <%= Equipo.where(nombre: "BRR17")&.last&.created_at&.strftime("%d-%m-%Y") %>
+                      <i class="far fa-clock"></i> <%= Equipo.where(nombre: "BRR17")&.last&.horometro %>
                   </td>
                 </tr>
                 <tr>
-                  <td><a href="pages/examples/invoice.html">OR1848</a></td>
-                  <td>Suministro EPP a planta</td>
-                  <td><span class="badge badge-warning">Compras</span></td>
+                  <td><a href="pages/examples/invoice.html">HQPTA31</a></td>
+                  <td>Barredora Ventanas</td>
+                  <td><span class="badge badge-success">Operativo</span></td>
+                  <td></td>
                   <td>
-                    <div class="sparkbar" data-color="#f39c12" data-height="20">Compras perfiles pendientes</div>
+                      <%= Equipo.where(nombre: "HQPTA31")&.last&.created_at&.strftime("%d-%m-%Y") %>
+                      <i class="far fa-clock"></i> <%= Equipo.where(nombre: "HQPTA31")&.last&.horometro %>
                   </td>
                 </tr>
                 <tr>
-                  <td><a href="pages/examples/invoice.html">OR7429</a></td>
-                  <td>Maestranza villegas</td>
-                  <td><span class="badge badge-danger">En ejecución</span></td>
+                  <td><a href="pages/examples/invoice.html">HQPTA32</a></td>
+                  <td>Barredora Ventanas</td>
+                  <td><span class="badge badge-success">Operativo</span></td>
+                  <td></td>
                   <td>
-                    <div class="sparkbar" data-color="#f56954" data-height="20"></div>
+                      <%= Equipo.where(nombre: "HQPTA32")&.last&.created_at&.strftime("%d-%m-%Y") %>
+                      <i class="far fa-clock"></i> <%= Equipo.where(nombre: "HQPTA32")&.last&.horometro %>
                   </td>
                 </tr>
                 <tr>
-                  <td><a href="pages/examples/invoice.html">OR7429</a></td>
-                  <td>Repuestos haver</td>
-                  <td><span class="badge badge-info">Adjudicado</span></td>
+                  <td><a href="pages/examples/invoice.html">HQPTA33</a></td>
+                  <td>Barredora Ventanas</td>
+                  <td><span class="badge badge-success">Operativo</span></td>
+                  <td></td>
                   <td>
-                    <div class="sparkbar" data-color="#00c0ef" data-height="20"></div>
+                      <%= Equipo.where(nombre: "HQPTA33")&.last&.created_at&.strftime("%d-%m-%Y") %>
+                      <i class="far fa-clock"></i> <%= Equipo.where(nombre: "HQPTA33")&.last&.horometro %>
                   </td>
                 </tr>
                 <tr>
-                  <td><a href="pages/examples/invoice.html">OR1848</a></td>
-                  <td>Torque molino 19</td>
-                  <td><span class="badge badge-warning">Compras</span></td>
+                  <td><a href="pages/examples/invoice.html">OL03</a></td>
+                  <td>Barredora Ventanas</td>
+                  <td><span class="badge badge-success">Operativo</span></td>
+                  <td></td>
                   <td>
-                    <div class="sparkbar" data-color="#f39c12" data-height="20"></div>
+                      <%= Equipo.where(nombre: "OL03")&.last&.created_at&.strftime("%d-%m-%Y") %>
+                      <i class="far fa-clock"></i> <%= Equipo.where(nombre: "OL03")&.last&.horometro %>
                   </td>
                 </tr>
                 <tr>
-                  <td><a href="pages/examples/invoice.html">OR7429</a></td>
-                  <td>Alineamiento molino</td>
-                  <td><span class="badge badge-danger">En ejecución</span></td>
-                  <td>
-                    <div class="sparkbar" data-color="#f56954" data-height="20"></div>
-                  </td>
+                  <td><a href="pages/examples/invoice.html">EX01</a></td>
+                  <td>Ejemplo 1</td>
+                  <td><span class="badge badge-info">Observaciones</span></td>
+                  <td><div class="sparkbar" data-color="#00c0ef" data-height="20"></div></td>
+                  <td></td>
                 </tr>
                 <tr>
-                  <td><a href="pages/examples/invoice.html">OR9842</a></td>
-                  <td>Planchas techo</td>
-                  <td><span class="badge badge-success">Programado</span></td>
-                  <td>
-                    <div class="sparkbar" data-color="#00a65a" data-height="20"></div>
-                  </td>
+                  <td><a href="pages/examples/invoice.html">EX02</a></td>
+                  <td>Ejemplo 2</td>
+                  <td><span class="badge badge-danger">Fuera de servicio</span></td>
+                  <td><div class="sparkbar" data-color="#f56954" data-height="20"></div></td>
+                  <td></td>
                 </tr>
                 </tbody>
               </table>
             </div>
-            <!-- /.table-responsive -->
           </div>
-          <!-- /.card-body -->
-
-          <!-- /.card-footer -->
         </div>
-        <!-- /.card -->
       </div>
-      <!-- /.col -->
-<!-- /.content-wrapper -->
-</main>
-<!-- page-content" -->
-</div>
-<!-- page-wrapper -->
+    </main>
+  </div>
 </div>

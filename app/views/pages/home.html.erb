@@ -1,9 +1,7 @@
 <%= render 'op' %>
-<%= render 'mantencion' %>
 
 
 <% if current_user.superadmin_role?  %>
 <%= render 'produccion' %>
 <% end %>
-
 <%= render 'tabla' %>
