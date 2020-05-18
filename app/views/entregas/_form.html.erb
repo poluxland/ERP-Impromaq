@@ -1,0 +1,40 @@
+
+<%= simple_form_for(@entrega) do |f| %>
+  <%= f.error_notification %>
+  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+
+  <div class="form-inputs offser-md-1">
+    <div class="row">
+      <div class="col-md-3 mb-3 ">
+        <%= f.input :fecha %>
+      </div>
+      <div class="col-md-3 mb-3 ">
+        <%= f.input :planta, collection: [ "LCA", "VTS", "PTM", "PAR"] %>
+      </div>
+      <div class="col-md-3 mb-3 ">
+        <%= f.input :tipo, collection: [ "Radio", "Computador", "Celular", "Otro"] %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-3 mb-3 ">
+        <%= f.input :nombre, label: "Detalle equipo" %>
+      </div>
+      <div class="col-md-3 mb-3 ">
+        <%= f.input :responsable %>
+      </div>
+      <div class="col-md-3 mb-3 ">
+        <%= f.input :antiguedad, label: "Antiguedad en meses" %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-9 mb-9 ">
+        <%= f.input :observaciones %>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit, "Agregar a registro", class: "btn-primary" %>
+  </div>
+<% end %>

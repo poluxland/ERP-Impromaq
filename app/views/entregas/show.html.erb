@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Fecha:</strong>
+  <%= @entrega.fecha %>
+</p>
+
+<p>
+  <strong>Nombre:</strong>
+  <%= @entrega.nombre %>
+</p>
+
+<p>
+  <strong>Tipo:</strong>
+  <%= @entrega.tipo %>
+</p>
+
+<p>
+  <strong>Responsable:</strong>
+  <%= @entrega.responsable %>
+</p>
+
+<p>
+  <strong>Antiguedad:</strong>
+  <%= @entrega.antiguedad %>
+</p>
+
+<p>
+  <strong>Observaciones:</strong>
+  <%= @entrega.observaciones %>
+</p>
+
+<%= link_to 'Edit', edit_entrega_path(@entrega) %> |
+<%= link_to 'Back', entregas_path %>
