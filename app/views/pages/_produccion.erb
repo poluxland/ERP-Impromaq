@@ -32,27 +32,39 @@
 
                 <div class="progress-group">
                   Puerto Montt
-                  <span class="float-right"><b><%= Trabajo.where(planta: "Ventanas")&.sum(:total) %></b></span>
+                  <span class="float-right">
+                    <b>
+                  <%= number_with_delimiter(Trabajo.where(planta: "P.Montt")&.sum(:total), delimiter: ".")  %>
+                    </b>
+                  </span>
                   <div class="progress progress-sm">
-                    <div class="progress-bar bg-primary" style="width: 80%"></div>
+                    <div class="progress-bar bg-primary" style="width: 100%"></div>
                   </div>
                 </div>
                 <!-- /.progress-group -->
 
                 <div class="progress-group">
                   La Calera
-                  <span class="float-right"><b><%= Trabajo.where(planta: "Ventanas")&.sum(:total) %></b></span>
+                  <span class="float-right">
+                    <b>
+                  <%= number_with_delimiter(Trabajo.where(planta: "La Calera")&.sum(:total), delimiter: ".")  %>
+                    </b>
+                  </span>
                   <div class="progress progress-sm">
-                    <div class="progress-bar bg-danger" style="width: 75%"></div>
+                    <div class="progress-bar bg-danger" style="width: 100%"></div>
                   </div>
                 </div>
 
                 <!-- /.progress-group -->
                 <div class="progress-group">
                   <span class="progress-text">Ventanas</span>
-                  <span class="float-right"><b><%= Trabajo.where(planta: "Ventanas")&.sum(:total) %></b></span>
+                  <span class="float-right">
+                    <b>
+                  <%= number_with_delimiter(Trabajo.where(planta: "Ventanas")&.sum(:total), delimiter: ".")  %>
+                    </b>
+                  </span>
                   <div class="progress progress-sm">
-                    <div class="progress-bar bg-success" style="width: 60%"></div>
+                    <div class="progress-bar bg-success" style="width: 100%"></div>
                   </div>
                 </div>
 
@@ -93,16 +105,17 @@ var chart = new Chart(ctx, {
             backgroundColor: 'rgb(44, 166, 77, 0.3)',
             borderColor: 'rgb(44, 166, 77, 0.3)',
             data: [
-                    <%= Trabajo.where(planta: "Ventanas")&.where(fecha_termino: "Mar-20")&.sum(:total) %>,
-                    <%= Trabajo.where(planta: "Ventanas")&.where(fecha_termino: "Abr-20")&.sum(:total) %>,
-                    <%= Trabajo.where(planta: "Ventanas")&.where(fecha_termino: "May-20")&.sum(:total) %>,
-                    <%= Trabajo.where(planta: "Ventanas")&.where(fecha_termino: "Jun-20")&.sum(:total) %>,
-                    <%= Trabajo.where(planta: "Ventanas")&.where(fecha_termino: "Jul-20")&.sum(:total) %>,
-                    <%= Trabajo.where(planta: "Ventanas")&.where(fecha_termino: "Ago-20")&.sum(:total) %>,
-                    <%= Trabajo.where(planta: "Ventanas")&.where(fecha_termino: "Sep-20")&.sum(:total) %>,
-                    <%= Trabajo.where(planta: "Ventanas")&.where(fecha_termino: "Oct-20")&.sum(:total) %>,
-                    <%= Trabajo.where(planta: "Ventanas")&.where(fecha_termino: "Nov-20")&.sum(:total) %>,
-                    <%= Trabajo.where(planta: "Ventanas")&.where(fecha_termino: "Dic-20")&.sum(:total) %>,
+                    <%= number_with_delimiter(Trabajo.where(planta: "Ventanas")&.where(fecha_termino: "Mar-20")&.sum(:total), delimiter: ".") %>,
+                    <%= number_with_delimiter(Trabajo.where(planta: "Ventanas")&.where(fecha_termino: "May-20")&.sum(:total), delimiter: ".") %>,
+                    <%= number_with_delimiter(Trabajo.where(planta: "Ventanas")&.where(fecha_termino: "Jun-20")&.sum(:total), delimiter: ".") %>,
+                    <%= number_with_delimiter(Trabajo.where(planta: "Ventanas")&.where(fecha_termino: "Jul-20")&.sum(:total), delimiter: ".") %>,
+                    <%= number_with_delimiter(Trabajo.where(planta: "Ventanas")&.where(fecha_termino: "Ago-20")&.sum(:total), delimiter: ".") %>,
+                    <%= number_with_delimiter(Trabajo.where(planta: "Ventanas")&.where(fecha_termino: "Sep-20")&.sum(:total), delimiter: ".") %>,
+                    <%= number_with_delimiter(Trabajo.where(planta: "Ventanas")&.where(fecha_termino: "Oct-20")&.sum(:total), delimiter: ".") %>,
+                    <%= number_with_delimiter(Trabajo.where(planta: "Ventanas")&.where(fecha_termino: "Nov-20")&.sum(:total), delimiter: ".") %>,
+                    <%= number_with_delimiter(Trabajo.where(planta: "Ventanas")&.where(fecha_termino: "Dic-20")&.sum(:total), delimiter: ".") %>,
+                    <%= number_with_delimiter(Trabajo.where(planta: "Ventanas")&.where(fecha_termino: "Mar-20")&.sum(:total), delimiter: ".") %>,
+
                   ]
         },{
             label: 'LCA',
