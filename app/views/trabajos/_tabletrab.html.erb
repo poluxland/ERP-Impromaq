@@ -9,6 +9,7 @@
       <th>Solicita</th>
       <th>Descripcion</th>
       <th>Total</th>
+      <th>Estado</th>
       <th>Termino</th>
       <th>Op</th>
       <th>Factura</th>
@@ -24,7 +25,8 @@
         <td><%= trabajo.planta %></td>
         <td><%= trabajo.ito %></td>
         <td><%= trabajo.descripcion %></td>
-        <td><%= number_to_currency(trabajo.total, delimiter: ".", precision: 0) %></td> </td>
+        <td><%= number_to_currency(trabajo.total, delimiter: ".", precision: 0) %></td>
+        <td><%= trabajo.avance %></td>
         <td><%= trabajo.fecha_termino %></td>
         <td><%= trabajo.op %></td>
         <td><%= trabajo.factura %></td>
