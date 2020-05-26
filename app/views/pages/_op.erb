@@ -11,7 +11,8 @@
       </h4>
       <p class="card-text">
         <%= number_to_currency(Trabajo.where(avance: "Terminado").where(planta: "La Calera").where(op: [nil, ""]).sum(:total), delimiter: ".", precision: 0) %> Sin OP<br>
-        <%= number_to_currency(Trabajo.where(avance: "Terminado").where(planta: "La Calera").where.not(op: true).sum(:total), delimiter: ".", precision: 0) %> Con OP
+        <%= number_to_currency(Trabajo.where(avance: "Terminado").where(planta: "La Calera").where.not(op: true).sum(:total), delimiter: ".", precision: 0) %> Con OP<br>
+        <%= number_to_currency(Trabajo.where(avance: "En ejecucción").where(planta: "La Calera").sum(:total), delimiter: ".", precision: 0) %> En ejecucción
       </p>
     </div>
     <div class="card-footer">
@@ -27,7 +28,8 @@
       </h4>
       <p class="card-text">
         <%= number_to_currency(Trabajo.where(avance: "Terminado").where(planta: "Ventanas").where(op: [nil, ""]).sum(:total), delimiter: ".", precision: 0) %> Sin OP<br>
-        <%= number_to_currency(Trabajo.where(avance: "Terminado").where(planta: "Ventanas").where.not(op: true).sum(:total), delimiter: ".", precision: 0) %> Con OP
+        <%= number_to_currency(Trabajo.where(avance: "Terminado").where(planta: "Ventanas").where.not(op: true).sum(:total), delimiter: ".", precision: 0) %> Con OP<br>
+        <%= number_to_currency(Trabajo.where(avance: "En ejecucción").where(planta: "Ventanas").sum(:total), delimiter: ".", precision: 0) %> En ejecucción
       </p>
     </div>
     <div class="card-footer">
@@ -43,7 +45,8 @@
       </h4>
       <p class="card-text">
         <%= number_to_currency(Trabajo.where(avance: "Terminado").where(planta: "P.Montt").where(op: [nil, ""]).sum(:total), delimiter: ".", precision: 0) %> Sin OP<br>
-        <%= number_to_currency(Trabajo.where(avance: "Terminado").where(planta: "P.Montt").where.not(op: true).sum(:total), delimiter: ".", precision: 0) %> Con OP
+        <%= number_to_currency(Trabajo.where(avance: "Terminado").where(planta: "P.Montt").where.not(op: true).sum(:total), delimiter: ".", precision: 0) %> Con OP<br>
+        <%= number_to_currency(Trabajo.where(avance: "En ejecucción").where(planta: "P.Montt").sum(:total), delimiter: ".", precision: 0) %> En ejecucción
       </p>
     </div>
     <div class="card-footer">
@@ -59,7 +62,8 @@
       </h4>
       <p class="card-text">
         <%= number_to_currency(Trabajo.where(avance: "Terminado").where(planta: "P.Arenas").where(op: [nil, ""]).sum(:total), delimiter: ".", precision: 0) %> Sin OP<br>
-        <%= number_to_currency(Trabajo.where(avance: "Terminado").where(planta: "P.Arenas").where.not(op: true).sum(:total), delimiter: ".", precision: 0) %> Con OP
+        <%= number_to_currency(Trabajo.where(avance: "Terminado").where(planta: "P.Arenas").where.not(op: true).sum(:total), delimiter: ".", precision: 0) %> Con OP<br>
+        <%= number_to_currency(Trabajo.where(avance: "En ejecucción").where(planta: "P.Arenas").sum(:total), delimiter: ".", precision: 0) %> En ejecucción
       </p>
     </div>
     <div class="card-footer">
