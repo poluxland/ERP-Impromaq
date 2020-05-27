@@ -6,9 +6,9 @@
       <div class="col-md-12">
         <div class="card shadow">
           <div class="card-header">
+            <a href="<%= indexop_path %>">
             <h4 class="card-title">Trabajos terminados</h5>
-
-
+            </a>
           </div>
           <!-- /.card-header -->
           <div class="card-body">
@@ -31,7 +31,7 @@
                 </p> -->
 
                 <div class="progress-group">
-                  Puerto Montt
+                  <a href="<%= ptmop_path %>">Puerto Montt</a>
                   <span class="float-right">
                     <b>
                   <%= number_with_delimiter(Trabajo.where(planta: "P.Montt")&.where(avance: ["Terminado", "Facturado"])&.sum(:total), delimiter: ".")  %>
@@ -44,7 +44,7 @@
                 <!-- /.progress-group -->
 
                 <div class="progress-group">
-                  La Calera
+                  <a href="<%= lcaop_path %>">La Calera</a>
                   <span class="float-right">
                     <b>
                   <%= number_with_delimiter(Trabajo.where(planta: "La Calera")&.where(avance: ["Terminado", "Facturado"])&.sum(:total), delimiter: ".")  %>
@@ -57,7 +57,8 @@
 
                 <!-- /.progress-group -->
                 <div class="progress-group">
-                  <span class="progress-text">Ventanas</span>
+                  <span class="progress-text">
+                    <a href="<%= vtsop_path %>">Ventanas</a></span>
                   <span class="float-right">
                     <b>
                   <%= number_with_delimiter(Trabajo.where(planta: "Ventanas")&.where(avance: ["Terminado", "Facturado"])&.sum(:total), delimiter: ".")  %>
