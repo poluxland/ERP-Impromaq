@@ -6,13 +6,16 @@
     <img class="card-img-top" style="max-height: 140px;" src="/lca.jpeg" alt="Card image cap">
     <div class="card-body">
       <h5 class="card-title"><i class="fas fa-poll text-success"></i> La Calera </h5>
-      <h4><%= number_to_currency(Trabajo.where(avance: "Terminado").where(planta: "La Calera").sum(:total), delimiter: ".", precision: 0)%>
-
+      <a href="<%= lcaop_path %>">
+        <h4><%= number_to_currency(Trabajo.where(avance: "Terminado").where(planta: "La Calera").sum(:total), delimiter: ".", precision: 0)%>
+      </a>
       </h4>
       <p class="card-text">
         <%= number_to_currency(Trabajo.where(avance: "Terminado").where(planta: "La Calera").where(op: [nil, ""]).sum(:total), delimiter: ".", precision: 0) %> Sin OP<br>
         <%= number_to_currency(Trabajo.where(avance: "Terminado").where(planta: "La Calera").where.not(op: true).sum(:total), delimiter: ".", precision: 0) %> Con OP<br>
+        <a href="<%= lcaejec_path %>">
         <%= number_to_currency(Trabajo.where(avance: "En ejecucción").where(planta: "La Calera").sum(:total), delimiter: ".", precision: 0) %> En ejecucción
+        </a>
       </p>
     </div>
     <div class="card-footer">
@@ -24,12 +27,16 @@
     <div class="card-body">
       <h5 class="card-title"><i class="fas fa-poll text-success"></i> Ventanas </h5>
       <h4>
+        <a href="<%= vtsop_path %>">
         <%= number_to_currency(Trabajo.where(avance: "Terminado").where(planta: "Ventanas").sum(:total), delimiter: ".", precision: 0)%>
+        </a>
       </h4>
       <p class="card-text">
         <%= number_to_currency(Trabajo.where(avance: "Terminado").where(planta: "Ventanas").where(op: [nil, ""]).sum(:total), delimiter: ".", precision: 0) %> Sin OP<br>
         <%= number_to_currency(Trabajo.where(avance: "Terminado").where(planta: "Ventanas").where.not(op: true).sum(:total), delimiter: ".", precision: 0) %> Con OP<br>
+        <a href="<%= vtsejec_path %>">
         <%= number_to_currency(Trabajo.where(avance: "En ejecucción").where(planta: "Ventanas").sum(:total), delimiter: ".", precision: 0) %> En ejecucción
+        </a>
       </p>
     </div>
     <div class="card-footer">
@@ -41,12 +48,16 @@
     <div class="card-body">
       <h5 class="card-title"><i class="fas fa-poll text-success"></i> Puerto Montt </h5>
       <h4>
+        <a href="<%= lcaop_path %>">
         <%= number_to_currency(Trabajo.where(avance: "Terminado").where(planta: "P.Montt").sum(:total), delimiter: ".", precision: 0)%>
       </h4>
+      </a>
       <p class="card-text">
         <%= number_to_currency(Trabajo.where(avance: "Terminado").where(planta: "P.Montt").where(op: [nil, ""]).sum(:total), delimiter: ".", precision: 0) %> Sin OP<br>
         <%= number_to_currency(Trabajo.where(avance: "Terminado").where(planta: "P.Montt").where.not(op: true).sum(:total), delimiter: ".", precision: 0) %> Con OP<br>
+        <a href="<%= ptmejec_path %>">
         <%= number_to_currency(Trabajo.where(avance: "En ejecucción").where(planta: "P.Montt").sum(:total), delimiter: ".", precision: 0) %> En ejecucción
+        </a>
       </p>
     </div>
     <div class="card-footer">
@@ -58,12 +69,16 @@
     <div class="card-body">
       <h5 class="card-title"><i class="fas fa-poll text-success"></i> Punta Arenas </h5>
       <h4>
+        <a href="<%= lcaop_path %>">
         <%= number_to_currency(Trabajo.where(avance: "Terminado").where(planta: "P.Arenas").sum(:total), delimiter: ".", precision: 0)%>
       </h4>
+      </a>
       <p class="card-text">
         <%= number_to_currency(Trabajo.where(avance: "Terminado").where(planta: "P.Arenas").where(op: [nil, ""]).sum(:total), delimiter: ".", precision: 0) %> Sin OP<br>
         <%= number_to_currency(Trabajo.where(avance: "Terminado").where(planta: "P.Arenas").where.not(op: true).sum(:total), delimiter: ".", precision: 0) %> Con OP<br>
+          <a href="<%= parejec_path %>">
         <%= number_to_currency(Trabajo.where(avance: "En ejecucción").where(planta: "P.Arenas").sum(:total), delimiter: ".", precision: 0) %> En ejecucción
+        </a>
       </p>
     </div>
     <div class="card-footer">
