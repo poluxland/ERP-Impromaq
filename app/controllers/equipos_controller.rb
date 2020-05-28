@@ -8,6 +8,26 @@ class EquiposController < ApplicationController
     @equipos = Equipo.all
   end
 
+  # :nombre, collection: ["OL03", "HQPTA31", "HQPTA32","HQPTA33", "BRR17", "HQPTA21", "HQPTA22"]
+  def brr17check
+    @equipo = Equipo.where(nombre: "BRR17").last
+  end
+
+  def ol03check
+    @equipo = Equipo.where(nombre: "OL03").last
+  end
+
+  def hqpta31check
+    @equipo = Equipo.where(nombre: "HQPTA31").last
+  end
+
+  def hqpta32check
+    @equipo = Equipo.where(nombre: "HQPTA32").last
+  end
+
+
+
+
   # GET /equipos/1
   # GET /equipos/1.json
   def show
