@@ -25,7 +25,9 @@ class EquiposController < ApplicationController
     @equipo = Equipo.where(nombre: "HQPTA32").last
   end
 
-
+  def hqpta33check
+    @equipo = Equipo.where(nombre: "HQPTA33").last
+  end
 
 
   # GET /equipos/1
