@@ -26,8 +26,10 @@
                   <td><span class="badge badge-success">Operativo</span></td>
                   <td></td>
                   <td>
+                      <a href="<%= brr17check_path %>">
                       <%= Equipo.where(nombre: "BRR17")&.last&.created_at&.strftime("%d-%m-%Y") %>
                       <i class="far fa-clock"></i> <%= Equipo.where(nombre: "BRR17")&.last&.horometro %>
+                      </a>
                   </td>
                 </tr>
                 <tr>
@@ -36,8 +38,10 @@
                   <td><span class="badge badge-success">Operativo</span></td>
                   <td></td>
                   <td>
+                    <a href="<%= hqpta31check_path %>">
                       <%= Equipo.where(nombre: "HQPTA31")&.last&.created_at&.strftime("%d-%m-%Y") %>
                       <i class="far fa-clock"></i> <%= Equipo.where(nombre: "HQPTA31")&.last&.horometro %>
+                    </a>
                   </td>
                 </tr>
                 <tr>
@@ -46,8 +50,10 @@
                   <td><span class="badge badge-success">Operativo</span></td>
                   <td></td>
                   <td>
+                    <a href="<%= hqpta32check_path %>">
                       <%= Equipo.where(nombre: "HQPTA32")&.last&.created_at&.strftime("%d-%m-%Y") %>
                       <i class="far fa-clock"></i> <%= Equipo.where(nombre: "HQPTA32")&.last&.horometro %>
+                    </a>
                   </td>
                 </tr>
                 <tr>
@@ -56,8 +62,10 @@
                   <td><span class="badge badge-success">Operativo</span></td>
                   <td></td>
                   <td>
+                    <a href="<%= hqpta33check_path %>">
                       <%= Equipo.where(nombre: "HQPTA33")&.last&.created_at&.strftime("%d-%m-%Y") %>
                       <i class="far fa-clock"></i> <%= Equipo.where(nombre: "HQPTA33")&.last&.horometro %>
+                    </a>
                   </td>
                 </tr>
                 <tr>
@@ -66,8 +74,10 @@
                   <td><span class="badge badge-success">Operativo</span></td>
                   <td></td>
                   <td>
+                    <a href="<%= ol03check_path %>">
                       <%= Equipo.where(nombre: "OL03")&.last&.created_at&.strftime("%d-%m-%Y") %>
                       <i class="far fa-clock"></i> <%= Equipo.where(nombre: "OL03")&.last&.horometro %>
+                    </a>
                   </td>
                 </tr>
                 <tr>
