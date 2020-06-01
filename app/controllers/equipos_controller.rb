@@ -13,6 +13,10 @@ class EquiposController < ApplicationController
     @equipo = Equipo.where(nombre: "BRR17").last
   end
 
+  def brr20check
+    @equipo = Equipo.where(nombre: "BRR20").last
+  end
+
   def ol03check
     @equipo = Equipo.where(nombre: "OL03").last
   end

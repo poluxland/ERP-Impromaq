@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   resources :entregas
   resources :equipos
   get 'brr17check', to: 'equipos#brr17check'
+  get 'brr20check', to: 'equipos#brr20check'
   get 'ol03check', to: 'equipos#ol03check'
   get 'hqpta31check', to: 'equipos#hqpta31check'
   get 'hqpta32check', to: 'equipos#hqpta32check'

@@ -22,13 +22,25 @@
                 <tbody>
                 <tr>
                   <td>BRR17</td>
-                  <td>Barredora Ventanas</td>
-                  <td><span class="badge badge-success">Operativo</span></td>
+                  <td>Barredora retiratada de VTS</td>
+                  <td><span class="badge badge-info">Observaciones</span></td>
                   <td></td>
                   <td>
                       <a href="<%= brr17check_path %>">
                       <%= Equipo.where(nombre: "BRR17")&.last&.created_at&.strftime("%d-%m-%Y") %>
                       <i class="far fa-clock"></i> <%= Equipo.where(nombre: "BRR17")&.last&.horometro %>
+                      </a>
+                  </td>
+                </tr>
+                <tr>
+                  <td>BRR20</td>
+                  <td>Barredora Ventanas</td>
+                  <td><span class="badge badge-success">Operativo</span></td>
+                  <td></td>
+                  <td>
+                      <a href="<%= brr20check_path %>">
+                      <%= Equipo.where(nombre: "BRR20")&.last&.created_at&.strftime("%d-%m-%Y") %>
+                      <i class="far fa-clock"></i> <%= Equipo.where(nombre: "BRR20")&.last&.horometro %>
                       </a>
                   </td>
                 </tr>
@@ -81,15 +93,8 @@
                   </td>
                 </tr>
                 <tr>
-                  <td>EX01</td>
-                  <td>Ejemplo 1</td>
-                  <td><span class="badge badge-info">Observaciones</span></td>
-                  <td><div class="sparkbar" data-color="#00c0ef" data-height="20"></div></td>
-                  <td></td>
-                </tr>
-                <tr>
                   <td>EX02</td>
-                  <td>Ejemplo 2</td>
+                  <td>Ejemplo fuera servicio</td>
                   <td><span class="badge badge-danger">Fuera de servicio</span></td>
                   <td><div class="sparkbar" data-color="#f56954" data-height="20"></div></td>
                   <td></td>
