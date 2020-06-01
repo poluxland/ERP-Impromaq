@@ -10,10 +10,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_18_000414) do
+ActiveRecord::Schema.define(version: 2020_05_31_162958) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "consulta", force: :cascade do |t|
+    t.string "nombre"
+    t.string "planta"
+    t.string "solicitud"
+    t.text "observaciones"
+    t.text "respuesta"
+    t.string "otros"
+    t.integer "monto"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "entregas", force: :cascade do |t|
     t.date "fecha"
@@ -101,6 +113,18 @@ ActiveRecord::Schema.define(version: 2020_05_18_000414) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "ep"
+  end
+
+  create_table "requerimientos", force: :cascade do |t|
+    t.string "nombre"
+    t.string "planta"
+    t.string "solicitud"
+    t.text "observaciones"
+    t.text "respuesta"
+    t.string "otros"
+    t.integer "monto"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "trabajos", force: :cascade do |t|

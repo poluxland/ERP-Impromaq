@@ -1,0 +1,56 @@
+
+
+
+<h1>Consultas RRHH</h1>
+
+
+
+<table id="myTable" class="table table-striped table-bordered table-sm shadow" cellspacing="0" width="100%">
+ <thead>
+   <tr>
+     <th>Nombre</th>
+     <th>Planta</th>
+     <th>Tipo</th>
+     <th>Solicitud</th>
+     <th>Respuesta</th>
+     <th colspan="3"></th>
+   </tr>
+ </thead>
+
+ <tbody>
+   <% @requerimientos.each do |requerimiento| %>
+     <tr>
+       <td><%= requerimiento.nombre %></td>
+       <td><%= requerimiento.planta %></td>
+       <td><%= requerimiento.solicitud %></td>
+       <td><%= requerimiento.observaciones %></td>
+       <td><%= requerimiento.respuesta %></td>
+
+
+
+       <td class="text-center">
+         <button type="button" class="btn btn-sm btn-secondary command-edit shadow p-1 rounded">
+         <%= link_to "", requerimiento, class: 'fa fa-eye fa-fw text-light'%>
+         </button>
+         <button type="button" class="btn btn-sm btn-success command-edit shadow p-1 rounded">
+         <%= link_to "", edit_requerimiento_path(requerimiento), class: "fa fa-edit fa-fw text-light"%>
+         </button>
+          <% if current_user.superadmin_role? %>
+         <button type="button" class="btn btn-sm btn-danger command-delete shadow p-1 rounded">
+           <%= link_to "", requerimiento, method: :delete, data: { confirm: "Are you sure?" }, class: "fa fa-trash fa-fw text-light" %>
+         </button>
+         <% end %>
+
+
+         </td>
+
+     </tr>
+   <% end %>
+ </tbody>
+
+
+</table>
+
+<br>
+
+<%= link_to 'Crear nueva consulta', new_requerimiento_path, class: "btn btn-primary shadow" %>

@@ -1,0 +1,41 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Nombre:</strong>
+  <%= @requerimiento.nombre %>
+</p>
+
+<p>
+  <strong>Rut:</strong>
+  <%= @requerimiento.monto %>
+</p>
+
+<p>
+  <strong>Planta:</strong>
+  <%= @requerimiento.planta %>
+</p>
+
+<p>
+  <strong>Solicitud:</strong>
+  <%= @requerimiento.solicitud %>
+</p>
+
+<p>
+  <strong>Observaciones:</strong>
+  <%= @requerimiento.observaciones %>
+</p>
+
+<p>
+  <strong>Respuesta:</strong>
+  <%= @requerimiento.respuesta %>
+</p>
+
+<p>
+  <strong>Otros:</strong>
+  <%= @requerimiento.otros %>
+</p>
+
+
+
+<%= link_to 'Edit', edit_requerimiento_path(@requerimiento) %> |
+<%= link_to 'Back', requerimientos_path %>

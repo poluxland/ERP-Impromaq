@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :requerimientos
   resources :entregas
   resources :equipos
   get 'brr17check', to: 'equipos#brr17check'
