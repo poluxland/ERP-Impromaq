@@ -1,5 +1,5 @@
 class EquiposController < ApplicationController
-  skip_before_action :authenticate_user!
+  skip_before_action :authenticate_user!, only: [:create, :show, :new]
   before_action :set_equipo, only: [:show, :edit, :update, :destroy]
 
   # GET /equipos

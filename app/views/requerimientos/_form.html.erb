@@ -24,6 +24,9 @@
         <div class="col-md-3 mb-3 ">
           <%= f.input :otros, label: "Correo electronico" %>
         </div>
+        <div class="col-md-3 mb-3 ">
+          <%= f.input :phone, label: "Telefono" %>
+        </div>
       </div>
 
     <div class="row">
@@ -37,7 +40,20 @@
         <%= f.input :respuesta, label: "Respuesta RRHH" %>
       </div>
     </div>
-<% end %>
+    <div class="row">
+      <div class="col-md-9 mb-9 ">
+        <%= f.input :estado, collection: [ "Abierto", "Cerrado", "Pendiente"] %>
+      </div>
+    </div>
+  <% else %>
+  <div class="row">
+    <div class="col-md-9 mb-9 ">
+      <%= f.hidden_field :estado, value: "Abierto" %>
+    </div>
+  </div>
+
+  <% end %>
+
 
 
 

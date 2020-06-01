@@ -1,2 +1,4 @@
 class Requerimiento < ApplicationRecord
+
+
 end

@@ -1,4 +1,7 @@
-<p id="notice"><%= notice %></p>
+<p>
+  <strong>Fecha:</strong>
+  <%= @requerimiento.created_at %>
+</p>
 
 <p>
   <strong>Nombre:</strong>
@@ -8,6 +11,11 @@
 <p>
   <strong>Rut:</strong>
   <%= @requerimiento.monto %>
+</p>
+
+<p>
+  <strong>Telefono:</strong>
+  <%= @requerimiento.phone %>
 </p>
 
 <p>
@@ -31,11 +39,11 @@
 </p>
 
 <p>
-  <strong>Otros:</strong>
+  <strong>Correo electronico:</strong>
   <%= @requerimiento.otros %>
 </p>
 
-
-
-<%= link_to 'Edit', edit_requerimiento_path(@requerimiento) %> |
-<%= link_to 'Back', requerimientos_path %>
+<p>
+  <strong>Estado:</strong>
+  <%= @requerimiento.estado %>
+</p>

@@ -1,14 +1,17 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>The change you wanted was rejected (422)</title>
+  <title>(422)</title>
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <style>
   .rails-default-error-page {
-    background-color: #EFEFEF;
-    color: #2E2F30;
+    font-family: "Work Sans", "Helvetica", "sans-serif";
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #0E0000;
+    background-color: #F4F4F4;
     text-align: center;
-    font-family: arial, sans-serif;
     margin: 0;
   }
 
@@ -23,7 +26,7 @@
     border-right-color: #999;
     border-left-color: #999;
     border-bottom-color: #BBB;
-    border-top: #B00100 solid 4px;
+    border-top: #525965 solid 4px;
     border-top-left-radius: 9px;
     border-top-right-radius: 9px;
     background-color: white;
@@ -33,7 +36,7 @@
 
   .rails-default-error-page h1 {
     font-size: 100%;
-    color: #730E15;
+    color: #525965;
     line-height: 1.5em;
   }
 
@@ -55,13 +58,15 @@
 </head>
 
 <body class="rails-default-error-page">
-  <!-- This file lives in public/422.html -->
+  <br>
+  <img class="justify-content-center" src="logo.png" alt="" width="72" height="72">
+  <!-- This file lives in public/500.html -->
+
   <div class="dialog">
     <div>
-      <h1>The change you wanted was rejected.</h1>
-      <p>Maybe you tried to change something you didn't have access to.</p>
+      <h1>Lo siento no tienes privilegios para realizar cambios.</h1>
     </div>
-    <p>If you are the application owner check the logs for more information.</p>
+    <p>Contacta al administrador para mayor información.</p>
   </div>
 </body>
 </html>

@@ -1,5 +1,5 @@
 class RequerimientosController < ApplicationController
-  skip_before_action :authenticate_user!
+  skip_before_action :authenticate_user!, only: [:create, :show, :new]
   before_action :set_requerimiento, only: [:show, :edit, :update, :destroy]
 
   # GET /requerimientos
@@ -29,7 +29,7 @@ class RequerimientosController < ApplicationController
 
     respond_to do |format|
       if @requerimiento.save
-        format.html { redirect_to @requerimiento, notice: 'Requerimiento was successfully created.' }
+        format.html { redirect_to @requerimiento, notice: 'Consulta enviada.' }
         format.json { render :show, status: :created, location: @requerimiento }
       else
         format.html { render :new }
@@ -43,7 +43,7 @@ class RequerimientosController < ApplicationController
   def update
     respond_to do |format|
       if @requerimiento.update(requerimiento_params)
-        format.html { redirect_to @requerimiento, notice: 'Requerimiento was successfully updated.' }
+        format.html { redirect_to @requerimiento, notice: 'Consulta enviada.' }
         format.json { render :show, status: :ok, location: @requerimiento }
       else
         format.html { render :edit }
@@ -70,6 +70,6 @@ class RequerimientosController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def requerimiento_params
-      params.require(:requerimiento).permit(:nombre, :planta, :solicitud, :observaciones, :respuesta, :otros, :monto)
+      params.require(:requerimiento).permit(:nombre, :planta, :solicitud, :observaciones, :respuesta, :otros, :monto, :estado, :phone)
     end
 end
