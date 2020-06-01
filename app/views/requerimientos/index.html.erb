@@ -35,7 +35,7 @@
          <button type="button" class="btn btn-sm btn-success command-edit shadow p-1 rounded">
          <%= link_to "", edit_requerimiento_path(requerimiento), class: "fa fa-edit fa-fw text-light"%>
          </button>
-          <% if current_user.superadmin_role? %>
+          <% if current_user&.superadmin_role? %>
          <button type="button" class="btn btn-sm btn-danger command-delete shadow p-1 rounded">
            <%= link_to "", requerimiento, method: :delete, data: { confirm: "Are you sure?" }, class: "fa fa-trash fa-fw text-light" %>
          </button>
