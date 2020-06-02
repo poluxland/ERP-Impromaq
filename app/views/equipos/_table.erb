@@ -6,6 +6,7 @@
   <thead>
     <tr>
       <th>Nombre</th>
+      <th>Fecha</th>
       <th>Operador</th>
       <th>Horometro</th>
       <th>Planta</th>
@@ -34,6 +35,7 @@
     <% @equipos.each do |equipo| %>
       <tr>
         <td><%= equipo.nombre %></td>
+        <td><%= equipo.created_at %></td>
         <td><%= equipo.operador %></td>
         <td><%= equipo.horometro %></td>
         <td><%= equipo.c17 %></td>
