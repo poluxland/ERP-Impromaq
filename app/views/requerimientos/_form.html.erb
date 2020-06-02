@@ -17,15 +17,16 @@
       </div>
     </div>
       <div class="row">
-
-    <div class="col-md-3 mb-3 ">
-      <%= f.input :solicitud, collection: [ "Certificados", "Liquidación", "Otros"] %>
-    </div>
-        <div class="col-md-3 mb-3 ">
-          <%= f.input :otros, label: "Correo electronico" %>
-        </div>
-        
+      <div class="col-md-3 mb-3 ">
+        <%= f.input :solicitud, collection: [ "Certificados", "Liquidación", "Otros"] %>
       </div>
+      <div class="col-md-3 mb-3 ">
+            <%= f.input :otros, label: "Correo electronico" %>
+      </div>
+      <div class="col-md-3 mb-3 ">
+            <%= f.input :contact, label: "Telefono" %>
+      </div>
+    </div>
 
     <div class="row">
       <div class="col-md-9 mb-9 ">
@@ -40,7 +41,7 @@
     </div>
     <div class="row">
       <div class="col-md-9 mb-9 ">
-        <%= f.input :estado, collection: [ "Abierto", "Cerrado", "Pendiente"] %>
+        <%= f.input :estado, collection: [ "Abierto", "Cerrado", "Otro"] %>
       </div>
     </div>
   <% else %>

@@ -70,6 +70,6 @@ class RequerimientosController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def requerimiento_params
-      params.require(:requerimiento).permit(:nombre, :planta, :solicitud, :observaciones, :respuesta, :otros, :monto, :estado, :phone)
+      params.require(:requerimiento).permit(:nombre, :planta, :solicitud, :observaciones, :respuesta, :otros, :monto, :estado, :phone, :contact)
     end
 end
