@@ -8,6 +8,10 @@ Rails.application.routes.draw do
   get 'hqpta31check', to: 'equipos#hqpta31check'
   get 'hqpta32check', to: 'equipos#hqpta32check'
   get 'hqpta33check', to: 'equipos#hqpta33check'
+  get 'lcacheck', to: 'equipos#lcacheck'
+  get 'vtscheck', to: 'equipos#vtscheck'
+  get 'ptmcheck', to: 'equipos#ptmcheck'
+  get 'parcheck', to: 'equipos#parcheck'
   resources :gastos
   namespace :admin do
     resources :users

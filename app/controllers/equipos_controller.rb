@@ -8,6 +8,25 @@ class EquiposController < ApplicationController
     @equipos = Equipo.all
   end
 
+  def lcacheck
+    # @equipos = Equipo.where(planta: "La Calera")
+    @equipos = Equipo.where("c17 LIKE (?)", "L%")
+  end
+
+  def vtscheck
+    @equipos = Equipo.where("c17 LIKE (?)", "V%")
+  end
+
+  def ptmcheck
+    @equipos = Equipo.where("c17 LIKE (?)", "P.M%")
+  end
+
+  def parcheck
+    @equipos = Equipo.where("c17 LIKE (?)", "P.A%")
+  end
+
+
+
   # :nombre, collection: ["OL03", "HQPTA31", "HQPTA32","HQPTA33", "BRR17", "HQPTA21", "HQPTA22"]
   def brr17check
     @equipo = Equipo.where(nombre: "BRR17").last
