@@ -48,7 +48,7 @@
     <div class="card-body">
       <h5 class="card-title"><i class="fas fa-poll text-success"></i> Puerto Montt </h5>
       <h4>
-        <a href="<%= lcaop_path %>">
+        <a href="<%= ptmop_path %>">
         <%= number_to_currency(Trabajo.where(avance: "Terminado").where(planta: "P.Montt").sum(:total), delimiter: ".", precision: 0)%>
       </h4>
       </a>
