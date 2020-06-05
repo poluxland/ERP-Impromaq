@@ -1,0 +1,277 @@
+<h1>Envasadoras</h1>
+
+
+<table id="myTable" class="table table-striped table-bordered table-sm shadow" cellspacing="0" width="100%">
+ <thead>
+   <tr>
+     <th>Id</th>
+     <th>Fecha</th>
+     <th>Stock S.Especial</th>
+     <th>Stock S.Extra</th>
+     <th>Stock BB Esp</th>
+     <th>Stock BB Extra</th>
+     <th>Stock BB Plus</th>
+     <th>Stock BB Super</th>
+     <th>Prod. haver</th>
+     <!--
+     <th>Horas disphaver</th>
+     <th>Horas efectivahaver</th>
+     <th>Produccion ventomatic</th>
+     <th>Horas dispventomatic</th>
+     <th>Horas efectivaventomatic</th>
+     <th>Stock sacosespecial</th>
+     <th>Stock sacosextra</th>
+     <th>Stock bigbagespaecial</th>
+     <th>Stock bigbagextra</th>
+     <th>Stock bigbagplus</th>
+     <th>Stock bigbagsuper</th>
+     <th>Produccion haver</th>
+     <th>Horas disphaver</th>
+     <th>Horas efectivahaver</th>
+     <th>Produccion ventomatic</th>
+     <th>Horas dispventomatic</th>
+     <th>Horas efectivaventomatic</th>
+     <th>Programa especialsacos</th>
+     <th>Programa extrasacos</th>
+     <th>Programa especialbigbag</th>
+     <th>Programa extrabigbag</th>
+     <th>Programa extrabigbag1t</th>
+     <th>Programa plusbigbag</th>
+     <th>Programa superbigbag</th>
+     <th>Despacho especialsacos</th>
+     <th>Despacho extrasacos</th>
+     <th>Despacho especialbigbag</th>
+     <th>Despacho extrabigbag</th>
+     <th>Despacho extrabigbag1t</th>
+     <th>Despacho plusbigbag</th>
+     <th>Despacho superbigbag</th>
+     <th>Medida1 silo19</th>
+     <th>Medida2 silo19</th>
+     <th>Medida1 silo20</th>
+     <th>Medida2 silo20</th>
+     <th>Medida1 silo21</th>
+     <th>Medida2 silo21</th>
+     <th>Medida1 silo22</th>
+     <th>Medida2 silo22</th>
+     <th>Medida silo27</th>
+     <th>Medida silo28</th>
+     <th>Medida tolva5s28</th>
+     <th>Medida tolva1vento</th>
+     <th>Medida tolva2vento</th>
+     <th>Medida tolva3vento</th>
+     <th>Medida tolva1bigbag</th>
+     <th>Medida tolva2bigbag</th>
+     <th>Medida tolva1s3000</th>
+     <th>Medida tolva4s3000</th>
+     <th>Medida tolva5s3000</th>
+     <th>Producto tolva5s28</th>
+     <th>Producto tolva1vento</th>
+     <th>Producto tolva2vento</th>
+     <th>Producto tolva3vento</th>
+     <th>Producto tolva1bigbag</th>
+     <th>Producto tolva2bigbag</th>
+     <th>Producto tolva1s3000</th>
+     <th>Producto tolva4s3000</th>
+     <th>Producto tolva5s3000</th>
+     <th>Programa manthaver</th>
+     <th>Ejecutado manthaver</th>
+     <th>Programa mantvento</th>
+     <th>Ejecutado mantvento</th>
+     <th>Programa mantbigbag</th>
+     <th>Ejecutado mantbigbag</th>
+     <th>Programa mantgranel</th>
+     <th>Ejecutado mantgranel</th>
+     <th>Programa mantplanta1</th>
+     <th>Ejecutado mantplanta1</th>
+     <th>Programa mantenv</th>
+     <th>Ejecutado mantenv</th>
+     <th>Adicional manthaver</th>
+     <th>Adicional mantvento</th>
+     <th>Adicional mantbigbbag</th>
+     <th>Adicional mantgranel</th>
+     <th>Adicional mantp1</th>
+     <th>Adicional mantenv</th>
+     <th>Obs manthaver</th>
+     <th>Obs mantvento</th>
+     <th>Obs mantbigbag</th>
+     <th>Obs mantgranel</th>
+     <th>Obs mantp1</th>
+     <th>Obs mantenv</th>
+     <th>Linea tarearelevante</th>
+     <th>Ot tarearelevante</th>
+     <th>Descripcion tarearelevante</th>
+     <th>Tipo fallarelevante</th>
+     <th>Hora fallarelevante</th>
+     <th>Descripcion fallarelevante</th>
+     <th>Descarga materiaprima</th>
+     <th>Respaldo descargamateriaprima</th>
+     <th>Excavadora</th>
+     <th>Camion tolva</th>
+     <th>Barredora</th>
+     <th>Bobcat</th>
+     <th>Horquilla serv</th>
+     <th>Horquilla haver</th>
+     <th>Horquilla vento</th>
+     <th>Horquilla cargabigbag</th>
+     <th>Horquilla llenadobigbag</th>
+     <th>Horquilla respaldo7t</th>
+     <th>Horquilla respaldo3t</th>
+     <th>Cargador descargacaliza</th>
+     <th>Cargador descargapuzolana</th>
+     <th>Cargador respaldo</th>
+     <th>Cargador patio</th>
+     <th>Observaciones</th>
+     <th>Fecha</th>
+     <th>Observacion prodhaver</th>
+     <th>Observacion prodvento</th>
+     <th>Num adicional</th>
+     <th>Num adicional2</th>
+     <th>Num adicional3</th>
+     <th>Adicional</th> -->
+
+     <th colspan="3"></th>
+   </tr>
+ </thead>
+
+ <tbody>
+   <% @envasadoras.each do |envasadora| %>
+     <tr>
+       <td><%= envasadora.id %></td>
+       <td><%= envasadora.created_at.strftime("%m/%d/%y") %></td>
+       <td><%= envasadora.stock_sacosespecial %></td>
+       <td><%= envasadora.stock_sacosextra %></td>
+       <td><%= envasadora.stock_bigbagespaecial %></td>
+       <td><%= envasadora.stock_bigbagextra %></td>
+       <td><%= envasadora.stock_bigbagplus %></td>
+       <td><%= envasadora.stock_bigbagsuper %></td>
+       <td><%= envasadora.produccion_haver %></td>
+       <!-- <td><%= envasadora.horas_disphaver %></td>
+       <td><%= envasadora.horas_efectivahaver %></td>
+       <td><%= envasadora.produccion_ventomatic %></td>
+       <td><%= envasadora.horas_dispventomatic %></td>
+       <td><%= envasadora.horas_efectivaventomatic %></td>
+       <td><%= envasadora.programa_especialsacos %></td>
+       <td><%= envasadora.programa_extrasacos %></td>
+       <td><%= envasadora.programa_especialbigbag %></td>
+       <td><%= envasadora.programa_extrabigbag %></td>
+       <td><%= envasadora.programa_extrabigbag1t %></td>
+       <td><%= envasadora.programa_plusbigbag %></td>
+       <td><%= envasadora.programa_superbigbag %></td>
+       <td><%= envasadora.despacho_especialsacos %></td>
+       <td><%= envasadora.despacho_extrasacos %></td>
+       <td><%= envasadora.despacho_especialbigbag %></td>
+       <td><%= envasadora.despacho_extrabigbag %></td>
+       <td><%= envasadora.despacho_extrabigbag1t %></td>
+       <td><%= envasadora.despacho_plusbigbag %></td>
+       <td><%= envasadora.despacho_superbigbag %></td>
+       <td><%= envasadora.medida1_silo19 %></td>
+       <td><%= envasadora.medida2_silo19 %></td>
+       <td><%= envasadora.medida1_silo20 %></td>
+       <td><%= envasadora.medida2_silo20 %></td>
+       <td><%= envasadora.medida1_silo21 %></td>
+       <td><%= envasadora.medida2_silo21 %></td>
+       <td><%= envasadora.medida1_silo22 %></td>
+       <td><%= envasadora.medida2_silo22 %></td>
+       <td><%= envasadora.medida_silo27 %></td>
+       <td><%= envasadora.medida_silo28 %></td>
+       <td><%= envasadora.medida_tolva5s28 %></td>
+       <td><%= envasadora.medida_tolva1vento %></td>
+       <td><%= envasadora.medida_tolva2vento %></td>
+       <td><%= envasadora.medida_tolva3vento %></td>
+       <td><%= envasadora.medida_tolva1bigbag %></td>
+       <td><%= envasadora.medida_tolva2bigbag %></td>
+       <td><%= envasadora.medida_tolva1s3000 %></td>
+       <td><%= envasadora.medida_tolva4s3000 %></td>
+       <td><%= envasadora.medida_tolva5s3000 %></td>
+       <td><%= envasadora.producto_tolva5s28 %></td>
+       <td><%= envasadora.producto_tolva1vento %></td>
+       <td><%= envasadora.producto_tolva2vento %></td>
+       <td><%= envasadora.producto_tolva3vento %></td>
+       <td><%= envasadora.producto_tolva1bigbag %></td>
+       <td><%= envasadora.producto_tolva2bigbag %></td>
+       <td><%= envasadora.producto_tolva1s3000 %></td>
+       <td><%= envasadora.producto_tolva4s3000 %></td>
+       <td><%= envasadora.producto_tolva5s3000 %></td>
+       <td><%= envasadora.programa_manthaver %></td>
+       <td><%= envasadora.ejecutado_manthaver %></td>
+       <td><%= envasadora.programa_mantvento %></td>
+       <td><%= envasadora.ejecutado_mantvento %></td>
+       <td><%= envasadora.programa_mantbigbag %></td>
+       <td><%= envasadora.ejecutado_mantbigbag %></td>
+       <td><%= envasadora.programa_mantgranel %></td>
+       <td><%= envasadora.ejecutado_mantgranel %></td>
+       <td><%= envasadora.programa_mantplanta1 %></td>
+       <td><%= envasadora.ejecutado_mantplanta1 %></td>
+       <td><%= envasadora.programa_mantenv %></td>
+       <td><%= envasadora.ejecutado_mantenv %></td>
+       <td><%= envasadora.adicional_manthaver %></td>
+       <td><%= envasadora.adicional_mantvento %></td>
+       <td><%= envasadora.adicional_mantbigbbag %></td>
+       <td><%= envasadora.adicional_mantgranel %></td>
+       <td><%= envasadora.adicional_mantp1 %></td>
+       <td><%= envasadora.adicional_mantenv %></td>
+       <td><%= envasadora.obs_manthaver %></td>
+       <td><%= envasadora.obs_mantvento %></td>
+       <td><%= envasadora.obs_mantbigbag %></td>
+       <td><%= envasadora.obs_mantgranel %></td>
+       <td><%= envasadora.obs_mantp1 %></td>
+       <td><%= envasadora.obs_mantenv %></td>
+       <td><%= envasadora.linea_tarearelevante %></td>
+       <td><%= envasadora.ot_tarearelevante %></td>
+       <td><%= envasadora.descripcion_tarearelevante %></td>
+       <td><%= envasadora.tipo_fallarelevante %></td>
+       <td><%= envasadora.hora_fallarelevante %></td>
+       <td><%= envasadora.descripcion_fallarelevante %></td>
+       <td><%= envasadora.descarga_materiaprima %></td>
+       <td><%= envasadora.respaldo_descargamateriaprima %></td>
+       <td><%= envasadora.excavadora %></td>
+       <td><%= envasadora.camion_tolva %></td>
+       <td><%= envasadora.barredora %></td>
+       <td><%= envasadora.bobcat %></td>
+       <td><%= envasadora.horquilla_serv %></td>
+       <td><%= envasadora.horquilla_haver %></td>
+       <td><%= envasadora.horquilla_vento %></td>
+       <td><%= envasadora.horquilla_cargabigbag %></td>
+       <td><%= envasadora.horquilla_llenadobigbag %></td>
+       <td><%= envasadora.horquilla_respaldo7t %></td>
+       <td><%= envasadora.horquilla_respaldo3t %></td>
+       <td><%= envasadora.cargador_descargacaliza %></td>
+       <td><%= envasadora.cargador_descargapuzolana %></td>
+       <td><%= envasadora.cargador_respaldo %></td>
+       <td><%= envasadora.cargador_patio %></td>
+       <td><%= envasadora.observaciones %></td>
+       <td><%= envasadora.fecha %></td>
+       <td><%= envasadora.observacion_prodhaver %></td>
+       <td><%= envasadora.observacion_prodvento %></td>
+       <td><%= envasadora.num_adicional %></td>
+       <td><%= envasadora.num_adicional2 %></td>
+       <td><%= envasadora.num_adicional3 %></td>
+       <td><%= envasadora.adicional %></td> -->
+
+
+
+       <td class="text-center">
+         <button type="button" class="btn btn-sm btn-secondary command-edit shadow p-1 rounded">
+         <%= link_to "", envasadora, class: 'fa fa-eye fa-fw text-light'%>
+         </button>
+         <button type="button" class="btn btn-sm btn-success command-edit shadow p-1 rounded">
+         <%= link_to "", edit_envasadora_path(envasadora), class: "fa fa-edit fa-fw text-light"%>
+         </button>
+          <% if current_user.superadmin_role? %>
+         <button type="button" class="btn btn-sm btn-danger command-delete shadow p-1 rounded">
+           <%= link_to "", envasadora, method: :delete, data: { confirm: "Are you sure?" }, class: "fa fa-trash fa-fw text-light" %>
+         </button>
+         <% end %>
+         </td>
+
+     </tr>
+   <% end %>
+ </tbody>
+</table>
+<br>
+
+
+
+<br>
+
+<%= link_to 'Nuevo reporte', new_envasadora_path, class: "btn btn-primary shadow" %>

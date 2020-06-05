@@ -1,0 +1,427 @@
+<div class="container shadow">
+
+<br><img src="/logo.png" class="p-1" style="width:100%; max-width:80px;">
+<h2>Reporte producción envasadora</h2>
+<table class="table table-sm m-0">
+  <thead class="table-success ">
+    <tr>
+      <th style="width: 33%; text-align: center;">Stock</th>
+      <th style="width: 33%; text-align: center;">Producción</th>
+      <th style="width: 34%; text-align: center;">Despacho</th>
+    </tr>
+  </thead>
+
+</table>
+    <table class="table table-sm m-0">
+      <thead class="table-secondary">
+        <tr>
+          <th class="border border-secondary" style="width: 11%; text-align: center;">Productos</th>
+          <th class="border border-secondary" style="width: 11%; text-align: center;">Sacos</th>
+          <th class="border border-secondary" style="width: 11%; text-align: center;">Bigbag</th>
+          <th class="border border-secondary" style="width: 11%; text-align: center;">Indicador</th>
+          <th class="border border-secondary" style="width: 11%; text-align: center;">Haver</th>
+          <th class="border border-secondary" style="width: 11%; text-align: center;">Ventomatic</th>
+          <th class="border border-secondary" style="width: 8%; text-align: center;">Producto</th>
+          <th class="border border-secondary" style="width: 8%; text-align: center;">Programa</th>
+          <th class="border border-secondary" style="width: 8%; text-align: center;">Real</th>
+          <th class="border border-secondary" style="width: 8%; text-align: center;">Desv.</th>
+        </tr>
+      </thead>
+        <tr>
+          <th class="border border-secondary" style="width: 11%; text-align: center;">Especial</th>
+          <th class="border border-secondary" style="width: 11%; text-align: center;"><%= @envasadora.stock_sacosespecial %></th>
+          <th class="border border-secondary" style="width: 11%; text-align: center;"><%= @envasadora.stock_bigbagespaecial %></th>
+          <th class="border border-secondary" style="width: 11%; text-align: center;">Prod. real</th>
+          <th class="border border-secondary" style="width: 11%; text-align: center;"><%= @envasadora.produccion_haver %></th>
+          <th class="border border-secondary" style="width: 11%; text-align: center;"><%= @envasadora.produccion_ventomatic %></th>
+          <th class="border border-secondary" style="width: 9%; text-align: center;">Esp. Sacos</th>
+          <th class="border border-secondary" style="width: 8%; text-align: center;"><%= @envasadora.programa_especialsacos %></th>
+          <th class="border border-secondary" style="width: 8%; text-align: center;"><%= @envasadora.despacho_especialsacos %></th>
+          <th class="border border-secondary" style="width: 8%; text-align: center;">
+            <%= ( @envasadora.despacho_especialsacos - @envasadora.programa_especialsacos ) %></th>
+        </tr>
+        <tr>
+          <th class="border border-secondary" style="width: 11%; text-align: center;">Extra</th>
+          <th class="border border-secondary" style="width: 11%; text-align: center;"><%= @envasadora.stock_sacosextra %></th>
+          <th class="border border-secondary" style="width: 11%; text-align: center;"><%= @envasadora.stock_bigbagextra %></th>
+          <th class="border border-secondary" style="width: 11%; text-align: center;">HH Disp.</th>
+          <th class="border border-secondary" style="width: 11%; text-align: center;"><%= @envasadora.horas_disphaver %></th>
+          <th class="border border-secondary" style="width: 11%; text-align: center;"><%= @envasadora.horas_dispventomatic %></th>
+          <th class="border border-secondary" style="width: 9%; text-align: center;">Extra Sacos</th>
+          <th class="border border-secondary" style="width: 8%; text-align: center;"><%= @envasadora.programa_extrasacos %></th>
+          <th class="border border-secondary" style="width: 8%; text-align: center;"><%= @envasadora.despacho_extrasacos %></th>
+          <th class="border border-secondary" style="width: 8%; text-align: center;">Desv.</th>
+        </tr>
+        <tr>
+          <th class="border border-secondary" style="width: 11%; text-align: center;">Plus</th>
+          <th class="border border-secondary" style="width: 11%; text-align: center;"></th>
+          <th class="border border-secondary" style="width: 11%; text-align: center;"><%= @envasadora.stock_bigbagplus %></th>
+          <th class="border border-secondary" style="width: 11%; text-align: center;">HH Efect.</th>
+          <th class="border border-secondary" style="width: 11%; text-align: center;"><%= @envasadora.horas_efectivahaver %></th>
+          <th class="border border-secondary" style="width: 11%; text-align: center;"><%= @envasadora.horas_efectivaventomatic %></th>
+          <th class="border border-secondary" style="width: 9%; text-align: center;">Esp. BB</th>
+          <th class="border border-secondary" style="width: 8%; text-align: center;"><%= @envasadora.programa_especialbigbag %></th>
+          <th class="border border-secondary" style="width: 8%; text-align: center;"><%= @envasadora.despacho_especialbigbag %></th>
+          <th class="border border-secondary" style="width: 8%; text-align: center;">Desv.</th>
+        </tr>
+        <tr>
+          <th style="width: 11%; text-align: center;"></th>
+          <th style="width: 11%; text-align: center;"></th>
+          <th style="width: 11%; text-align: center;"></th>
+          <th class="border border-secondary" style="width: 11%; text-align: center;">TPH</th>
+          <th class="border border-secondary" style="width: 11%; text-align: center;">Haver</th>
+          <th class="border border-secondary" style="width: 11%; text-align: center;">Ventomatic</th>
+          <th class="border border-secondary" style="width: 9%; text-align: center;">Extra BB</th>
+          <th class="border border-secondary" style="width: 8%; text-align: center;"><%= @envasadora.programa_extrabigbag %></th>
+          <th class="border border-secondary" style="width: 8%; text-align: center;"><%= @envasadora.despacho_extrabigbag %></th>
+          <th class="border border-secondary" style="width: 8%; text-align: center;">Desv.</th>
+        </tr>
+        <tr>
+          <th style="width: 11%; text-align: center;"></th>
+          <th style="width: 11%; text-align: center;"></th>
+          <th style="width: 11%; text-align: center;"></th>
+          <th class="border border-secondary" style="width: 11%; text-align: center;">FS</th>
+          <th class="border border-secondary" style="width: 11%; text-align: center;">Haver</th>
+          <th class="border border-secondary" style="width: 11%; text-align: center;">Ventomatic</th>
+          <th class="border border-secondary" style="width: 9%; text-align: center;">Extra BB1t</th>
+          <th class="border border-secondary" style="width: 8%; text-align: center;"><%= @envasadora.programa_extrabigbag1t %></th>
+          <th class="border border-secondary" style="width: 8%; text-align: center;"><%= @envasadora.despacho_extrabigbag1t %></th>
+          <th class="border border-secondary" style="width: 8%; text-align: center;">Desv.</th>
+        </tr>
+        <tr>
+          <th style="width: 11%; text-align: center;"></th>
+          <th style="width: 11%; text-align: center;"></th>
+          <th style="width: 11%; text-align: center;"></th>
+          <th style="width: 11%; text-align: center;"></th>
+          <th style="width: 11%; text-align: center;"></th>
+          <th style="width: 11%; text-align: center;"></th>
+          <th class="border border-secondary" style="width: 9%; text-align: center;">Plus BB</th>
+          <th class="border border-secondary" style="width: 8%; text-align: center;"><%= @envasadora.programa_plusbigbag %></th>
+          <th class="border border-secondary" style="width: 8%; text-align: center;"><%= @envasadora.despacho_plusbigbag %></th>
+          <th class="border border-secondary" style="width: 8%; text-align: center;">Desv.</th>
+        </tr>
+        <tr>
+          <th style="width: 11%; text-align: center;"></th>
+          <th style="width: 11%; text-align: center;"></th>
+          <th style="width: 11%; text-align: center;"></th>
+          <th style="width: 11%; text-align: center;"></th>
+          <th style="width: 11%; text-align: center;"></th>
+          <th style="width: 11%; text-align: center;"></th>
+          <th class="border border-secondary" style="width: 9%; text-align: center;">Super BB</th>
+          <th class="border border-secondary" style="width: 8%; text-align: center;"><%= @envasadora.programa_superbigbag %></th>
+          <th class="border border-secondary" style="width: 8%; text-align: center;"><%= @envasadora.despacho_superbigbag %></th>
+          <th class="border border-secondary" style="width: 8%; text-align: center;">Desv.</th>
+        </tr>
+    </table>
+
+    <table class="table table-sm m-0">
+      <thead class="table-success border border-secondary" >
+        <tr>
+          <th class="" style="width: 50%; text-align: center;">Nivel de silos</th>
+          <th class="" style="width: 50%; text-align: center;">Nivel de tolvas</th>
+        </tr>
+      </thead>
+    </table>
+    <table class="table table-sm m-0">
+      <thead class="table-secondary">
+        <tr>
+          <th class="border border-secondary" style="width: 12.5%; text-align: center;">Silos</th>
+          <th class="border border-secondary" style="width: 12.5%; text-align: center;"></th>
+          <th class="border border-secondary" style="width: 12.5%; text-align: center;">Mts Vacios</th>
+          <th class="border border-secondary" style="width: 12.5%; text-align: center;">Toneladas</th>
+          <th class="border border-secondary" style="width: 10%; text-align: center;">Linea</th>
+          <th class="border border-secondary" style="width: 10%; text-align: center;">Tolvas</th>
+          <th class="border border-secondary" style="width: 10%; text-align: center;">Mts Vacios</th>
+          <th class="border border-secondary" style="width: 10%; text-align: center;">Producto</th>
+          <th class="border border-secondary" style="width: 10%; text-align: center;">Toneladas</th>
+        </tr>
+      </thead>
+      <tr>
+        <th class="border border-secondary" style="width: 12.5%; text-align: center;">28</th>
+        <th class="border border-secondary" style="width: 12.5%; text-align: center;"><%= @envasadora.medida_silo28 %></th>
+        <th class="border border-secondary" style="width: 12.5%; text-align: center;">Mts Vacios</th>
+        <th class="border border-secondary" style="width: 12.5%; text-align: center;">Toneladas</th>
+        <th class="border border-secondary" style="width: 10%; text-align: center;">S28</th>
+        <th class="border border-secondary" style="width: 10%; text-align: center;">5</th>
+        <th class="border border-secondary" style="width: 10%; text-align: center;"><%= @envasadora.medida_tolva5s28 %></th>
+        <th class="border border-secondary" style="width: 10%; text-align: center;"><%= @envasadora.producto_tolva5s28 %></th>
+        <th class="border border-secondary" style="width: 10%; text-align: center;">Toneladas</th>
+      </tr>
+      <tr>
+        <th class="border border-secondary" style="width: 12.5%; text-align: center;">27</th>
+        <th class="border border-secondary" style="width: 12.5%; text-align: center;"><%= @envasadora.medida_silo27 %></th>
+        <th class="border border-secondary" style="width: 12.5%; text-align: center;">Mts Vacios</th>
+        <th class="border border-secondary" style="width: 12.5%; text-align: center;">Toneladas</th>
+        <th class="border border-secondary" style="width: 10%; text-align: center;">BB</th>
+        <th class="border border-secondary" style="width: 10%; text-align: center;">1</th>
+        <th class="border border-secondary" style="width: 10%; text-align: center;"><%= @envasadora.medida_tolva1bigbag %></th>
+        <th class="border border-secondary" style="width: 10%; text-align: center;"><%= @envasadora.producto_tolva1bigbag %></th>
+        <th class="border border-secondary" style="width: 10%; text-align: center;">Toneladas</th>
+      </tr>
+      <tr>
+        <th class="border border-secondary" style="width: 12.5%; text-align: center;">22</th>
+        <th class="border border-secondary" style="width: 12.5%; text-align: center;"><%= @envasadora.medida1_silo22 %> -<%= @envasadora.medida2_silo22 %></th>
+        <th class="border border-secondary" style="width: 12.5%; text-align: center;">Mts Vacios</th>
+        <th class="border border-secondary" style="width: 12.5%; text-align: center;">Toneladas</th>
+        <th class="border border-secondary" style="width: 10%; text-align: center;">BB</th>
+        <th class="border border-secondary" style="width: 10%; text-align: center;">2</th>
+        <th class="border border-secondary" style="width: 10%; text-align: center;"><%= @envasadora.medida_tolva2bigbag %></th>
+        <th class="border border-secondary" style="width: 10%; text-align: center;"><%= @envasadora.producto_tolva2bigbag %></th>
+        <th class="border border-secondary" style="width: 10%; text-align: center;">Toneladas</th>
+      </tr>
+      <tr>
+        <th class="border border-secondary" style="width: 12.5%; text-align: center;">21</th>
+        <th class="border border-secondary" style="width: 12.5%; text-align: center;"><%= @envasadora.medida1_silo21 %> - <%= @envasadora.medida2_silo21 %></th>
+        <th class="border border-secondary" style="width: 12.5%; text-align: center;">Mts Vacios</th>
+        <th class="border border-secondary" style="width: 12.5%; text-align: center;">Toneladas</th>
+        <th class="border border-secondary" style="width: 10%; text-align: center;">Ventomatic</th>
+        <th class="border border-secondary" style="width: 10%; text-align: center;">1</th>
+        <th class="border border-secondary" style="width: 10%; text-align: center;"><%= @envasadora.medida_tolva1vento %></th>
+        <th class="border border-secondary" style="width: 10%; text-align: center;"><%= @envasadora.producto_tolva1vento %></th>
+        <th class="border border-secondary" style="width: 10%; text-align: center;">Toneladas</th>
+      </tr>
+      <tr>
+        <th class="border border-secondary" style="width: 12.5%; text-align: center;">20</th>
+        <th class="border border-secondary" style="width: 12.5%; text-align: center;"><%= @envasadora.medida1_silo20 %> - <%= @envasadora.medida2_silo20 %></th>
+        <th class="border border-secondary" style="width: 12.5%; text-align: center;">Mts Vacios</th>
+        <th class="border border-secondary" style="width: 12.5%; text-align: center;">Toneladas</th>
+        <th class="border border-secondary" style="width: 10%; text-align: center;">Ventomatic</th>
+        <th class="border border-secondary" style="width: 10%; text-align: center;">2</th>
+        <th class="border border-secondary" style="width: 10%; text-align: center;"><%= @envasadora.medida_tolva2vento %></th>
+        <th class="border border-secondary" style="width: 10%; text-align: center;"><%= @envasadora.producto_tolva2vento %></th>
+        <th class="border border-secondary" style="width: 10%; text-align: center;">Toneladas</th>
+      </tr>
+      <tr>
+        <th class="border border-secondary" style="width: 12.5%; text-align: center;">19</th>
+        <th class="border border-secondary" style="width: 12.5%; text-align: center;"><%= @envasadora.medida1_silo19 %> - <%= @envasadora.medida2_silo19 %></th>
+        <th class="border border-secondary" style="width: 12.5%; text-align: center;">Mts Vacios</th>
+        <th class="border border-secondary" style="width: 12.5%; text-align: center;">Toneladas</th>
+        <th class="border border-secondary" style="width: 10%; text-align: center;">Ventomatic</th>
+        <th class="border border-secondary" style="width: 10%; text-align: center;">3</th>
+        <th class="border border-secondary" style="width: 10%; text-align: center;"><%= @envasadora.medida_tolva3vento %></th>
+        <th class="border border-secondary" style="width: 10%; text-align: center;"><%= @envasadora.producto_tolva3vento %></th>
+        <th class="border border-secondary" style="width: 10%; text-align: center;">Toneladas</th>
+      </tr>
+      <tr>
+        <th style="width: 11%; text-align: center;"></th>
+        <th style="width: 11%; text-align: center;"></th>
+        <th class="border border-secondary" style="width: 11%; text-align: center;">Mts Vacios</th>
+        <th class="border border-secondary" style="width: 11%; text-align: center;">Toneladas</th>
+        <th class="border border-secondary" style="width: 11%; text-align: center;">S3000</th>
+        <th class="border border-secondary" style="width: 11%; text-align: center;">1</th>
+        <th class="border border-secondary" style="width: 11%; text-align: center;"><%= @envasadora.medida_tolva1s3000 %></th>
+        <th class="border border-secondary" style="width: 11%; text-align: center;"><%= @envasadora.producto_tolva1s3000 %></th>
+        <th class="border border-secondary" style="width: 11%; text-align: center;">Toneladas</th>
+      </tr>
+      <tr>
+        <th style="width: 11%; text-align: center;"></th>
+        <th style="width: 11%; text-align: center;"></th>
+        <th class="border border-secondary" style="width: 11%; text-align: center;">Mts Vacios</th>
+        <th class="border border-secondary" style="width: 11%; text-align: center;">Toneladas</th>
+        <th class="border border-secondary" style="width: 11%; text-align: center;">s3000</th>
+        <th class="border border-secondary" style="width: 11%; text-align: center;">4</th>
+        <th class="border border-secondary" style="width: 11%; text-align: center;"><%= @envasadora.medida_tolva4s3000 %></th>
+        <th class="border border-secondary" style="width: 11%; text-align: center;"><%= @envasadora.producto_tolva4s3000 %></th>
+        <th class="border border-secondary" style="width: 11%; text-align: center;">Toneladas</th>
+      </tr>
+      <tr>
+        <th style="width: 11%; text-align: center;"></th>
+        <th style="width: 11%; text-align: center;"></th>
+        <th class="border border-secondary" style="width: 11%; text-align: center;">Mts Vacios</th>
+        <th class="border border-secondary" style="width: 11%; text-align: center;">Toneladas</th>
+        <th class="border border-secondary" style="width: 11%; text-align: center;">S3000</th>
+        <th class="border border-secondary" style="width: 11%; text-align: center;">5</th>
+        <th class="border border-secondary" style="width: 11%; text-align: center;"><%= @envasadora.medida_tolva5s3000 %></th>
+        <th class="border border-secondary" style="width: 11%; text-align: center;"><%= @envasadora.producto_tolva5s3000 %></th>
+        <th class="border border-secondary" style="width: 11%; text-align: center;">Toneladas</th>
+      </tr>
+
+    </table>
+
+    <table class="table table-sm m-0">
+      <thead class="table-success">
+        <tr>
+          <th class="border border-secondary" style="width: 100%; text-align: center;">Mantención envasadora</th>
+        </tr>
+      </thead>
+    </table>
+    <table class="table table-sm m-0">
+      <thead class="table-success">
+        <tr>
+          <th class="border border-secondary" style="width: 12%; text-align: center;">Linea</th>
+          <th class="border border-secondary" style="width: 12%; text-align: center;">Programado</th>
+          <th class="border border-secondary" style="width: 12%; text-align: center;">Ejecutado</th>
+          <th class="border border-secondary" style="width: 12%; text-align: center;">Adicional</th>
+          <th class="border border-secondary" style="width: 50%; text-align: center;">Observaciones</th>
+        </tr>
+      </thead>
+      <tr>
+        <th class="border border-secondary" style="width: 12%; text-align: center;">Vento-Haver</th>
+        <th class="border border-secondary" style="width: 12%; text-align: center;"><%= @envasadora.programa_manthaver %></th>
+        <th class="border border-secondary" style="width: 12%; text-align: center;"><%= @envasadora.ejecutado_manthaver %></th>
+        <th class="border border-secondary" style="width: 12%; text-align: center;"><%= @envasadora.adicional_manthaver %></th>
+        <th class="border border-secondary" style="width: 12%; text-align: center;"><%= @envasadora.obs_manthaver %></th>
+      </tr>
+      <tr>
+        <th class="border border-secondary" style="width: 12%; text-align: center;">Ventomatic</th>
+        <th class="border border-secondary" style="width: 12%; text-align: center;"><%= @envasadora.programa_mantvento %></th>
+        <th class="border border-secondary" style="width: 12%; text-align: center;"><%= @envasadora.ejecutado_mantvento %></th>
+        <th class="border border-secondary" style="width: 12%; text-align: center;"><%= @envasadora.adicional_mantvento %></th>
+        <th class="border border-secondary" style="width: 12%; text-align: center;"><%= @envasadora.obs_mantvento %></th>
+      </tr>
+      <tr>
+        <th class="border border-secondary" style="width: 12%; text-align: center;">BB</th>
+        <th class="border border-secondary" style="width: 12%; text-align: center;"><%= @envasadora.programa_mantbigbag %></th>
+        <th class="border border-secondary" style="width: 12%; text-align: center;"><%= @envasadora.ejecutado_mantbigbag %></th>
+        <th class="border border-secondary" style="width: 12%; text-align: center;"><%= @envasadora.adicional_mantbigbbag %></th>
+        <th class="border border-secondary" style="width: 12%; text-align: center;"><%= @envasadora.obs_mantbigbag %></th>
+      </tr>
+      <tr>
+        <th class="border border-secondary" style="width: 12%; text-align: center;">Granel</th>
+        <th class="border border-secondary" style="width: 12%; text-align: center;"><%= @envasadora.programa_mantgranel %></th>
+        <th class="border border-secondary" style="width: 12%; text-align: center;"><%= @envasadora.ejecutado_mantgranel %></th>
+        <th class="border border-secondary" style="width: 12%; text-align: center;"><%= @envasadora.adicional_mantgranel %></th>
+        <th class="border border-secondary" style="width: 12%; text-align: center;"><%= @envasadora.obs_mantgranel %></th>
+      </tr>
+      <tr>
+        <th class="border border-secondary" style="width: 12%; text-align: center;">Planta 1</th>
+        <th class="border border-secondary" style="width: 12%; text-align: center;"><%= @envasadora.programa_mantplanta1 %></th>
+        <th class="border border-secondary" style="width: 12%; text-align: center;"><%= @envasadora.ejecutado_mantplanta1 %></th>
+        <th class="border border-secondary" style="width: 12%; text-align: center;"><%= @envasadora.adicional_mantp1 %></th>
+        <th class="border border-secondary" style="width: 12%; text-align: center;"><%= @envasadora.obs_mantp1 %></th>
+      </tr>
+      <tr>
+        <th class="border border-secondary" style="width: 12%; text-align: center;">Envasadora</th>
+        <th class="border border-secondary" style="width: 12%; text-align: center;"><%= @envasadora.programa_mantenv %></th>
+        <th class="border border-secondary" style="width: 12%; text-align: center;"><%= @envasadora.ejecutado_mantenv %></th>
+        <th class="border border-secondary" style="width: 12%; text-align: center;"><%= @envasadora.adicional_mantenv %></th>
+        <th class="border border-secondary" style="width: 12%; text-align: center;"><%= @envasadora.obs_mantenv %></th>
+      </tr>
+    </table>
+    <table class="table table-sm m-0">
+      <thead class="table-success">
+        <tr>
+          <th class="border border-secondary" style="width: 12%; text-align: center;">Linea</th>
+          <th class="border border-secondary" style="width: 12%; text-align: center;">OT</th>
+          <th class="border border-secondary" style="width: 78%; text-align: center;">Descripción</th>
+        </tr>
+      </thead>
+      <tr>
+        <th class="border border-secondary" style="width: 12%; text-align: center;"><%= @envasadora.linea_tarearelevante %></th>
+        <th class="border border-secondary" style="width: 12%; text-align: center;"><%= @envasadora.ot_tarearelevante %></th>
+        <th class="border border-secondary" style="width: 78%; text-align: center;"><%= @envasadora.descripcion_tarearelevante %></th>
+      </tr>
+    </table>
+    <table class="table table-sm m-0">
+      <thead class="table-success">
+        <tr>
+          <th class="border border-secondary" style="width: 12%; text-align: center;">Tipo</th>
+          <th class="border border-secondary" style="width: 12%; text-align: center;">Hora</th>
+          <th class="border border-secondary" style="width: 78%; text-align: center;">Falla</th>
+        </tr>
+      </thead>
+      <tr>
+        <th class="border border-secondary" style="width: 12%; text-align: center;"><%= @envasadora.tipo_fallarelevante %></th>
+        <th class="border border-secondary" style="width: 12%; text-align: center;"><%= @envasadora.hora_fallarelevante %></th>
+        <th class="border border-secondary" style="width: 78%; text-align: center;"><%= @envasadora.descripcion_fallarelevante %></th>
+      </tr>
+    </table>
+    <table class="table table-sm m-0">
+      <thead class="table-success">
+        <tr>
+          <th class="border border-secondary" style="width: 100%; text-align: center;">Equipos moviles</th>
+        </tr>
+      </thead>
+    </table>
+    <table class="table table-sm m-0 ">
+      <thead class="table-secondary">
+        <tr>
+          <th class="border border-secondary" style="width: 50%; text-align: center;">Transporte</th>
+          <th class="border border-secondary" style="width: 50%; text-align: center;">Envasadora</th>
+        </tr>
+      </thead>
+    </table>
+    <table class="table table-sm m-0 ">
+      <thead class="table">
+        <tr>
+          <th class="border border-secondary" style="width: 25%; text-align: center;">Descarga materia prima</th>
+          <th class="border border-secondary" style="width: 25%; text-align: center;"><%= @envasadora.descarga_materiaprima %></th>
+          <th class="border border-secondary" style="width: 25%; text-align: center;">Barredora ENV</th>
+          <th class="border border-secondary" style="width: 25%; text-align: center;"><%= @envasadora.barredora %></th>
+        </tr>
+        <tr>
+          <th class="border border-secondary" style="width: 25%; text-align: center;">Respaldo materia prima</th>
+          <th class="border border-secondary" style="width: 25%; text-align: center;"><%= @envasadora.respaldo_descargamateriaprima %></th>
+          <th class="border border-secondary" style="width: 25%; text-align: center;">Horquilla haver</th>
+          <th class="border border-secondary" style="width: 25%; text-align: center;"><%= @envasadora.horquilla_haver %></th>
+        </tr>
+        <tr>
+          <th class="border border-secondary" style="width: 25%; text-align: center;">Excavadora</th>
+          <th class="border border-secondary" style="width: 25%; text-align: center;"><%= @envasadora.excavadora %></th>
+          <th class="border border-secondary" style="width: 25%; text-align: center;">Transporte</th>
+          <th class="border border-secondary" style="width: 25%; text-align: center;">Envasadora</th>
+        </tr>
+        <tr>
+          <th class="border border-secondary" style="width: 25%; text-align: center;">Camion Tolva</th>
+          <th class="border border-secondary" style="width: 25%; text-align: center;"><%= @envasadora.camion_tolva %></th>
+          <th class="border border-secondary" style="width: 25%; text-align: center;">Bobcat</th>
+          <th class="border border-secondary" style="width: 25%; text-align: center;"><%= @envasadora.bobcat %></th>
+        </tr>
+        <tr>
+          <th class="border border-secondary" style="width: 25%; text-align: center;">Bobcat</th>
+          <th class="border border-secondary" style="width: 25%; text-align: center;"><%= @envasadora.bobcat %></th>
+          <th class="border border-secondary" style="width: 25%; text-align: center;">Horquilla llenado bigbag</th>
+          <th class="border border-secondary" style="width: 25%; text-align: center;"><%= @envasadora.horquilla_llenadobigbag %></th>
+        </tr>
+        <tr>
+          <th class="border border-secondary" style="width: 25%; text-align: center;">Horquilla 7t respaldo</th>
+          <th class="border border-secondary" style="width: 25%; text-align: center;"><%= @envasadora.horquilla_respaldo7t %></th>
+          <th class="border border-secondary" style="width: 25%; text-align: center;">Horquilla carga bigbag</th>
+          <th class="border border-secondary" style="width: 25%; text-align: center;"><%= @envasadora.horquilla_cargabigbag %></th>
+        </tr>
+        <tr>
+          <th class="border border-secondary" style="width: 25%; text-align: center;">Horquilla servicios</th>
+          <th class="border border-secondary" style="width: 25%; text-align: center;"><%= @envasadora.horquilla_serv %></th>
+          <th class="border border-secondary" style="width: 25%; text-align: center;">Horquilla ventomatic</th>
+          <th class="border border-secondary" style="width: 25%; text-align: center;"><%= @envasadora.horquilla_vento %></th>
+        </tr>
+        <tr>
+          <th class="border border-secondary" style="width: 25%; text-align: center;">Cargador descarga caliza</th>
+          <th class="border border-secondary" style="width: 25%; text-align: center;"><%= @envasadora.cargador_descargacaliza %></th>
+          <th class="border border-secondary" style="width: 25%; text-align: center;">Horquilla respaldo 3t</th>
+          <th class="border border-secondary" style="width: 25%; text-align: center;"><%= @envasadora.horquilla_respaldo3t %></th>
+        </tr>
+        <tr>
+          <th class="border border-secondary" style="width: 25%; text-align: center;">Cargador respaldo</th>
+          <th class="border border-secondary" style="width: 25%; text-align: center;"><%= @envasadora.cargador_respaldo %></th>
+          <th class="border border-secondary" style="width: 25%; text-align: center;">Cargador descagra puzolana</th>
+          <th class="border border-secondary" style="width: 25%; text-align: center;"><%= @envasadora.cargador_descargapuzolana %></th>
+        </tr>
+        <tr>
+          <th class="border border-secondary" style="width: 25%; text-align: center;">Cargador patio</th>
+          <th class="border border-secondary" style="width: 25%; text-align: center;"><%= @envasadora.cargador_patio %></th>
+          <th class="border border-secondary" style="width: 25%; text-align: center;"></th>
+          <th class="border border-secondary" style="width: 25%; text-align: center;"></th>
+        </tr>
+      </thead>
+    </table>
+
+  <%= @envasadora.observaciones %>
+  <%= @envasadora.fecha %>
+  <%= @envasadora.observacion_prodhaver %>
+  <%= @envasadora.observacion_prodvento %>
+  <%= @envasadora.num_adicional %>
+  <%= @envasadora.num_adicional2 %>
+  <%= @envasadora.num_adicional3 %>
+  <%= @envasadora.adicional %>
+
+</div>
+
+<div class="botones">
+  <div class="d-flex justify-content-center">
+  <%= link_to 'Editar', edit_envasadora_path(@envasadora), class: "btn btn-primary shadow" %>&nbsp;
+  <%= link_to 'Volver', envasadoras_path, class: "btn btn-primary shadow" %>   &nbsp;
+  <%= link_to "Imprimir", '#', class: "btn btn-primary shadow", onclick: "printpage()" %>
+  <br>
+  </div>
+</div>
