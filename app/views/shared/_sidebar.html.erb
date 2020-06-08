@@ -55,9 +55,9 @@
                 <li>
                   <a href="<%= requerimientos_path %>">Consultas</a>
                 </li>
-                <!-- <li>
-                  <a href="#">LCA</a>
-                </li>
+                <li>
+                  <a href="<%= entregas_path %>">Entregas</a>
+                </li><!--
                 <li>
                   <a href="#">PTM</a>
                 </li>
@@ -202,11 +202,16 @@
           <li class="sidebar-dropdown">
             <a href="#">
               <i class="fa fa-shopping-cart"></i>
-              <span>Entregas</span></a>
+              <span>Taller</span></a>
             <div class="sidebar-submenu">
               <ul>
-                <li><a href="<%= entregas_path %>">Indice</a></li>
-
+                <li><a href="<%= checklists_path %>">Checklist MEC</a></li>
+              </ul>
+              <ul>
+                <li><a href="">1</a></li>
+              </ul>
+              <ul>
+                <li><a href="">2</a></li>
               </ul>
             </div>
           </li>
@@ -228,13 +233,13 @@
           <li>
             <a href="<%= new_equipo_path %>">
               <i class="fa fa-book"></i>
-              <span>Checklist</span>
+              <span>Checklist OP</span>
             </a>
           </li>
           <li>
-            <a href="#">
+            <a href="<%= new_checklist_path %>">
               <i class="fa fa-calendar"></i>
-              <span>Mantencion</span>
+              <span>Checklist MEC</span>
             </a>
           </li>
           <li>

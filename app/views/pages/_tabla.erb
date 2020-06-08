@@ -16,7 +16,8 @@
                   <th>Equipo</th>
                   <th>Status</th>
                   <th>Ultima Mantención</th>
-                  <th>Ultimo Checklist</th>
+                  <th>Checklist OP</th>
+                  <th>Checklist MEC</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -31,6 +32,7 @@
                       <i class="far fa-clock"></i> <%= Equipo.where(nombre: "BRR17")&.last&.horometro %>
                       </a>
                   </td>
+                  <td></td>
                 </tr>
                 <tr>
                   <td>BRR20</td>
@@ -43,6 +45,7 @@
                       <i class="far fa-clock"></i> <%= Equipo.where(nombre: "BRR20")&.last&.horometro %>
                       </a>
                   </td>
+                  <td></td>
                 </tr>
                 <tr>
                   <td>HQPTA31</td>
@@ -55,6 +58,7 @@
                       <i class="far fa-clock"></i> <%= Equipo.where(nombre: "HQPTA31")&.last&.horometro %>
                     </a>
                   </td>
+                  <td></td>
                 </tr>
                 <tr>
                   <td>HQPTA32</td>
@@ -67,6 +71,7 @@
                       <i class="far fa-clock"></i> <%= Equipo.where(nombre: "HQPTA32")&.last&.horometro %>
                     </a>
                   </td>
+                  <td></td>
                 </tr>
                 <tr>
                   <td>HQPTA33</td>
@@ -79,6 +84,7 @@
                       <i class="far fa-clock"></i> <%= Equipo.where(nombre: "HQPTA33")&.last&.horometro %>
                     </a>
                   </td>
+                  <td></td>
                 </tr>
                 <tr>
                   <td>OL03</td>
@@ -91,12 +97,14 @@
                       <i class="far fa-clock"></i> <%= Equipo.where(nombre: "OL03")&.last&.horometro %>
                     </a>
                   </td>
+                  <td></td>
                 </tr>
                 <tr>
                   <td>EX02</td>
                   <td>Ejemplo fuera servicio</td>
                   <td><span class="badge badge-danger">Fuera de servicio</span></td>
                   <td><div class="sparkbar" data-color="#f56954" data-height="20"></div></td>
+                  <td></td>
                   <td></td>
                 </tr>
                 </tbody>

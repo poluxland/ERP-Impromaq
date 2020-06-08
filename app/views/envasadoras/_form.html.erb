@@ -3,13 +3,15 @@
   <%= f.error_notification %>
   <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 
-  <div class="form-inputs">
-    <%= f.input :stock_sacosespecial %>
-    <%= f.input :stock_sacosextra %>
-    <%= f.input :stock_bigbagespaecial %>
-    <%= f.input :stock_bigbagextra %>
-    <%= f.input :stock_bigbagplus %>
-    <%= f.input :stock_bigbagsuper %>
+  <div class="form-inputs offser-md-1">
+    <div class="row">
+      <div class="col-md-1 mb-2 "><%= f.input :stock_sacosespecial %></div>
+      <div class="col-md-1 mb-1 "><%= f.input :stock_sacosextra %></div>
+      <div class="col-md-1 mb-1 "><%= f.input :stock_bigbagespaecial %></div>
+      <div class="col-md-1 mb-1 "><%= f.input :stock_bigbagextra %></div>
+      <div class="col-md-1 mb-1 "><%= f.input :stock_bigbagplus %></div>
+      <div class="col-md-1 mb-1"><%= f.input :stock_bigbagsuper %></div>
+      </div>
     <%= f.input :produccion_haver %>
     <%= f.input :horas_disphaver %>
     <%= f.input :horas_efectivahaver %>

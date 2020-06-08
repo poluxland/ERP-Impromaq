@@ -6,17 +6,18 @@
    <tr>
      <th>Id</th>
      <th>Fecha</th>
-     <th>Stock S.Especial</th>
+     <th>Prod. haver</th>
+     <th>Produccion ventomatic</th>
+     <th>TPH Haver</th>
+     <th>TPH Vento</th>
+     <!--<th>Stock S.Especial</th>
      <th>Stock S.Extra</th>
      <th>Stock BB Esp</th>
      <th>Stock BB Extra</th>
      <th>Stock BB Plus</th>
      <th>Stock BB Super</th>
-     <th>Prod. haver</th>
-     <!--
      <th>Horas disphaver</th>
      <th>Horas efectivahaver</th>
-     <th>Produccion ventomatic</th>
      <th>Horas dispventomatic</th>
      <th>Horas efectivaventomatic</th>
      <th>Stock sacosespecial</th>
@@ -138,16 +139,18 @@
      <tr>
        <td><%= envasadora.id %></td>
        <td><%= envasadora.created_at.strftime("%m/%d/%y") %></td>
-       <td><%= envasadora.stock_sacosespecial %></td>
+       <td><%= envasadora.produccion_haver %></td>
+       <td><%= envasadora.produccion_ventomatic %></td>
+       <td><%= envasadora.produccion_haver %>  <%=envasadora.horas_efectivahaver %></td>
+       <td><%= envasadora.produccion_ventomatic %>  <%= envasadora.horas_dispventomatic %></td>
+       <!-- <td><%= envasadora.stock_sacosespecial %></td>
        <td><%= envasadora.stock_sacosextra %></td>
        <td><%= envasadora.stock_bigbagespaecial %></td>
        <td><%= envasadora.stock_bigbagextra %></td>
        <td><%= envasadora.stock_bigbagplus %></td>
        <td><%= envasadora.stock_bigbagsuper %></td>
-       <td><%= envasadora.produccion_haver %></td>
-       <!-- <td><%= envasadora.horas_disphaver %></td>
+       <td><%= envasadora.horas_disphaver %></td>
        <td><%= envasadora.horas_efectivahaver %></td>
-       <td><%= envasadora.produccion_ventomatic %></td>
        <td><%= envasadora.horas_dispventomatic %></td>
        <td><%= envasadora.horas_efectivaventomatic %></td>
        <td><%= envasadora.programa_especialsacos %></td>
@@ -257,7 +260,7 @@
          <button type="button" class="btn btn-sm btn-success command-edit shadow p-1 rounded">
          <%= link_to "", edit_envasadora_path(envasadora), class: "fa fa-edit fa-fw text-light"%>
          </button>
-          <% if current_user.superadmin_role? %>
+         <% if current_user.superadmin_role? %>
          <button type="button" class="btn btn-sm btn-danger command-delete shadow p-1 rounded">
            <%= link_to "", envasadora, method: :delete, data: { confirm: "Are you sure?" }, class: "fa fa-trash fa-fw text-light" %>
          </button>

@@ -1,0 +1,83 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Checklists</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Equipo</th>
+      <th>Operativo</th>
+      <th>Horometro</th>
+      <th>C1</th>
+      <th>C2</th>
+      <th>C3</th>
+      <th>C4</th>
+      <th>C5</th>
+      <th>C6</th>
+      <th>C7</th>
+      <th>C8</th>
+      <th>C9</th>
+      <th>C10</th>
+      <th>C11</th>
+      <th>C12</th>
+      <th>C13</th>
+      <th>C14</th>
+      <th>C15</th>
+      <th>C16</th>
+      <th>C17</th>
+      <th>C18</th>
+      <th>C19</th>
+      <th>Combustible</th>
+      <th>Acmotor</th>
+      <th>Achidraulico</th>
+      <th>Actrans</th>
+      <th>Acatf</th>
+      <th>Acnuto</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @checklists.each do |checklist| %>
+      <tr>
+        <td><%= checklist.nombre %></td>
+        <td><%= checklist.equipo %></td>
+        <td><%= checklist.operativo %></td>
+        <td><%= checklist.horometro %></td>
+        <td><%= checklist.c1 %></td>
+        <td><%= checklist.c2 %></td>
+        <td><%= checklist.c3 %></td>
+        <td><%= checklist.c4 %></td>
+        <td><%= checklist.c5 %></td>
+        <td><%= checklist.c6 %></td>
+        <td><%= checklist.c7 %></td>
+        <td><%= checklist.c8 %></td>
+        <td><%= checklist.c9 %></td>
+        <td><%= checklist.c10 %></td>
+        <td><%= checklist.c11 %></td>
+        <td><%= checklist.c12 %></td>
+        <td><%= checklist.c13 %></td>
+        <td><%= checklist.c14 %></td>
+        <td><%= checklist.c15 %></td>
+        <td><%= checklist.c16 %></td>
+        <td><%= checklist.c17 %></td>
+        <td><%= checklist.c18 %></td>
+        <td><%= checklist.c19 %></td>
+        <td><%= checklist.combustible %></td>
+        <td><%= checklist.acmotor %></td>
+        <td><%= checklist.achidraulico %></td>
+        <td><%= checklist.actrans %></td>
+        <td><%= checklist.acatf %></td>
+        <td><%= checklist.acnuto %></td>
+        <td><%= link_to 'Show', checklist %></td>
+        <td><%= link_to 'Edit', edit_checklist_path(checklist) %></td>
+        <td><%= link_to 'Destroy', checklist, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Checklist', new_checklist_path %>
