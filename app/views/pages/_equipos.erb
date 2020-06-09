@@ -32,26 +32,6 @@
                     <td></td>
                   </tr>
                 <tr>
-                  <td>BRR17</td>
-                  <td>Barredora Tetant 6400</td>
-                  <td><span class="badge badge-danger">Fuera de servicio</span></td>
-                  <td>
-                      <a href="<%= brr17check_path %>">
-                      <%= Checklist.where(equipo: "BRR17")&.last&.created_at&.strftime("%d-%m-%y") %>
-                      <i class="far fa-clock"></i> <%= Checklist.where(equipo: "BRR17")&.last&.horometro %>
-                      </a>
-                  </td>
-                  <td>
-                      <a href="<%= brr17check_path %>">
-                      <%= Equipo.where(nombre: "BRR17")&.last&.created_at&.strftime("%d-%m-%y") %>
-                      <i class="far fa-clock"></i> <%= Equipo.where(nombre: "BRR17")&.last&.horometro %>
-                      </a>
-                  </td>
-                  <td></td>
-                  <td></td>
-                </tr>
-
-                <tr>
                   <td>HQPTA31</td>
                   <td>Horquilla Env 7t</td>
                   <td><span class="badge badge-success">Operativo</span></td>
@@ -506,7 +486,25 @@
                   <td></td>
                   <td></td>
                 </tr>
-
+                <tr>
+                  <td>BRR17</td>
+                  <td>Barredora Tetant 6400</td>
+                  <td><span class="badge badge-danger">Fuera de servicio</span></td>
+                  <td>
+                      <a href="<%= brr17check_path %>">
+                      <%= Checklist.where(equipo: "BRR17")&.last&.created_at&.strftime("%d-%m-%y") %>
+                      <i class="far fa-clock"></i> <%= Checklist.where(equipo: "BRR17")&.last&.horometro %>
+                      </a>
+                  </td>
+                  <td>
+                      <a href="<%= brr17check_path %>">
+                      <%= Equipo.where(nombre: "BRR17")&.last&.created_at&.strftime("%d-%m-%y") %>
+                      <i class="far fa-clock"></i> <%= Equipo.where(nombre: "BRR17")&.last&.horometro %>
+                      </a>
+                  </td>
+                  <td></td>
+                  <td></td>
+                </tr>
                 <tr>
                   <td></td>
                   <td></td>
