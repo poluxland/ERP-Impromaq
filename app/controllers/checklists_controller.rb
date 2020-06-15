@@ -13,6 +13,8 @@ class ChecklistsController < ApplicationController
   def show
   end
 
+  
+
   # GET /checklists/new
   def new
     @checklist = Checklist.new

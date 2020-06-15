@@ -57,7 +57,7 @@
         <%= number_to_currency(Trabajo.where(avance: "Terminado").where(planta: "P.Montt").where.not(op: true).sum(:total), delimiter: ".", precision: 0) %> Con OP<br>
         <a href="<%= ptmejec_path %>">
         <%= number_to_currency(Trabajo.where(avance: "En ejecucción").where(planta: "P.Montt").sum(:total), delimiter: ".", precision: 0) %> En ejecucción
-        </a>
+        </a><br>
       </p>
     </div>
     <div class="card-footer">
