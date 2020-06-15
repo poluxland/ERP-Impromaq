@@ -103,19 +103,6 @@
               </ul>
             </div>
           </li>
-          <li class="sidebar-dropdown">
-            <a href="#">
-              <i class="fa fa-shopping-cart"></i>
-              <span>Envasadora</span></a>
-            <div class="sidebar-submenu">
-              <ul>
-                <li><a href="<%= envasadoras_path %>">Reporte LCA</a></li>
-                <li><a href="#">2</a></li>
-                <li><a href="#">3</a></li>
-                <li><a href="#">4</a></li>
-              </ul>
-            </div>
-          </li>
            <li class="sidebar-dropdown">
             <a href="#">
               <i class="fa fa-shopping-cart"></i>
@@ -183,19 +170,13 @@
             <div class="sidebar-submenu">
               <ul>
                 <li>
-                  <a href="<%= equipos_path %>">Indice</a>
+                  <a href="<%= equipos_path %>">Indice operador</a>
                 </li>
                 <li>
-                  <a href="<%= lcacheck_path %>">La Calera</a>
+                  <a href="<%= checklists_path %>">Indice Mecánico</a>
                 </li>
                 <li>
-                  <a href="<%= vtscheck_path %>">Ventanas</a>
-                </li>
-                <li>
-                  <a href="<%= ptmcheck_path %>">Puerto Montt</a>
-                </li>
-                <li>
-                  <a href="<%= parcheck_path %>">Punta Arenas</a>
+                  <a href="<%= barcos_path %>">Indica Barco</a>
                 </li>
               </ul>
             </div>
@@ -203,16 +184,22 @@
           <li class="sidebar-dropdown">
             <a href="#">
               <i class="fa fa-shopping-cart"></i>
-              <span>Taller</span></a>
+              <span>Otros</span></a>
             <div class="sidebar-submenu">
               <ul>
-                <li><a href="<%= checklists_path %>">Checklist MEC</a></li>
+                <li><a href="<%= envasadoras_path %>">Reporte ENV</a></li>
               </ul>
               <ul>
-                <li><a href="">1</a></li>
+                <li><a href="">LCA</a></li>
               </ul>
               <ul>
-                <li><a href="">2</a></li>
+                <li><a href="">VTS</a></li>
+              </ul>
+              <ul>
+                <li><a href="">PTM</a></li>
+              </ul>
+              <ul>
+                <li><a href="">PAR</a></li>
               </ul>
             </div>
           </li>
@@ -223,7 +210,7 @@
           <li>
             <a href="<%= new_requerimiento_path %>">
               <i class="fa fa-book"></i>
-              <span>Solicitudes</span>
+              <span>Solicitudes RRHH</span>
             </a>
           </li>
           <li>
