@@ -1,0 +1,38 @@
+
+<%= simple_form_for(@barco) do |f| %>
+  <%= f.error_notification %>
+  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+
+  <div class="form-inputs col-md-4 mb-4 justify-center">
+    <%= f.input :nombre, label: 'Nombre' %>
+    <%= f.input :nave, label: 'Nave' %>
+    <%= f.input :barandas, label: 'Barandas' %>
+    <%= f.input :colectores, label: 'Colectores de polvo tolva ecológicas' %>
+    <%= f.input :vtolva1, label: 'Vibrador tolva 1' %>
+    <%= f.input :vtolva2, label: 'Vibrador tolva 2' %>
+    <%= f.input :al1, label: 'Alimentador 1' %>
+    <%= f.input :al2, label: 'Alimentador 2' %>
+    <%= f.input :compresorm, label: 'Compresor muelle' %>
+    <%= f.input :cabezalm, label: 'Cabezal BC03 muelle' %>
+    <%= f.input :cabezald, label: 'Cabezal BC03 domo' %>
+    <%= f.input :polines, label: 'Polines BC03' %>
+    <%= f.input :redaire, label: 'Red de red aire' %>
+    <%= f.input :motoresbc03, label: 'Motor BC03' %>
+    <%= f.input :techotolva, label: 'Techos tolvas ecológicas' %>
+    <%= f.input :greating, label: 'Greating' %>
+    <%= f.input :alumbrado, label: 'Alumbrado general' %>
+    <%= f.input :caseta, label: 'Caseta tolvero' %>
+    <%= f.input :ccmmuelle, label: 'CCM Muelle' %>
+    <%= f.input :observaciones, label: 'Observaciones' %>
+
+    <!-- <%= f.input :numero %>
+    <%= f.input :empresa %>
+    <%= f.input :varios %>
+    <%= f.input :c18 %>
+    <%= f.input :c19 %> -->
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit, "Enviar Checklist", class: "btn-primary" %>
+  </div>
+<% end %>

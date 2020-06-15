@@ -1,0 +1,55 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  nombre: MyString
+  nave: MyString
+  barandas: false
+  colectores: false
+  vtolva1: false
+  vtolva2: false
+  al1: false
+  al2: false
+  compresorm: false
+  cabezalm: false
+  cabezald: false
+  polines: false
+  redaire: false
+  motoresbc03: false
+  techotolva: false
+  greating: false
+  alumbrado: false
+  caseta: false
+  ccmmuelle: false
+  c18: false
+  c19: false
+  numero: 1
+  observaciones: MyText
+  empresa: MyString
+  varios: MyString
+
+two:
+  nombre: MyString
+  nave: MyString
+  barandas: false
+  colectores: false
+  vtolva1: false
+  vtolva2: false
+  al1: false
+  al2: false
+  compresorm: false
+  cabezalm: false
+  cabezald: false
+  polines: false
+  redaire: false
+  motoresbc03: false
+  techotolva: false
+  greating: false
+  alumbrado: false
+  caseta: false
+  ccmmuelle: false
+  c18: false
+  c19: false
+  numero: 1
+  observaciones: MyText
+  empresa: MyString
+  varios: MyString

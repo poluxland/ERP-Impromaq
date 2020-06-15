@@ -42,6 +42,7 @@
       <!-- sidebar-search  -->
       <div class="sidebar-menu">
         <ul>
+          <% if user_signed_in? %>
           <li class="header-menu">
             <span>General</span>
           </li>
@@ -215,6 +216,7 @@
               </ul>
             </div>
           </li>
+          <% end %>
           <li class="header-menu">
             <span>Acceso directo</span>
           </li>
@@ -225,9 +227,9 @@
             </a>
           </li>
           <li>
-            <a href="<%= new_equipo_path %>">
+            <a href="<%= new_barco_path %>">
               <i class="fa fa-book"></i>
-              <span>Estado</span>
+              <span>Checklist Puerto</span>
             </a>
           </li>
           <li>

@@ -1,4 +1,5 @@
 class ChecklistsController < ApplicationController
+  skip_before_action :authenticate_user!, only: [:create, :show, :new]
   before_action :set_checklist, only: [:show, :edit, :update, :destroy]
 
   # GET /checklists

@@ -10,10 +10,40 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_06_08_214813) do
+ActiveRecord::Schema.define(version: 2020_06_12_163113) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "barcos", force: :cascade do |t|
+    t.string "nombre"
+    t.string "nave"
+    t.boolean "barandas"
+    t.boolean "colectores"
+    t.boolean "vtolva1"
+    t.boolean "vtolva2"
+    t.boolean "al1"
+    t.boolean "al2"
+    t.boolean "compresorm"
+    t.boolean "cabezalm"
+    t.boolean "cabezald"
+    t.boolean "polines"
+    t.boolean "redaire"
+    t.boolean "motoresbc03"
+    t.boolean "techotolva"
+    t.boolean "greating"
+    t.boolean "alumbrado"
+    t.boolean "caseta"
+    t.boolean "ccmmuelle"
+    t.boolean "c18"
+    t.boolean "c19"
+    t.integer "numero"
+    t.text "observaciones"
+    t.string "empresa"
+    t.string "varios"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "checklists", force: :cascade do |t|
     t.string "nombre"

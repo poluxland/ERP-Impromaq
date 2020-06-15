@@ -1,0 +1,2 @@
+class Barco < ApplicationRecord
+end
