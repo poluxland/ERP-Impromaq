@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :medidas
   resources :barcos
   resources :checklists
   resources :envasadoras

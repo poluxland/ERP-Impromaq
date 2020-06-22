@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_06_12_163113) do
+ActiveRecord::Schema.define(version: 2020_06_19_200512) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -291,6 +291,44 @@ ActiveRecord::Schema.define(version: 2020_06_12_163113) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "ep"
+  end
+
+  create_table "medidas", force: :cascade do |t|
+    t.integer "silo19a"
+    t.integer "silo19b"
+    t.integer "silo20a"
+    t.integer "silo20b"
+    t.integer "silo21a"
+    t.integer "silo21b"
+    t.integer "silo22a"
+    t.integer "silo22b"
+    t.integer "silo27"
+    t.integer "silo28"
+    t.integer "especialsacos"
+    t.integer "extrsacos"
+    t.integer "bigbagextra"
+    t.integer "bigbagextra1350"
+    t.integer "bigbagextra1"
+    t.integer "bigbagespecial"
+    t.integer "bigbagsuper"
+    t.integer "prodhaver"
+    t.integer "prodvento"
+    t.string "tolvacalle5"
+    t.string "silos3000tolva1"
+    t.string "silos3000tolva4"
+    t.string "silos3000tolva5"
+    t.string "silosbigbag1"
+    t.string "silosbigbag2"
+    t.string "silosvento1"
+    t.string "silovento2"
+    t.string "silovento3"
+    t.integer "callesilo28"
+    t.integer "callesplanta1"
+    t.integer "callesilo27"
+    t.string "observaciones"
+    t.integer "otros"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "requerimientos", force: :cascade do |t|

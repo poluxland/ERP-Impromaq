@@ -190,16 +190,16 @@
                 <li><a href="<%= envasadoras_path %>">Reporte ENV</a></li>
               </ul>
               <ul>
-                <li><a href="">LCA</a></li>
+                <li><a href="<%= medidas_path %>">Medidas Silos</a></li>
               </ul>
               <ul>
-                <li><a href="">VTS</a></li>
+                <li><a href="">A</a></li>
               </ul>
               <ul>
-                <li><a href="">PTM</a></li>
+                <li><a href="">B</a></li>
               </ul>
               <ul>
-                <li><a href="">PAR</a></li>
+                <li><a href="">C</a></li>
               </ul>
             </div>
           </li>
@@ -210,7 +210,7 @@
           <li>
             <a href="<%= new_requerimiento_path %>">
               <i class="fa fa-book"></i>
-              <span>Solicitudes RRHH</span>
+              <span>RRHH</span>
             </a>
           </li>
           <li>
@@ -232,7 +232,13 @@
             </a>
           </li>
           <li>
-            <a href="<%= new_trabajo_path %>">
+            <a href="<%= new_medida_path %>">
+              <i class="fa fa-calendar"></i>
+              <span>Medida Silos</span>
+            </a>
+          </li>
+          <li>
+            <a href="<%= new_medida_path %>">
               <i class="fa fa-folder"></i>
               <span>Cotizacion</span>
             </a>
@@ -280,6 +286,8 @@ $("#show-sidebar").click(function() {
 });
 
 
-
+if (screen.width < 500) {
+	$(".page-wrapper").removeClass("toggled");
+}
 
 </script>
