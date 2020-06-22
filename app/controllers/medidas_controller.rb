@@ -1,4 +1,5 @@
 class MedidasController < ApplicationController
+  skip_before_action :authenticate_user!, only: [:create, :show, :new]
   before_action :set_medida, only: [:show, :edit, :update, :destroy]
 
   # GET /medidas
