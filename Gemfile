@@ -1,7 +1,6 @@
 source 'https://rubygems.org'
 ruby '~> 2.7.1'
 
-
 gem 'devise'
 gem 'jbuilder', '~> 2.0'
 gem 'pg', '~> 0.21'
@@ -19,6 +18,7 @@ gem 'webpacker'
 
 group :development do
   gem 'web-console', '>= 3.3.0'
+  gem 'letter_opener'
 end
 
 group :development, :test do
