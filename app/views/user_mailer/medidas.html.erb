@@ -1,5 +1,206 @@
-<h1>User#medidas</h1>
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-<p>
-  <%= @greeting %>, find me in app/views/user_mailer/medidas.html.erb
-</p>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <title>Reporte medidas silos y stock</title>
+  </head>
+  <body>
+    <div class="container col-6">
+      <h1><u>Reporte medidas silos y stock</u></h1>
+      <h2><%= Medida.last.created_at&.strftime("%d-%m-%y") %></h2><br>
+      <h2>Medidas silos</h2>
+
+<table class="table table-sm">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">Silo</th>
+      <th scope="col">Medida 1</th>
+      <th scope="col">Medida 2</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>19</td>
+      <td><%= Medida.last.silo19a %></td>
+      <td><%= Medida.last.silo19b %></td>
+    </tr>
+    <tr>
+      <td>20</td>
+      <td><%= Medida.last.silo20a %> </td>
+      <td><%= Medida.last.silo20b %></td>
+    </tr>
+    <tr>
+      <td>21</td>
+      <td><%= Medida.last.silo21a %></td>
+      <td><%= Medida.last.silo21b %></td>
+    </tr>
+    <tr>
+      <td>22</td>
+      <td><%= Medida.last.silo22a %></td>
+      <td><%= Medida.last.silo22b %></td>
+    </tr>
+    <tr>
+      <td>27</td>
+      <td><%= Medida.last.silo27 %></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>28</td>
+      <td><%= Medida.last.silo28 %></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+  </tbody>
+</table>
+<table class="table table-sm">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">Equipo</th>
+      <th scope="col">Stock (ton)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Especial sacos</td>
+      <td> <%= Medida.last.especialsacos %></td>
+    </tr>
+    <tr>
+      <td>Extra sacos</td>
+      <td><%= Medida.last.extrsacos %></td>
+    </tr>
+    <tr>
+      <td>Bigbag extra</td>
+      <td><%= Medida.last.bigbagextra %></td>
+    </tr>
+    <tr>
+      <td>Bigbag extra 1t</td>
+      <td><%= Medida.last.bigbagextra1 %></td>
+    </tr>
+    <tr>
+      <td>Extra peba 1350 </td>
+      <td><%= Medida.last.bigbagextra1350 %></td>
+    </tr>
+    <tr>
+      <td>Bigbag especial</td>
+      <td><%= Medida.last.bigbagespecial %></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Bigbag super </td>
+      <td><%= Medida.last.bigbagsuper %></td>
+    </tr>
+  </tbody>
+</table>
+<table class="table table-sm">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">Equipo</th>
+      <th scope="col">Producción (ton)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Haver</td>
+      <td> <%= Medida.last.prodhaver %></td>
+    </tr>
+    <tr>
+      <td>Ventomatic </td>
+      <td><%= Medida.last.prodvento %></td>
+    </tr>
+  </tbody>
+</table>
+<table class="table table-sm">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">Calle</th>
+      <th scope="col">Disponibles</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Silos 3000 tolva 1 </td>
+      <td><%= Medida.last.silos3000tolva1 %></td>
+    </tr>
+    <tr>
+      <td>Silos 3000 tolva 4 </td>
+      <td><%= Medida.last.silos3000tolva4 %></td>
+    </tr>
+    <tr>
+      <td>Silos 3000 tolva 5 </td>
+      <td><%= Medida.last.silos3000tolva5 %> </td>
+    </tr>
+    <tr>
+      <td>Silo 1 bigbag </td>
+      <td><%= Medida.last.silosbigbag1 %></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Silo 2 bigbag </td>
+      <td><%= Medida.last.silosbigbag2 %></td>
+    </tr>
+    <tr>
+      <td>Silo 1 Ventomatic </td>
+      <td><%= Medida.last.silosvento1 %></td>
+    </tr>
+    <tr>
+      <td>Silo 2 Ventomatic</td>
+      <td><%= Medida.last.silovento2 %></td>
+    </tr>
+    <tr>
+      <td>Silo 3 Ventomatic </td>
+      <td><%= Medida.last.silovento3 %></td>
+    </tr>
+  </tbody>
+</table>
+
+<table class="table table-sm">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">Silo/Tolva</th>
+      <th scope="col">Cemento</th>
+    </tr>
+  </thead>
+  <tbody>
+
+    <tr>
+      <td>Calles silo28 </td>
+      <td><%= Medida.last.callesilo28 %></td>
+    </tr>
+    <tr>
+      <td>Calles planta 1</td>
+      <td><%= Medida.last.callesplanta1 %></td>
+    </tr>
+    <tr>
+      <td>Calle silo27 </td>
+      <td><%= Medida.last.callesilo27 %></td>
+    </tr>
+  </tbody>
+</table>
+
+
+
+
+
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <!-- <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script> -->
+  </body>
+</html>
