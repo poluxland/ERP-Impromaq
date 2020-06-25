@@ -2,44 +2,173 @@
 <%= simple_form_for(@medida) do |f| %>
   <%= f.error_notification %>
   <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
-  <div class="col-md-4 mb-4 justify-center">
+  <div class="form-inputs offset-md-1">
   <!-- <div class="form-inputs"> -->
-    <%= f.input :silo19a, label: 'Silo 19 Medida 1' %>
-    <%= f.input :silo19b, label: 'Silo 19 Medida 2' %>
-    <%= f.input :silo20a, label: 'Silo 20 Medida 1' %>
-    <%= f.input :silo20b, label: 'Silo 20 Medida 2'%>
-    <%= f.input :silo21a, label: 'Silo 21 Medida 1' %>
-    <%= f.input :silo21b, label: 'Silo 21 Medida 2' %>
-    <%= f.input :silo22a, label: 'Silo 22 Medida 1' %>
-    <%= f.input :silo22b, label: 'Silo 22 Medida 2' %>
-    <%= f.input :silo27, label: 'Medida Silo 27' %>
-    <%= f.input :silo28, label: 'Medida Silo 28' %>
-    <%= f.input :especialsacos, label: 'Especial sacos' %>
-    <%= f.input :extrsacos, label: 'Extra sacos' %>
-    <%= f.input :bigbagextra, label: 'Bigbag extra' %>
-    <%= f.input :bigbagextra1350, label: 'Bigbag extra 1350' %>
-    <%= f.input :bigbagextra1, label: 'Bigbag extra 1000' %>
-    <%= f.input :bigbagespecial, label: 'Bigbag extra espcecial' %>
-    <%= f.input :bigbagsuper, label: 'Bigbag super' %>
+  <div class="row">
+    <div class="col-md-2 mb-2 ">
+      <%= f.input :silo19a, label: 'Silo 19 Medida 1' %>
+    </div>
+    <div class="col-md-2 mb-2 ">
+      <%= f.input :silo19b, label: 'Silo 19 Medida 2' %>
+    </div>
+    <div class="col-md-2 mb-2 ">
+      <%= f.input :silo20a, label: 'Silo 20 Medida 1' %>
+    </div>
+    <div class="col-md-2 mb-2 ">
+      <%= f.input :silo20b, label: 'Silo 20 Medida 2'%>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-2 mb-2 ">
+      <%= f.input :silo21a, label: 'Silo 21 Medida 1' %>
+    </div>
+    <div class="col-md-2 mb-2 ">
+      <%= f.input :silo21b, label: 'Silo 21 Medida 2' %>
+    </div>
+    <div class="col-md-2 mb-2 ">
+      <%= f.input :silo22a, label: 'Silo 22 Medida 1' %>
+    </div>
+    <div class="col-md-2 mb-2 ">
+      <%= f.input :silo22b, label: 'Silo 22 Medida 2' %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-2 mb-2 ">
+      <%= f.input :silo27, label: 'Medida Silo 27' %>
+    </div>
+    <div class="col-md-2 mb-2 ">
+      <%= f.input :silo28, label: 'Medida Silo 28' %>
+    </div>
+  </div>
+  <h2>Producción</h2>
+  <div class="row">
+    <div class="col-md-2 mb-2 ">
+      <%= f.input :especialsacos, label: 'Especial sacos' %>
+    </div>
+    <div class="col-md-2 mb-2 ">
+      <%= f.input :extrsacos, label: 'Extra sacos' %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-2 mb-2 ">
+        <%= f.input :bigbagextra, label: 'Bigbag extra' %>
+    </div>
+    <div class="col-md-2 mb-2 ">
+      <%= f.input :bigbagextra1350, label: 'Bigbag extra 1350' %>
+    </div>
+    <div class="col-md-2 mb-2 ">
+      <%= f.input :bigbagextra1, label: 'Bigbag extra 1000' %>
+    </div>
+    <div class="col-md-2 mb-2 ">
+      <%= f.input :bigbagespecial, label: 'Bigbag extra especial' %>
+    </div>
+    <div class="col-md-2 mb-2 ">
+      <%= f.input :bigbagsuper, label: 'Bigbag super' %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-2 mb-2 ">
     <%= f.input :prodhaver, label: 'Producción Haver' %>
-    <%= f.input :prodvento, label: 'Producción Ventomatic' %>
-    <%= f.input :tolvacalle5, collection: [ "Especial", "Extra", "Super" ], label: 'Tolva calle 5'  %>
-    <%= f.input :silos3000tolva1, collection: [ "Especial", "Extra", "Super" ], label: 'Silos 3000 tolva 1'  %>
-    <%= f.input :silos3000tolva4, collection: [ "Especial", "Extra", "Super" ], label: 'Silos 3000 tolva 4'  %>
-    <%= f.input :silos3000tolva5, collection: [ "Especial", "Extra", "Super" ], label: 'Silos 3000 tolva 5'  %>
-    <%= f.input :silosbigbag1, collection: [ "Especial", "Extra", "Super" ], label: 'Silos bigbag 1'  %>
-    <%= f.input :silosbigbag2, collection: [ "Especial", "Extra", "Super" ], label: 'Silos bigbag 2'  %>
-    <%= f.input :silosvento1, collection: [ "Especial", "Extra", "Super" ], label: 'Silos vento 1'  %>
-    <%= f.input :silovento2, collection: [ "Especial", "Extra", "Super" ], label: 'Silos vento 2'  %>
-    <%= f.input :silovento3, collection: [ "Especial", "Extra", "Super" ], label: 'Silos vento 3'  %>
-    <%= f.input :callesilo28, collection: [ 0, 1 ], label: 'Calles silo 28'  %>
-    <%= f.input :callesplanta1, collection: [ 0, 1, 2, 3 ], label: 'Calles planta 1'  %>
-    <%= f.input :callesilo27, collection: [ 0, 1 ], label: 'Calles silo 27'  %>
-    <!-- <%= f.input :observaciones %>
-    <%= f.input :otros %> -->
+    </div>
+    <div class="col-md-2 mb-2 ">
+      <%= f.input :prodvento, label: 'Producción Vento' %>
+    </div>
+  </div>
+  <h2>Nivel tolvas</h2>
+  <div class="row">
+    <div class="col-md-2 mb-2 ">
+      <%= f.input :tolvacalle5, collection: [ "Especial", "Extra", "Super" ], label: 'Tolva calle 5'  %>
+    </div>
+    <div class="col-md-2 mb-2 ">
+      <%= f.input :otros, collection: [ 0, 25, 50, 75, 100 ], label: 'Nivel tolva calle 5'  %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-2 mb-2 ">
+      <%= f.input :silos3000tolva1, collection: [ "Especial", "Extra", "Super" ], label: 'Silos 3000 tolva 1'  %>
+
+    </div>
+    <div class="col-md-2 mb-2 ">
+        <%= f.input :ns30001, collection: [ 0, 25, 50, 75, 100 ], label: 'Nivel tolva 1'  %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-2 mb-2 ">
+      <%= f.input :silos3000tolva4, collection: [ "Especial", "Extra", "Super" ], label: 'Silos 3000 tolva 4'  %>
+
+    </div>
+    <div class="col-md-2 mb-2 ">
+      <%= f.input :ns30002, collection: [ 0, 25, 50, 75, 100 ], label: 'Nivel tolva 4'  %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-2 mb-2 ">
+      <%= f.input :silos3000tolva5, collection: [ "Especial", "Extra", "Super" ], label: 'Silos 3000 tolva 5'  %>
+
+    </div>
+    <div class="col-md-2 mb-2 ">
+      <%= f.input :ns30003, collection: [ 0, 25, 50, 75, 100 ], label: 'Nivel tolva 5'  %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-2 mb-2 ">
+      <%= f.input :silosbigbag1, collection: [ "Especial", "Extra", "Super" ], label: 'Silos bigbag 1'  %>
+
+    </div>
+    <div class="col-md-2 mb-2 ">
+      <%= f.input :nbb1, collection: [ 0, 25, 50, 75, 100 ], label: 'Nivel bigbag silo 1'  %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-2 mb-2 ">
+      <%= f.input :silosbigbag2, collection: [ "Especial", "Extra", "Super" ], label: 'Silos bigbag 2'  %>
+
+    </div>
+    <div class="col-md-2 mb-2 ">
+      <%= f.input :nbb2, collection: [ 0, 25, 50, 75, 100 ], label: 'Nivel bigbag silo 2'  %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-2 mb-2 ">
+      <%= f.input :silosvento1, collection: [ "Especial", "Extra", "Super" ], label: 'Silos vento 1'  %>
+
+    </div>
+    <div class="col-md-2 mb-2 ">
+      <%= f.input :nvento1, collection: [ 0, 25, 50, 75, 100 ], label: 'Nivel Silo 1'  %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-2 mb-2 ">
+      <%= f.input :silovento2, collection: [ "Especial", "Extra", "Super" ], label: 'Silos vento 2'  %>
+
+    </div>
+    <div class="col-md-2 mb-2 ">
+      <%= f.input :nvento2, collection: [ 0, 25, 50, 75, 100 ], label: 'Nivel Silo 2'  %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-2 mb-2 ">
+        <%= f.input :silovento3, collection: [ "Especial", "Extra", "Super" ], label: 'Silos vento 3'  %>
+    </div>
+    <div class="col-md-2 mb-2 ">
+        <%= f.input :nvento3, collection: [ 0, 25, 50, 75, 100 ], label: 'Nivel Silo 3'  %>
+    </div>
+  </div>
+  <h2>Calles</h2>
+  <div class="row">
+    <div class="col-md-2 mb-2 ">
+          <%= f.input :callesilo28, collection: [ 0, 1, 2, 3, 4 ], label: 'Calles silo 28'  %>
+    </div>
+    <div class="col-md-2 mb-2 ">
+        <%= f.input :callesplanta1, collection: [ 0, 1, 2, 3 ], label: 'Calles planta 1'  %>
+    </div>
+    <div class="col-md-2 mb-2 ">
+      <%= f.input :callesilo27, collection: [ 0, 1 ], label: 'Calles silo 27'  %>
+    </div>
+  </div>
   </div>
 
   <div class="form-actions">
-    <%= f.button :submit, "Actualizar medidas", class: "btn-primary" %>
+    <%= f.button :submit, "Actualizar", class: "btn-primary" %>
   </div>
 <% end %>

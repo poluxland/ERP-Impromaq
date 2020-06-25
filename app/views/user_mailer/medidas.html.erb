@@ -10,11 +10,40 @@
 
     <title>Reporte medidas silos y stock</title>
   </head>
+
+<style>
+  table {
+  border-collapse: collapse;
+  }
+
+  table, th, td {
+  border: 1px solid black;
+  }
+
+  table {
+  width: 40%;
+}
+
+  th {
+  height: 20px;
+  background-color: #4CAF50;
+  color: white;
+}
+
+th, td {
+  padding: 5px;
+  text-align: left;
+}
+
+
+</style>
+
+
   <body>
     <div class="container col-6">
       <h1><u>Reporte medidas silos y stock</u></h1>
       <h2><%= Medida.last.created_at&.strftime("%d-%m-%y") %></h2>
-      <h2>Medidas silos</h2>
+
 <table class="table table-sm">
   <thead class="thead-dark">
     <tr>
@@ -54,11 +83,7 @@
       <td><%= Medida.last.silo28 %></td>
       <td></td>
     </tr>
-    <tr>
-      <td></td>
-      <td></td>
-      <td></td>
-    </tr>
+
   </tbody>
 <br></table><br>
 <table class="table table-sm">
@@ -92,7 +117,7 @@
     <tr>
       <td>Bigbag especial</td>
       <td><%= Medida.last.bigbagespecial %></td>
-      <td></td>
+
     </tr>
     <tr>
       <td>Bigbag super </td>
@@ -104,7 +129,7 @@
   <thead class="thead-dark">
     <tr>
       <th scope="col">Equipo</th>
-      <th scope="col">Producción (ton)</th>
+      <th scope="col">Producción (sacos)</th>
     </tr>
   </thead>
   <tbody>
@@ -121,43 +146,69 @@
 <table class="table table-sm">
   <thead class="thead-dark">
     <tr>
-      <th scope="col">Calle</th>
-      <th scope="col">Disponibles</th>
+      <th scope="col">Linea</th>
+      <th scope="col">Tolva</th>
+      <th scope="col">Producto</th>
+      <th scope="col">Nivel tolva %</th>
+      <th scope="col">Toneladas</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td>Silos 3000 tolva 1 </td>
+      <td>Silos 3000</td>
+      <td>Tolva 1 </td>
       <td><%= Medida.last.silos3000tolva1 %></td>
+      <td><%= Medida.last.ns30001 %></td>
+      <td><%= Medida.last.ns30001.to_i * 150 / 100  %></td>
     </tr>
     <tr>
-      <td>Silos 3000 tolva 4 </td>
+      <td>Silos 3000</td>
+      <td>Tolva 4 </td>
       <td><%= Medida.last.silos3000tolva4 %></td>
+      <td><%= Medida.last.ns30002 %></td>
+      <td><%= Medida.last.ns30002.to_i * 150 / 100  %></td>
     </tr>
     <tr>
-      <td>Silos 3000 tolva 5 </td>
+      <td>Silos 3000</td>
+      <td>Tolva 5 </td>
       <td><%= Medida.last.silos3000tolva5 %> </td>
+      <td><%= Medida.last.ns30003 %></td>
+      <td><%= Medida.last.ns30003.to_i * 150 / 100  %></td>
     </tr>
     <tr>
-      <td>Silo 1 bigbag </td>
+      <td>Bigbag </td>
+      <td>Silo 1</td>
       <td><%= Medida.last.silosbigbag1 %></td>
-      <td></td>
+      <td><%= Medida.last.nbb1 %></td>
+      <td><%= Medida.last.nbb1.to_i * 150 / 100  %></td>
     </tr>
     <tr>
-      <td>Silo 2 bigbag </td>
+      <td>Bigbag </td>
+      <td>Silo 2 </td>
       <td><%= Medida.last.silosbigbag2 %></td>
+      <td><%= Medida.last.nbb2 %></td>
+      <td><%= Medida.last.nbb2.to_i * 150 / 100  %></td>
     </tr>
     <tr>
-      <td>Silo 1 Ventomatic </td>
+      <td>Ventomatic </td>
+      <td>Silo 1</td>
       <td><%= Medida.last.silosvento1 %></td>
+      <td><%= Medida.last.nvento1 %></td>
+      <td><%= Medida.last.nvento1.to_i * 150 / 100  %></td>
     </tr>
     <tr>
-      <td>Silo 2 Ventomatic</td>
+      <td>Ventomatic</td>
+      <td>Silo 2</td>
       <td><%= Medida.last.silovento2 %></td>
+      <td><%= Medida.last.nvento2 %></td>
+      <td><%= Medida.last.nvento2.to_i * 75 / 100  %></td>
     </tr>
     <tr>
-      <td>Silo 3 Ventomatic </td>
+      <td>Ventomatic </td>
+      <td>Silo 3</td>
       <td><%= Medida.last.silovento3 %></td>
+      <td><%= Medida.last.nvento3 %></td>
+      <td><%= Medida.last.nvento3.to_i * 75 / 100  %></td>
     </tr>
   </tbody>
 </table><br>
@@ -165,30 +216,26 @@
 <table class="table table-sm">
   <thead class="thead-dark">
     <tr>
-      <th scope="col">Silo/Tolva</th>
-      <th scope="col">Cemento</th>
+      <th scope="col">Calles</th>
+      <th scope="col">Operativas</th>
     </tr>
   </thead>
   <tbody>
-
     <tr>
-      <td>Calles silo28 </td>
+      <td>Silo 27</td>
+      <td><%= Medida.last.callesilo27 %></td>
+    </tr>
+    <tr>
+      <td>Silo 28 </td>
       <td><%= Medida.last.callesilo28 %></td>
     </tr>
     <tr>
-      <td>Calles planta 1</td>
+      <td>Planta 1</td>
       <td><%= Medida.last.callesplanta1 %></td>
     </tr>
-    <tr>
-      <td>Calle silo27 </td>
-      <td><%= Medida.last.callesilo27 %></td>
-    </tr>
+
   </tbody>
 </table><br>
-
-
-
-
 
     </div>
     <br>
@@ -196,11 +243,7 @@
     <br>
     <br>
 
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <!-- <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script> -->
+
   </body>
 
 </html>

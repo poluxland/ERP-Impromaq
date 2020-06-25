@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_06_19_200512) do
+ActiveRecord::Schema.define(version: 2020_06_25_140153) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -329,6 +329,16 @@ ActiveRecord::Schema.define(version: 2020_06_19_200512) do
     t.integer "otros"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "ns28"
+    t.integer "nbb1"
+    t.integer "nbb2"
+    t.integer "nvento1"
+    t.integer "nvento2"
+    t.integer "nvento3"
+    t.integer "ns30001"
+    t.integer "ns30002"
+    t.integer "ns30003"
+    t.integer "nivel9"
   end
 
   create_table "requerimientos", force: :cascade do |t|
