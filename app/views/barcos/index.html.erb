@@ -1,4 +1,4 @@
-<p id="notice"><%= notice %></p>
+
 
 <h1>Checklist Barco</h1>
 
@@ -26,12 +26,8 @@
       <th>Alumbrado</th>
       <th>Caseta</th>
       <th>Ccmmuelle</th>
-      <th>C18</th>
-      <th>C19</th>
       <th>Numero</th>
       <th>Observaciones</th>
-      <th>Empresa</th>
-      <th>Varios</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -39,7 +35,7 @@
   <tbody>
     <% @barcos.each do |barco| %>
       <tr>
-        <td><%= barco.created_at.strftime("%m/%d/%y") %></td>
+        <td><%= barco.created_at.strftime("%d/%m/%y") %></td>
         <td><%= barco.nombre %></td>
         <td><%= barco.nave %></td>
         <td><%= barco.barandas %></td>
@@ -59,12 +55,8 @@
         <td><%= barco.alumbrado %></td>
         <td><%= barco.caseta %></td>
         <td><%= barco.ccmmuelle %></td>
-        <td><%= barco.c18 %></td>
-        <td><%= barco.c19 %></td>
         <td><%= barco.numero %></td>
         <td><%= barco.observaciones %></td>
-        <td><%= barco.empresa %></td>
-        <td><%= barco.varios %></td>
         <td class="text-center">
           <button type="button" class="btn btn-sm btn-secondary command-edit shadow p-1 rounded">
           <%= link_to "", barco, class: 'fa fa-eye fa-fw text-light'%>
