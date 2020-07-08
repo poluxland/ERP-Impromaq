@@ -2,81 +2,77 @@
 
 <h1>Checklist Barco</h1>
 
-<!-- <table id="myTable" class="table table-responsive table-striped table-bordered table-sm shadow" cellspacing="0" width="100%"> -->
-<table id="myTable" class="table table-striped table-bordered table-sm shadow" cellspacing="0" width="100%">
-  <thead>
-    <tr>
-      <th>Fecha</th>
-      <th>Nombre</th>
-      <th>Nave</th>
-      <th>Barandas</th>
-      <th>Colectores</th>
-      <th>Vtolva1</th>
-      <th>Vtolva2</th>
-      <th>Al1</th>
-      <th>Al2</th>
-      <th>Compresorm</th>
-      <th>Cabezalm</th>
-      <th>Cabezald</th>
-      <th>Polines</th>
-      <th>Redaire</th>
-      <th>Motoresbc03</th>
-      <th>Techotolva</th>
-      <th>Greating</th>
-      <th>Alumbrado</th>
-      <th>Caseta</th>
-      <th>Ccmmuelle</th>
-      <th>Numero</th>
-      <th>Observaciones</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @barcos.each do |barco| %>
-      <tr>
-        <td><%= barco.created_at.strftime("%d/%m/%y") %></td>
-        <td><%= barco.nombre %></td>
-        <td><%= barco.nave %></td>
-        <td><%= barco.barandas ? "Si" : "No"%></td>
-        <td><%= barco.colectores ? "Si" : "No" %></td>
-        <td><%= barco.vtolva1 ? "Si" : "No" %></td>
-        <td><%= barco.vtolva2 ? "Si" : "No" %></td>
-        <td><%= barco.al1 ? "Si" : "No" %></td>
-        <td><%= barco.al2 ? "Si" : "No" %></td>
-        <td><%= barco.compresorm ? "Si" : "No" %></td>
-        <td><%= barco.cabezalm ? "Si" : "No" %></td>
-        <td><%= barco.cabezald ? "Si" : "No" %></td>
-        <td><%= barco.polines ? "Si" : "No" %></td>
-        <td><%= barco.redaire ? "Si" : "No" %></td>
-        <td><%= barco.motoresbc03 ? "Si" : "No" %></td>
-        <td><%= barco.techotolva ? "Si" : "No" %></td>
-        <td><%= barco.greating ? "Si" : "No" %></td>
-        <td><%= barco.alumbrado ? "Si" : "No" %></td>
-        <td><%= barco.caseta ? "Si" : "No" %></td>
-        <td><%= barco.ccmmuelle ? "Si" : "No" %></td>
-        <td><%= barco.numero %></td>
-        <td><%= barco.observaciones %></td>
-        <td class="text-center">
-          <button type="button" class="btn btn-sm btn-secondary command-edit shadow p-1 rounded">
-          <%= link_to "", barco, class: 'fa fa-eye fa-fw text-light'%>
-          </button>
+<table id="myTable" class="table table-responsive table-striped table-bordered table-sm shadow" cellspacing="0" width="100%">
+    <thead>
+        <tr>
+          <th>Fecha</th>
+          <th>Nombre</th>
+          <th>Nave</th>
+          <th>Barandas</th>
+          <th>Colectores</th>
+          <th>Vtolva1</th>
+          <th>Vtolva2</th>
+          <th>Al1</th>
+          <th>Al2</th>
+          <th>Compresorm</th>
+          <th>Cabezalm</th>
+          <th>Cabezald</th>
+          <th>Polines</th>
+          <th>Redaire</th>
+          <th>Motoresbc03</th>
+          <th>Techotolva</th>
+          <th>Greating</th>
+          <th>Alumbrado</th>
+          <th>Caseta</th>
+           <th>Ccmmuelle</th>
+          <th>Numero</th>
+          <th>Observaciones</th>
+          <!-- <th colspan="3">Opciones</th> -->
+        </tr>
+    </thead>
+    <tbody>
+        <% @barcos.each do |barco| %>
+        <tr>
+          <td><%= barco.created_at.strftime("%d/%m/%y") %></td>
+          <td><%= barco.nombre %></td>
+          <td><%= barco.nave %></td>
+          <td><%= barco.barandas ? "Si" : "No"%></td>
+          <td><%= barco.colectores ? "Si" : "No" %></td>
+          <td><%= barco.vtolva1 ? "Si" : "No" %></td>
+          <td><%= barco.vtolva2 ? "Si" : "No" %></td>
+          <td><%= barco.al1 ? "Si" : "No" %></td>
+          <td><%= barco.al2 ? "Si" : "No" %></td>
+          <td><%= barco.compresorm ? "Si" : "No" %></td>
+          <td><%= barco.cabezalm ? "Si" : "No" %></td>
+          <td><%= barco.cabezald ? "Si" : "No" %></td>
+          <td><%= barco.polines ? "Si" : "No" %></td>
+          <td><%= barco.redaire ? "Si" : "No" %></td>
+          <td><%= barco.motoresbc03 ? "Si" : "No" %></td>
+          <td><%= barco.techotolva ? "Si" : "No" %></td>
+          <td><%= barco.greating ? "Si" : "No" %></td>
+          <td><%= barco.alumbrado ? "Si" : "No" %></td>
+          <td><%= barco.caseta ? "Si" : "No" %></td>
+           <td><%= barco.ccmmuelle ? "Si" : "No" %></td>
+          <td><%= barco.numero %></td>
+          <td><%= barco.observaciones %></td>
+          <!-- <td class="text-center">
+            <button type="button" class="btn btn-sm btn-secondary command-edit shadow p-1 rounded">
+            <%= link_to "", barco, class: 'fa fa-eye fa-fw text-light'%>
+            </button>
 
 
-          <!-- <% if current_user.superadmin_role? %>
-          <button type="button" class="btn btn-sm btn-danger command-delete shadow p-1 rounded">
-            <%= link_to "", barco, method: :delete, data: { confirm: "Are you sure?" }, class: "fa fa-trash fa-fw text-light" %>
-          </button>
+            <% if current_user.superadmin_role? %>
+            <button type="button" class="btn btn-sm btn-danger command-delete shadow p-1 rounded">
+              <%= link_to "", barco, method: :delete, data: { confirm: "Are you sure?" }, class: "fa fa-trash fa-fw text-light" %>
+            </button>
 
-          <% end %> -->
+            <% end %>
 
-          </td>
+            </td> -->
 
-      </tr>
-    <% end %>
-  </tbody>
+        </tr>
+      <% end %>
+    </tbody>
 </table>
-
-<br>
 
 <%= link_to 'Nuevo checklist', new_barco_path, class: "btn btn-primary shadow" %>
