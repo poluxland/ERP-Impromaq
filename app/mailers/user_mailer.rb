@@ -8,6 +8,6 @@ class UserMailer < ApplicationMailer
   def medidas
     @greeting = "Hi"
 
-    mail to: "ignacio.sierra@msindustrial.cl, jose.jerez@msindustrial.cl, fernando.gonzalez@msindustrial.cl"
+    mail to: "ignacio.sierra@msindustrial.cl, jose.jerez@msindustrial.cl, fernando.gonzalez@msindustrial.cl, supervisor.envasadora@msindustrial.cl"
   end
 end
