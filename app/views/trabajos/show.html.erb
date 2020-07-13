@@ -7,8 +7,8 @@
         <table>
           <tr><td class="title"><img src="/logo.png" style="width:100%; max-width:80px;"></td>
             <td>
-            
-            
+
+
         </table>
       </td>
     </tr>
@@ -30,16 +30,16 @@
       <td>Planta</td>
       <td>Solicita</td>
       <td>Fecha Cotización</td>
-      <td>Actualización</td>  
+      <!-- <td>Actualización</td>   -->
     </tr>
-    
+
     <tr>
       <td><%= @trabajo.planta %></td>
       <td><%= @trabajo.ito %></td>
-      <td><%= @trabajo.created_at.strftime("%d-%m-%Y") %></td>
+      <!-- <td><%= @trabajo.created_at.strftime("%d-%m-%Y") %></td> -->
       <td><%= @trabajo.updated_at.strftime("%d-%m-%Y") %></td>
     </tr>
-    
+
     </table>
     <table>
     <br>
@@ -53,84 +53,84 @@
       <td style="width: 50%;"><%= @trabajo.i1 %></td>
       <td style="text-align: right;"><%= @trabajo.q1 %></td>
       <td style="text-align: right;"><%= number_to_currency(@trabajo.v1, delimiter: ".", precision: 0) %></td>
-      
+
       <td style="width: 20%;"> <%= number_to_currency(@trabajo.v1.to_i * @trabajo.q1.to_i, delimiter: ".", precision: 0) unless @trabajo.q1.to_i == 0 %></td></td>
     </tr>
     <tr class="item">
       <td><%= @trabajo.i2 %></td>
       <td style="text-align: right;"><%= @trabajo.q2 %></td>
       <td style="text-align: right;"><%= number_to_currency(@trabajo.v2, delimiter: ".", precision: 0) %></td>
-      
+
       <td><%= number_to_currency(@trabajo.v2.to_i * @trabajo.q2.to_i, delimiter: ".", precision: 0) unless @trabajo.q2.to_i == 0 %></td>
     </tr>
     <tr class="item">
       <td><%= @trabajo.i3 %></td>
       <td style="text-align: right;"><%= @trabajo.q3 %></td>
       <td style="text-align: right;"><%= number_to_currency(@trabajo.v3, delimiter: ".", precision: 0) %></td>
-      
+
       <td><%= number_to_currency(@trabajo.v3.to_i * @trabajo.q3.to_i, delimiter: ".", precision: 0) unless @trabajo.q3.to_i == 0 %></td>
     </tr>
     <tr class="item">
       <td><%= @trabajo.i4 %></td>
       <td style="text-align: right;"><%= @trabajo.q4 %></td>
       <td style="text-align: right;"><%= number_to_currency(@trabajo.v4, delimiter: ".", precision: 0) %></td>
-      
+
       <td><%= number_to_currency(@trabajo.v4.to_i * @trabajo.q4.to_i, delimiter: ".", precision: 0) unless @trabajo.q4.to_i == 0 %></td>
     </tr>
     <tr class="item">
       <td><%= @trabajo.i5 %></td>
       <td style="text-align: right;"><%= @trabajo.q5 %></td>
       <td style="text-align: right;"><%= number_to_currency(@trabajo.v5, delimiter: ".", precision: 0) %></td>
-      
+
       <td><%= number_to_currency(@trabajo.v5.to_i * @trabajo.q5.to_i, delimiter: ".", precision: 0) unless @trabajo.q5.to_i == 0 %></td>
     </tr>
     <tr class="item">
       <td><%= @trabajo.i6 %></td>
       <td style="text-align: right;"><%= @trabajo.q6 %></td>
       <td style="text-align: right;"><%= number_to_currency(@trabajo.v6, delimiter: ".", precision: 0) %></td>
-      
+
       <td><%= number_to_currency(@trabajo.v6.to_i * @trabajo.q6.to_i, delimiter: ".", precision: 0) unless @trabajo.q6.to_i == 0 %></td>
     </tr>
     <tr class="item">
       <td><%= @trabajo.i7 %></td>
       <td style="text-align: right;"><%= @trabajo.q7 %></td>
       <td style="text-align: right;"><%= number_to_currency(@trabajo.v7, delimiter: ".", precision: 0) %></td>
-      
+
       <td><%= number_to_currency(@trabajo.v7.to_i * @trabajo.q7.to_i, delimiter: ".", precision: 0) unless @trabajo.q7.to_i == 0 %></td>
     </tr>
     <tr class="item">
       <td><%= @trabajo.i8 %></td>
       <td style="text-align: right;"><%= @trabajo.q8 %></td>
       <td style="text-align: right;"><%= number_to_currency(@trabajo.v8, delimiter: ".", precision: 0) %></td>
-      
+
       <td><%= number_to_currency(@trabajo.v8.to_i * @trabajo.q8.to_i, delimiter: ".", precision: 0) unless @trabajo.q8.to_i == 0 %></td>
     </tr>
     <tr class="item">
       <td><%= @trabajo.i9 %></td>
       <td style="text-align: right;"><%= @trabajo.q9 %></td>
       <td style="text-align: right;"><%= number_to_currency(@trabajo.v9, delimiter: ".", precision: 0) %></td>
-      
+
       <td><%= number_to_currency(@trabajo.v9.to_i * @trabajo.q9.to_i, delimiter: ".", precision: 0) unless @trabajo.q9.to_i == 0 %></td>
     </tr>
     <tr class="item">
       <td><%= @trabajo.i10 %></td>
       <td style="text-align: right;"><%= @trabajo.q10 %></td>
       <td style="text-align: right;"><%= number_to_currency(@trabajo.v10, delimiter: ".", precision: 0) %></td>
-      
+
       <td><%= number_to_currency(@trabajo.v10.to_i * @trabajo.q10.to_i, delimiter: ".", precision: 0) unless @trabajo.q10.to_i == 0 %></td>
     </tr>
     <tr class="item">
       <td><%= @trabajo.i11 %></td>
       <td style="text-align: right;"><%= @trabajo.q11 %></td>
       <td style="text-align: right;"><%= number_to_currency(@trabajo.v11, delimiter: ".", precision: 0) %> </td>
-      
+
       <td><%= number_to_currency(@trabajo.v11.to_i * @trabajo.q11.to_i, delimiter: ".", precision: 0) unless @trabajo.q11.to_i == 0 %></td>
     </tr>
     <tr class="item">
       <td><%= @trabajo.i12 %></td>
       <td style="text-align: right;"><%= @trabajo.q12 %></td>
       <td style="text-align: right;"><%= number_to_currency(@trabajo.v12, delimiter: ".", precision: 0) %></td>
-  
+
       <td><%= number_to_currency(@trabajo.v12.to_i * @trabajo.q12.to_i, delimiter: ".", precision: 0) unless @trabajo.q12.to_i == 0 %></td>
     </tr>
     <tr class="total">
@@ -141,9 +141,9 @@
     <tr class="details">
     <td colspan="3"><%= @trabajo.observaciones %><%= @trabajo.otros %></td>
     </tr>
-    
+
   </table>
-  
+
 <br><div  style="font-size: 12px;">
 Validez de la oferta: 15 Dias<br>
 El valor de la oferta considera:<br>
@@ -158,9 +158,9 @@ Planificación, Evaluación y desarrollo de la tarea<br></div>
 <br>
 <div class="botones">
   <div class="d-flex justify-content-center">
-  <%= link_to 'Editar', edit_trabajo_path(@trabajo), class: "btn btn-primary shadow" %>&nbsp;  
-  <%= link_to 'Volver', trabajos_path, class: "btn btn-primary shadow" %>   &nbsp; 
-  <%= link_to "Imprimir", '#', class: "btn btn-primary shadow", onclick: "printpage()" %> 
+  <%= link_to 'Editar', edit_trabajo_path(@trabajo), class: "btn btn-primary shadow" %>&nbsp;
+  <%= link_to 'Volver', trabajos_path, class: "btn btn-primary shadow" %>   &nbsp;
+  <%= link_to "Imprimir", '#', class: "btn btn-primary shadow", onclick: "printpage()" %>
   <br>
   </div>
 </div>
