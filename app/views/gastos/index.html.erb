@@ -47,7 +47,7 @@
           <%= link_to "", gasto, class: 'fa fa-eye fa-fw text-light'%>
           </button>
           <button type="button" class="btn btn-sm btn-success mr-2 command-edit shadow p-1 mb-1 rounded">
-          <%= link_to "", edit_hora_path(gasto), class: "fa fa-edit fa-fw text-light"%>
+          <%= link_to "", edit_gasto_path(gasto), class: "fa fa-edit fa-fw text-light"%>
           </button>
 
           <% if current_user.superadmin_role? %>
