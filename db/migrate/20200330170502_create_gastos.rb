@@ -12,7 +12,7 @@ class CreateGastos < ActiveRecord::Migration[5.2]
       t.string :cc
       t.string :resp
       t.string :familia
-      t.string :tipo
+      # t.string :tipo
       t.integer :cot
       t.string :aprobado
       t.string :estado

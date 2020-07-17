@@ -79,18 +79,6 @@ ActiveRecord::Schema.define(version: 2020_06_25_140153) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "consulta", force: :cascade do |t|
-    t.string "nombre"
-    t.string "planta"
-    t.string "solicitud"
-    t.text "observaciones"
-    t.text "respuesta"
-    t.string "otros"
-    t.integer "monto"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
   create_table "entregas", force: :cascade do |t|
     t.date "fecha"
     t.string "nombre"
