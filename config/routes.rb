@@ -16,13 +16,18 @@ Rails.application.routes.draw do
   get 'vtscheck', to: 'equipos#vtscheck'
   get 'ptmcheck', to: 'equipos#ptmcheck'
   get 'parcheck', to: 'equipos#parcheck'
-  resources :gastos
+
+  resources :gastos do
+    collection { post :import }
+  end
+  # resources :gasto
+
   namespace :admin do
     resources :users
     resources :horas
     resources :trabajos
 
-    root to: "users#index"
+    root to: 'users#index'
   end
 
   resources :horas
@@ -39,17 +44,11 @@ Rails.application.routes.draw do
   get 'vtsejec', to: 'trabajos#vtsejec'
   get 'ptmejec', to: 'trabajos#ptmejec'
   get 'parejec', to: 'trabajos#parejec'
-
-
-
-
   get 'indexop', to: 'trabajos#indexop'
   get 'lcaop', to: 'trabajos#lcaop'
   get 'vtsop', to: 'trabajos#vtsop'
   get 'ptmop', to: 'trabajos#ptmop'
   get 'parop', to: 'trabajos#parop'
-
-
   get 'indexfact', to: 'trabajos#indexfact'
   get 'lcafact', to: 'trabajos#lcafact'
   get 'vtsfact', to: 'trabajos#vtsfact'
@@ -58,6 +57,6 @@ Rails.application.routes.draw do
   devise_for :users
   root to: 'pages#home'
 
-  #get '*path' => redirect('/')
+  # get '*path' => redirect('/')
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

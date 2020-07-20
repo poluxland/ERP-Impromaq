@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_06_25_140153) do
+ActiveRecord::Schema.define(version: 2020_07_20_163450) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -261,6 +261,17 @@ ActiveRecord::Schema.define(version: 2020_06_25_140153) do
     t.string "estado"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "tipo_documento"
+    t.integer "folio"
+    t.string "emisor"
+    t.string "razon_social_emisor"
+    t.string "emision"
+    t.integer "monto_neto"
+    t.integer "monto_exento"
+    t.integer "monto_iva"
+    t.integer "monto_total"
+    t.integer "impuestos"
+    t.string "fecha_vencimiento"
   end
 
   create_table "horas", force: :cascade do |t|

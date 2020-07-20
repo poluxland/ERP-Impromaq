@@ -7,6 +7,11 @@ class GastosController < ApplicationController
     @gastos = Gasto.all
   end
 
+  def import
+    Gasto.my_import(params[:file])
+    redirect_to gastos_url, notice: 'Facturas correctamente importadas'
+  end
+
   # GET /gastos/1
   # GET /gastos/1.json
   def show
@@ -29,7 +34,7 @@ class GastosController < ApplicationController
     respond_to do |format|
       if @gasto.save
         format.html { redirect_to gastos_url, notice: 'El registro ha sido creado.' }
-        #format.html { redirect_to @gasto, notice: 'Gasto was successfully created.' }
+        # format.html { redirect_to @gasto, notice: 'Gasto was successfully created.' }
         format.json { render :show, status: :created, location: @gasto }
       else
         format.html { render :new }
