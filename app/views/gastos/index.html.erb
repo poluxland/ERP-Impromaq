@@ -26,19 +26,15 @@
       <th>monto_total</th>
       <th>impuestos</th>
       <th>fecha_vencimiento</th>
-      <th>Fecha</th>
       <th>Rend</th>
-      <th>Num</th>
       <th>Descripcion</th>
-      <th>Valor</th>
-      <th>Iva</th>
-      <th>Neto</th>
       <th>Cc</th>
       <th>Resp</th>
       <th>Familia</th>
       <th>Cot</th>
-      <th>Aprobado</th>
       <th>Estado</th>
+      <th>ID</th>
+
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -58,19 +54,15 @@
         <td><%= gasto.monto_total%></td>
         <td><%= gasto.impuestos%></td>
         <td><%= gasto.fecha_vencimiento%></td>
-        <td><%= gasto.fecha %></td>
         <td><%= gasto.rend %></td>
-        <td><%= gasto.num %></td>
         <td><%= gasto.descripcion %></td>
-        <td><%= gasto.valor %></td>
-        <td><%= gasto.iva %></td>
-        <td><%= gasto.neto %></td>
         <td><%= gasto.cc %></td>
         <td><%= gasto.resp %></td>
         <td><%= gasto.familia %></td>
         <td><%= gasto.cot %></td>
-        <td><%= gasto.aprobado %></td>
         <td><%= gasto.estado %></td>
+        <td><%= gasto.aprobado %></td>
+
         <td class="text-center">
           <button type="button" class="btn btn-sm btn-secondary mr-2 command-edit shadow p-1 mb-1 rounded">
           <%= link_to "", gasto, class: 'fa fa-eye fa-fw text-light'%>
@@ -78,17 +70,12 @@
           <button type="button" class="btn btn-sm btn-success mr-2 command-edit shadow p-1 mb-1 rounded">
           <%= link_to "", edit_gasto_path(gasto), class: "fa fa-edit fa-fw text-light"%>
           </button>
-
           <% if current_user.superadmin_role? %>
           <button type="button" class="btn btn-sm btn-danger command-delete shadow p-1 mb-1 rounded">
             <%= link_to "", gasto, method: :delete, data: { confirm: "Are you sure?" }, class: "fa fa-trash fa-fw text-light" %>
           </button>
-
           <% end %>
-
-
           </td>
-
       </tr>
     <% end %>
   </tbody>

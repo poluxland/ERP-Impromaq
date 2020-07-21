@@ -1,67 +1,84 @@
 
 <%= simple_form_for(@gasto) do |f| %>
- 
+
 <div class="form-inputs offset-md-1">
 
   <div class="row">
     <div class="col-md-3 mb-3 ">
-      <%= f.input :fecha %>
+      <%= f.input :tipo_documento, collection: [ "factura_electronica", "Boleta", "Otro"] %>
     </div>
     <div class="col-md-3 mb-3 ">
-      <%= f.input :rend %>
+      <%= f.input :folio %>
     </div>
-    <div class="col-md-3 mb-3 ">
-      <%= f.input :tipo %>
+    <div class="col-md-3 mb-3">
+      <%= f.input :emisor %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-9 mb-9">
+      <%= f.input :razon_social_emisor %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-3 mb-3">
+      <%= f.input :emision %>
+    </div>
+    <div class="col-md-3 mb-3">
+     <%= f.input :monto_neto %>
+    </div>
+    <div class="col-md-3 mb-3">
+     <%= f.input :monto_exento %>
     </div>
   </div>
 
   <div class="row">
     <div class="col-md-3 mb-3">
-      <%= f.input :descripcion %>
+      <%= f.input :impuestos %>
     </div>
     <div class="col-md-3 mb-3">
-     <%= f.input :valor %>
+      <%= f.input :monto_iva %>
     </div>
     <div class="col-md-3 mb-3">
-     <%= f.input :iva %>
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="col-md-3 mb-3">
-      <%= f.input :neto %>
-    </div>
-    <div class="col-md-3 mb-3">
-      <%= f.input :cc, collection: [ "Cmec", "Horno", "Ser", "Trans", "Env", "Vts", "Ext Vts", "Adm", "Ptm", "Ext Ptm", "Ngp", "Otro"] %>
-    </div>
-    <div class="col-md-3 mb-3">
-     <%= f.input :resp %> 
+     <%= f.input :monto_total %>
     </div>
   </div>
 
   <div class="row">
     <div class="col-md-3 mb-3">
-      <%= f.input :familia %>
+      <%= f.input :fecha_vencimiento %>
     </div>
     <div class="col-md-3 mb-3">
-       <%= f.input :aprobado %>
+       <%= f.input :rend, label: "Rendición Nº" %>
     </div>
     <div class="col-md-3 mb-3">
-     <%= f.input :estado %>
+     <%= f.input :descripcion %>
     </div>
   </div>
 
   <div class="row">
     <div class="col-md-3 mb-3">
-      <%= f.input :tipo %>
+      <%= f.input :resp %>
     </div>
      <div class="col-md-3 mb-3">
-      <%= f.input :num %>
+      <%= f.input :cc, collection: [ "ADM", "ENV", "SER", "CMEC", "TRANS", "NGP", "PTM", "VTS", "H09"] %>
     </div>
+    <div class="col-md-3 mb-3">
+      <%= f.input :familia, collection: [ "Materiales", "Insumos", "Repuestos", "Arriendo", "Herramientas", "Traslados", "Alimentación", "Sueldos", "Seguridad", "Personal", "ADM" ] %>
+    </div>
+  </div>
+  <div class="row">
     <div class="col-md-3 mb-3">
       <%= f.input :cot %>
     </div>
+     <div class="col-md-3 mb-3">
+      <%= f.input :estado, collection: [ "Pendiente", "Pagado"] %>
+    </div>
+    <div class="col-md-3 mb-3">
+      <%= f.input :aprobado, label: "ID" %>
+    </div>
   </div>
+
 
 
 
@@ -70,3 +87,5 @@
   <%= f.button :submit, "Agregar a registro", class: "btn-primary", label: 'Total' %>
 </div>
 <% end %>
+
+  </div>
