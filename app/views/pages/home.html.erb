@@ -1,8 +1,7 @@
 <%= render 'op' %>
-
-
-<% if current_user.superadmin_role?  %>
 <%= render 'gastos' %>
 <%= render 'ventas' %>
-<% end %>
 <%= render 'equipos' %>
+
+<% if current_user.superadmin_role?  %>
+<% end %>
