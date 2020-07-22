@@ -7,6 +7,42 @@ class GastosController < ApplicationController
     @gastos = Gasto.all
   end
 
+  def gastoslca
+    @gastos = Gasto.where(cc: [ "ADM", "ENV", "SER", "CMEC", "TRANS", "NGP", "H09"])
+  end
+
+  def gastoslcapend
+    @gastos = Gasto.where(cc: [ "ADM", "ENV", "SER", "CMEC", "TRANS", "NGP", "H09"]).where(estado: "Pendiente")
+  end
+
+  def gastoslcapagado
+    @gastos = Gasto.where(cc: [ "ADM", "ENV", "SER", "CMEC", "TRANS", "NGP", "H09"]).where(estado: "Pagado")
+  end
+
+  def gastosvts
+    @gastos = Gasto.where(cc: 'VTS')
+  end
+
+  def gastosvtspend
+    @gastos = Gasto.where(cc: 'VTS').where(estado: "Pendiente")
+  end
+
+  def gastosvtspagado
+    @gastos = Gasto.where(cc: 'VTS').where(estado: "Pagado")
+  end
+
+  def gastosptm
+    @gastos = Gasto.where(cc: 'PTM')
+  end
+
+  def gastosptmpend
+    @gastos = Gasto.where(cc: 'PTM').where(estado: "Pendiente")
+  end
+
+  def gastosptmpagado
+    @gastos = Gasto.where(cc: 'PTM').where(estado: "Pagado")
+  end
+
   def import
     Gasto.my_import(params[:file])
     redirect_to gastos_url, notice: 'Facturas correctamente importadas'

@@ -20,6 +20,16 @@ Rails.application.routes.draw do
   resources :gastos do
     collection { post :import }
   end
+  get 'gastoslca', to: 'gastos#gastoslca'
+  get 'gastoslcapend', to: 'gastos#gastoslcapend'
+  get 'gastoslcapagado', to: 'gastos#gastoslcapagado'
+  get 'gastosvts', to: 'gastos#gastosvts'
+  get 'gastosvtspend', to: 'gastos#gastosvtspend'
+  get 'gastosvtspagado', to: 'gastos#gastosvtspagado'
+  get 'gastosptm', to: 'gastos#gastosptm'
+  get 'gastosptmpend', to: 'gastos#gastosptmpend'
+  get 'gastosptmpagado', to: 'gastos#gastosptmpagado'
+
   # resources :gasto
 
   namespace :admin do

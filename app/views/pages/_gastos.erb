@@ -1,0 +1,75 @@
+
+
+<!-- Cards OPs -->
+<div class="card-deck pt-0">
+  <div class="card shadow">
+    <div class="card-body">
+      <h5 class="card-title"><i class="fas fa-file-invoice-dollar text-success"></i> Gastos LCA </h5>
+        <p class="card-text">
+          <a href="<%= gastoslca_path %>">
+            <%= number_to_currency(Gasto.where(cc: [ "ADM", "ENV", "SER", "CMEC", "TRANS", "NGP", "H09"]).sum(:monto_neto), delimiter: ".", precision: 0) %> Gastado<br>
+          </a>
+          <a href="<%= gastoslcapagado_path %>">
+          <%= number_to_currency(Gasto.where(cc: [ "ADM", "ENV", "SER", "CMEC", "TRANS", "NGP", "H09"]).where(estado: "Pagado").sum(:monto_neto), delimiter: ".", precision: 0) %> Pagado<br>
+          </a>
+          <a href="<%= gastoslcapend_path %>">
+            <%= number_to_currency(Gasto.where(cc: [ "ADM", "ENV", "SER", "CMEC", "TRANS", "NGP", "H09"]).where(estado: "Pendiente").sum(:monto_neto), delimiter: ".", precision: 0) %> Pendiente de pago
+          </a>
+        </p>
+    </div>
+    <div class="card-footer">
+      <small class="text-muted">Sin asignar <%= number_to_currency(Gasto.where(cc: [nil, ""]).sum(:monto_neto), delimiter: ".", precision: 0) %> <br></small>
+    </div>
+  </div>
+  <div class="card shadow">
+    <div class="card-body">
+      <h5 class="card-title"><i class="fas fa-file-invoice-dollar text-success"></i> Gastos VTS</h5>
+      <p class="card-text">
+        <a href="<%= gastosvts_path %>">
+          <%= number_to_currency(Gasto.where(cc: "VTS").sum(:monto_neto), delimiter: ".", precision: 0) %> Gastado<br>
+        </a>
+        <a href="<%= gastosvtspagado_path %>">
+        <%= number_to_currency(Gasto.where(cc: "VTS").where(estado: "Pagado").sum(:monto_neto), delimiter: ".", precision: 0) %> Pagado<br>
+        </a>
+        <a href="<%= gastosvtspagado_path %>">
+        <%= number_to_currency(Gasto.where(cc: "VTS").where(estado: "Pendiente").sum(:monto_neto), delimiter: ".", precision: 0) %> Pendiente de pago
+        </a>
+      </p>
+    </div>
+    <div class="card-footer">
+      <small class="text-muted">Sin asignar <%= number_to_currency(Gasto.where(cc: [nil, ""]).sum(:monto_neto), delimiter: ".", precision: 0) %> <br></small>
+    </div>
+  </div>
+  <div class="card shadow">
+    <div class="card-body">
+      <h5 class="card-title"><i class="fas fa-file-invoice-dollar text-success"></i> Gastos PTM</h5>
+      <p class="card-text">
+        <a href="<%= gastosptm_path %>">
+          <%= number_to_currency(Gasto.where(cc: "PTM").sum(:monto_neto), delimiter: ".", precision: 0) %> Gastado<br>
+        </a>
+        <a href="<%= gastosptmpagado_path %>">
+          <%= number_to_currency(Gasto.where(cc: "PTM").where(estado: "Pagado").sum(:monto_neto), delimiter: ".", precision: 0) %> Pagado<br>
+        </a>
+        <a href="<%= gastosptmpend_path %>">
+          <%= number_to_currency(Gasto.where(cc: "PTM").where(estado: "Pendiente").sum(:monto_neto), delimiter: ".", precision: 0) %> Pendiente de pago
+        </a>
+      </p>
+    </div>
+    <div class="card-footer">
+      <small class="text-muted">Sin asignar <%= number_to_currency(Gasto.where(cc: [nil, ""]).sum(:monto_neto), delimiter: ".", precision: 0) %> <br></small>
+    </div>
+  </div>
+  <div class="card shadow">
+    <div class="card-body">
+      <h5 class="card-title"><i class="fas fa-file-invoice-dollar text-success"></i> Gastos PTA </h5>
+      <p class="card-text">
+        <%= number_to_currency(Gasto.where(cc: "PTA").sum(:monto_neto), delimiter: ".", precision: 0) %> Gastado<br>
+        <%= number_to_currency(Gasto.where(cc: "PTA").where(estado: "Pagado").sum(:monto_neto), delimiter: ".", precision: 0) %> Pagado<br>
+        <%= number_to_currency(Gasto.where(cc: "PTA").where(estado: "Pendiente").sum(:monto_neto), delimiter: ".", precision: 0) %> Pendiente de pago
+      </p>
+    </div>
+    <div class="card-footer">
+      <small class="text-muted">Sin asignar <%= number_to_currency(Gasto.where(cc: [nil, ""]).sum(:monto_neto), delimiter: ".", precision: 0) %> <br></small>
+    </div>
+  </div>
+</div>
