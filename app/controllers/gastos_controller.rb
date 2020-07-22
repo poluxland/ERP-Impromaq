@@ -12,10 +12,14 @@ class GastosController < ApplicationController
     redirect_to gastos_url, notice: 'Facturas correctamente importadas'
   end
 
+  def dup
+    @gasto_dup = Gasto.find(params[:id]).dup
+    render :new
+  end
+
   # GET /gastos/1
   # GET /gastos/1.json
-  def show
-  end
+  def show; end
 
   # GET /gastos/new
   def new
@@ -23,8 +27,7 @@ class GastosController < ApplicationController
   end
 
   # GET /gastos/1/edit
-  def edit
-  end
+  def edit; end
 
   # POST /gastos
   # POST /gastos.json
@@ -48,7 +51,8 @@ class GastosController < ApplicationController
   def update
     respond_to do |format|
       if @gasto.update(gasto_params)
-        format.html { redirect_to @gasto, notice: 'Gasto was successfully updated.' }
+        format.html { redirect_to gastos_url, notice: 'El registro ha sido actualizado.' }
+        # format.html { redirect_to @gasto, notice: 'Gasto was successfully updated.' }
         format.json { render :show, status: :ok, location: @gasto }
       else
         format.html { render :edit }
@@ -68,13 +72,15 @@ class GastosController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_gasto
-      @gasto = Gasto.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def gasto_params
-      params.require(:gasto).permit(:fecha, :rend, :tipo, :num, :descripcion, :valor, :iva, :neto, :cc, :resp, :familia, :tipo, :cot, :aprobado, :estado)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_gasto
+    @gasto = Gasto.find(params[:id])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def gasto_params
+    params.require(:gasto).permit(:fecha, :rend, :tipo, :num, :descripcion, :valor, :iva, :neto, :cc, :resp, :familia,
+                                  :tipo, :cot, :aprobado, :estado)
+  end
 end
