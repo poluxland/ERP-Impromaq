@@ -6,13 +6,13 @@
     <%= submit_tag "Importar archivo" %>
   <% end %>
 </div>
-
+<h4><u>Rendicion <%= @max %></u></h4>
 <h4><%= number_to_currency(@gastos.sum(:monto_neto), delimiter: ".", precision: 0) %> Neto<br>
 <%= number_to_currency(@gastos.sum(:monto_total), delimiter: ".", precision: 0) %> Total<br></h4>
 
 <h1>Gastos</h1>
 
-<table class="table table-responsive table-striped table-bordered table-sm shadow" cellspacing="0" width="100%">
+<table id="myTable" class="table table-responsive table-striped table-bordered table-sm shadow" cellspacing="0" width="100%">
   <thead>
     <tr>
       <th>Tipo</th>
@@ -33,8 +33,10 @@
       <th>Cot</th>
       <th>Estado</th>
       <th>ID</th>
-
-      <th colspan="4"></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
     </tr>
   </thead>
 
@@ -60,24 +62,27 @@
         <td><%= gasto.estado %></td>
         <td><%= gasto.aprobado %></td>
 
-        <td class="text-center">
+        <td>
           <button type="button" class="btn btn-sm btn-secondary mr-2 command-edit shadow p-1 mb-1 rounded">
           <%= link_to "", gasto, class: 'fa fa-eye fa-fw text-light'%>
           </button>
+          <td>
           <button type="button" class="btn btn-sm btn-success mr-2 command-edit shadow p-1 mb-1 rounded">
           <%= link_to "", edit_gasto_path(gasto), class: "fa fa-edit fa-fw text-light"%>
           </button>
+          </td>
           <% if current_user.superadmin_role? %>
-          <button type="button" class="btn btn-sm btn-danger mr-2 command-delete shadow p-1 mb-1 rounded">
+
+          <td><button type="button" class="btn btn-sm btn-danger mr-2 command-delete shadow p-1 mb-1 rounded">
             <%= link_to "", gasto, method: :delete, data: { confirm: "Are you sure?" }, class: "fa fa-trash fa-fw text-light" %>
-          </button>
-          <button type="button" class="btn btn-sm btn-primary mr-2 command-delete shadow p-1 mb-1 rounded">
+          </button></td>
+          <td><button type="button" class="btn btn-sm btn-primary mr-2 command-delete shadow p-1 mb-1 rounded">
             <%= link_to 'd', gasto, action: dup,  class: "fa fa-trash fa-fw text-light" %>
-          </button>
+          </button></td>
 
           <% end %>
 
-          </td>
+          
       </tr>
     <% end %>
   </tbody>

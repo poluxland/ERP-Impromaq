@@ -9,8 +9,8 @@ class GastosController < ApplicationController
 
   def gastoslcarend
     # @gastos = Gasto.where("rend < ?", Gasto.maximum(:rend))
-
-    @gastos = Gasto.where(rend: "412")
+    @max = Gasto.maximum("rend")
+    @gastos = Gasto.where(rend: @max)
   end
 
   def gastoslca
