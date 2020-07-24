@@ -71,18 +71,26 @@
           <%= link_to "", edit_gasto_path(gasto), class: "fa fa-edit fa-fw text-light"%>
           </button>
           </td>
-          <% if current_user.superadmin_role? %>
 
-          <td><button type="button" class="btn btn-sm btn-danger mr-2 command-delete shadow p-1 mb-1 rounded">
+
+          <td>
+              <% if current_user.superadmin_role? %>
+            <button type="button" class="btn btn-sm btn-danger mr-2 command-delete shadow p-1 mb-1 rounded">
             <%= link_to "", gasto, method: :delete, data: { confirm: "Are you sure?" }, class: "fa fa-trash fa-fw text-light" %>
-          </button></td>
-          <td><button type="button" class="btn btn-sm btn-primary mr-2 command-delete shadow p-1 mb-1 rounded">
+          </button>
+            <% end %>
+        </td>
+          <td>
+            <% if current_user.superadmin_role? %>
+            <button type="button" class="btn btn-sm btn-primary mr-2 command-delete shadow p-1 mb-1 rounded">
             <%= link_to 'd', gasto, action: dup,  class: "fa fa-trash fa-fw text-light" %>
-          </button></td>
+          </button>
+            <% end %>
+        </td>
 
-          <% end %>
 
-          
+
+
       </tr>
     <% end %>
   </tbody>
