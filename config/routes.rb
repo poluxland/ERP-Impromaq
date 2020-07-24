@@ -29,6 +29,7 @@ Rails.application.routes.draw do
   get 'gastosptm', to: 'gastos#gastosptm'
   get 'gastosptmpend', to: 'gastos#gastosptmpend'
   get 'gastosptmpagado', to: 'gastos#gastosptmpagado'
+  get 'gastoslcarend', to: 'gastos#gastoslcarend'
 
   # resources :gasto
 
