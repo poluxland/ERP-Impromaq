@@ -7,6 +7,10 @@ class GastosController < ApplicationController
     @gastos = Gasto.all
   end
 
+  def gastosunasigned
+    @gastos = Gasto.where(estado: [nil, ''])
+  end
+
   def gastoslcarend
     # @gastos = Gasto.where("rend < ?", Gasto.maximum(:rend))
     @max = Gasto.where(cc: [ "ADM", "ENV", "SER", "CMEC", "TRANS", "NGP", "H09"]).maximum("rend")

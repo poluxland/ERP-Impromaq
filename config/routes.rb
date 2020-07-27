@@ -32,6 +32,8 @@ Rails.application.routes.draw do
   get 'gastoslcarend', to: 'gastos#gastoslcarend'
   get 'gastosvtsrend', to: 'gastos#gastosvtsrend'
   get 'gastosptmrend', to: 'gastos#gastosptmrend'
+  get 'gastosunasigned', to: 'gastos#gastosunasigned'
+
 
   # resources :gasto
 
