@@ -56,6 +56,12 @@ class EquiposController < ApplicationController
   # GET /equipos/1
   # GET /equipos/1.json
   def show
+  @test = Equipo
+    .where(id: @equipo.id)
+    .pluck(:c1, :c2, :c3, :c4, :c5, :c6, :c7, :c8, :c9, :c10, :c11, :c12, :c13, :c14, :c15, :c16)
+    .flatten
+    .group_by(&:itself)
+    .transform_values(&:count)
   end
 
   # GET /equipos/new
@@ -74,7 +80,7 @@ class EquiposController < ApplicationController
 
     respond_to do |format|
       if @equipo.save
-        format.html { redirect_to @equipo, notice: 'Equipo was successfully created.' }
+        format.html { redirect_to @equipo, notice: 'Checlist equipo ingresado' }
         format.json { render :show, status: :created, location: @equipo }
       else
         format.html { render :new }

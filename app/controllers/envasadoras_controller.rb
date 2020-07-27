@@ -28,7 +28,7 @@ class EnvasadorasController < ApplicationController
 
     respond_to do |format|
       if @envasadora.save
-        format.html { redirect_to @envasadora, notice: 'Envasadora was successfully created.' }
+        format.html { redirect_to @envasadora, notice: 'Envasadora creado con exito' }
         format.json { render :show, status: :created, location: @envasadora }
       else
         format.html { render :new }

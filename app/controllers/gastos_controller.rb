@@ -9,9 +9,20 @@ class GastosController < ApplicationController
 
   def gastoslcarend
     # @gastos = Gasto.where("rend < ?", Gasto.maximum(:rend))
-    @max = Gasto.maximum("rend")
-    @gastos = Gasto.where(rend: @max)
+    @max = Gasto.where(cc: [ "ADM", "ENV", "SER", "CMEC", "TRANS", "NGP", "H09"]).maximum("rend")
+    @gastos = Gasto.where(cc: [ "ADM", "ENV", "SER", "CMEC", "TRANS", "NGP", "H09"]).where(rend: @max)
   end
+
+  def gastosvtsrend
+    @max = Gasto.where(cc: "VTS").maximum("rend")
+    @gastos = Gasto.where(cc: "VTS").where(rend: @max)
+  end
+
+  def gastosptmrend
+    @max = Gasto.where(cc: "PTM").maximum("rend")
+    @gastos = Gasto.where(cc: "PTM").where(rend: @max)
+  end
+
 
   def gastoslca
     @gastos = Gasto.where(cc: [ "ADM", "ENV", "SER", "CMEC", "TRANS", "NGP", "H09"])
@@ -79,7 +90,7 @@ class GastosController < ApplicationController
     respond_to do |format|
       if @gasto.save
         format.html { redirect_to gastos_url, notice: 'El registro ha sido creado.' }
-        # format.html { redirect_to @gasto, notice: 'Gasto was successfully created.' }
+        # format.html { redirect_to @gasto, notice: 'Gasto creado con exito' }
         format.json { render :show, status: :created, location: @gasto }
       else
         format.html { render :new }

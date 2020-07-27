@@ -29,7 +29,7 @@ class BarcosController < ApplicationController
 
     respond_to do |format|
       if @barco.save
-        format.html { redirect_to @barco, notice: 'Barco was successfully created.' }
+        format.html { redirect_to @barco, notice: 'Barco creado con exito' }
         format.json { render :show, status: :created, location: @barco }
       else
         format.html { render :new }

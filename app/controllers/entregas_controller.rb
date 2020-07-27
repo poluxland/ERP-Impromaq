@@ -28,7 +28,7 @@ class EntregasController < ApplicationController
 
     respond_to do |format|
       if @entrega.save
-        format.html { redirect_to @entrega, notice: 'Entrega was successfully created.' }
+        format.html { redirect_to @entrega, notice: 'Entrega creado con exito' }
         format.json { render :show, status: :created, location: @entrega }
       else
         format.html { render :new }

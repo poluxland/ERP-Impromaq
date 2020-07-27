@@ -29,7 +29,7 @@ class MedidasController < ApplicationController
 
     respond_to do |format|
       if @medida.save
-        format.html { redirect_to @medida, notice: 'Medida was successfully created.' }
+        format.html { redirect_to @medida, notice: 'Medida creado con exito' }
         format.json { render :show, status: :created, location: @medida }
       else
         format.html { render :new }

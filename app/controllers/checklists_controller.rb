@@ -31,7 +31,7 @@ class ChecklistsController < ApplicationController
 
     respond_to do |format|
       if @checklist.save
-        format.html { redirect_to @checklist, notice: 'Checklist was successfully created.' }
+        format.html { redirect_to @checklist, notice: 'Checklist creado con exito' }
         format.json { render :show, status: :created, location: @checklist }
       else
         format.html { render :new }

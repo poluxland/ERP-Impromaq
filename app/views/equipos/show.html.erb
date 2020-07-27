@@ -1,4 +1,14 @@
-<p id="notice"><%= notice %></p>
+
+
+Si <%= @test["Si"] %> - <%= @test["Si"] * 1 %> Puntos <br>
+No leve <%= @test["No(leve)"] %> - <%= @test["No(leve)"] * 0.5 %> Puntos <br>
+No grave <%= @test["No(grave)"] %> - 0 Puntos <br>
+No Aplica <%= @test["No aplica"] %> <br>
+<br>
+Porcentaje equipo <%= ((@test["Si"] * 1.0 + @test["No(leve)"] * 0.5) / (@test["Si"] + @test["No(leve)"] + @test["No(grave)"]) )* 100 %>
+<br>
+<br>
+
 
 <p>
   <strong>Nombre:</strong>
