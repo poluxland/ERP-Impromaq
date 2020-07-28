@@ -80,7 +80,7 @@ class EquiposController < ApplicationController
 
     respond_to do |format|
       if @equipo.save
-        format.html { redirect_to @equipo, notice: 'Checlist equipo ingresado' }
+        format.html { redirect_to @equipo, notice: 'Checklist equipo ingresado' }
         format.json { render :show, status: :created, location: @equipo }
       else
         format.html { render :new }
