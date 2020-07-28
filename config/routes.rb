@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'dup', to: 'gastos#dup'
   resources :medidas
   resources :barcos
   resources :checklists
@@ -33,6 +34,7 @@ Rails.application.routes.draw do
   get 'gastosvtsrend', to: 'gastos#gastosvtsrend'
   get 'gastosptmrend', to: 'gastos#gastosptmrend'
   get 'gastosunasigned', to: 'gastos#gastosunasigned'
+
 
 
   # resources :gasto

@@ -93,7 +93,6 @@
           </button>
           </td>
 
-
           <td>
               <% if current_user.superadmin_role? %>
             <button type="button" class="btn btn-sm btn-danger mr-2 command-delete shadow p-1 mb-1 rounded">
@@ -104,7 +103,7 @@
           <td>
             <% if current_user.superadmin_role? %>
             <button type="button" class="btn btn-sm btn-primary mr-2 command-delete shadow p-1 mb-1 rounded">
-            <%= link_to 'd', gasto, action: dup,  class: "fa fa-trash fa-fw text-light" %>
+            <%= link_to '', dup_path(gasto),  class: "fa fa-clone fa-fw text-light" %>
           </button>
             <% end %>
         </td>

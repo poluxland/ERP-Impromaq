@@ -70,7 +70,7 @@ class GastosController < ApplicationController
   end
 
   def dup
-    @gasto_dup = Gasto.find(params[:id]).dup
+    @gasto = Gasto.find(params["format"].to_i).dup
     render :new
   end
 
