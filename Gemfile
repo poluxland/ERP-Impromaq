@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 ruby '~> 2.7.1'
-
+gem 'activeadmin'
 gem 'activerecord-import'
 gem 'autoprefixer-rails'
 gem 'devise'
