@@ -35,18 +35,6 @@ Rails.application.routes.draw do
   get 'gastosptmrend', to: 'gastos#gastosptmrend'
   get 'gastosunasigned', to: 'gastos#gastosunasigned'
 
-
-
-  # resources :gasto
-
-  namespace :admin do
-    resources :users
-    resources :horas
-    resources :trabajos
-
-    root to: 'users#index'
-  end
-
   resources :horas
   get 'mec', to: 'horas#mec'
   get 'serv', to: 'horas#serv'
