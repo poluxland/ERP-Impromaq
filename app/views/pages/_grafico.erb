@@ -1,2 +1,2 @@
 
-<%= bar_chart Gasto.group(:cc).sum(:monto_neto) %>
+<%= bar_chart Gasto.group(:cc).sum(:monto_neto), thousands: "." %>
