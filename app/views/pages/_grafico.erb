@@ -14,3 +14,19 @@
     </div>
   </div>
 </div>
+<div class="container">
+  <div class="row">
+    <div class="col-sm">
+      Gastos por centro de costo
+      <%= pie_chart Gasto.group(:cc).sum(:monto_neto), thousands: "." %>
+    </div>
+    <div class="col-sm">
+      Gastos por familia
+      <%= pie_chart Gasto.group(:familia).sum(:monto_neto), thousands: "." %>
+    </div>
+    <div class="col-sm">
+      Trabajos terminados por centro de costo
+      <%= pie_chart Trabajo.where(avance: ["Terminado", "Facturado"]).group(:centro_costo).sum(:total), thousands: "." %>
+    </div>
+  </div>
+</div>
