@@ -5,6 +5,7 @@ gem 'activerecord-import'
 gem 'autoprefixer-rails'
 gem 'devise'
 gem 'font-awesome-sass'
+gem "chartkick"
 gem 'jbuilder'
 gem 'pg', '~> 0.21'
 gem 'puma'
