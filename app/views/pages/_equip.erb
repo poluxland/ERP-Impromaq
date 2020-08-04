@@ -1,0 +1,558 @@
+
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th>Codigo</th>
+      <th>Equipo</th>
+      <th>Estatus</th>
+      <th>Checklist MEC</th>
+      <th>Checklist OP</th>
+      <th>Ultima mantención</th>
+      <th>Proxima mantención</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% Equipo.all.each do |equipo| %>
+      <tr>
+        <td><%= equipo.nombre %></td>
+        <td><%= equipo.operador %></td>
+        <td><%= equipo.horometro %></td>
+        <td><%= equipo.c30 %></td>
+        <td><%= equipo.id %></td>
+        <td></td>
+          <td></td>
+
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+
+
+
+
+<div class="card-deck">
+        <div class="card shadow">
+          <div class="card-header border-transparent">
+            <a href="<%= equipos_path %>">
+            <h4 class="card-title">Equipos</h4>
+            </a>
+            <div class="card-tools">
+            </div>
+          </div>
+          <div class="card-body p-0">
+            <div class="table table-sm table-responsive">
+              <table class="table m-0">
+                <thead>
+                <tr>
+                  <th>Codigo</th>
+                  <th>Equipo</th>
+                  <th>Status</th>
+                  <th>Checklist MEC</th>
+                  <th>Checklist OP</th>
+                  <th>Ultima Mantención</th>
+                  <th>Proxima Mantención</th>
+                </tr>
+                </thead>
+                <tbody>
+                  <tr class="table-secondary">
+                    <td></td>
+                    <td><strong>Planta Puerto Montt</strong></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                <tr>
+                  <td>HQPTA31</td>
+                  <td>Horquilla Env 7t</td>
+                  <td><span class="badge badge-success">Operativo</span></td>
+                  <td>
+                      <a href="">
+                      <%= Checklist.where(equipo: "HQPTA31")&.last&.created_at&.strftime("%d-%m-%y") %>
+                      <i class="far fa-clock"></i> <%= Checklist.where(equipo: "HQPTA31")&.last&.horometro %>
+                      </a>
+                  </td>
+                  <td>
+                    <a href="<%= hqpta31check_path %>">
+                      <%= Equipo.where(nombre: "HQPTA31")&.last&.created_at&.strftime("%d-%m-%y") %>
+                      <i class="far fa-clock"></i> <%= Equipo.where(nombre: "HQPTA31")&.last&.horometro %>
+                    </a>
+                  </td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>HQPTA32</td>
+                  <td>Horquilla Patio 7t</td>
+                  <td><span class="badge badge-success">Operativo</span></td>
+                  <td>
+                      <a href="">
+                      <%= Checklist.where(equipo: "HQPTA32")&.last&.created_at&.strftime("%d-%m-%y") %>
+                      <i class="far fa-clock"></i> <%= Checklist.where(equipo: "HQPTA32")&.last&.horometro %>
+                      </a>
+                  </td>
+                  <td>
+                    <a href="<%= hqpta32check_path %>">
+                      <%= Equipo.where(nombre: "HQPTA32")&.last&.created_at&.strftime("%d-%m-%y") %>
+                      <i class="far fa-clock"></i> <%= Equipo.where(nombre: "HQPTA32")&.last&.horometro %>
+                    </a>
+                  </td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>HQPTA33</td>
+                  <td>Horquilla BigBag 3t</td>
+                  <td><span class="badge badge-success">Operativo</span></td>
+                  <td>
+                      <a href="">
+                      <%= Checklist.where(equipo: "HQPTA33")&.last&.created_at&.strftime("%d-%m-%y") %>
+                      <i class="far fa-clock"></i> <%= Checklist.where(equipo: "HQPTA33")&.last&.horometro %>
+                      </a>
+                  </td>
+                  <td>
+                    <a href="<%= hqpta33check_path %>">
+                      <%= Equipo.where(nombre: "HQPTA33")&.last&.created_at&.strftime("%d-%m-%y") %>
+                      <i class="far fa-clock"></i> <%= Equipo.where(nombre: "HQPTA33")&.last&.horometro %>
+                    </a>
+                  </td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>OL03</td>
+                  <td>Cargador frontal 938K</td>
+                  <td><span class="badge badge-success">Operativo</span></td>
+                  <td>
+                      <a href="">
+                      <%= Checklist.where(equipo: "OL03")&.last&.created_at&.strftime("%d-%m-%y") %>
+                      <i class="far fa-clock"></i> <%= Checklist.where(equipo: "OL03")&.last&.horometro %>
+                      </a>
+                  </td>
+                  <td>
+                    <a href="<%= ol03check_path %>">
+                      <%= Equipo.where(nombre: "OL03")&.last&.created_at&.strftime("%d-%m-%y") %>
+                      <i class="far fa-clock"></i> <%= Equipo.where(nombre: "OL03")&.last&.horometro %>
+                    </a>
+                  </td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr class="table-secondary">
+                  <td></td>
+                  <td><strong>Planta Ventanas</strong></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>BRR20</td>
+                  <td>VTS Barredora Tentant S20</td>
+                  <td><span class="badge badge-success">Operativo</span></td>
+                  <td>
+                      <a href="">
+                      <%= Checklist.where(equipo: "BRR20")&.last&.created_at&.strftime("%d-%m-%y") %>
+                      <i class="far fa-clock"></i> <%= Checklist.where(equipo: "BRR20")&.last&.horometro %>
+                      </a>
+                  </td>
+                  <td>
+                      <a href="<%= brr20check_path %>">
+                      <%= Equipo.where(nombre: "BRR20")&.last&.created_at&.strftime("%d-%m-%y") %>
+                      <i class="far fa-clock"></i> <%= Equipo.where(nombre: "BRR20")&.last&.horometro %>
+                      </a>
+                  </td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr class="table-secondary">
+                  <td></td>
+                  <td><strong>Planta La Calera</strong></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>EX01</td>
+                  <td>Excavadora CAT320GC</td>
+                  <td><span class="badge badge-success">Operativo</span></td>
+                  <td>
+                      <a href="">
+                      <%= Checklist.where(equipo: "EX01")&.last&.created_at&.strftime("%d-%m-%y") %>
+                      <i class="far fa-clock"></i> <%= Checklist.where(equipo: "EX01")&.last&.horometro %>
+                      </a>
+                  </td>
+                  <td>
+                    <a href="<%= ol03check_path %>">
+                      <%= Equipo.where(nombre: "EX01")&.last&.created_at&.strftime("%d-%m-%y") %>
+                      <i class="far fa-clock"></i> <%= Equipo.where(nombre: "EX01")&.last&.horometro %>
+                    </a>
+                  </td>
+                  <td></td>
+                  <td></td>
+
+                </tr>
+                <tr>
+                  <td>OL01</td>
+                  <td>Cargador frontal CAT938K</td>
+                  <td><span class="badge badge-success">Operativo</span></td>
+                  <td>
+                      <a href="">
+                      <%= Checklist.where(equipo: "OL01")&.last&.created_at&.strftime("%d-%m-%y") %>
+                      <i class="far fa-clock"></i> <%= Checklist.where(equipo: "OL01")&.last&.horometro %>
+                      </a>
+                  </td>
+                  <td>
+                    <a href="<%= ol03check_path %>">
+                      <%= Equipo.where(nombre: "OL01")&.last&.created_at&.strftime("%d-%m-%y") %>
+                      <i class="far fa-clock"></i> <%= Equipo.where(nombre: "OL01")&.last&.horometro %>
+                    </a>
+                  </td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>OL02</td>
+                  <td>Cargador frontal CAT938K</td>
+                  <td><span class="badge badge-success">Operativo</span></td>
+                  <td>
+                      <a href="">
+                      <%= Checklist.where(equipo: "OL02")&.last&.created_at&.strftime("%d-%m-%y") %>
+                      <i class="far fa-clock"></i> <%= Checklist.where(equipo: "OL02")&.last&.horometro %>
+                      </a>
+                  </td>
+                  <td>
+                    <a href="<%= ol03check_path %>">
+                      <%= Equipo.where(nombre: "OL02")&.last&.created_at&.strftime("%d-%m-%y") %>
+                      <i class="far fa-clock"></i> <%= Equipo.where(nombre: "OL02")&.last&.horometro %>
+                    </a>
+                  </td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>OL06</td>
+                  <td>Cargador frontal CAT980</td>
+                  <td><span class="badge badge-info">Observaciones</span></td>
+                  <td>
+                      <a href="">
+                      <%= Checklist.where(equipo: "OL06")&.last&.created_at&.strftime("%d-%m-%y") %>
+                      <i class="far fa-clock"></i> <%= Checklist.where(equipo: "OL06")&.last&.horometro %>
+                      </a>
+                  </td>
+                  <td>
+                    <a href="<%= ol03check_path %>">
+                      <%= Equipo.where(nombre: "OL06")&.last&.created_at&.strftime("%d-%m-%y") %>
+                      <i class="far fa-clock"></i> <%= Equipo.where(nombre: "OL06")&.last&.horometro %>
+                    </a>
+                  </td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>OL09</td>
+                  <td>Cargador frontal CAT938G</td>
+                  <td><span class="badge badge-success">Operativo</span></td>
+                  <td>
+                      <a href="">
+                      <%= Checklist.where(equipo: "OL09")&.last&.created_at&.strftime("%d-%m-%y") %>
+                      <i class="far fa-clock"></i> <%= Checklist.where(equipo: "OL09")&.last&.horometro %>
+                      </a>
+                  </td>
+                  <td>
+                    <a href="<%= ol03check_path %>">
+                      <%= Equipo.where(nombre: "OL09")&.last&.created_at&.strftime("%d-%m-%y") %>
+                      <i class="far fa-clock"></i> <%= Equipo.where(nombre: "OL09")&.last&.horometro %>
+                    </a>
+                  </td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>OL11</td>
+                  <td>Cargador frontal CAT938G</td>
+                  <td><span class="badge badge-success">Operativo</span></td>
+                  <td>
+                      <a href="">
+                      <%= Checklist.where(equipo: "OL11")&.last&.created_at&.strftime("%d-%m-%y") %>
+                      <i class="far fa-clock"></i> <%= Checklist.where(equipo: "OL11")&.last&.horometro %>
+                      </a>
+                  </td>
+                  <td>
+                    <a href="<%= ol03check_path %>">
+                      <%= Equipo.where(nombre: "OL11")&.last&.created_at&.strftime("%d-%m-%y") %>
+                      <i class="far fa-clock"></i> <%= Equipo.where(nombre: "OL11")&.last&.horometro %>
+                    </a>
+                  </td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>BRR19</td>
+                  <td>Barreroa Tentant S30</td>
+                  <td><span class="badge badge-success">Operativo</span></td>
+                  <td>
+                      <a href="">
+                      <%= Checklist.where(equipo: "BRR19")&.last&.created_at&.strftime("%d-%m-%y") %>
+                      <i class="far fa-clock"></i> <%= Checklist.where(equipo: "BRR19")&.last&.horometro %>
+                      </a>
+                  </td>
+                  <td>
+                    <a href="<%= ol03check_path %>">
+                      <%= Equipo.where(nombre: "BRR19")&.last&.created_at&.strftime("%d-%m-%y") %>
+                      <i class="far fa-clock"></i> <%= Equipo.where(nombre: "BRR19")&.last&.horometro %>
+                    </a>
+                  </td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>OK03</td>
+                  <td>Camion Mercedez</td>
+                  <td><span class="badge badge-success">Operativo</span></td>
+                  <td>
+                      <a href="">
+                      <%= Checklist.where(equipo: "OK03")&.last&.created_at&.strftime("%d-%m-%y") %>
+                      <i class="far fa-clock"></i> <%= Checklist.where(equipo: "OK03")&.last&.horometro %>
+                      </a>
+                  </td>
+                  <td>
+                    <a href="<%= ol03check_path %>">
+                      <%= Equipo.where(nombre: "OK03")&.last&.created_at&.strftime("%d-%m-%y") %>
+                      <i class="far fa-clock"></i> <%= Equipo.where(nombre: "OK03")&.last&.horometro %>
+                    </a>
+                  </td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>OK04</td>
+                  <td>Camion Volvo</td>
+                  <td><span class="badge badge-success">Operativo</span></td>
+                  <td>
+                      <a href="">
+                      <%= Checklist.where(equipo: "OK04")&.last&.created_at&.strftime("%d-%m-%y") %>
+                      <i class="far fa-clock"></i> <%= Checklist.where(equipo: "OK04")&.last&.horometro %>
+                      </a>
+                  </td>
+                  <td>
+                    <a href="<%= ol03check_path %>">
+                      <%= Equipo.where(nombre: "OK04")&.last&.created_at&.strftime("%d-%m-%y") %>
+                      <i class="far fa-clock"></i> <%= Equipo.where(nombre: "OK04")&.last&.horometro %>
+                    </a>
+                  </td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>OK05</td>
+                  <td>Camión Mercedez</td>
+                  <td><span class="badge badge-success">Operativo</span></td>
+                  <td>
+                      <a href="">
+                      <%= Checklist.where(equipo: "OK05")&.last&.created_at&.strftime("%d-%m-%y") %>
+                      <i class="far fa-clock"></i> <%= Checklist.where(equipo: "OK05")&.last&.horometro %>
+                      </a>
+                  </td>
+                  <td>
+                    <a href="<%= ol03check_path %>">
+                      <%= Equipo.where(nombre: "OK05")&.last&.created_at&.strftime("%d-%m-%y") %>
+                      <i class="far fa-clock"></i> <%= Equipo.where(nombre: "OK05")&.last&.horometro %>
+                    </a>
+                  </td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>HQ13</td>
+                  <td>Horquilla Linde 7t</td>
+                  <td><span class="badge badge-success">Operativo</span></td>
+                  <td>
+                      <a href="">
+                      <%= Checklist.where(equipo: "HQ13")&.last&.created_at&.strftime("%d-%m-%y") %>
+                      <i class="far fa-clock"></i> <%= Checklist.where(equipo: "HQ13")&.last&.horometro %>
+                      </a>
+                  </td>
+                  <td>
+                    <a href="<%= ol03check_path %>">
+                      <%= Equipo.where(nombre: "HQ13")&.last&.created_at&.strftime("%d-%m-%y") %>
+                      <i class="far fa-clock"></i> <%= Equipo.where(nombre: "HQ13")&.last&.horometro %>
+                    </a>
+                  </td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>HQ12</td>
+                  <td>Horquilla 3t Hyundai</td>
+                  <td><span class="badge badge-success">Operativo</span></td>
+                  <td>
+                      <a href="">
+                      <%= Checklist.where(equipo: "HQ12")&.last&.created_at&.strftime("%d-%m-%y") %>
+                      <i class="far fa-clock"></i> <%= Checklist.where(equipo: "HQ12")&.last&.horometro %>
+                      </a>
+                  </td>
+                  <td>
+                    <a href="<%= ol03check_path %>">
+                      <%= Equipo.where(nombre: "HQ12")&.last&.created_at&.strftime("%d-%m-%y") %>
+                      <i class="far fa-clock"></i> <%= Equipo.where(nombre: "HQ12")&.last&.horometro %>
+                    </a>
+                  </td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>HQ011</td>
+                  <td>Horquilla 7t Komatsu</td>
+                  <td><span class="badge badge-success">Operativo</span></td>
+                  <td>
+                      <a href="">
+                      <%= Checklist.where(equipo: "HQ011")&.last&.created_at&.strftime("%d-%m-%y") %>
+                      <i class="far fa-clock"></i> <%= Checklist.where(equipo: "HQ011")&.last&.horometro %>
+                      </a>
+                  </td>
+                  <td>
+                    <a href="<%= ol03check_path %>">
+                      <%= Equipo.where(nombre: "HQ011")&.last&.created_at&.strftime("%d-%m-%y") %>
+                      <i class="far fa-clock"></i> <%= Equipo.where(nombre: "HQ011")&.last&.horometro %>
+                    </a>
+                  </td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>HQ10</td>
+                  <td>Horquilla 7t Mitsubishi</td>
+                  <td><span class="badge badge-success">Operativo</span></td>
+                  <td>
+                      <a href="">
+                      <%= Checklist.where(equipo: "HQ10")&.last&.created_at&.strftime("%d-%m-%y") %>
+                      <i class="far fa-clock"></i> <%= Checklist.where(equipo: "HQ10")&.last&.horometro %>
+                      </a>
+                  </td>
+                  <td>
+                    <a href="<%= ol03check_path %>">
+                      <%= Equipo.where(nombre: "HQ10")&.last&.created_at&.strftime("%d-%m-%y") %>
+                      <i class="far fa-clock"></i> <%= Equipo.where(nombre: "HQ10")&.last&.horometro %>
+                    </a>
+                  </td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>HQ03</td>
+                  <td>Horquilla 3t Toyota</td>
+                  <td><span class="badge badge-success">Operativo</span></td>
+                  <td>
+                      <a href="">
+                      <%= Checklist.where(equipo: "HQ03")&.last&.created_at&.strftime("%d-%m-%y") %>
+                      <i class="far fa-clock"></i> <%= Checklist.where(equipo: "HQ03")&.last&.horometro %>
+                      </a>
+                  </td>
+                  <td>
+                    <a href="<%= ol03check_path %>">
+                      <%= Equipo.where(nombre: "HQ03")&.last&.created_at&.strftime("%d-%m-%y") %>
+                      <i class="far fa-clock"></i> <%= Equipo.where(nombre: "HQ03")&.last&.horometro %>
+                    </a>
+                  </td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>HQ01</td>
+                  <td>Horquilla 7t Mitsubishi</td>
+                  <td><span class="badge badge-success">Operativo</span></td>
+                  <td>
+                      <a href="">
+                      <%= Checklist.where(equipo: "HQ01")&.last&.created_at&.strftime("%d-%m-%y") %>
+                      <i class="far fa-clock"></i> <%= Checklist.where(equipo: "HQ01")&.last&.horometro %>
+                      </a>
+                  </td>
+                  <td>
+                    <a href="<%= ol03check_path %>">
+                      <%= Equipo.where(nombre: "HQ01")&.last&.created_at&.strftime("%d-%m-%y") %>
+                      <i class="far fa-clock"></i> <%= Equipo.where(nombre: "HQ01")&.last&.horometro %>
+                    </a>
+                  </td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>HQ21</td>
+                  <td>Horquilla 3t Hyundai</td>
+                  <td><span class="badge badge-success">Operativo</span></td>
+                  <td>
+                      <a href="">
+                      <%= Checklist.where(equipo: "HQ21")&.last&.created_at&.strftime("%d-%m-%y") %>
+                      <i class="far fa-clock"></i> <%= Checklist.where(equipo: "HQ21")&.last&.horometro %>
+                      </a>
+                  </td>
+                  <td>
+                    <a href="<%= ol03check_path %>">
+                      <%= Equipo.where(nombre: "HQ21")&.last&.created_at&.strftime("%d-%m-%y") %>
+                      <i class="far fa-clock"></i> <%= Equipo.where(nombre: "HQ21")&.last&.horometro %>
+                    </a>
+                  </td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>HQ22</td>
+                  <td>Horquilla 7t Hyundai</td>
+                  <td><span class="badge badge-success">Operativo</span></td>
+                  <td>
+                      <a href="">
+                      <%= Checklist.where(equipo: "HQ22")&.last&.created_at&.strftime("%d-%m-%y") %>
+                      <i class="far fa-clock"></i> <%= Checklist.where(equipo: "HQ22")&.last&.horometro %>
+                      </a>
+                  </td>
+                  <td>
+                    <a href="<%= ol03check_path %>">
+                      <%= Equipo.where(nombre: "HQ22")&.last&.created_at&.strftime("%d-%m-%y") %>
+                      <i class="far fa-clock"></i> <%= Equipo.where(nombre: "HQ22")&.last&.horometro %>
+                    </a>
+                  </td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>BRR17</td>
+                  <td>Barredora Tetant 6400</td>
+                  <td><span class="badge badge-danger">Fuera de servicio</span></td>
+                  <td>
+                      <a href="">
+                      <%= Checklist.where(equipo: "BRR17")&.last&.created_at&.strftime("%d-%m-%y") %>
+                      <i class="far fa-clock"></i> <%= Checklist.where(equipo: "BRR17")&.last&.horometro %>
+                      </a>
+                  </td>
+                  <td>
+                      <a href="<%= brr17check_path %>">
+                      <%= Equipo.where(nombre: "BRR17")&.last&.created_at&.strftime("%d-%m-%y") %>
+                      <i class="far fa-clock"></i> <%= Equipo.where(nombre: "BRR17")&.last&.horometro %>
+                      </a>
+                  </td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

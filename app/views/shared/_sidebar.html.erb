@@ -58,16 +58,7 @@
                 </li>
                 <li>
                   <a href="<%= entregas_path %>">Entregas</a>
-                </li><!--
-                <li>
-                  <a href="#">PTM</a>
                 </li>
-                <li>
-                  <a href="#">VTS</a>
-                </li>
-                <li>
-                  <a href="#">PAR</a>
-                </li> -->
               </ul>
             </div>
           </li>
@@ -89,60 +80,97 @@
                 </li>
               </ul>
             </div>
-          </li>
-          <li class="sidebar-dropdown">
-            <a href="#">
-              <i class="fa fa-shopping-cart"></i>
-              <span>Cotizaciones</span></a>
-            <div class="sidebar-submenu">
-              <ul><li><a href="<%= trabajos_path %>">Indice</a></li>
-                  <li><a href="<%= lca_path %>">LCA</a></li>
-                <li><a href="<%= vts_path %>">VTS</a></li>
-                <li><a href="<%= ptm_path %>">PTM</a></li>
-                <li><a href="<%= par_path %>">PAR</a></li>
-              </ul>
-            </div>
-          </li>
-           <li class="sidebar-dropdown">
-            <a href="#">
-              <i class="fa fa-shopping-cart"></i>
-              <span>En ejecucción</span></a>
-            <div class="sidebar-submenu">
-              <ul><li><a href="<%= indexejec_path %>">Indice</a></li>
-                  <li><a href="<%= lcaejec_path %>">LCA</a></li>
-                <li><a href="<%= vtsejec_path %>">VTS</a></li>
-                <li><a href="<%= ptmejec_path %>">PTM</a></li>
-                <li><a href="<%= parejec_path %>">PAR</a></li>
-              </ul>
-            </div>
-          </li>
-           <li class="sidebar-dropdown">
-            <a href="#">
-              <i class="fa fa-shopping-cart"></i>
-              <span>Terminado</span></a>
-            <div class="sidebar-submenu">
-              <ul><li><a href="<%= indexop_path %>">Indice</a></li>
-                  <li><a href="<%= lcaop_path %>">LCA</a></li>
-                <li><a href="<%= vtsop_path %>">VTS</a></li>
-                <li><a href="<%= ptmop_path %>">PTM</a></li>
-                <li><a href="<%= parop_path %>">PAR</a></li>
-              </ul>
-            </div>
-          </li>
-           <li class="sidebar-dropdown">
-            <a href="#">
-              <i class="fa fa-shopping-cart"></i>
-              <span>Facturado</span></a>
-            <div class="sidebar-submenu">
-              <ul><li><a href="<%= indexfact_path %>">Indice</a></li>
-                  <li><a href="<%= lcafact_path %>">LCA</a></li>
-                <li><a href="<%= vtsfact_path %>">VTS</a></li>
-                <li><a href="<%= ptmfact_path %>">PTM</a></li>
-                <li><a href="<%= parfact_path %>">PAR</a></li>
-              </ul>
-            </div>
-          </li>
+            <li class="sidebar-dropdown">
+              <a href="#">
+                <i class="fa fa-globe"></i>
+                <span>Checklist</span>
+              </a>
+              <div class="sidebar-submenu">
+                <ul>
+                  <li>
+                    <a href="<%= equipos_path %>">Indice operador</a>
+                  </li>
+                  <li>
+                    <a href="<%= checklists_path %>">Indice Mecánico</a>
+                  </li>
+                  <li>
+                    <a href="<%= barcos_path %>">Indice Barco</a>
+                  </li>
+                </ul>
+              </div>
+            </li>
+            <li class="sidebar-dropdown">
+              <a href="#">
+                <i class="fa fa-shopping-cart"></i>
+                <span>Otros</span></a>
+              <div class="sidebar-submenu">
+                <ul>
+                  <li><a href="<%= envasadoras_path %>">Reporte ENV</a></li>
+                </ul>
+                <ul>
+                  <li><a href="<%= medidas_path %>">Medidas Silos</a></li>
+                </ul>
 
+              </div>
+            </li>
+            <li class="header-menu">
+              <span>Plantas</span>
+            </li>
+            <% if current_user.superadmin_role?  %>
+            <li class="sidebar-dropdown">
+              <a href="#">
+                <i class="fa fa-shopping-cart"></i>
+                <span>La Calera</span></a>
+              <div class="sidebar-submenu">
+                <ul><li><a href="<%= trabajos_path %>">Indice</a></li>
+                    <li><a href="<%= lca_path %>">LCA</a></li>
+                  <li><a href="<%= lcaejec_path %>">Ejecutado</a></li>
+                  <li><a href="<%= lcaop_path %>">Terminado</a></li>
+                  <li><a href="<%= lcafact_path %>">Facturado</a></li>
+                </ul>
+              </div>
+            </li>
+            <% end %>
+            <% if current_user&.superadmin_role? || current_user&.supervisor_role? %>
+            <li class="sidebar-dropdown">
+              <a href="#">
+                <i class="fa fa-shopping-cart"></i>
+                <span>Ventanas</span></a>
+              <div class="sidebar-submenu">
+                <ul>
+                  <li><a href="<%= vts_path %>">VTS</a></li>
+                  <li><a href="<%= vtsejec_path %>">Ejecutado</a></li>
+                  <li><a href="<%= vtsop_path %>">Terminado</a></li>
+                  <li><a href="<%= vtsfact_path %>">Facturado</a></li>
+                </ul>
+              </div>
+            </li>
+            <li class="sidebar-dropdown">
+              <a href="#">
+                <i class="fa fa-shopping-cart"></i>
+                <span>P.Montt</span></a>
+              <div class="sidebar-submenu">
+                <ul>
+                  <li><a href="<%= ptm_path %>">PTM</a></li>
+                  <li><a href="<%= ptmejec_path %>">Ejecutado</a></li>
+                  <li><a href="<%= ptmop_path %>">Terminado</a></li>
+                  <li><a href="<%= ptmfact_path %>">Facturado</a></li>
+                </ul>
+              </div>
+            </li>
+            <li class="sidebar-dropdown">
+              <a href="#">
+                <i class="fa fa-shopping-cart"></i>
+                <span>P.Arenas</span></a>
+              <div class="sidebar-submenu">
+                <ul>
+                  <li><a href="<%= par_path %>">PAR</a></li>
+                  <li><a href="<%= parejec_path %>">Ejecutado</a></li>
+                  <li><a href="<%= parop_path %>">Terminado</a></li>
+                  <li><a href="<%= parfact_path %>">Facturado</a></li>
+                </ul>
+              </div>
+            </li>
           <li class="sidebar-dropdown">
             <a href="#">
               <i class="fa fa-chart-line"></i>
@@ -150,65 +178,15 @@
             </a>
             <div class="sidebar-submenu">
               <ul>
-                <li>
-                  <a href="<%= gastos_path %>">Indice</a>
-                </li>
-                <li>
-                  <a href="<%= gastosunasigned_path %>">No asignados</a>
-                </li>
-                <li>
-                  <a href="<%= gastoslcarend_path %>">Rendición LCA</a>
-                </li>
-                <li>
-                  <a href="<%= gastosvtsrend_path %>">Rendición VTS</a>
-                </li>
-                <li>
-                  <a href="<%= gastosptmrend_path %>">Rendición PTM</a>
-                </li>
+                <li><a href="<%= gastos_path %>">Indice</a></li>
+                <li><a href="<%= gastosunasigned_path %>">No asignados</a></li>
+                <li><a href="<%= gastoslcarend_path %>">Rendición LCA</a></li>
+                <li><a href="<%= gastosvtsrend_path %>">Rendición VTS</a></li>
+                <li><a href="<%= gastosptmrend_path %>">Rendición PTM</a></li>
               </ul>
             </div>
           </li>
-          <li class="sidebar-dropdown">
-            <a href="#">
-              <i class="fa fa-globe"></i>
-              <span>Checklist</span>
-            </a>
-            <div class="sidebar-submenu">
-              <ul>
-                <li>
-                  <a href="<%= equipos_path %>">Indice operador</a>
-                </li>
-                <li>
-                  <a href="<%= checklists_path %>">Indice Mecánico</a>
-                </li>
-                <li>
-                  <a href="<%= barcos_path %>">Indice Barco</a>
-                </li>
-              </ul>
-            </div>
-          </li>
-          <li class="sidebar-dropdown">
-            <a href="#">
-              <i class="fa fa-shopping-cart"></i>
-              <span>Otros</span></a>
-            <div class="sidebar-submenu">
-              <ul>
-                <li><a href="<%= envasadoras_path %>">Reporte ENV</a></li>
-              </ul>
-              <ul>
-                <li><a href="<%= medidas_path %>">Medidas Silos</a></li>
-              </ul>
-              <!-- <ul>
-                <li><a href="">A</a></li>
-              </ul>
-              <ul>
-                <li><a href="">B</a></li>
-              </ul>
-              <ul>
-                <li><a href="">C</a></li>
-              </ul> -->
-            </div>
-          </li>
+          <% end %>
           <% end %>
           <li class="header-menu">
             <span>Acceso directo</span>
