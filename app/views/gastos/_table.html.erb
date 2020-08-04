@@ -37,17 +37,10 @@
     <th>emisor</th>
     <th>razon_social_emisor</th>
     <th>emision</th>
-    <th>monto_neto</th>
-    <th>monto_exento</th>
-    <th>monto_iva</th>
     <th>monto_total</th>
     <th>Rend</th>
-    <th>Descripcion</th>
     <th>Cc</th>
-    <th>Resp</th>
-    <th>Familia</th>
     <th>Estado</th>
-    <th>ID</th>
     <th></th>
     <th></th>
     <th></th>
@@ -63,18 +56,10 @@
       <td><%= gasto.emisor%></td>
       <td><%= gasto.razon_social_emisor%></td>
       <td><%= gasto.emision%></td>
-      <td><%= gasto.monto_neto%></td>
-      <td><%= gasto.monto_exento%></td>
-      <td><%= gasto.monto_iva%></td>
       <td><%= gasto.monto_total%></td>
       <td><%= gasto.rend %></td>
-      <td><%= gasto.descripcion %></td>
       <td><%= gasto.cc %></td>
-      <td><%= gasto.resp %></td>
-      <td><%= gasto.familia %></td>
       <td><%= gasto.estado %></td>
-      <td><%= gasto.aprobado %></td>
-
       <td>
         <button type="button" class="btn btn-sm btn-secondary mr-2 command-edit shadow p-1 mb-1 rounded">
           <%= link_to "", gasto, class: 'fa fa-eye fa-fw text-light'%>
