@@ -1,11 +1,11 @@
-<%= render 'op' %>
-<%= render 'gastos' %>
-<%= render 'grafico' %>
-<%= render 'ventas' %>
-<%= render 'equipos' %>
-
 
 
 
 <% if current_user.superadmin_role?  %>
+  <%= render 'op' %>
+  <%= render 'gastos' %>
+  <%= render 'grafico' %>
+  <%= render 'ventas' %>
 <% end %>
+
+<%= render 'equipos' %>
