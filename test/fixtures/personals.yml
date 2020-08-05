@@ -1,0 +1,17 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  rut: 1
+  dv: 1
+  nombre: MyString
+  contratado: 2020-08-05
+  evaluacion: MyString
+  comentarios: MyString
+
+two:
+  rut: 1
+  dv: 1
+  nombre: MyString
+  contratado: 2020-08-05
+  evaluacion: MyString
+  comentarios: MyString

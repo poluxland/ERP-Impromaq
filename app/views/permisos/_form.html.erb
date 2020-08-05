@@ -1,0 +1,40 @@
+<%= simple_form_for(@permiso) do |f| %>
+<%= f.error_notification %>
+<%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+
+<div class="form-inputs offset-md-1">
+  <div class="row">
+    <div class="col-md-4 mb-4 ">
+      <%= f.input :desde %>
+    </div>
+    <div class="col-md-4 mb-4 ">
+      <%= f.input :hasta %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-4 mb-4 ">
+      <%= f.input :cantidad %>
+    </div>
+    <div class="col-md-4 mb-4 ">
+      <%= f.input :periodo %>
+    </div>
+    </div>
+    <div class="row">
+      <div class="col-md-8 mb-8">
+        <%= f.input :otros %>
+      </div>
+    </div>
+<div class="row">
+  <div class="col-md-8 mb-8">
+    <%= f.association :personal, collection: Personal.all.map { |r| [r.nombre, r.id] } %>
+
+
+  </div>
+</div>
+</div>
+
+<div class="form-actions">
+  <%= f.button :submit, label: 'Crear' %>
+
+</div>
+<% end %>

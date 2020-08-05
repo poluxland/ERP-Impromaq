@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Rut:</strong>
+  <%= @personal.rut %>
+</p>
+
+<p>
+  <strong>Dv:</strong>
+  <%= @personal.dv %>
+</p>
+
+<p>
+  <strong>Nombre:</strong>
+  <%= @personal.nombre %>
+</p>
+
+<p>
+  <strong>Contratado:</strong>
+  <%= @personal.contratado %>
+</p>
+
+<p>
+  <strong>Evaluacion:</strong>
+  <%= @personal.evaluacion %>
+</p>
+
+<p>
+  <strong>Comentarios:</strong>
+  <%= @personal.comentarios %>
+</p>
+
+<%= link_to 'Edit', edit_personal_path(@personal) %> |
+<%= link_to 'Back', personals_path %>

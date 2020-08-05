@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :permisos
+  resources :personals
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
   get 'dup', to: 'gastos#dup'

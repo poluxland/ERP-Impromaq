@@ -1,0 +1,17 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  desde: 2020-08-05
+  hasta: 2020-08-05
+  cantidad: 1
+  periodo: 1
+  otros: MyString
+  personal: one
+
+two:
+  desde: 2020-08-05
+  hasta: 2020-08-05
+  cantidad: 1
+  periodo: 1
+  otros: MyString
+  personal: two

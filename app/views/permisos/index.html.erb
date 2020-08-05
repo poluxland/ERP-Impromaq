@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Permisos</h1>
+
+<table id="myTable" class="table  table-striped table-bordered table-sm shadow" cellspacing="0" width="100%">
+  <thead>
+    <tr>
+      <th>Desde</th>
+      <th>Hasta</th>
+      <th>Cantidad</th>
+      <th>Periodo</th>
+      <th>Otros</th>
+      <th>Personal</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @permisos.each do |permiso| %>
+      <tr>
+        <td><%= permiso.desde %></td>
+        <td><%= permiso.hasta %></td>
+        <td><%= permiso.cantidad %></td>
+        <td><%= permiso.periodo %></td>
+        <td><%= permiso.otros %></td>
+        <td><%= permiso.personal_id %></td>
+        <td><%= link_to 'Show', permiso %></td>
+        <td><%= link_to 'Edit', edit_permiso_path(permiso) %></td>
+        <td><%= link_to 'Destroy', permiso, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Nuevo Permiso', new_permiso_path, class: "btn btn-primary" %>

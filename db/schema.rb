@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_07_29_202307) do
+ActiveRecord::Schema.define(version: 2020_08_05_162339) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -366,6 +366,29 @@ ActiveRecord::Schema.define(version: 2020_07_29_202307) do
     t.integer "nivel9"
   end
 
+  create_table "permisos", force: :cascade do |t|
+    t.date "desde"
+    t.date "hasta"
+    t.integer "cantidad"
+    t.integer "periodo"
+    t.string "otros"
+    t.bigint "personal_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["personal_id"], name: "index_permisos_on_personal_id"
+  end
+
+  create_table "personals", force: :cascade do |t|
+    t.integer "rut"
+    t.integer "dv"
+    t.string "nombre"
+    t.date "contratado"
+    t.string "evaluacion"
+    t.string "comentarios"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "requerimientos", force: :cascade do |t|
     t.string "nombre"
     t.string "planta"
@@ -449,4 +472,5 @@ ActiveRecord::Schema.define(version: 2020_07_29_202307) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "permisos", "personals"
 end
