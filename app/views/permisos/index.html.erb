@@ -25,7 +25,7 @@
         <td><%= permiso.cantidad %></td>
         <td><%= permiso.periodo %></td>
         <td><%= permiso.otros %></td>
-        <td><%= permiso.personal_id %></td>
+        <td><%= permiso.personal.nombre %></td>
         <td><%= link_to 'Show', permiso %></td>
         <td><%= link_to 'Edit', edit_permiso_path(permiso) %></td>
         <td><%= link_to 'Destroy', permiso, method: :delete, data: { confirm: 'Are you sure?' } %></td>
