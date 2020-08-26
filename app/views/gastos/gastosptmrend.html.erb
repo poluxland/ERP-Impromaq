@@ -1,2 +1,95 @@
 
-<%= render 'table' %>
+<div class="row">
+  <div class="col-sm-6">
+    <div class="card shadow">
+      <div class="card-body">
+        <h4>
+          <%= number_to_currency(@gastos.sum(:monto_neto), delimiter: ".", precision: 0) %>
+          Neto
+          <br>
+          <%= number_to_currency(@gastos.sum(:monto_total), delimiter: ".", precision: 0) %>
+          Total
+        </h4>
+        <%= link_to 'Nuevo Gasto', new_gasto_path, class: "btn btn-primary shadow" %>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-6">
+    <div class="card shadow">
+      <div class="card-body">
+        <h5 class="card-title">Importar facturas</h5>
+        <p class="card-text">Seleccionar archivo CSV</p>
+        <%= form_tag import_gastos_path, multipart: true do %>
+        <%= file_field_tag :file %>
+        <%= submit_tag "Importar archivo" %>
+      <% end %>
+    </div>
+  </div>
+</div>
+</div>
+
+<div></div>
+
+<table id="myTable" class="table table-responsive table-striped table-bordered table-sm shadow" cellspacing="0" width="100%">
+<thead>
+  <tr>
+    <th>tipo_documento</th>
+    <th>Id</th>
+    <th>folio</th>
+    <th>emisor</th>
+    <th>razon_social_emisor</th>
+    <th>emision</th>
+    <th>monto_total</th>
+    <th>Rend</th>
+    <th>Cc</th>
+    <th>Estado</th>
+    <th></th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+</thead>
+
+<tbody>
+  <% @gastos.each do |gasto| %>
+    <tr>
+      <td><%= gasto.tipo_documento%></td>
+      <td><%= gasto.aprobado%></td>
+      <td><%= gasto.folio%></td>
+      <td><%= gasto.emisor%></td>
+      <td><%= gasto.razon_social_emisor%></td>
+      <td><%= gasto.emision%></td>
+      <td><%= gasto.monto_total%></td>
+      <td><%= gasto.rend %></td>
+      <td><%= gasto.cc %></td>
+      <td><%= gasto.estado %></td>
+      <td>
+        <button type="button" class="btn btn-sm btn-secondary mr-2 command-edit shadow p-1 mb-1 rounded">
+          <%= link_to "", gasto, class: 'fa fa-eye fa-fw text-light'%>
+        </button>
+        <td>
+          <button type="button" class="btn btn-sm btn-success mr-2 command-edit shadow p-1 mb-1 rounded">
+            <%= link_to "", edit_gasto_path(gasto), class: "fa fa-edit fa-fw text-light"%>
+          </button>
+        </td>
+
+        <td>
+          <% if current_user.superadmin_role? %>
+            <button type="button" class="btn btn-sm btn-danger mr-2 command-delete shadow p-1 mb-1 rounded">
+              <%= link_to "", gasto, method: :delete, data: { confirm: "Are you sure?" }, class: "fa fa-trash fa-fw text-light" %>
+            </button>
+          <% end %>
+        </td>
+        <td>
+          <% if current_user.superadmin_role? %>
+            <button type="button" class="btn btn-sm btn-primary mr-2 command-delete shadow p-1 mb-1 rounded">
+              <%= link_to '', dup_path(gasto), class: "fa fa-clone fa-fw text-light" %>
+            </button>
+          <% end %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
