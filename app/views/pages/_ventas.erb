@@ -2,6 +2,6 @@
 
 
 
-<%= line_chart Trabajo.where(avance: ["Terminado", "Facturado"]).group(:fecha_termino).sum(:total), thousands: "." %>
 
-<%= line_chart Trabajo.where(avance: ["Terminado", "Facturado"]).group(:centro_costo).group(:fecha_termino).sum(:total), thousands: "." %>
+
+<%= line_chart Trabajo.where(avance: ["Terminado", "Facturado"]).group(:planta).group(:fecha_termino).sum(:total), thousands: "." %>
