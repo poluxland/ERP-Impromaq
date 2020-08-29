@@ -5,7 +5,7 @@
   <div class="card shadow">
     <img class="card-img-top" style="max-height: 140px;" src="/lca.jpeg" alt="Card image cap">
     <div class="card-body">
-      <h5 class="card-title"><i class="fas fa-poll text-success"></i> La Calera </h5>
+      <h5 class="card-title"><i class="fas fa-poll text-success"></i>Pendiente LCA</h5>
       <a href="<%= lcaop_path %>">
         <h4><%= number_to_currency(Trabajo.where(avance: "Terminado").where(planta: "La Calera").sum(:total), delimiter: ".", precision: 0)%>
       </a>
@@ -22,7 +22,7 @@
   <div class="card shadow">
     <img class="card-img-top" style="max-height: 140px;" src="/vts.jpeg" alt="Card image cap">
     <div class="card-body">
-      <h5 class="card-title"><i class="fas fa-poll text-success"></i> Ventanas </h5>
+      <h5 class="card-title"><i class="fas fa-poll text-success"></i> Pendiente VTS </h5>
       <h4>
         <a href="<%= vtsop_path %>">
         <%= number_to_currency(Trabajo.where(avance: "Terminado").where(planta: "Ventanas").sum(:total), delimiter: ".", precision: 0)%>
@@ -40,7 +40,7 @@
   <div class="card shadow">
     <img class="card-img-top" style="max-height: 140px;" src="/ptm.jpg" alt="Card image cap">
     <div class="card-body">
-      <h5 class="card-title"><i class="fas fa-poll text-success"></i> Puerto Montt </h5>
+      <h5 class="card-title"><i class="fas fa-poll text-success"></i>Pendiente PTM</h5>
       <h4>
         <a href="<%= ptmop_path %>">
         <%= number_to_currency(Trabajo.where(avance: "Terminado").where(planta: "P.Montt").sum(:total), delimiter: ".", precision: 0)%>
@@ -58,7 +58,7 @@
   <div class="card shadow">
     <img class="card-img-top" style="max-height: 140px;" src="/pam.jpg" alt="Card image cap">
     <div class="card-body">
-      <h5 class="card-title"><i class="fas fa-poll text-success"></i> Punta Arenas </h5>
+      <h5 class="card-title"><i class="fas fa-poll text-success"></i>Pendiente PUQ </h5>
       <h4>
         <a href="<%= lcaop_path %>">
         <%= number_to_currency(Trabajo.where(avance: "Terminado").where(planta: "P.Arenas").sum(:total), delimiter: ".", precision: 0)%>
