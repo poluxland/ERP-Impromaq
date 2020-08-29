@@ -43,7 +43,7 @@
       <td>Factura</td>
     </tr>
     <tr class>
-        <td><%= f.input :fecha_termino, label: false, discard_day: true, include_blank: true %></td>
+        <td><%= f.input :fecha_termino, as: :date, start_year: Date.today.year - 1, end_year: Date.today.year - 0, label: false, discard_day: true, include_blank: true %></td>
         <td><%= f.input :avance, label: false, collection: ["Cotizada", "Aprobada", "En ejecucción", "Terminado", "Facturado", "Cancelada"] %></td>
         <td><%= f.input :op, label: false %></td>
         <td><%= f.input :factura, label: false %></td>
