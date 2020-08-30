@@ -10,10 +10,10 @@
             <%= number_to_currency(Trabajo.where(avance:[ "Terminado", "Facturado" ]).where(centro_costo: [ "Cmec", "Horno", "Ser", "Trans", "Env", "Adm", "Ngp", "PUQ", "Otro"]).where(:fecha_termino => Date.today.beginning_of_month..Date.today.end_of_month).sum(:total), delimiter: ".", precision: 0) %> <%= (Date.today - 0.month).strftime("%B") %> <br>
           </a>
           <a href="<%= gastoslcapagado_path %>">
-          <%= number_to_currency(Trabajo.where(avance:[ "Terminado", "Facturado" ]).where(centro_costo: [ "Cmec", "Horno", "Ser", "Trans", "Env", "Adm", "Ngp", "PUQ", "Otro"]).where('fecha_termino >= ? AND fecha_termino < ?', Date.today.beginning_of_month - 1.month, Date.today.end_of_month - 1.month).sum(:total), delimiter: ".", precision: 0) %> <%= (Date.today - 1.month).strftime("%B") %><br>
+          <%= number_to_currency(Trabajo.where(avance:[ "Terminado", "Facturado" ]).where(centro_costo: [ "Cmec", "Horno", "Ser", "Trans", "Env", "Adm", "Ngp", "PUQ", "Otro"]).where(:fecha_termino => ((Date.today.beginning_of_month) - 1.month)..((Date.today.end_of_month) - 1.month)).sum(:total), delimiter: ".", precision: 0) %> <%= (Date.today - 1.month).strftime("%B") %><br>
           </a>
           <a href="<%= gastoslcapend_path %>">
-            <%= number_to_currency(Trabajo.where(avance:[ "Terminado", "Facturado" ]).where(centro_costo: [ "Cmec", "Horno", "Ser", "Trans", "Env", "Adm", "Ngp", "PUQ", "Otro"]).where('fecha_termino >= ? AND fecha_termino < ?', Date.today.beginning_of_month - 2.month, Date.today.end_of_month - 2.month).sum(:total), delimiter: ".", precision: 0) %> <%= (Date.today - 2.month).strftime("%B") %>
+            <%= number_to_currency(Trabajo.where(avance:[ "Terminado", "Facturado" ]).where(centro_costo: [ "Cmec", "Horno", "Ser", "Trans", "Env", "Adm", "Ngp", "PUQ", "Otro"]).where(:fecha_termino => ((Date.today.beginning_of_month) - 2.month)..((Date.today.end_of_month) - 2.month)).sum(:total), delimiter: ".", precision: 0) %> <%= (Date.today - 2.month).strftime("%B") %>
           </a>
         </p>
     </div>
@@ -26,10 +26,10 @@
           <%= number_to_currency(Trabajo.where(avance:[ "Terminado", "Facturado" ]).where(centro_costo: [ "Vts", "Ext Vts" ]).where('fecha_termino >= ? AND fecha_termino < ?', Date.today.beginning_of_month, Date.today.end_of_month).sum(:total), delimiter: ".", precision: 0) %> <%= (Date.today - 0.month).strftime("%B") %><br>
         </a>
         <a href="<%= gastosvtspagado_path %>">
-        <%= number_to_currency(Trabajo.where(avance:[ "Terminado", "Facturado" ]).where(centro_costo: [ "Vts", "Ext Vts" ]).where('fecha_termino >= ? AND fecha_termino < ?', Date.today.beginning_of_month - 1.month, Date.today.end_of_month - 1.month).sum(:total), delimiter: ".", precision: 0) %><%= (Date.today - 1.month).strftime("%B") %><br>
+        <%= number_to_currency(Trabajo.where(avance:[ "Terminado", "Facturado" ]).where(centro_costo: [ "Vts", "Ext Vts" ]).where(:fecha_termino => ((Date.today.beginning_of_month) - 1.month)..((Date.today.end_of_month) - 1.month)).sum(:total), delimiter: ".", precision: 0) %><%= (Date.today - 1.month).strftime("%B") %><br>
         </a>
         <a href="<%= gastosvtspagado_path %>">
-        <%= number_to_currency(Trabajo.where(avance:[ "Terminado", "Facturado" ]).where(centro_costo: [ "Vts", "Ext Vts" ]).where('fecha_termino >= ? AND fecha_termino < ?', Date.today.beginning_of_month - 2.month, Date.today.end_of_month - 2.month).sum(:total), delimiter: ".", precision: 0) %> <%= (Date.today - 2.month).strftime("%B") %>
+        <%= number_to_currency(Trabajo.where(avance:[ "Terminado", "Facturado" ]).where(centro_costo: [ "Vts", "Ext Vts" ]).where(:fecha_termino => ((Date.today.beginning_of_month) - 2.month)..((Date.today.end_of_month) - 2.month)).sum(:total), delimiter: ".", precision: 0) %> <%= (Date.today - 2.month).strftime("%B") %>
         </a>
       </p>
     </div>
@@ -42,10 +42,10 @@
           <%= number_to_currency(Trabajo.where(avance:[ "Terminado", "Facturado" ]).where(centro_costo: ["Ptm", "Ext Ptm"]).where('fecha_termino >= ? AND fecha_termino < ?', Date.today.beginning_of_month, Date.today.end_of_month).sum(:total), delimiter: ".", precision: 0) %> <%= (Date.today - 0.month).strftime("%B") %><br>
         </a>
         <a href="<%= gastosptmpagado_path %>">
-          <%= number_to_currency(Trabajo.where(avance:[ "Terminado", "Facturado" ]).where(centro_costo: ["Ptm", "Ext Ptm"]).where('fecha_termino >= ? AND fecha_termino < ?', Date.today.beginning_of_month - 1.month, Date.today.end_of_month - 1.month).sum(:total), delimiter: ".", precision: 0) %><%= (Date.today - 1.month).strftime("%B") %><br>
+          <%= number_to_currency(Trabajo.where(avance:[ "Terminado", "Facturado" ]).where(centro_costo: ["Ptm", "Ext Ptm"]).where(:fecha_termino => ((Date.today.beginning_of_month) - 1.month)..((Date.today.end_of_month) - 1.month)).sum(:total), delimiter: ".", precision: 0) %><%= (Date.today - 1.month).strftime("%B") %><br>
         </a>
         <a href="<%= gastosptmpend_path %>">
-          <%= number_to_currency(Trabajo.where(avance:[ "Terminado", "Facturado" ]).where(centro_costo: ["Ptm", "Ext Ptm"]).where('fecha_termino >= ? AND fecha_termino < ?', Date.today.beginning_of_month - 2.month, Date.today.end_of_month - 2.month).sum(:total), delimiter: ".", precision: 0) %> <%= (Date.today - 2.month).strftime("%B") %>
+          <%= number_to_currency(Trabajo.where(avance:[ "Terminado", "Facturado" ]).where(centro_costo: ["Ptm", "Ext Ptm"]).where(:fecha_termino => ((Date.today.beginning_of_month) - 2.month)..((Date.today.end_of_month) - 2.month)).sum(:total), delimiter: ".", precision: 0) %> <%= (Date.today - 2.month).strftime("%B") %>
         </a>
       </p>
     </div>
@@ -57,8 +57,8 @@
         <a href="<%= parventames_path %>">
         <%= number_to_currency(Trabajo.where(avance:[ "Terminado", "Facturado" ]).where(centro_costo: "PUQ").where('fecha_termino >= ? AND fecha_termino < ?', Date.today.beginning_of_month, Date.today.end_of_month).sum(:total), delimiter: ".", precision: 0) %> <%= (Date.today - 0.month).strftime("%B") %><br>
         </a>
-        <%= number_to_currency(Trabajo.where(avance:[ "Terminado", "Facturado" ]).where(centro_costo: "PUQ").where('fecha_termino >= ? AND fecha_termino < ?', Date.today.beginning_of_month - 1.month, Date.today.end_of_month - 1.month).sum(:total), delimiter: ".", precision: 0) %><%= (Date.today - 1.month).strftime("%B") %><br>
-        <%= number_to_currency(Trabajo.where(avance:[ "Terminado", "Facturado" ]).where(centro_costo: "PUQ").where('fecha_termino >= ? AND fecha_termino < ?', Date.today.beginning_of_month - 2.month, Date.today.end_of_month - 2.month).sum(:total), delimiter: ".", precision: 0) %> <%= (Date.today - 2.month).strftime("%B") %>
+        <%= number_to_currency(Trabajo.where(avance:[ "Terminado", "Facturado" ]).where(centro_costo: "PUQ").where(:fecha_termino => ((Date.today.beginning_of_month) - 1.month)..((Date.today.end_of_month) - 1.month)).sum(:total), delimiter: ".", precision: 0) %><%= (Date.today - 1.month).strftime("%B") %><br>
+        <%= number_to_currency(Trabajo.where(avance:[ "Terminado", "Facturado" ]).where(centro_costo: "PUQ").where(:fecha_termino => ((Date.today.beginning_of_month) - 2.month)..((Date.today.end_of_month) - 2.month)).sum(:total), delimiter: ".", precision: 0) %> <%= (Date.today - 2.month).strftime("%B") %>
       </p>
     </div>
   </div>
