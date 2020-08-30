@@ -39,13 +39,13 @@
       <h5 class="card-title"><i class="fas fa-file-invoice-dollar text-success"></i> Venta PTM</h5>
       <p class="card-text">
         <a href="<%= ptmventames_path %>">
-          <%= number_to_currency(Trabajo.where(avance:[ "Terminado", "Facturado" ]).where(centro_costo: ["Ptm", "Ext Ptm"]).where('fecha_termino >= ? AND fecha_termino < ?', Date.today.beginning_of_month, Date.today.end_of_month).sum(:total), delimiter: ".", precision: 0) %> <%= (Date.today - 0.month).strftime("%B") %><br>
+          <%= number_to_currency(Trabajo.where(avance:[ "Terminado", "Facturado" ]).where(planta: "P.Montt").where('fecha_termino >= ? AND fecha_termino < ?', Date.today.beginning_of_month, Date.today.end_of_month).sum(:total), delimiter: ".", precision: 0) %> <%= (Date.today - 0.month).strftime("%B") %><br>
         </a>
         <a href="<%= gastosptmpagado_path %>">
-          <%= number_to_currency(Trabajo.where(avance:[ "Terminado", "Facturado" ]).where(centro_costo: ["Ptm", "Ext Ptm"]).where(:fecha_termino => ((Date.today.beginning_of_month) - 1.month)..((Date.today.end_of_month) - 1.month)).sum(:total), delimiter: ".", precision: 0) %><%= (Date.today - 1.month).strftime("%B") %><br>
+          <%= number_to_currency(Trabajo.where(avance:[ "Terminado", "Facturado" ]).where(planta: "P.Montt").where(:fecha_termino => ((Date.today.beginning_of_month) - 1.month)..((Date.today.end_of_month) - 1.month)).sum(:total), delimiter: ".", precision: 0) %><%= (Date.today - 1.month).strftime("%B") %><br>
         </a>
         <a href="<%= gastosptmpend_path %>">
-          <%= number_to_currency(Trabajo.where(avance:[ "Terminado", "Facturado" ]).where(centro_costo: ["Ptm", "Ext Ptm"]).where(:fecha_termino => ((Date.today.beginning_of_month) - 2.month)..((Date.today.end_of_month) - 2.month)).sum(:total), delimiter: ".", precision: 0) %> <%= (Date.today - 2.month).strftime("%B") %>
+          <%= number_to_currency(Trabajo.where(avance:[ "Terminado", "Facturado" ]).where(planta: "P.Montt").where(:fecha_termino => ((Date.today.beginning_of_month) - 2.month)..((Date.today.end_of_month) - 2.month)).sum(:total), delimiter: ".", precision: 0) %> <%= (Date.today - 2.month).strftime("%B") %>
         </a>
       </p>
     </div>
