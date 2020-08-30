@@ -7,7 +7,7 @@ class TrabajosController < ApplicationController
     @trabajos = Trabajo.all
   end
 
-  def lca 
+  def lca
     # @trabajos = Trabajo.where(planta: "La Calera")
     @trabajos = Trabajo.where("planta LIKE (?)", "L%")
   end
@@ -16,11 +16,11 @@ class TrabajosController < ApplicationController
     @trabajos = Trabajo.where("planta LIKE (?)", "V%")
   end
 
-  def ptm 
+  def ptm
     @trabajos = Trabajo.where("planta LIKE (?)", "P.M%")
   end
 
-  def par 
+  def par
     @trabajos = Trabajo.where("planta LIKE (?)", "P.A%")
   end
 
@@ -84,6 +84,30 @@ class TrabajosController < ApplicationController
   def parfact
     @trabajos = Trabajo.where(avance: "Facturado").where(planta: "P.Arenas")
   end
+
+
+
+  def lcaventames
+    @trabajos = Trabajo.where(avance: [ "Terminado", "Facturado"]).where(planta: "La Calera").where(:fecha_termino => Date.today.beginning_of_month..Date.today.end_of_month)
+  end
+
+  def vtsventames
+    @trabajos = Trabajo.where(avance: [ "Terminado", "Facturado"]).where(planta: "Ventanas").where(:fecha_termino => Date.today.beginning_of_month..Date.today.end_of_month)
+  end
+
+  def ptmventames
+    @trabajos = Trabajo.where(avance: [ "Terminado", "Facturado"]).where(planta: "P.Montt").where(:fecha_termino => Date.today.beginning_of_month..Date.today.end_of_month)
+  end
+
+  def parventames
+    @trabajos = Trabajo.where(avance: [ "Terminado", "Facturado"]).where(planta: "P.Arenas").where(:fecha_termino => Date.today.beginning_of_month..Date.today.end_of_month)
+  end
+
+
+
+
+
+
 
 
 
