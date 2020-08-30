@@ -103,7 +103,37 @@ class TrabajosController < ApplicationController
     @trabajos = Trabajo.where(avance: [ "Terminado", "Facturado"]).where(planta: "P.Arenas").where(:fecha_termino => Date.today.beginning_of_month..Date.today.end_of_month)
   end
 
+  def lcaventames1m
+    @trabajos = Trabajo.where(avance: [ "Terminado", "Facturado"]).where(planta: "La Calera").where(:fecha_termino => ((Date.today.beginning_of_month)- 1.month)..((Date.today.end_of_month) - 1.month))
+  end
 
+  def vtsventames1m
+    @trabajos = Trabajo.where(avance: [ "Terminado", "Facturado"]).where(planta: "Ventanas").where(:fecha_termino => ((Date.today.beginning_of_month)- 1.month)..((Date.today.end_of_month) - 1.month))
+  end
+
+  def ptmventames1m
+    @trabajos = Trabajo.where(avance: [ "Terminado", "Facturado"]).where(planta: "P.Montt").where(:fecha_termino => ((Date.today.beginning_of_month)- 1.month)..((Date.today.end_of_month) - 1.month))
+  end
+
+  def parventames1m
+    @trabajos = Trabajo.where(avance: [ "Terminado", "Facturado"]).where(planta: "P.Arenas").where(:fecha_termino => ((Date.today.beginning_of_month)- 1.month)..((Date.today.end_of_month) - 1.month))
+  end
+
+  def lcaventames2m
+    @trabajos = Trabajo.where(avance: [ "Terminado", "Facturado"]).where(planta: "La Calera").where(:fecha_termino => ((Date.today.beginning_of_month)- 2.month)..((Date.today.end_of_month) - 2.month))
+  end
+
+  def vtsventames2m
+    @trabajos = Trabajo.where(avance: [ "Terminado", "Facturado"]).where(planta: "Ventanas").where(:fecha_termino => ((Date.today.beginning_of_month)- 2.month)..((Date.today.end_of_month) - 2.month))
+  end
+
+  def ptmventames2m
+    @trabajos = Trabajo.where(avance: [ "Terminado", "Facturado"]).where(planta: "P.Montt").where(:fecha_termino => ((Date.today.beginning_of_month)- 2.month)..((Date.today.end_of_month) - 2.month))
+  end
+
+  def parventames2m
+    @trabajos = Trabajo.where(avance: [ "Terminado", "Facturado"]).where(planta: "P.Arenas").where(:fecha_termino => ((Date.today.beginning_of_month)- 2.month)..((Date.today.end_of_month) - 2.month))
+  end
 
 
 
