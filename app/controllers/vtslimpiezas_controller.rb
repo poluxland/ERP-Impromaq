@@ -1,4 +1,5 @@
 class VtslimpiezasController < InheritedResources::Base
+skip_before_action :authenticate_user!, only: [:create, :show, :new]
 
   private
 
