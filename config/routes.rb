@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :vtslimpiezas
   resources :permisos
   resources :personals
   devise_for :admin_users, ActiveAdmin::Devise.config

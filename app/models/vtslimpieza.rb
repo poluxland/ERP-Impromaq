@@ -1,0 +1,2 @@
+class Vtslimpieza < ApplicationRecord
+end

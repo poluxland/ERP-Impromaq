@@ -1,0 +1,25 @@
+
+<%= simple_form_for(@vtslimpieza) do |f| %>
+  <%= f.error_notification %>
+  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+
+  <div class="col-md-4 mb-4 justify-center">
+    <%= f.input :nombre %>
+    <%= f.input :fecha %>
+    <%= f.input :turno %>
+    <%= f.input :pesamatic, collection: [ "Si", "No", "No aplica"] %>
+    <%= f.input :camarin, collection: [ "Si", "No", "No aplica"] %>
+    <%= f.input :baño, collection: [ "Si", "No", "No aplica"] %>
+    <%= f.input :comedor, collection: [ "Si", "No", "No aplica"] %>
+    <%= f.input :botoneras, collection: [ "Si", "No", "No aplica"] %>
+    <%= f.input :baranda, collection: [ "Si", "No", "No aplica"] %>
+    <%= f.input :asiento, collection: [ "Si", "No", "No aplica"] %>
+    <%= f.input :mesa_computador, collection: [ "Si", "No", "No aplica"] %>
+    <%= f.input :mesa_comedor, collection: [ "Si", "No", "No aplica"] %>
+    <%= f.input :comentarios %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit, "Enviar Checklist", class: "btn-primary" %>
+  </div>
+<% end %>

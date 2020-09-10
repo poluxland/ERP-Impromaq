@@ -1,0 +1,31 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  nombre: MyString
+  fecha: 2020-09-10 12:25:03
+  turno: MyString
+  pesamatic: MyString
+  camarin: MyString
+  baño: MyString
+  comedor: MyString
+  botoneras: MyString
+  baranda: MyString
+  asiento: MyString
+  mesa_computador: MyString
+  mesa_comedor: MyString
+  comentarios: MyString
+
+two:
+  nombre: MyString
+  fecha: 2020-09-10 12:25:03
+  turno: MyString
+  pesamatic: MyString
+  camarin: MyString
+  baño: MyString
+  comedor: MyString
+  botoneras: MyString
+  baranda: MyString
+  asiento: MyString
+  mesa_computador: MyString
+  mesa_comedor: MyString
+  comentarios: MyString

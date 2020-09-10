@@ -1,0 +1,53 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Checklist Sanitización</h1>
+
+<table id="myTable" class="table table-responsive table-striped table-bordered table-sm shadow" cellspacing="0" width="100%">
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Fecha</th>
+      <th>Turno</th>
+      <th>Pesamatic</th>
+      <th>Camarin</th>
+      <th>Baño</th>
+      <th>Comedor</th>
+      <th>Botoneras</th>
+      <th>Baranda</th>
+      <th>Asiento</th>
+      <th>Mesa computador</th>
+      <th>Mesa comedor</th>
+      <th>Comentarios</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @vtslimpiezas.each do |vtslimpieza| %>
+      <tr>
+        <td><%= vtslimpieza.nombre %></td>
+        <td><%= vtslimpieza.fecha %></td>
+        <td><%= vtslimpieza.turno %></td>
+        <td><%= vtslimpieza.pesamatic %></td>
+        <td><%= vtslimpieza.camarin %></td>
+        <td><%= vtslimpieza.baño %></td>
+        <td><%= vtslimpieza.comedor %></td>
+        <td><%= vtslimpieza.botoneras %></td>
+        <td><%= vtslimpieza.baranda %></td>
+        <td><%= vtslimpieza.asiento %></td>
+        <td><%= vtslimpieza.mesa_computador %></td>
+        <td><%= vtslimpieza.mesa_comedor %></td>
+        <td><%= vtslimpieza.comentarios %></td>
+        <td><%= link_to 'Show', vtslimpieza %></td>
+        <td><%= link_to 'Edit', edit_vtslimpieza_path(vtslimpieza) %></td>
+        <td><%= link_to 'Destroy', vtslimpieza, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Nuevo resgistro', new_vtslimpieza_path, class: "btn btn-primary shadow m-3" %>
