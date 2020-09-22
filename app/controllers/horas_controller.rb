@@ -5,11 +5,11 @@ class HorasController < ApplicationController
   # GET /horas
   # GET /horas.json
   def indexserv
-    @horas = Hora.where(mandante: "Cesar Hernandez")
+    @horas = Hora.where(mandante: "Cesar Hernandez").where(estado: "Pendiente revisión")
   end
 
   def indexmant
-    @horas = Hora.where(mandante: ["Martin Llancafil", "Jorge Vyhmeister", "Johnny Rute"])
+    @horas = Hora.where(mandante: ["Martin Llancafil", "Jorge Vyhmeister", "Johnny Rute"]).where(estado: "Pendiente revisión")
   end
 
   def index
