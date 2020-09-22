@@ -43,6 +43,9 @@ Rails.application.routes.draw do
   resources :horas
   get 'mec', to: 'horas#mec'
   get 'serv', to: 'horas#serv'
+  get 'indexserv', to: 'horas#indexserv'
+  get 'indexmant', to: 'horas#indexmant'
+
   resources :trabajos
   get 'lca', to: 'trabajos#lca'
   get 'vts', to: 'trabajos#vts'

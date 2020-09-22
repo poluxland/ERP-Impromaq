@@ -4,9 +4,19 @@ class HorasController < ApplicationController
 
   # GET /horas
   # GET /horas.json
+  def indexserv
+    @horas = Hora.where(mandante: "Cesar Hernandez")
+  end
+
+  def indexmant
+    @horas = Hora.where(mandante: ["Martin Llancafil", "Jorge Vyhmeister", "Johnny Rute"])
+  end
+
   def index
     @horas = Hora.all
   end
+
+
 
   def mec
     #@horas = Hora.where(mandante: "Martin Llancafil")
