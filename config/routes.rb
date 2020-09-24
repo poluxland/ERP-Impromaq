@@ -26,6 +26,8 @@ Rails.application.routes.draw do
   resources :gastos do
     collection { post :import }
   end
+
+  get 'gastosfull', to: 'gastos#gastosfull'
   get 'gastoslca', to: 'gastos#gastoslca'
   get 'gastoslcapend', to: 'gastos#gastoslcapend'
   get 'gastoslcapagado', to: 'gastos#gastoslcapagado'
@@ -42,6 +44,18 @@ Rails.application.routes.draw do
   get 'gastosvtsmes1m', to: 'gastos#gastosvtsmes1m'
   get 'gastosvtsmes2m', to: 'gastos#gastosvtsmes2m'
   get 'gastosvtsmes3m', to: 'gastos#gastosvtsmes3m'
+  get 'gastoslcames', to: 'gastos#gastoslcames'
+  get 'gastoslcames1m', to: 'gastos#gastoslcames1m'
+  get 'gastoslcames2m', to: 'gastos#gastoslcames2m'
+  get 'gastoslcames3m', to: 'gastos#gastoslcames3m'
+  get 'gastosptmmes', to: 'gastos#gastosptmmes'
+  get 'gastosptmmes1m', to: 'gastos#gastosptmmes1m'
+  get 'gastosptmmes2m', to: 'gastos#gastosptmmes2m'
+  get 'gastosptmmes3m', to: 'gastos#gastosptmmes3m'
+  get 'gastospuqmes', to: 'gastos#gastospuqmes'
+  get 'gastospuqmes1m', to: 'gastos#gastospuqmes1m'
+  get 'gastospuqmes2m', to: 'gastos#gastospuqmes2m'
+  get 'gastospuqmes3m', to: 'gastos#gastospuqmes3m'
   get 'gastosunasigned', to: 'gastos#gastosunasigned'
 
   resources :horas
