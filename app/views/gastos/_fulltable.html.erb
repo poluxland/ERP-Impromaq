@@ -28,7 +28,7 @@
 </thead>
 
 <tbody>
-  <% @gastos.each do |gasto| %>
+  <% @gastos&.each do |gasto| %>
     <tr>
       <td><%= gasto.created_at.strftime("%d-%m-%Y")%></td>
       <td><%= gasto.tipo_documento%></td>
