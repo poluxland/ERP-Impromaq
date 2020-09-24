@@ -54,22 +54,19 @@
         <br><br>
 
 
-                  <a href="<%= lcaventames_path %>">
+                  <a href="<%= gastosvtsmes_path %>">
                     <%= number_to_currency(Gasto.where(cc: "VTS").where(:created_at => Date.today.beginning_of_month..Date.today.end_of_month).sum(:monto_neto), delimiter: ".", precision: 0) %> <%= (Date.today - 0.month).strftime("%B") %> <br>
                   </a>
-                  <a href="<%= lcaventames1m_path %>">
+                  <a href="<%= gastosvtsmes1m_path %>">
                   <%= number_to_currency(Gasto.where(cc: "VTS").where(:created_at => ((Date.today.beginning_of_month) - 1.month)..((Date.today.end_of_month) - 1.month)).sum(:monto_neto), delimiter: ".", precision: 0) %> <%= (Date.today - 1.month).strftime("%B") %><br>
                   </a>
-                  <a href="<%= lcaventames2m_path %>">
+                  <a href="<%= gastosvtsmes2m_path %>">
                     <%= number_to_currency(Gasto.where(cc: "VTS").where(:created_at => ((Date.today.beginning_of_month) - 2.month)..((Date.today.end_of_month) - 2.month)).sum(:monto_neto), delimiter: ".", precision: 0) %> <%= (Date.today - 2.month).strftime("%B") %><br>
                   </a>
-                  <a href="<%= lcaventames3m_path %>">
+                  <a href="<%= gastosvtsmes3m_path %>">
                     <%= number_to_currency(Gasto.where(cc: "VTS").where(:created_at => ((Date.today.beginning_of_month) - 3.month)..((Date.today.end_of_month) - 3.month)).sum(:monto_neto), delimiter: ".", precision: 0) %> <%= (Date.today - 3.month).strftime("%B") %>
-</a>
+                  </a>
 
-                <br><br><%= number_to_currency(Gasto.where(cc: "VTS").sum(:monto_neto), delimiter: ".", precision: 0) %> total
-                <br><%= number_to_currency(Gasto.where(cc: "VTS").where(:created_at => ((Date.today.beginning_of_month) - 3.month)..((Date.today.end_of_month) - 0.month)).sum(:monto_neto), delimiter: ".", precision: 0) %> dates
-                <br><%= number_to_currency(Gasto.where(cc: "VTS").where.not(:created_at => ((Date.today.beginning_of_month) - 3.month)..((Date.today.end_of_month) - 0.month)).sum(:monto_neto), delimiter: ".", precision: 0) %> not
 
       </p>
     </div>
