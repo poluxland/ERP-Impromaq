@@ -113,11 +113,11 @@
   </div>
   <div class="card shadow">
     <div class="card-body">
-      <h5 class="card-title"><i class="fas fa-file-invoice-dollar text-success"></i> Gastos PTA </h5>
+      <h5 class="card-title"><i class="fas fa-file-invoice-dollar text-success"></i> Gastos PUQ </h5>
       <p class="card-text">
-        <%= number_to_currency(Gasto.where(cc: "PTA").sum(:monto_neto), delimiter: ".", precision: 0) %> Gastado<br>
-        <%= number_to_currency(Gasto.where(cc: "PTA").where(estado: "Pagado").sum(:monto_neto), delimiter: ".", precision: 0) %> Pagado<br>
-        <%= number_to_currency(Gasto.where(cc: "PTA").where(estado: "Pendiente").sum(:monto_neto), delimiter: ".", precision: 0) %> Pendiente de pago
+        <%= number_to_currency(Gasto.where(cc: "PUQ").sum(:monto_neto), delimiter: ".", precision: 0) %> Gastado<br>
+        <%= number_to_currency(Gasto.where(cc: "PUQ").where(estado: "Pagado").sum(:monto_neto), delimiter: ".", precision: 0) %> Pagado<br>
+        <%= number_to_currency(Gasto.where(cc: "PUQ").where(estado: "Pendiente").sum(:monto_neto), delimiter: ".", precision: 0) %> Pendiente de pago
 
         <br><br>
 
