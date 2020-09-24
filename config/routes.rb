@@ -38,10 +38,11 @@ Rails.application.routes.draw do
   get 'gastoslcarend', to: 'gastos#gastoslcarend'
   get 'gastosvtsrend', to: 'gastos#gastosvtsrend'
   get 'gastosptmrend', to: 'gastos#gastosptmrend'
-  get 'gastosvtsmes_path', to: 'gastos#gastosvtsmes_path'
-  get 'gastosvtsmes1m_path', to: 'gastos#gastosvtsmes1m_path'
-  get 'gastosvtsmes2m_path', to: 'gastos#gastosvtsmes2m_path'
-  get 'gastosvtsmes3m_path', to: 'gastos#gastosvtsmes3m_path'
+  get 'gastosvtsmes', to: 'gastos#gastosvtsmes'
+  get 'gastosvtsmes1m', to: 'gastos#gastosvtsmes1m'
+  get 'gastosvtsmes2m', to: 'gastos#gastosvtsmes2m'
+  get 'gastosvtsmes3m', to: 'gastos#gastosvtsmes3m'
+  get 'gastosunasigned', to: 'gastos#gastosunasigned'
 
   resources :horas
   get 'mec', to: 'horas#mec'
