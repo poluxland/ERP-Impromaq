@@ -39,7 +39,7 @@ class GastosController < ApplicationController
     @gastos = Gasto.where(cc: "PTM").where(:created_at => ((Date.today.beginning_of_month)- 1.month)..((Date.today.end_of_month) - 1.month))
   end
 
-  def gastospusmes1m
+  def gastospuqmes1m
     @gastos = Gasto.where(cc: "PUQ").where(:created_at => ((Date.today.beginning_of_month)- 1.month)..((Date.today.end_of_month) - 1.month))
   end
 
