@@ -30,7 +30,7 @@
 <tbody>
   <% @gastos.each do |gasto| %>
     <tr>
-      <td><%= gasto.fecha%></td>
+      <td><%= gasto.created_at%></td>
       <td><%= gasto.tipo_documento%></td>
       <td><%= gasto.folio%></td>
       <td><%= gasto.emisor%></td>
