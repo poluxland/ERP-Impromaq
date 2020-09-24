@@ -65,7 +65,10 @@
                   </a>
                   <a href="<%= lcaventames3m_path %>">
                     <%= number_to_currency(Gasto.where(cc: "VTS").where(:created_at => ((Date.today.beginning_of_month) - 3.month)..((Date.today.end_of_month) - 3.month)).sum(:monto_neto), delimiter: ".", precision: 0) %> <%= (Date.today - 3.month).strftime("%B") %>
-  <br><br><%= number_to_currency(Gasto.where(cc: "VTS").sum(:monto_neto), delimiter: ".", precision: 0) %> total
+</a>
+
+                <br><br><%= number_to_currency(Gasto.where(cc: "VTS").sum(:monto_neto), delimiter: ".", precision: 0) %> total
+                <br><%= number_to_currency(Gasto.where(cc: "VTS").where(:created_at => ((Date.today.beginning_of_month) - 5.month)..((Date.today.end_of_month) - 0.month)).sum(:monto_neto), delimiter: ".", precision: 0) %> total
 
       </p>
     </div>
