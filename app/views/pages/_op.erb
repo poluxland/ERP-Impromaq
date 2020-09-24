@@ -54,14 +54,14 @@
     <div class="card-body">
       <h5 class="card-title"><i class="fas fa-poll text-success"></i> Pendiente PUQ </h5>
       <h4>
-        <a href="<%= lcaop_path %>">
+        <a href="<%= parop_path %>">
         <%= number_to_currency(Trabajo.where(avance: "Terminado").where(planta: "P.Arenas").sum(:total), delimiter: ".", precision: 0)%>
       </h4>
       </a>
       <p class="card-text">
         <%= number_to_currency(Trabajo.where(avance: "Terminado").where(planta: "P.Arenas").where(op: [nil, ""]).sum(:total), delimiter: ".", precision: 0) %> Sin OP<br>
         <%= number_to_currency(Trabajo.where(avance: "Terminado").where(planta: "P.Arenas").where.not(op: true).sum(:total), delimiter: ".", precision: 0) %> Con OP<br>
-          
+
       </p>
     </div>
   </div>
