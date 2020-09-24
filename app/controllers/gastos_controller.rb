@@ -7,6 +7,58 @@ class GastosController < ApplicationController
     @gastos = Gasto.all
   end
 
+  def gastoslcames
+    @gastos = Gasto.where(cc: [ "ADM", "ENV", "SER", "CMEC", "TRANS", "NGP", "H09"]).where(:created_at => Date.today.beginning_of_month..Date.today.end_of_month)
+  end
+
+  def gastosvtsmes
+    @gastos = Gasto.where(cc: "VTS").where(:created_at => Date.today.beginning_of_month..Date.today.end_of_month)
+  end
+
+  def gastosptmmes
+    @gastos = Gasto.where(cc: "PTM").where(:created_at => Date.today.beginning_of_month..Date.today.end_of_month)
+  end
+
+  def gastospuqmes
+    @gastos = Gasto.where(cc: "PUQ").where(:created_at => Date.today.beginning_of_month..Date.today.end_of_month)
+  end
+
+  def gastoslcames1m
+    @gastos = Gasto.where(cc: [ "ADM", "ENV", "SER", "CMEC", "TRANS", "NGP", "H09"]).where(:created_at => ((Date.today.beginning_of_month)- 1.month)..((Date.today.end_of_month) - 1.month))
+  end
+
+  def gastosvtsmes1m
+    @gastos = Gasto.where(cc: "VTS").where(:created_at => ((Date.today.beginning_of_month)- 1.month)..((Date.today.end_of_month) - 1.month))
+  end
+
+  def gastosptmmes1m
+    @gastos = Gasto.where(cc: "PTM").where(:created_at => ((Date.today.beginning_of_month)- 1.month)..((Date.today.end_of_month) - 1.month))
+  end
+
+  def gastospusmes1m
+    @gastos = Gasto.where(cc: "PUQ").where(:created_at => ((Date.today.beginning_of_month)- 1.month)..((Date.today.end_of_month) - 1.month))
+  end
+
+  def gastoslcames2m
+    @gastos = Gasto.where(cc: [ "ADM", "ENV", "SER", "CMEC", "TRANS", "NGP", "H09"]).where(:created_at => ((Date.today.beginning_of_month)- 2.month)..((Date.today.end_of_month) - 2.month))
+  end
+
+  def gastosvtsmes2m
+    @gastos = Gasto.where(cc: "VTS").where(:created_at => ((Date.today.beginning_of_month)- 2.month)..((Date.today.end_of_month) - 2.month))
+  end
+
+  def gastosptmmes2m
+    @gastos = Gasto.where(cc: "PTM").where(:created_at => ((Date.today.beginning_of_month)- 2.month)..((Date.today.end_of_month) - 2.month))
+  end
+
+  def gastospuqmes2m
+    @gastos = Gasto.where(cc: "PUQ").where(:created_at => ((Date.today.beginning_of_month)- 2.month)..((Date.today.end_of_month) - 2.month))
+  end
+
+
+
+
+
   def gastosunasigned
     @gastos = Gasto.where(estado: [nil, ''])
   end
