@@ -19,18 +19,16 @@
 <br><br>
 
 
-          <a href="<%= lcaventames_path %>">
+          <a href="<%= gastoslcames_path %>">
             <%= number_to_currency(Gasto.where(cc: [ "ADM", "ENV", "SER", "CMEC", "TRANS", "NGP", "H09"]).where(:created_at => Date.today.beginning_of_month..Date.today.end_of_month).sum(:monto_neto), delimiter: ".", precision: 0) %> <%= (Date.today - 0.month).strftime("%B") %> <br>
           </a>
-          <a href="<%= lcaventames1m_path %>">
+          <a href="<%= gastoslcames1m_path %>">
           <%= number_to_currency(Gasto.where(cc: [ "ADM", "ENV", "SER", "CMEC", "TRANS", "NGP", "H09"]).where(:created_at => ((Date.today.beginning_of_month) - 1.month)..((Date.today.end_of_month) - 1.month)).sum(:monto_neto), delimiter: ".", precision: 0) %> <%= (Date.today - 1.month).strftime("%B") %><br>
           </a>
-          <a href="<%= lcaventames2m_path %>">
+          <a href="<%= gastoslcames2m_path %>">
             <%= number_to_currency(Gasto.where(cc: [ "ADM", "ENV", "SER", "CMEC", "TRANS", "NGP", "H09"]).where(:created_at => ((Date.today.beginning_of_month) - 2.month)..((Date.today.end_of_month) - 2.month)).sum(:monto_neto), delimiter: ".", precision: 0) %> <%= (Date.today - 2.month).strftime("%B") %><br>
           </a>
-          <a href="<%= lcaventames3m_path %>">
-            <%= number_to_currency(Gasto.where(cc: [ "ADM", "ENV", "SER", "CMEC", "TRANS", "NGP", "H09"]).where(:created_at => ((Date.today.beginning_of_month) - 3.month)..((Date.today.end_of_month) - 3.month)).sum(:monto_neto), delimiter: ".", precision: 0) %> <%= (Date.today - 3.month).strftime("%B") %>
-          </a>
+
         </p>
     </div>
     <div class="card-footer">
@@ -63,9 +61,7 @@
                   <a href="<%= gastosvtsmes2m_path %>">
                     <%= number_to_currency(Gasto.where(cc: "VTS").where(:created_at => ((Date.today.beginning_of_month) - 2.month)..((Date.today.end_of_month) - 2.month)).sum(:monto_neto), delimiter: ".", precision: 0) %> <%= (Date.today - 2.month).strftime("%B") %><br>
                   </a>
-                  <a href="<%= gastosvtsmes3m_path %>">
-                    <%= number_to_currency(Gasto.where(cc: "VTS").where(:created_at => ((Date.today.beginning_of_month) - 3.month)..((Date.today.end_of_month) - 3.month)).sum(:monto_neto), delimiter: ".", precision: 0) %> <%= (Date.today - 3.month).strftime("%B") %>
-                  </a>
+
 
 
       </p>
@@ -92,19 +88,15 @@
         <br><br>
 
 
-                  <a href="<%= lcaventames_path %>">
+                  <a href="<%= gastosptmmes_path %>">
                     <%= number_to_currency(Gasto.where(cc: "PTM").where(:created_at => Date.today.beginning_of_month..Date.today.end_of_month).sum(:monto_neto), delimiter: ".", precision: 0) %> <%= (Date.today - 0.month).strftime("%B") %> <br>
                   </a>
-                  <a href="<%= lcaventames1m_path %>">
+                  <a href="<%= gastosptmmes1m_path %>">
                   <%= number_to_currency(Gasto.where(cc: "PTM").where(:created_at => ((Date.today.beginning_of_month) - 1.month)..((Date.today.end_of_month) - 1.month)).sum(:monto_neto), delimiter: ".", precision: 0) %> <%= (Date.today - 1.month).strftime("%B") %><br>
                   </a>
-                  <a href="<%= lcaventames2m_path %>">
+                  <a href="<%= gastosptmmes2m_path %>">
                     <%= number_to_currency(Gasto.where(cc: "PTM").where(:created_at => ((Date.today.beginning_of_month) - 2.month)..((Date.today.end_of_month) - 2.month)).sum(:monto_neto), delimiter: ".", precision: 0) %> <%= (Date.today - 2.month).strftime("%B") %><br>
                   </a>
-                  <a href="<%= lcaventames3m_path %>">
-                    <%= number_to_currency(Gasto.where(cc: "PTM").where(:created_at => ((Date.today.beginning_of_month) - 3.month)..((Date.today.end_of_month) - 3.month)).sum(:monto_neto), delimiter: ".", precision: 0) %> <%= (Date.today - 3.month).strftime("%B") %>
-
-                    <br><br><%= number_to_currency(Gasto.where(cc: "PTM").sum(:monto_neto), delimiter: ".", precision: 0) %> total
 
       </p>
     </div>
@@ -116,26 +108,27 @@
     <div class="card-body">
       <h5 class="card-title"><i class="fas fa-file-invoice-dollar text-success"></i> Gastos PUQ </h5>
       <p class="card-text">
-        <%= number_to_currency(Gasto.where(cc: "PUQ").sum(:monto_neto), delimiter: ".", precision: 0) %> Gastado<br>
-        <%= number_to_currency(Gasto.where(cc: "PUQ").where(estado: "Pagado").sum(:monto_neto), delimiter: ".", precision: 0) %> Pagado<br>
+        <a href="<%= gastospuq_path %>">
+          <%= number_to_currency(Gasto.where(cc: "PUQ").sum(:monto_neto), delimiter: ".", precision: 0) %> Gastado<br>
+        </a>
+        <a href="<%= gastospuqpagado_path %>">
+          <%= number_to_currency(Gasto.where(cc: "PUQ").where(estado: "Pagado").sum(:monto_neto), delimiter: ".", precision: 0) %> Pagado<br>
+        </a>
+        <a href="<%= gastospuqpend_path %>">
         <%= number_to_currency(Gasto.where(cc: "PUQ").where(estado: "Pendiente").sum(:monto_neto), delimiter: ".", precision: 0) %> Pendiente de pago
-
+        </a>
         <br><br>
 
 
-                  <a href="<%= lcaventames_path %>">
+                  <a href="<%= gastospuqmes_path %>">
                     <%= number_to_currency(Gasto.where(cc: "PUQ").where(:created_at => Date.today.beginning_of_month..Date.today.end_of_month).sum(:monto_neto), delimiter: ".", precision: 0) %> <%= (Date.today - 0.month).strftime("%B") %> <br>
                   </a>
-                  <a href="<%= lcaventames1m_path %>">
+                  <a href="<%= gastospuqmes1m_path %>">
                   <%= number_to_currency(Gasto.where(cc: "PUQ").where(:created_at => ((Date.today.beginning_of_month) - 1.month)..((Date.today.end_of_month) - 1.month)).sum(:monto_neto), delimiter: ".", precision: 0) %> <%= (Date.today - 1.month).strftime("%B") %><br>
                   </a>
-                  <a href="<%= lcaventames2m_path %>">
+                  <a href="<%= gastospuqmes2m_path %>">
                     <%= number_to_currency(Gasto.where(cc: "PUQ").where(:created_at => ((Date.today.beginning_of_month) - 2.month)..((Date.today.end_of_month) - 2.month)).sum(:monto_neto), delimiter: ".", precision: 0) %> <%= (Date.today - 2.month).strftime("%B") %><br>
                   </a>
-                  <a href="<%= lcaventames3m_path %>">
-                    <%= number_to_currency(Gasto.where(cc: "PUQ").where(:created_at => ((Date.today.beginning_of_month) - 3.month)..((Date.today.end_of_month) - 3.month)).sum(:monto_neto), delimiter: ".", precision: 0) %> <%= (Date.today - 3.month).strftime("%B") %>
-
-                    <br><br><%= number_to_currency(Gasto.where(cc: "PUQ").sum(:monto_neto), delimiter: ".", precision: 0) %> total
 
 
       </p>

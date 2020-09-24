@@ -120,6 +120,18 @@ class GastosController < ApplicationController
     @gastos = Gasto.where(cc: 'PTM').where(estado: "Pagado")
   end
 
+  def gastospuq
+    @gastos = Gasto.where(cc: 'PUQ')
+  end
+
+  def gastospuqpend
+    @gastos = Gasto.where(cc: 'PUQ').where(estado: "Pendiente")
+  end
+
+  def gastospuqpagado
+    @gastos = Gasto.where(cc: 'PUQ').where(estado: "Pagado")
+  end
+
   def import
     Gasto.my_import(params[:file])
     redirect_to gastos_url, notice: 'Facturas correctamente importadas'
