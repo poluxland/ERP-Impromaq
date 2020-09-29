@@ -5,7 +5,7 @@ ActiveAdmin.register Gasto do
   #
   # Uncomment all parameters which should be permitted for assignment
   #
-  permit_params :fecha, :rend, :tipo, :num, :descripcion, :valor, :iva, :neto, :cc, :resp, :familia, :cot, :aprobado, :estado, :tipo_documento, :folio, :emisor, :razon_social_emisor, :emision, :monto_neto, :monto_exento, :monto_iva, :monto_total, :impuestos, :fecha_vencimiento
+  permit_params :fecha, :rend, :tipo, :num, :descripcion, :valor, :iva, :neto, :cc, :resp, :familia, :cot, :aprobado, :estado, :tipo_documento, :folio, :emisor, :razon_social_emisor, :emision, :monto_neto, :monto_exento, :monto_iva, :monto_total, :impuestos, :fecha_vencimiento, :created_at
   #
   # or
   #
