@@ -39,6 +39,7 @@
     <th>razon_social_emisor</th>
     <th>emision</th>
     <th>monto_total</th>
+    <th>monto_neto</th>
     <th>Rend</th>
     <th>Cc</th>
     <th>Estado</th>
@@ -59,6 +60,7 @@
       <td><%= gasto.razon_social_emisor%></td>
       <td><%= gasto.emision%></td>
       <td><%= number_with_delimiter(gasto.monto_total) %></td>
+      <td><%= number_with_delimiter(gasto.monto_neto) %></td>
       <td><%= gasto.rend %></td>
       <td><%= gasto.cc %></td>
       <td><%= gasto.estado %></td>
