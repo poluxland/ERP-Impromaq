@@ -59,7 +59,21 @@ class GastosController < ApplicationController
     @gastos = Gasto.where(cc: "PUQ").where(created_at: (Time.current.advance(months: -2).all_month))
   end
 
+  def gastoslcames3m
+    @gastos = Gasto.where(cc: [ "ADM", "ENV", "SER", "CMEC", "TRANS", "NGP", "H09"]).where(created_at: (Time.current.advance(months: -3).all_month))
+  end
 
+  def gastosvtsmes3m
+    @gastos = Gasto.where(cc: "VTS").where(created_at: (Time.current.advance(months: -3).all_month))
+  end
+
+  def gastosptmmes3m
+    @gastos = Gasto.where(cc: "PTM").where(created_at: (Time.current.advance(months: -3).all_month))
+  end
+
+  def gastospuqmes3m
+    @gastos = Gasto.where(cc: "PUQ").where(created_at: (Time.current.advance(months: -3).all_month))
+  end
 
 
 
