@@ -8,7 +8,7 @@ class GastosController < ApplicationController
   end
 
   def gastosfull
-    @gastos = Gasto.all
+    @gastos = Gasto.where.not(emision: [nil, false])
   end
 
   def gastoslcames
