@@ -37,7 +37,7 @@
       <td><%= gasto.emisor%></td>
       <td><%= gasto.razon_social_emisor%></td>
       <td><%= gasto.emision&.to_date%></td>
-      <td><%= gasto.emision.to_date&.strftime("%B")%></td>
+      <td><%= gasto.emision&.to_date&.strftime("%B")%></td>
       <td><%= gasto.monto_total%></td>
       <td><%= number_with_delimiter(gasto.monto_neto) %></td>
       <td><%= gasto.monto_exento%></td>
