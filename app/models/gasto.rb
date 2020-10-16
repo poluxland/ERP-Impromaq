@@ -1,4 +1,5 @@
 class Gasto < ApplicationRecord
+  validates :emision, :monto_neto, presence: true
 require 'csv'
 require 'activerecord-import/base'
 require 'activerecord-import/active_record/adapters/postgresql_adapter'
