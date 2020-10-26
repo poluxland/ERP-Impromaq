@@ -39,9 +39,12 @@
           <button type="button" class="btn btn-sm btn-secondary command-edit shadow p-1 rounded">
           <%= link_to "", trabajo, class: 'fa fa-eye fa-fw text-light'%>
           </button>
+          <% if ["Cotizada", "Aprobada", "En ejecucción", "Terminado", "Cancelada"].include?(trabajo.avance) %>
           <button type="button" class="btn btn-sm btn-success command-edit shadow p-1 rounded">
           <%= link_to "", edit_trabajo_path(trabajo), class: "fa fa-edit fa-fw text-light"%>
           </button>
+          <% end %>
+
           <!-- <% if current_user.superadmin_role? %>
           <button type="button" class="btn btn-sm btn-danger command-delete shadow p-1 rounded">
             <%= link_to "", trabajo, method: :delete, data: { confirm: "Are you sure?" }, class: "fa fa-trash fa-fw text-light" %>
