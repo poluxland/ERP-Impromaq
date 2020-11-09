@@ -135,6 +135,22 @@ class TrabajosController < ApplicationController
     @trabajos = Trabajo.where(avance: [ "Terminado", "Facturado"]).where(planta: "P.Arenas").where(:fecha_termino => ((Date.today.beginning_of_month)- 2.month)..((Date.today.end_of_month) - 2.month))
   end
 
+  def lcaventames3m
+    @trabajos = Trabajo.where(avance: [ "Terminado", "Facturado"]).where(planta: "La Calera").where(:fecha_termino => ((Date.today.beginning_of_month)- 3.month)..((Date.today.end_of_month) - 3.month))
+  end
+
+  def vtsventames3m
+    @trabajos = Trabajo.where(avance: [ "Terminado", "Facturado"]).where(planta: "Ventanas").where(:fecha_termino => ((Date.today.beginning_of_month)- 3.month)..((Date.today.end_of_month) - 3.month))
+  end
+
+  def ptmventames3m
+    @trabajos = Trabajo.where(avance: [ "Terminado", "Facturado"]).where(planta: "P.Montt").where(:fecha_termino => ((Date.today.beginning_of_month)- 3.month)..((Date.today.end_of_month) - 3.month))
+  end
+
+  def parventames3m
+    @trabajos = Trabajo.where(avance: [ "Terminado", "Facturado"]).where(planta: "P.Arenas").where(:fecha_termino => ((Date.today.beginning_of_month)- 3.month)..((Date.today.end_of_month) - 3.month))
+  end
+
 
 
 
