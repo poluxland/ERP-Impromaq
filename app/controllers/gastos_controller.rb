@@ -3,6 +3,12 @@ class GastosController < ApplicationController
 
   # GET /gastos
   # GET /gastos.json
+  def gastosduplicados
+    @gastos = Gasto.select(:monto_neto).group(:monto_neto).having("count(monto_neto) > 1")
+  end
+
+
+
   def index
     @gastos = Gasto.all
   end

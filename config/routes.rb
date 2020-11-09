@@ -60,6 +60,7 @@ Rails.application.routes.draw do
   get 'gastospuqmes2m', to: 'gastos#gastospuqmes2m'
   get 'gastospuqmes3m', to: 'gastos#gastospuqmes3m'
   get 'gastosunasigned', to: 'gastos#gastosunasigned'
+  get 'gastosduplicados', to: 'gastos#gastosduplicados'
 
   resources :horas
   get 'mec', to: 'horas#mec'
