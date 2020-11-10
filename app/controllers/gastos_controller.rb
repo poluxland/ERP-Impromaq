@@ -4,7 +4,8 @@ class GastosController < ApplicationController
   # GET /gastos
   # GET /gastos.json
   def gastosduplicados
-    @gastos = Gasto.select(:monto_neto).group(:monto_neto).having("count(monto_neto) > 1")
+    tags = Gasto.group(:folio).select(:folio).having('count(*) > 1').map(&:folio)
+    @gastos = Gasto.where(folio: tags)
   end
 
 
