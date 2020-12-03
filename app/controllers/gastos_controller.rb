@@ -229,6 +229,6 @@ class GastosController < ApplicationController
     params.require(:gasto).permit(:fecha, :rend, :tipo, :num, :descripcion, :valor, :iva, :neto, :cc, :resp, :familia,
                                   :tipo, :cot, :aprobado, :estado, :tipo_documento, :folio, :emisor,
                                   :razon_social_emisor, :emision, :monto_neto, :monto_exento, :monto_iva, :monto_total,
-                                  :impuestos, :fecha_vencimiento)
+                                  :impuestos, :fecha_vencimiento, :created_at)
   end
 end
