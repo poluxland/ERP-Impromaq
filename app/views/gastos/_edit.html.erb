@@ -1,0 +1,96 @@
+
+<%= simple_form_for(@gasto) do |f| %>
+
+<div class="form-inputs offset-md-1">
+
+  <div class="row">
+    <div class="col-md-3 mb-3 ">
+      <%= f.input :tipo_documento, collection: [ "factura_electronica", "Boleta", "RRHH", "Nota de credito", "Nota de Debito", "Otro", "Factura"] %>
+    </div>
+    <div class="col-md-3 mb-3 ">
+      <%= f.input :folio %>
+    </div>
+    <div class="col-md-3 mb-3">
+      <%= f.input :emisor %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-9 mb-9">
+      <%= f.input :razon_social_emisor %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-3 mb-3">
+      <%= f.input :emision %>
+    </div>
+    <div class="col-md-3 mb-3">
+     <%= f.input :monto_neto %>
+    </div>
+    <div class="col-md-3 mb-3">
+     <%= f.input :monto_exento %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-3 mb-3">
+      <%= f.input :impuestos %>
+    </div>
+    <div class="col-md-3 mb-3">
+      <%= f.input :monto_iva %>
+    </div>
+    <div class="col-md-3 mb-3">
+     <%= f.input :monto_total %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-3 mb-3">
+      <%= f.input :fecha_vencimiento %>
+    </div>
+    <div class="col-md-3 mb-3">
+       <%= f.input :rend, label: "Rendición Nº" %>
+    </div>
+    <div class="col-md-3 mb-3">
+     <%= f.input :descripcion %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-3 mb-3">
+      <%= f.input :resp %>
+    </div>
+     <div class="col-md-3 mb-3">
+      <%= f.input :cc, collection: [ "ADM", "ENV", "SER", "CMEC", "TRANS", "NGP", "PTM", "VTS", "H09", "PUQ"] %>
+    </div>
+    <div class="col-md-3 mb-3">
+      <%= f.input :familia, collection: [ "Materiales", "Insumos", "Repuestos", "Arriendo", "Herramientas", "Traslados", "Alimentación", "Sueldos", "Seguridad", "Personal", "ADM", "LEASING" ] %>
+    </div>
+  </div>
+  <div class="row">
+
+     <div class="col-md-3 mb-3">
+      <%= f.input :estado, collection: [ "Pendiente", "Pagado"] %>
+    </div>
+    <div class="col-md-3 mb-3">
+      <%= f.input :aprobado, label: "ID / Cotización" %>
+    </div>
+
+  </div>
+
+    <% if current_user.superadmin_role?  %>
+<div class="row">
+  <div class="col-md-9 mb-9">
+    <%= f.input :created_at, label: "Ingreso" %>
+  </div>
+  </div>
+<% end %>
+
+
+
+<div class="form-actions">
+  <%= f.button :submit, "Agregar a registro", class: "btn-primary", label: 'Total' %>
+</div>
+<% end %>
+
+  </div>

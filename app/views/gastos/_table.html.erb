@@ -53,7 +53,7 @@
 <tbody>
   <% @gastos.each do |gasto| %>
     <tr>
-      <td><%= gasto.created_at.strftime("%d-%m-%Y")%></td>
+      <td><%= gasto.created_at.strftime("%Y-%m-%d")%></td>
       <td><%= gasto.tipo_documento%></td>
       <td><%= gasto.folio%></td>
       <td><%= gasto.emisor%></td>
