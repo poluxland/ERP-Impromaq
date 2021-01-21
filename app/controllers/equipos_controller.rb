@@ -52,6 +52,77 @@ class EquiposController < ApplicationController
     @equipo = Equipo.where(nombre: "HQPTA33").last
   end
 
+  def ex01check
+    @equipo = Equipo.where(nombre: "EX01").last
+  end
+
+  def ol01check
+    @equipo = Equipo.where(nombre: "OL01").last
+  end
+
+  def ol02check
+    @equipo = Equipo.where(nombre: "OL02").last
+  end
+
+  def ol06check
+    @equipo = Equipo.where(nombre: "OL06").last
+  end
+
+  def ol09check
+    @equipo = Equipo.where(nombre: "OL09").last
+  end
+
+  def ol11check
+    @equipo = Equipo.where(nombre: "OL11").last
+  end
+
+  def brr19check
+    @equipo = Equipo.where(nombre: "BRR19").last
+  end
+
+  def ok03check
+    @equipo = Equipo.where(nombre: "OK03").last
+  end
+
+  def ok04check
+    @equipo = Equipo.where(nombre: "OK04").last
+  end
+
+  def ok05check
+    @equipo = Equipo.where(nombre: "OK05").last
+  end
+
+  def hq13check
+    @equipo = Equipo.where(nombre: "HQ13").last
+  end
+
+  def hq12check
+    @equipo = Equipo.where(nombre: "HQ12").last
+  end
+
+  def hq11check
+    @equipo = Equipo.where(nombre: "HQ11").last
+  end
+
+  def hq10check
+    @equipo = Equipo.where(nombre: "HQ10").last
+  end
+
+  def hq03check
+    @equipo = Equipo.where(nombre: "HQ03").last
+  end
+
+  def hq01check
+    @equipo = Equipo.where(nombre: "HQ01").last
+  end
+
+  def hq21check
+    @equipo = Equipo.where(nombre: "HQ21").last
+  end
+
+  def hq22check
+    @equipo = Equipo.where(nombre: "HQ22").last
+  end
 
   # GET /equipos/1
   # GET /equipos/1.json
