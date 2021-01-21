@@ -1,32 +1,35 @@
-<div class="container">
-  <div class="row">
-    <div class="col-sm">
-      Gastos por centro de costo
-      <%= bar_chart Gasto.group(:cc).sum(:monto_neto), thousands: "." %>
+
+
+<!-- Cards OPs -->
+<div class="card-deck">
+  <div class="card shadow">
+    <div class="card-body">
+      <h5 class="card-title"><i class="fas fa-poll text-success"></i> Gastos segun centro de costo</h5>
+
+      <%= line_chart Gasto.group(:cc).sum(:monto_neto), thousands: "." %>
+
+
     </div>
-    <div class="col-sm">
-      Gastos por familia
-      <%= bar_chart Gasto.group(:familia).sum(:monto_neto), thousands: "." %>
-    </div>
-    <div class="col-sm">
-      Trabajos terminados por centro de costo
-      <%= bar_chart Trabajo.where(avance: ["Terminado", "Facturado"]).group(:centro_costo).sum(:total), thousands: "." %>
+  </div>
+  <div class="card shadow">
+    <div class="card-body">
+      <h5 class="card-title"><i class="fas fa-poll text-success"></i> Gastos segun familia</h5>
+
+      <%= line_chart Gasto.group(:familia).sum(:monto_neto), thousands: "." %>
+
     </div>
   </div>
 </div>
-<div class="container">
-  <div class="row">
-    <div class="col-sm">
-      Gastos por centro de costo
-      <%= pie_chart Gasto.group(:cc).sum(:monto_neto), thousands: "." %>
-    </div>
-    <div class="col-sm">
-      Gastos por familia
-      <%= pie_chart Gasto.group(:familia).sum(:monto_neto), thousands: "." %>
-    </div>
-    <div class="col-sm">
-      Trabajos terminados por centro de costo
-      <%= pie_chart Trabajo.where(avance: ["Terminado", "Facturado"]).group(:centro_costo).sum(:total), thousands: "." %>
+
+<div class="card-deck">
+  <div class="card shadow">
+    <div class="card-body">
+      <h5 class="card-title"><i class="fas fa-poll text-success"></i> Ventas adicionales por planta</h5>
+
+      <%= line_chart Trabajo.where(avance: ["Terminado", "Facturado"]).group(:planta).group(:fecha_termino).sum(:total), thousands: "." %>
+
+
     </div>
   </div>
+
 </div>
