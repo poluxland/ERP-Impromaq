@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :interventions
   resources :vtslimpiezas
   resources :permisos
   resources :personals

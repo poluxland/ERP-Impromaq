@@ -1,0 +1,51 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Mantenciones</h1>
+
+<table id="myTable" class="table table-striped table-bordered table-sm shadow" cellspacing="0" width="100%">
+  <thead>
+    <tr>
+      <th>Equipo</th>
+      <th>Desde</th>
+      <th>Hasta</th>
+      <th>Mecanico</th>
+      <th>Descripcion</th>
+      <th>Repuestos</th>
+      <th></th>
+      
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @interventions.each do |intervention| %>
+      <tr>
+        <td><%= intervention.equipo %></td>
+        <td><%= intervention.desde %></td>
+        <td><%= intervention.hasta %></td>
+        <td><%= intervention.mecanico %></td>
+        <td><%= intervention.descripcion %></td>
+        <td><%= intervention.repuestos %></td>
+        <td>
+
+        
+
+        <button type="button" class="btn btn-sm btn-secondary mr-2 command-edit shadow p-1 mb-1 rounded">
+          <%= link_to "", intervention, class: 'fa fa-eye fa-fw text-light'%>
+        </button>
+        
+        
+          <button type="button" class="btn btn-sm btn-success mr-2 command-edit shadow p-1 mb-1 rounded">
+            <%= link_to "", edit_intervention_path(intervention), class: "fa fa-edit fa-fw text-light"%>
+          </button>
+        </td>
+
+        
+        
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Nueva mantención', new_intervention_path %>
