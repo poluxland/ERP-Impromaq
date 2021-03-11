@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :mantencions
   resources :trucks
   resources :interventions
   resources :vtslimpiezas

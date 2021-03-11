@@ -33,7 +33,7 @@
   <tbody>
     <% @equipos.each do |equipo| %>
       <tr>
-        <td><%= equipo.nombre %></td>
+        <td><%= equipo.truck.codigo %></td>
         <td><%= equipo.created_at.strftime("%m/%d/%y") %></td>
         <td><%= equipo.operador %></td>
         <td><%= equipo.horometro %></td>

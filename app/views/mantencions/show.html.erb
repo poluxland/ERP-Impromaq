@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Equipo:</strong>
+  <%= @mantencion.equipo %>
+</p>
+
+<p>
+  <strong>Desde:</strong>
+  <%= @mantencion.desde %>
+</p>
+
+<p>
+  <strong>Hasta:</strong>
+  <%= @mantencion.hasta %>
+</p>
+
+<p>
+  <strong>Mecanico:</strong>
+  <%= @mantencion.mecanico %>
+</p>
+
+<p>
+  <strong>Descripcion:</strong>
+  <%= @mantencion.descripcion %>
+</p>
+
+<p>
+  <strong>Repuestos:</strong>
+  <%= @mantencion.repuestos %>
+</p>
+
+<p>
+  <strong>Truck:</strong>
+  <%= @mantencion.truck_id %>
+</p>
+
+<%= link_to 'Edit', edit_mantencion_path(@mantencion) %> |
+<%= link_to 'Back', mantencions_path %>

@@ -1,0 +1,19 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  equipo: MyString
+  desde: 2021-03-11 20:09:21
+  hasta: 2021-03-11 20:09:21
+  mecanico: MyString
+  descripcion: MyText
+  repuestos: MyString
+  truck: one
+
+two:
+  equipo: MyString
+  desde: 2021-03-11 20:09:21
+  hasta: 2021-03-11 20:09:21
+  mecanico: MyString
+  descripcion: MyText
+  repuestos: MyString
+  truck: two

@@ -1,16 +1,17 @@
 
-<%= simple_form_for(@intervention) do |f| %>
+<%= simple_form_for(@mantencion) do |f| %>
   <%= f.error_notification %>
   <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 
   <div class="form-inputs">
-  <%= f.association :truck, label_method: :codigo %>
-    
+  <%= f.association :truck , label_method: :codigo %>
+    <%= f.input :equipo %>
     <%= f.input :desde %>
     <%= f.input :hasta %>
     <%= f.input :mecanico %>
     <%= f.input :descripcion %>
     <%= f.input :repuestos %>
+    
   </div>
 
   <div class="form-actions">

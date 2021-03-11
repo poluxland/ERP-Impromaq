@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Mantencions</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Equipo</th>
+      <th>Desde</th>
+      <th>Hasta</th>
+      <th>Mecanico</th>
+      <th>Descripcion</th>
+      <th>Repuestos</th>
+      <th>Truck</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @mantencions.each do |mantencion| %>
+      <tr>
+        <td><%= mantencion.equipo %></td>
+        <td><%= mantencion.desde %></td>
+        <td><%= mantencion.hasta %></td>
+        <td><%= mantencion.mecanico %></td>
+        <td><%= mantencion.descripcion %></td>
+        <td><%= mantencion.repuestos %></td>
+        <td><%= mantencion.truck_id %></td>
+        <td><%= link_to 'Show', mantencion %></td>
+        <td><%= link_to 'Edit', edit_mantencion_path(mantencion) %></td>
+        <td><%= link_to 'Destroy', mantencion, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Mantencion', new_mantencion_path %>
