@@ -1,0 +1,47 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Equipos moviles</h1>
+
+<table id="myTable" class="table table-striped table-bordered table-sm shadow" cellspacing="0" width="100%">
+  <thead>
+    <tr>
+      <th>Codigo</th>
+      <th>Marca</th>
+      <th>Modelo</th>
+      <th>Planta</th>
+      <th>Año</th>
+      <th>Otros</th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @trucks.each do |truck| %>
+      <tr>
+        <td><%= truck.codigo %></td>
+        <td><%= truck.marca %></td>
+        <td><%= truck.modelo %></td>
+        <td><%= truck.planta %></td>
+        <td><%= truck.año %></td>
+        <td><%= truck.otros %></td>
+        <td>
+
+        
+
+        <button type="button" class="btn btn-sm btn-secondary mr-2 command-edit shadow p-1 mb-1 rounded">
+          <%= link_to "", truck, class: 'fa fa-eye fa-fw text-light'%>
+        </button>
+        
+        
+          <button type="button" class="btn btn-sm btn-success mr-2 command-edit shadow p-1 mb-1 rounded">
+            <%= link_to "", edit_truck_path(truck), class: "fa fa-edit fa-fw text-light"%>
+          </button>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Truck', new_truck_path %>
