@@ -7,7 +7,7 @@ class CreateMantencions < ActiveRecord::Migration[6.0]
       t.string :mecanico
       t.text :descripcion
       t.string :repuestos
-      t.references :truck, null: false, foreign_key: true
+      t.references :truck, null: true, foreign_key: true
 
       t.timestamps
     end
