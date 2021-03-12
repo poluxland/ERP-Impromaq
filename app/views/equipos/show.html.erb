@@ -13,7 +13,7 @@ Porcentaje equipo <%= ((@test["Si"].to_i * 1.0 + @test["No(leve)"].to_i * 0.5) /
 
 <p>
   <strong>Nombre:</strong>
-  <%= @equipo.truck.codigo %>
+  <%= @equipo.truck&.codigo %>
 </p>
 
 <p>
