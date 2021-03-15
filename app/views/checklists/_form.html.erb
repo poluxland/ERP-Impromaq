@@ -6,7 +6,7 @@
   <div class="col-md-4 mb-4 justify-center">
 
     <%= f.input :nombre %>
-    <%= f.association :truck, label_method: :codigo, collection: Truck.order('codigo ASC') %>
+    <%= f.association :truck, label_method: :codigo, collection: Truck.order('codigo ASC'), label: 'Equipo' %>
     <%= f.input :operativo, collection: [ "Operativo", "Observaciones", "Fuera de servicio" ] %>
     <%= f.input :horometro %>
     <%= f.input :c1, label: 'Reviso nivel de aceite motor' %>
