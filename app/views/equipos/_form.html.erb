@@ -8,7 +8,7 @@
   <div class="col-md-4 mb-4 justify-center">
 
     
-    <%= f.association :truck, label_method: :codigo %>
+    <%= f.association :truck, label_method: :codigo, collection: Truck.order('codigo ASC') %>
     <%= f.input :operador %>
     <%= f.input :horometro %>
     <%= f.input :c17, collection: [ "LCA", "PTM", "VTS", "PAM", "Otros"], label: 'Planta' %>
