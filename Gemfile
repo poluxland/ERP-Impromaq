@@ -15,6 +15,7 @@ gem 'redis'
 gem 'sassc-rails'
 gem 'simple_form'
 gem 'webpacker'
+gem 'forest_liana'
 
 group :development do
   gem 'letter_opener'
