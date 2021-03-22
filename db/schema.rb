@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_11_233054) do
+ActiveRecord::Schema.define(version: 2021_03_17_150257) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -396,6 +396,17 @@ ActiveRecord::Schema.define(version: 2021_03_11_233054) do
     t.integer "nivel9"
   end
 
+  create_table "overtimes", force: :cascade do |t|
+    t.datetime "inicio"
+    t.datetime "termino"
+    t.bigint "personal_id", null: false
+    t.integer "cantidad"
+    t.text "motivo"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["personal_id"], name: "index_overtimes_on_personal_id"
+  end
+
   create_table "permisos", force: :cascade do |t|
     t.date "desde"
     t.date "hasta"
@@ -535,5 +546,6 @@ ActiveRecord::Schema.define(version: 2021_03_11_233054) do
   add_foreign_key "equipos", "trucks"
   add_foreign_key "interventions", "trucks"
   add_foreign_key "mantencions", "trucks"
+  add_foreign_key "overtimes", "personals"
   add_foreign_key "permisos", "personals"
 end
