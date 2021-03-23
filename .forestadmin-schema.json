@@ -148,7 +148,11 @@
         "description": null,
         "position": 0,
         "widget": null
-      }]
+      }],
+      "hooks": {
+        "load": false,
+        "change": []
+      }
     }]
   }, {
     "name": "Barco",
@@ -7055,7 +7059,11 @@
         "description": null,
         "position": 0,
         "widget": null
-      }]
+      }],
+      "hooks": {
+        "load": false,
+        "change": []
+      }
     }]
   }, {
     "name": "Vtslimpieza",
@@ -7312,9 +7320,8 @@
   }],
   "meta": {
     "database_type": "postgresql",
-    "framework_version": "6.0.3.4",
     "liana": "forest-rails",
-    "liana_version": "5.1.0",
-    "orm_version": "6.0.3.4"
+    "liana_version": "6.1.1",
+    "orm_version": "6.1.3"
   }
 }

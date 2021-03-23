@@ -8,7 +8,7 @@ gem 'font-awesome-sass'
 gem "chartkick"
 gem 'groupdate'
 gem 'jbuilder'
-gem 'pg', '~> 0.21'
+gem 'pg'
 gem 'puma'
 gem 'rails'
 gem 'redis'
