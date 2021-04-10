@@ -6,10 +6,9 @@
     <tr>
       <th>Codigo</th>
       <th>Planta</th>
-      <th>Checklist</th>
-      <th>Checklist</th>
-      <th>Equipo</th>
-      <th>Equipo</th>
+      <th>Checklist Mantenedor</th>
+      <th>Checklist Operador</th>
+      <th>Mantención</th>
     </tr>
   </thead>
 
@@ -18,10 +17,17 @@
       <tr>
         <td><%= truck.codigo %></td>
         <td><%= truck.planta %></td>
-        <td><%= truck.checklist.last&.created_at&.strftime("%Y-%m-%d") %></td>
-        <td><%= truck.checklist.last&.horometro %></td>
-        <td><%= truck.equipo.last&.created_at&.strftime("%Y-%m-%d") %></td>
-        <td><%= truck.equipo.last&.horometro %></td>
+        <td>
+          <%= truck.checklist.last&.created_at&.strftime("%m-%d") %> / 
+          <%= truck.checklist.last&.horometro %>
+        </td>
+        <td>
+          <%= truck.equipo.last&.created_at&.strftime("%d-%m") %> / 
+          <%= truck.equipo.last&.horometro %>
+          <%= truck.equipo.last&.operador %>
+        </td>
+        <td><%= truck.mantencion.last&.created_at&.strftime("%d-%m") %> </td>
+        
         
       </tr>
     <% end %>
