@@ -18,7 +18,7 @@
         <td><%= truck.codigo %></td>
         <td><%= truck.planta %></td>
         <td>
-          <%= truck.checklist.last&.created_at&.strftime("%m-%d") %> / 
+          <%= truck.checklist.last&.created_at&.strftime("%d-%m") %> / 
           <%= truck.checklist.last&.horometro %>
         </td>
         <td>
