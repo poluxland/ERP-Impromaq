@@ -4567,7 +4567,7 @@
       "is_sortable": true,
       "is_virtual": false,
       "reference": "Truck.id",
-      "inverse_of": null,
+      "inverse_of": "mantencion",
       "relationship": "BelongsTo",
       "widget": null,
       "validations": []
@@ -6894,6 +6894,22 @@
       "relationship": "HasMany",
       "widget": null,
       "validations": []
+    }, {
+      "field": "mantencion",
+      "type": ["Number"],
+      "default_value": null,
+      "enums": null,
+      "integration": null,
+      "is_filterable": false,
+      "is_read_only": false,
+      "is_required": false,
+      "is_sortable": true,
+      "is_virtual": false,
+      "reference": "Mantencion.id",
+      "inverse_of": "truck",
+      "relationship": "HasMany",
+      "widget": null,
+      "validations": []
     }],
     "segments": [],
     "actions": []
@@ -7353,7 +7369,7 @@
   "meta": {
     "database_type": "postgresql",
     "liana": "forest-rails",
-    "liana_version": "6.1.1",
-    "orm_version": "6.1.3"
+    "liana_version": "6.2.3",
+    "orm_version": "6.1.3.1"
   }
 }
