@@ -7,8 +7,7 @@
     <tr>
     
       <th>Codigo</th>
-      <th>Desde</th>
-      <th>Hasta</th>
+      <th>Duracion</th>
       <th>Mecanico</th>
       <th>Descripcion</th>
       <th>Repuestos</th>
@@ -21,8 +20,7 @@
     <% @interventions.each do |intervention| %>
       <tr>
         <td><%= intervention.truck.codigo %></td>
-        <td><%= intervention.desde %></td>
-        <td><%= intervention.hasta %></td>
+        <td><%= intervention.duracion %></td>
         <td><%= intervention.mecanico %></td>
         <td><%= intervention.descripcion %></td>
         <td><%= intervention.repuestos %></td>

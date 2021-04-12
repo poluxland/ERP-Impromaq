@@ -15,20 +15,28 @@
   <tbody>
     <% @trucks.each do |truck| %>
       <tr>
-        <td><%= truck.codigo %></td>
-        <td><%= truck.planta %></td>
+      
+          <td><a href="<%= trucks_path %>"><%= truck.codigo %></a></td> 
+          <td><%= truck.planta %></td>
+       
         <td>
+        <a href="<%= checklists_path %>">
           <%= truck.checklist.last&.created_at&.strftime("%d-%m") %> / 
           <%= truck.checklist.last&.horometro %>
+          </a>
         </td>
         <td>
+        <a href="<%= equipos_path %>">
           <%= truck.equipo.last&.created_at&.strftime("%d-%m") %> / 
           <%= truck.equipo.last&.horometro %>
           <%= truck.equipo.last&.operador %>
+          </a>
         </td>
         <td>
+        <a href="<%= interventions_path %>">
           <%= truck.intervention.last&.created_at&.strftime("%d-%m") %> 
           <%= truck.intervention.last&.mecanico %> 
+          </a>
         </td>
         
         
