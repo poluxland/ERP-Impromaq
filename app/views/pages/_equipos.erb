@@ -8,7 +8,7 @@
       <th>Planta</th>
       <th>Checklist Mantenedor</th>
       <th>Checklist Operador</th>
-      <th>Mantención</th>
+      <th>Intervenciones</th>
     </tr>
   </thead>
 
@@ -26,7 +26,10 @@
           <%= truck.equipo.last&.horometro %>
           <%= truck.equipo.last&.operador %>
         </td>
-        <td><%= truck.intervention.last&.created_at&.strftime("%d-%m") %> </td>
+        <td>
+          <%= truck.intervention.last&.created_at&.strftime("%d-%m") %> 
+          <%= truck.intervention.last&.mecanico %> 
+        </td>
         
         
       </tr>
