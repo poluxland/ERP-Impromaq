@@ -5,7 +5,7 @@
   <thead>
     <tr>
       <th>Codigo</th>
-      <th>Planta</th>
+      <th>Estado</th>
       <th>Checklist Mantenedor</th>
       <th>Checklist Operador</th>
       <th>Intervenciones</th>
@@ -17,7 +17,11 @@
       <tr>
       
           <td><a href="<%= truck_path(truck.id) %>"><%= truck.codigo %></a></td> 
-          <td><%= truck.planta %></td>
+          <td>
+            <% if truck.checklist.present? %>
+              <%= truck.checklist&.last&.operativo %>
+            <% end %>
+          </td>
        
         <td>
          <% if truck.checklist.present? %>
