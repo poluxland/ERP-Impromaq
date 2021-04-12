@@ -16,29 +16,36 @@
     <% @trucks.each do |truck| %>
       <tr>
       
-          <td><a href="<%= trucks_path %>"><%= truck.codigo %></a></td> 
+          <td><a href="<%= truck_path(truck.id) %>"><%= truck.codigo %></a></td> 
           <td><%= truck.planta %></td>
        
         <td>
-        <a href="<%= checklists_path %>">
+         <% if truck.checklist.present? %>
+        <a href="<%= checklist_path(truck&.checklist&.last&.id) %>">
           <%= truck.checklist.last&.created_at&.strftime("%d-%m") %> / 
           <%= truck.checklist.last&.horometro %>
           </a>
+          <% end %>
         </td>
         <td>
-        <a href="<%= equipos_path %>">
+        <% if truck.equipo.present? %>
+        <a href="<%= equipo_path(truck&.equipo.last&.id) %>">
           <%= truck.equipo.last&.created_at&.strftime("%d-%m") %> / 
           <%= truck.equipo.last&.horometro %>
           <%= truck.equipo.last&.operador %>
           </a>
+          <% end %>
         </td>
         <td>
-        <a href="<%= interventions_path %>">
+          <% if truck.intervention.present? %>
+        <a href="<%= intervention_path(truck&.intervention.last&.id) %>">
           <%= truck.intervention.last&.created_at&.strftime("%d-%m") %> 
           <%= truck.intervention.last&.mecanico %> 
           </a>
+          <% end %>
         </td>
         
+
         
       </tr>
     <% end %>
