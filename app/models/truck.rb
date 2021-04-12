@@ -1,5 +1,5 @@
 class Truck < ApplicationRecord
-    has_many :checklist
-    has_many :equipo
-    has_many :intervention
+    has_many :checklist, dependent: :destroy
+    has_many :equipo, dependent: :destroy
+    has_many :intervention, dependent: :destroy
 end

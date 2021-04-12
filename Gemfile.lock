@@ -106,7 +106,7 @@ GEM
     ffi (1.15.0)
     font-awesome-sass (5.15.1)
       sassc (>= 1.11)
-    forest_liana (6.2.3)
+    forest_liana (6.3.0)
       arel-helpers
       bcrypt
       groupdate (= 2.5.2)
