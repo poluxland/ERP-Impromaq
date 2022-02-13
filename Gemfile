@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-ruby '~> 3.0.2'
+ruby '~> 3.1.0'
 gem 'activeadmin'
 gem 'activerecord-import'
 gem 'autoprefixer-rails'
@@ -16,6 +16,9 @@ gem 'sassc-rails'
 gem 'simple_form'
 gem 'webpacker'
 gem 'forest_liana'
+gem 'net-smtp'
+gem 'net-imap'
+gem 'net-pop'
 
 group :development do
   gem 'letter_opener'
