@@ -2,7 +2,7 @@
   "name": "rails-impromaq",
   "private": true,
   "dependencies": {
-    "@rails/webpacker": "5.3.0",
+    "@rails/webpacker": "5.4.3",
     "bootstrap": "^4.4.1",
     "chart.js": "^3.7.1",
     "chartkick": "^4.1.1",
