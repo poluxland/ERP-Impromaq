@@ -4,8 +4,8 @@
   "dependencies": {
     "@rails/webpacker": "5.3.0",
     "bootstrap": "^4.4.1",
-    "chart.js": "^2.9.3",
-    "chartkick": "^3.2.1",
+    "chart.js": "^3.7.1",
+    "chartkick": "^4.1.1",
     "jquery": "^3.4.1",
     "popper.js": "^1.16.1",
     "webpack": "^4.0.0"
