@@ -10,7 +10,7 @@ gem 'groupdate'
 gem 'jbuilder'
 gem 'pg'
 gem 'puma'
-gem 'rails'
+gem 'rails', "~> 6.1.4.6"
 gem 'redis'
 gem 'sassc-rails'
 gem 'simple_form'

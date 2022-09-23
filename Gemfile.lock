@@ -372,7 +372,7 @@ DEPENDENCIES
   pry-byebug
   pry-rails
   puma
-  rails
+  rails (~> 6.1.4.6)
   redis
   sassc-rails
   simple_form
