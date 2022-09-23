@@ -11,7 +11,7 @@ class GastosController < ApplicationController
 
 
   def index
-    @gastos = Gasto.all
+    @gastos = Gasto.last(2000)
   end
 
   def gastosfull

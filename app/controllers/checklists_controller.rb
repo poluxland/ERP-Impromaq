@@ -5,7 +5,7 @@ class ChecklistsController < ApplicationController
   # GET /checklists
   # GET /checklists.json
   def index
-    @checklists = Checklist.all
+    @checklists = Checklist.last(2000)
   end
 
   # GET /checklists/1
@@ -13,7 +13,7 @@ class ChecklistsController < ApplicationController
   def show
   end
 
-  
+
 
   # GET /checklists/new
   def new
