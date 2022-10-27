@@ -71,6 +71,7 @@ class MedidasController < ApplicationController
     # Only allow a list of trusted parameters through.
     def medida_params
       params.require(:medida).permit(:silo19a, :silo19b, :silo20a, :silo20b, :silo21a, :silo21b, :silo22a, :silo22b, :silo27, :silo28, :especialsacos, :extrsacos, :bigbagextra, :bigbagextra1350, :bigbagextra1, :bigbagespecial, :bigbagsuper, :prodhaver, :prodvento, :tolvacalle5, :silos3000tolva1,
-         :silos3000tolva4, :silos3000tolva5, :silosbigbag1, :silosbigbag2, :silosvento1, :silovento2, :silovento3, :callesilo28, :callesplanta1, :callesilo27, :observaciones, :otros, :ns28, :nbb1, :nbb2, :nvento1, :nvento2, :nvento3, :ns30001, :ns30002, :ns30003, :nivel9, :bigbagplus)
+         :silos3000tolva4, :silos3000tolva5, :silosbigbag1, :silosbigbag2, :silosvento1, :silovento2, :silovento3, :callesilo28, :callesplanta1, :callesilo27, :observaciones, :otros, :ns28, :nbb1, :nbb2, :nvento1, :nvento2, :nvento3, :ns30001, :ns30002, :ns30003, :nivel9, :bigbagplus, :s28c3op,
+         :s28c3cemento, :s28c3nota, :s28c4op, :s28c4cemento, :s28c4nota, :s28c5op, :s27c6op, :s27c7cemento, :s27c7nota, :s30c1op, :s30c1cemento, :s30c1nota, :s30c4op, :s30c4cemento, :s30c4nota, :s30c5op, :s30c5cemento, :s30c5nota)
     end
 end

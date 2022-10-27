@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_08_10_184920) do
+ActiveRecord::Schema.define(version: 2022_10_27_211009) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -103,7 +103,7 @@ ActiveRecord::Schema.define(version: 2021_08_10_184920) do
     t.integer "acnuto"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.bigint "truck_id", null: false
+    t.bigint "truck_id"
     t.index ["truck_id"], name: "index_checklists_on_truck_id"
   end
 
@@ -270,7 +270,7 @@ ActiveRecord::Schema.define(version: 2021_08_10_184920) do
     t.text "comentarios"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.bigint "truck_id", null: false
+    t.bigint "truck_id"
     t.index ["truck_id"], name: "index_equipos_on_truck_id"
   end
 
@@ -396,6 +396,27 @@ ActiveRecord::Schema.define(version: 2021_08_10_184920) do
     t.integer "ns30003"
     t.integer "nivel9"
     t.integer "bigbagplus"
+    t.string "s28c3op"
+    t.string "s28c3cemento"
+    t.string "s28c3nota"
+    t.string "s28c4op"
+    t.string "s28c4cemento"
+    t.string "s28c4nota"
+    t.string "s28c5op"
+    t.string "s28c5cemento"
+    t.string "s28c5nota"
+    t.string "s27c6op"
+    t.string "s27c7cemento"
+    t.string "s27c7nota"
+    t.string "s30c1op"
+    t.string "s30c1cemento"
+    t.string "s30c1nota"
+    t.string "s30c4op"
+    t.string "s30c4cemento"
+    t.string "s30c4nota"
+    t.string "s30c5op"
+    t.string "s30c5cemento"
+    t.string "s30c5nota"
   end
 
   create_table "overtimes", force: :cascade do |t|
