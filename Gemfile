@@ -4,7 +4,7 @@ gem 'activeadmin'
 gem 'activerecord-import'
 gem 'autoprefixer-rails'
 gem 'devise'
-gem 'font-awesome-sass'
+gem 'font-awesome-sass' , "~> 5"
 gem "chartkick"
 gem 'groupdate'
 gem 'jbuilder'
