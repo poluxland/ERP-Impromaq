@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :units
   mount ForestLiana::Engine => '/forest'
   resources :overtimes
   resources :mantencions

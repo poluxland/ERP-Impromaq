@@ -1,0 +1,395 @@
+require "application_system_test_case"
+
+class UnitsTest < ApplicationSystemTestCase
+  setup do
+    @unit = units(:one)
+  end
+
+  test "visiting the index" do
+    visit units_url
+    assert_selector "h1", text: "Units"
+  end
+
+  test "creating a Unit" do
+    visit units_url
+    click_on "New Unit"
+
+    fill_in "B11", with: @unit.b11
+    fill_in "B12", with: @unit.b12
+    fill_in "B13", with: @unit.b13
+    fill_in "B14", with: @unit.b14
+    fill_in "B15", with: @unit.b15
+    fill_in "B16", with: @unit.b16
+    fill_in "B17", with: @unit.b17
+    fill_in "B18", with: @unit.b18
+    fill_in "B21", with: @unit.b21
+    fill_in "B22", with: @unit.b22
+    fill_in "B23", with: @unit.b23
+    fill_in "B24", with: @unit.b24
+    fill_in "B25", with: @unit.b25
+    fill_in "B26", with: @unit.b26
+    fill_in "B27", with: @unit.b27
+    fill_in "B28", with: @unit.b28
+    fill_in "B31", with: @unit.b31
+    fill_in "B32", with: @unit.b32
+    fill_in "B33", with: @unit.b33
+    fill_in "B34", with: @unit.b34
+    fill_in "B35", with: @unit.b35
+    fill_in "B36", with: @unit.b36
+    fill_in "B37", with: @unit.b37
+    fill_in "B38", with: @unit.b38
+    fill_in "B41", with: @unit.b41
+    fill_in "B42", with: @unit.b42
+    fill_in "B43", with: @unit.b43
+    fill_in "B44", with: @unit.b44
+    fill_in "B45", with: @unit.b45
+    fill_in "B46", with: @unit.b46
+    fill_in "B47", with: @unit.b47
+    fill_in "B48", with: @unit.b48
+    fill_in "B51", with: @unit.b51
+    fill_in "B52", with: @unit.b52
+    fill_in "B53", with: @unit.b53
+    fill_in "B54", with: @unit.b54
+    fill_in "B55", with: @unit.b55
+    fill_in "B56", with: @unit.b56
+    fill_in "B57", with: @unit.b57
+    fill_in "B58", with: @unit.b58
+    fill_in "B61", with: @unit.b61
+    fill_in "B62", with: @unit.b62
+    fill_in "B63", with: @unit.b63
+    fill_in "B64", with: @unit.b64
+    fill_in "B65", with: @unit.b65
+    fill_in "B66", with: @unit.b66
+    fill_in "B67", with: @unit.b67
+    fill_in "B68", with: @unit.b68
+    fill_in "B71", with: @unit.b71
+    fill_in "B72", with: @unit.b72
+    fill_in "B73", with: @unit.b73
+    fill_in "B74", with: @unit.b74
+    fill_in "B75", with: @unit.b75
+    fill_in "B76", with: @unit.b76
+    fill_in "B77", with: @unit.b77
+    fill_in "B78", with: @unit.b78
+    fill_in "H11", with: @unit.h11
+    fill_in "H12", with: @unit.h12
+    fill_in "H13", with: @unit.h13
+    fill_in "H14", with: @unit.h14
+    fill_in "H15", with: @unit.h15
+    fill_in "H16", with: @unit.h16
+    fill_in "H17", with: @unit.h17
+    fill_in "H18", with: @unit.h18
+    fill_in "H21", with: @unit.h21
+    fill_in "H22", with: @unit.h22
+    fill_in "H23", with: @unit.h23
+    fill_in "H24", with: @unit.h24
+    fill_in "H25", with: @unit.h25
+    fill_in "H26", with: @unit.h26
+    fill_in "H27", with: @unit.h27
+    fill_in "H28", with: @unit.h28
+    fill_in "H31", with: @unit.h31
+    fill_in "H32", with: @unit.h32
+    fill_in "H33", with: @unit.h33
+    fill_in "H34", with: @unit.h34
+    fill_in "H35", with: @unit.h35
+    fill_in "H36", with: @unit.h36
+    fill_in "H37", with: @unit.h37
+    fill_in "H38", with: @unit.h38
+    fill_in "H41", with: @unit.h41
+    fill_in "H42", with: @unit.h42
+    fill_in "H43", with: @unit.h43
+    fill_in "H44", with: @unit.h44
+    fill_in "H45", with: @unit.h45
+    fill_in "H46", with: @unit.h46
+    fill_in "H47", with: @unit.h47
+    fill_in "H48", with: @unit.h48
+    fill_in "H51", with: @unit.h51
+    fill_in "H52", with: @unit.h52
+    fill_in "H53", with: @unit.h53
+    fill_in "H54", with: @unit.h54
+    fill_in "H55", with: @unit.h55
+    fill_in "H56", with: @unit.h56
+    fill_in "H57", with: @unit.h57
+    fill_in "H58", with: @unit.h58
+    fill_in "H61", with: @unit.h61
+    fill_in "H62", with: @unit.h62
+    fill_in "H63", with: @unit.h63
+    fill_in "H64", with: @unit.h64
+    fill_in "H65", with: @unit.h65
+    fill_in "H66", with: @unit.h66
+    fill_in "H67", with: @unit.h67
+    fill_in "H68", with: @unit.h68
+    fill_in "H71", with: @unit.h71
+    fill_in "H72", with: @unit.h72
+    fill_in "H73", with: @unit.h73
+    fill_in "H74", with: @unit.h74
+    fill_in "H75", with: @unit.h75
+    fill_in "H76", with: @unit.h76
+    fill_in "H77", with: @unit.h77
+    fill_in "H78", with: @unit.h78
+    fill_in "O11", with: @unit.o11
+    fill_in "O12", with: @unit.o12
+    fill_in "O13", with: @unit.o13
+    fill_in "O14", with: @unit.o14
+    fill_in "O15", with: @unit.o15
+    fill_in "O16", with: @unit.o16
+    fill_in "O17", with: @unit.o17
+    fill_in "O18", with: @unit.o18
+    fill_in "O21", with: @unit.o21
+    fill_in "O22", with: @unit.o22
+    fill_in "O23", with: @unit.o23
+    fill_in "O24", with: @unit.o24
+    fill_in "O25", with: @unit.o25
+    fill_in "O26", with: @unit.o26
+    fill_in "O27", with: @unit.o27
+    fill_in "O28", with: @unit.o28
+    fill_in "O31", with: @unit.o31
+    fill_in "O32", with: @unit.o32
+    fill_in "O33", with: @unit.o33
+    fill_in "O34", with: @unit.o34
+    fill_in "O35", with: @unit.o35
+    fill_in "O36", with: @unit.o36
+    fill_in "O37", with: @unit.o37
+    fill_in "O38", with: @unit.o38
+    fill_in "O41", with: @unit.o41
+    fill_in "O42", with: @unit.o42
+    fill_in "O43", with: @unit.o43
+    fill_in "O44", with: @unit.o44
+    fill_in "O45", with: @unit.o45
+    fill_in "O46", with: @unit.o46
+    fill_in "O47", with: @unit.o47
+    fill_in "O48", with: @unit.o48
+    fill_in "O51", with: @unit.o51
+    fill_in "O52", with: @unit.o52
+    fill_in "O53", with: @unit.o53
+    fill_in "O54", with: @unit.o54
+    fill_in "O55", with: @unit.o55
+    fill_in "O56", with: @unit.o56
+    fill_in "O57", with: @unit.o57
+    fill_in "O58", with: @unit.o58
+    fill_in "O61", with: @unit.o61
+    fill_in "O62", with: @unit.o62
+    fill_in "O63", with: @unit.o63
+    fill_in "O64", with: @unit.o64
+    fill_in "O65", with: @unit.o65
+    fill_in "O66", with: @unit.o66
+    fill_in "O67", with: @unit.o67
+    fill_in "O68", with: @unit.o68
+    fill_in "O71", with: @unit.o71
+    fill_in "O72", with: @unit.o72
+    fill_in "O73", with: @unit.o73
+    fill_in "O74", with: @unit.o74
+    fill_in "O75", with: @unit.o75
+    fill_in "O76", with: @unit.o76
+    fill_in "O77", with: @unit.o77
+    fill_in "O78", with: @unit.o78
+    fill_in "O81", with: @unit.o81
+    fill_in "O82", with: @unit.o82
+    fill_in "O83", with: @unit.o83
+    fill_in "O84", with: @unit.o84
+    fill_in "O85", with: @unit.o85
+    fill_in "O86", with: @unit.o86
+    fill_in "O87", with: @unit.o87
+    fill_in "O88", with: @unit.o88
+    fill_in "Observaciones", with: @unit.observaciones
+    click_on "Create Unit"
+
+    assert_text "Unit was successfully created"
+    click_on "Back"
+  end
+
+  test "updating a Unit" do
+    visit units_url
+    click_on "Edit", match: :first
+
+    fill_in "B11", with: @unit.b11
+    fill_in "B12", with: @unit.b12
+    fill_in "B13", with: @unit.b13
+    fill_in "B14", with: @unit.b14
+    fill_in "B15", with: @unit.b15
+    fill_in "B16", with: @unit.b16
+    fill_in "B17", with: @unit.b17
+    fill_in "B18", with: @unit.b18
+    fill_in "B21", with: @unit.b21
+    fill_in "B22", with: @unit.b22
+    fill_in "B23", with: @unit.b23
+    fill_in "B24", with: @unit.b24
+    fill_in "B25", with: @unit.b25
+    fill_in "B26", with: @unit.b26
+    fill_in "B27", with: @unit.b27
+    fill_in "B28", with: @unit.b28
+    fill_in "B31", with: @unit.b31
+    fill_in "B32", with: @unit.b32
+    fill_in "B33", with: @unit.b33
+    fill_in "B34", with: @unit.b34
+    fill_in "B35", with: @unit.b35
+    fill_in "B36", with: @unit.b36
+    fill_in "B37", with: @unit.b37
+    fill_in "B38", with: @unit.b38
+    fill_in "B41", with: @unit.b41
+    fill_in "B42", with: @unit.b42
+    fill_in "B43", with: @unit.b43
+    fill_in "B44", with: @unit.b44
+    fill_in "B45", with: @unit.b45
+    fill_in "B46", with: @unit.b46
+    fill_in "B47", with: @unit.b47
+    fill_in "B48", with: @unit.b48
+    fill_in "B51", with: @unit.b51
+    fill_in "B52", with: @unit.b52
+    fill_in "B53", with: @unit.b53
+    fill_in "B54", with: @unit.b54
+    fill_in "B55", with: @unit.b55
+    fill_in "B56", with: @unit.b56
+    fill_in "B57", with: @unit.b57
+    fill_in "B58", with: @unit.b58
+    fill_in "B61", with: @unit.b61
+    fill_in "B62", with: @unit.b62
+    fill_in "B63", with: @unit.b63
+    fill_in "B64", with: @unit.b64
+    fill_in "B65", with: @unit.b65
+    fill_in "B66", with: @unit.b66
+    fill_in "B67", with: @unit.b67
+    fill_in "B68", with: @unit.b68
+    fill_in "B71", with: @unit.b71
+    fill_in "B72", with: @unit.b72
+    fill_in "B73", with: @unit.b73
+    fill_in "B74", with: @unit.b74
+    fill_in "B75", with: @unit.b75
+    fill_in "B76", with: @unit.b76
+    fill_in "B77", with: @unit.b77
+    fill_in "B78", with: @unit.b78
+    fill_in "H11", with: @unit.h11
+    fill_in "H12", with: @unit.h12
+    fill_in "H13", with: @unit.h13
+    fill_in "H14", with: @unit.h14
+    fill_in "H15", with: @unit.h15
+    fill_in "H16", with: @unit.h16
+    fill_in "H17", with: @unit.h17
+    fill_in "H18", with: @unit.h18
+    fill_in "H21", with: @unit.h21
+    fill_in "H22", with: @unit.h22
+    fill_in "H23", with: @unit.h23
+    fill_in "H24", with: @unit.h24
+    fill_in "H25", with: @unit.h25
+    fill_in "H26", with: @unit.h26
+    fill_in "H27", with: @unit.h27
+    fill_in "H28", with: @unit.h28
+    fill_in "H31", with: @unit.h31
+    fill_in "H32", with: @unit.h32
+    fill_in "H33", with: @unit.h33
+    fill_in "H34", with: @unit.h34
+    fill_in "H35", with: @unit.h35
+    fill_in "H36", with: @unit.h36
+    fill_in "H37", with: @unit.h37
+    fill_in "H38", with: @unit.h38
+    fill_in "H41", with: @unit.h41
+    fill_in "H42", with: @unit.h42
+    fill_in "H43", with: @unit.h43
+    fill_in "H44", with: @unit.h44
+    fill_in "H45", with: @unit.h45
+    fill_in "H46", with: @unit.h46
+    fill_in "H47", with: @unit.h47
+    fill_in "H48", with: @unit.h48
+    fill_in "H51", with: @unit.h51
+    fill_in "H52", with: @unit.h52
+    fill_in "H53", with: @unit.h53
+    fill_in "H54", with: @unit.h54
+    fill_in "H55", with: @unit.h55
+    fill_in "H56", with: @unit.h56
+    fill_in "H57", with: @unit.h57
+    fill_in "H58", with: @unit.h58
+    fill_in "H61", with: @unit.h61
+    fill_in "H62", with: @unit.h62
+    fill_in "H63", with: @unit.h63
+    fill_in "H64", with: @unit.h64
+    fill_in "H65", with: @unit.h65
+    fill_in "H66", with: @unit.h66
+    fill_in "H67", with: @unit.h67
+    fill_in "H68", with: @unit.h68
+    fill_in "H71", with: @unit.h71
+    fill_in "H72", with: @unit.h72
+    fill_in "H73", with: @unit.h73
+    fill_in "H74", with: @unit.h74
+    fill_in "H75", with: @unit.h75
+    fill_in "H76", with: @unit.h76
+    fill_in "H77", with: @unit.h77
+    fill_in "H78", with: @unit.h78
+    fill_in "O11", with: @unit.o11
+    fill_in "O12", with: @unit.o12
+    fill_in "O13", with: @unit.o13
+    fill_in "O14", with: @unit.o14
+    fill_in "O15", with: @unit.o15
+    fill_in "O16", with: @unit.o16
+    fill_in "O17", with: @unit.o17
+    fill_in "O18", with: @unit.o18
+    fill_in "O21", with: @unit.o21
+    fill_in "O22", with: @unit.o22
+    fill_in "O23", with: @unit.o23
+    fill_in "O24", with: @unit.o24
+    fill_in "O25", with: @unit.o25
+    fill_in "O26", with: @unit.o26
+    fill_in "O27", with: @unit.o27
+    fill_in "O28", with: @unit.o28
+    fill_in "O31", with: @unit.o31
+    fill_in "O32", with: @unit.o32
+    fill_in "O33", with: @unit.o33
+    fill_in "O34", with: @unit.o34
+    fill_in "O35", with: @unit.o35
+    fill_in "O36", with: @unit.o36
+    fill_in "O37", with: @unit.o37
+    fill_in "O38", with: @unit.o38
+    fill_in "O41", with: @unit.o41
+    fill_in "O42", with: @unit.o42
+    fill_in "O43", with: @unit.o43
+    fill_in "O44", with: @unit.o44
+    fill_in "O45", with: @unit.o45
+    fill_in "O46", with: @unit.o46
+    fill_in "O47", with: @unit.o47
+    fill_in "O48", with: @unit.o48
+    fill_in "O51", with: @unit.o51
+    fill_in "O52", with: @unit.o52
+    fill_in "O53", with: @unit.o53
+    fill_in "O54", with: @unit.o54
+    fill_in "O55", with: @unit.o55
+    fill_in "O56", with: @unit.o56
+    fill_in "O57", with: @unit.o57
+    fill_in "O58", with: @unit.o58
+    fill_in "O61", with: @unit.o61
+    fill_in "O62", with: @unit.o62
+    fill_in "O63", with: @unit.o63
+    fill_in "O64", with: @unit.o64
+    fill_in "O65", with: @unit.o65
+    fill_in "O66", with: @unit.o66
+    fill_in "O67", with: @unit.o67
+    fill_in "O68", with: @unit.o68
+    fill_in "O71", with: @unit.o71
+    fill_in "O72", with: @unit.o72
+    fill_in "O73", with: @unit.o73
+    fill_in "O74", with: @unit.o74
+    fill_in "O75", with: @unit.o75
+    fill_in "O76", with: @unit.o76
+    fill_in "O77", with: @unit.o77
+    fill_in "O78", with: @unit.o78
+    fill_in "O81", with: @unit.o81
+    fill_in "O82", with: @unit.o82
+    fill_in "O83", with: @unit.o83
+    fill_in "O84", with: @unit.o84
+    fill_in "O85", with: @unit.o85
+    fill_in "O86", with: @unit.o86
+    fill_in "O87", with: @unit.o87
+    fill_in "O88", with: @unit.o88
+    fill_in "Observaciones", with: @unit.observaciones
+    click_on "Update Unit"
+
+    assert_text "Unit was successfully updated"
+    click_on "Back"
+  end
+
+  test "destroying a Unit" do
+    visit units_url
+    page.accept_confirm do
+      click_on "Destroy", match: :first
+    end
+
+    assert_text "Unit was successfully destroyed"
+  end
+end

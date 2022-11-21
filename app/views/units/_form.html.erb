@@ -1,0 +1,171 @@
+
+<%= simple_form_for(@unit) do |f| %>
+  <%= f.error_notification %>
+  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+
+  <div class="form-inputs">
+  <h2>Transporte</h2>
+    <div class="row">
+    <%= f.input :o11, label: 'OL01 Estado', collection: [ "Operativo", "Observaciones", "Fuera de servicio" ], collection: [ "Operativo", "Observaciones", "Fuera de servicio" ] %>
+    <%= f.input :o12, label: 'OL01 Estructural' %>
+    <%= f.input :o13, label: 'OL01 Motor' %>
+    <%= f.input :o14, label: 'OL01 Transmisión' %>
+    <%= f.input :o15, label: 'OL01 Hidraulico' %>
+    <%= f.input :o16, label: 'OL01 Electrico' %>
+    </div>
+    <div class="row">
+    <%= f.input :o21, label: 'OL02 Estado', collection: [ "Operativo", "Observaciones", "Fuera de servicio" ] %>
+    <%= f.input :o22, label: 'OL02 Estructural' %>
+    <%= f.input :o23, label: 'OL02 Motor' %>
+    <%= f.input :o24, label: 'OL02 Transmisión' %>
+    <%= f.input :o25, label: 'OL02 Hidraulico' %>
+    <%= f.input :o26, label: 'OL02 Electrico' %>
+    </div>
+    <div class="row">
+    <%= f.input :o31, label: 'OL09 Estado', collection: [ "Operativo", "Observaciones", "Fuera de servicio" ] %>
+    <%= f.input :o32, label: 'OL09 Estructural' %>
+    <%= f.input :o33, label: 'OL09 Motor' %>
+    <%= f.input :o34, label: 'OL09 Transmisión' %>
+    <%= f.input :o35, label: 'OL09 Hidraulico' %>
+    <%= f.input :o36, label: 'OL09 Electrico' %>
+    </div>
+    <div class="row">
+    <%= f.input :o41, label: 'OL11 Estado', collection: [ "Operativo", "Observaciones", "Fuera de servicio" ] %>
+    <%= f.input :o42, label: 'OL11 Estructural' %>
+    <%= f.input :o43, label: 'OL11 Motor' %>
+    <%= f.input :o44, label: 'OL11 Transmisión' %>
+    <%= f.input :o45, label: 'OL11 Hidraulico' %>
+    <%= f.input :o46, label: 'OL11 Electrico' %>
+    </div>
+    <div class="row">
+    <%= f.input :o51, label: 'EX01 Estado', collection: [ "Operativo", "Observaciones", "Fuera de servicio" ] %>
+    <%= f.input :o52, label: 'EX01 Estructural' %>
+    <%= f.input :o53, label: 'EX01 Motor' %>
+    <%= f.input :o54, label: 'EX01 Transmisión' %>
+    <%= f.input :o55, label: 'EX01 Hidraulico' %>
+    <%= f.input :o56, label: 'EX01 Electrico' %>
+    </div>
+    <div class="row">
+    <%= f.input :o61, label: 'OK04 Estado', collection: [ "Operativo", "Observaciones", "Fuera de servicio" ] %>
+    <%= f.input :o62, label: 'OK04 Estructural' %>
+    <%= f.input :o63, label: 'OK04 Motor'  %>
+    <%= f.input :o64, label: 'OK04 Transmisión' %>
+    <%= f.input :o65, label: 'OK04 Hidraulico' %>
+    <%= f.input :o66, label: 'OK04 Electrico' %>
+    </div>
+    <div class="row">
+    <%= f.input :o71, label: 'OK05 Estado', collection: [ "Operativo", "Observaciones", "Fuera de servicio" ] %>
+    <%= f.input :o72, label: 'OK05 Estructural' %>
+    <%= f.input :o73, label: 'OK05 Motor'  %>
+    <%= f.input :o74, label: 'OK05 Transmisión' %>
+    <%= f.input :o75, label: 'OK05 Hidraulico' %>
+    <%= f.input :o76, label: 'OK05 Electrico' %>
+    </div>
+    <h2>Servicios</h2>
+    <div class="row">
+    <%= f.input :b11, label: 'BBC19 Estado', collection: [ "Operativo", "Observaciones", "Fuera de servicio" ] %>
+    <%= f.input :b12, label: 'BBC19 Estructural' %>
+    <%= f.input :b13, label: 'BBC19 Motor' %>
+    <%= f.input :b14, label: 'BBC19 Transmisión' %>
+    <%= f.input :b15, label: 'BBC19 Hidraulico' %>
+    <%= f.input :b16, label: 'BBC19 Electrico' %>
+    </div>
+    <div class="row">
+    <%= f.input :b21, label: 'BBC20 Estado', collection: [ "Operativo", "Observaciones", "Fuera de servicio" ] %>
+    <%= f.input :b22, label: 'BBC20 Estructural' %>
+    <%= f.input :b23, label: 'BBC20 Motor' %>
+    <%= f.input :b24, label: 'BBC20 Transmisión' %>
+    <%= f.input :b25, label: 'BBC20 Hidraulico' %>
+    <%= f.input :b26, label: 'BBC20 Electrico' %>
+    </div>
+    <div class="row">
+    <%= f.input :b31, label: 'BRR19 Estado', collection: [ "Operativo", "Observaciones", "Fuera de servicio" ] %>
+    <%= f.input :b32, label: 'BRR19 Estructural' %>
+    <%= f.input :b33, label: 'BRR19 Motor' %>
+    <%= f.input :b34, label: 'BRR19 Transmisión' %>
+    <%= f.input :b35, label: 'BRR19 Hidraulico' %>
+    <%= f.input :b36, label: 'BRR19 Electrico' %>
+    </div>
+    <div class="row">
+    <%= f.input :b41, label: 'BRR21 Estado', collection: [ "Operativo", "Observaciones", "Fuera de servicio" ] %>
+    <%= f.input :b42, label: 'BRR21 Estructural' %>
+    <%= f.input :b43, label: 'BRR21 Motor' %>
+    <%= f.input :b44, label: 'BRR21 Transmisión' %>
+    <%= f.input :b45, label: 'BRR21 Hidraulico' %>
+    <%= f.input :b46, label: 'BRR21 Electrico' %>
+    </div>
+    <div class="row">
+    <%= f.input :b51, label: 'HQ22 Estado', collection: [ "Operativo", "Observaciones", "Fuera de servicio" ] %>
+    <%= f.input :b52, label: 'HQ22 Estructural' %>
+    <%= f.input :b53, label: 'HQ22 Motor' %>
+    <%= f.input :b54, label: 'HQ22 Transmisión' %>
+    <%= f.input :b55, label: 'HQ22 Hidraulico' %>
+    <%= f.input :b56, label: 'HQ22 Electrico' %>
+    </div>
+    <div class="row">
+    <%= f.input :b61, label: 'CA01 Estado', collection: [ "Operativo", "Observaciones", "Fuera de servicio" ] %>
+    <%= f.input :b62, label: 'CA01 Estructural' %>
+    <%= f.input :b63, label: 'CA01 Motor' %>
+    <%= f.input :b64, label: 'CA01 Transmisión' %>
+    <%= f.input :b65, label: 'CA01 Hidraulico' %>
+    <%= f.input :b66, label: 'CA01 Electrico' %>
+    </div>
+    <div class="row">
+    <%= f.input :h11, label: 'HQ03 Estado', collection: [ "Operativo", "Observaciones", "Fuera de servicio" ] %>
+    <%= f.input :h12, label: 'HQ03 Estructural' %>
+    <%= f.input :h13, label: 'HQ03 Motor' %>
+    <%= f.input :h14, label: 'HQ03 Transmisión' %>
+    <%= f.input :h15, label: 'HQ03 Hidraulico' %>
+    <%= f.input :h16, label: 'HQ03 Electrico' %>
+    </div>
+    <h2>Envasadora</h2>
+    <div class="row">
+    <%= f.input :h21, label: 'HQ12 Estado', collection: [ "Operativo", "Observaciones", "Fuera de servicio" ] %>
+    <%= f.input :h22, label: 'HQ12 Estructural' %>
+    <%= f.input :h23, label: 'HQ12 Motor' %>
+    <%= f.input :h24, label: 'HQ12 Transmisión' %>
+    <%= f.input :h25, label: 'HQ12 Hidraulico' %>
+    <%= f.input :h26, label: 'HQ12 Electrico' %>
+    </div>
+    <div class="row">
+    <%= f.input :h31, label: 'HQ13 Estado', collection: [ "Operativo", "Observaciones", "Fuera de servicio" ] %>
+    <%= f.input :h32, label: 'HQ13 Estructural' %>
+    <%= f.input :h33, label: 'HQ13 Motor' %>
+    <%= f.input :h34, label: 'HQ13 Transmisión' %>
+    <%= f.input :h35, label: 'HQ13 Hidraulico' %>
+    <%= f.input :h36, label: 'HQ13 Electrico' %>
+    </div>
+    <div class="row">
+    <%= f.input :h41, label: 'HQ21 Estado', collection: [ "Operativo", "Observaciones", "Fuera de servicio" ] %>
+    <%= f.input :h42, label: 'HQ21 Estructural' %>
+    <%= f.input :h43, label: 'HQ21 Motor' %>
+    <%= f.input :h44, label: 'HQ21 Transmisión' %>
+    <%= f.input :h45, label: 'HQ21 Hidraulico' %>
+    <%= f.input :h46, label: 'HQ21 Electrico' %>
+    </div>
+    <div class="row">
+    <%= f.input :h51, label: 'HQ23 Estado', collection: [ "Operativo", "Observaciones", "Fuera de servicio" ] %>
+    <%= f.input :h52, label: 'HQ23 Estructural' %>
+    <%= f.input :h53, label: 'HQ23 Motor' %>
+    <%= f.input :h54, label: 'HQ23 Transmisión' %>
+    <%= f.input :h55, label: 'HQ23 Hidraulico' %>
+    <%= f.input :h56, label: 'HQ23 Electrico' %>
+    </div>
+    <div class="row">
+    <%= f.input :h61, label: 'HQ24 Estado', collection: [ "Operativo", "Observaciones", "Fuera de servicio" ] %>
+    <%= f.input :h62, label: 'HQ24 Estructural' %>
+    <%= f.input :h63, label: 'HQ24 Motor' %>
+    <%= f.input :h64, label: 'HQ24 Transmisión' %>
+    <%= f.input :h65, label: 'HQ24 Hidraulico' %>
+    <%= f.input :h66, label: 'HQ24 Electrico' %>
+    </div>
+
+    <div class="row">
+    <%= f.input :observaciones %>
+    </div>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>
