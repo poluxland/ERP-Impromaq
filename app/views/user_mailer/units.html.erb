@@ -1,0 +1,241 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" style="background-color: #FFFFFF;margin: 0;padding: 0;">
+
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="x-ua-compatible" content="IE=edge,chrome=1">
+  <meta name="format-detection" content="telephone=no">
+  <!-- disable auto telephone linking in iOS -->
+  <title>Planit</title>
+  <link href="http://fonts.googleapis.com/css?family=Montserrat:400,500,600,700,800" rel="stylesheet">
+
+  <style type="text/css">
+
+    table {
+    border-collapse: collapse;
+    }
+
+    table, th, td {
+    border: 1px solid black;
+    }
+
+    table {
+    width: 40%;
+  }
+
+    th {
+    height: 20px;
+    background-color: #4CAF50;
+    color: white;
+  }
+
+  th, td {
+    padding: 5px;
+    text-align: left;
+  }
+
+
+  </style>
+</head>
+
+<body>
+
+
+
+
+
+<div class="card-deck">
+<div class="card shadow">
+
+<table id="" class="table table-striped table-bordered table-sm shadow" cellspacing="0" width="100%">
+  <thead>
+      <th>Equipo</th>
+      <th>Estado</th>
+      <th>Estructural</th>
+      <th>Motor</th>
+      <th>Transmisión</th>
+      <th>Hidraulico</th>
+      <th>Electrico</th>
+    </tr>
+  </thead>
+
+  <tbody>
+
+          <td>OL01</td>
+          <td><%= Unit.last&.o11 %></td>
+          <td><%= Unit.last&.o12 %></td>
+          <td><%= Unit.last&.o13 %></td>
+          <td><%= Unit.last&.o14 %></td>
+          <td><%= Unit.last&.o15 %></td>
+          <td><%= Unit.last&.o16 %></td>
+        </tr>
+          <td>OL02</td>
+          <td><%= Unit.last&.o21 %></td>
+          <td><%= Unit.last&.o22 %></td>
+          <td><%= Unit.last&.o23 %></td>
+          <td><%= Unit.last&.o24 %></td>
+          <td><%= Unit.last&.o25 %></td>
+          <td><%= Unit.last&.o26 %></td>
+        </tr>
+          <td>OL09</td>
+          <td><%= Unit.last&.o31 %></td>
+          <td><%= Unit.last&.o32 %></td>
+          <td><%= Unit.last&.o33 %></td>
+          <td><%= Unit.last&.o34 %></td>
+          <td><%= Unit.last&.o35 %></td>
+          <td><%= Unit.last&.o36 %></td>
+        </tr>
+          <td>OL11</td>
+          <td><%= Unit.last&.o41 %></td>
+          <td><%= Unit.last&.o42 %></td>
+          <td><%= Unit.last&.o43 %></td>
+          <td><%= Unit.last&.o44 %></td>
+          <td><%= Unit.last&.o45 %></td>
+          <td><%= Unit.last&.o46 %></td>
+        </tr>
+          <td>EX01</td>
+          <td><%= Unit.last&.o51 %></td>
+          <td><%= Unit.last&.o52 %></td>
+          <td><%= Unit.last&.o53 %></td>
+          <td><%= Unit.last&.o54 %></td>
+          <td><%= Unit.last&.o55 %></td>
+          <td><%= Unit.last&.o56 %></td>
+        </tr>
+          <td>OK04</td>
+          <td><%= Unit.last&.o61 %></td>
+          <td><%= Unit.last&.o62 %></td>
+          <td><%= Unit.last&.o63 %></td>
+          <td><%= Unit.last&.o64 %></td>
+          <td><%= Unit.last&.o65 %></td>
+          <td><%= Unit.last&.o66 %></td>
+        </tr>
+
+          <td>OK05</td>
+          <td><%= Unit.last&.o71 %></td>
+          <td><%= Unit.last&.o72 %></td>
+          <td><%= Unit.last&.o73 %></td>
+          <td><%= Unit.last&.o74 %></td>
+          <td><%= Unit.last&.o75 %></td>
+          <td><%= Unit.last&.o76 %></td>
+        </tr>
+
+          <td>BBC19</td>
+          <td><%= Unit.last&.b11 %></td>
+          <td><%= Unit.last&.b12 %></td>
+          <td><%= Unit.last&.b13 %></td>
+          <td><%= Unit.last&.b14 %></td>
+          <td><%= Unit.last&.b15 %></td>
+          <td><%= Unit.last&.b16 %></td>
+        </tr>
+
+          <td>BBC20</td>
+          <td><%= Unit.last&.b21 %></td>
+          <td><%= Unit.last&.b22 %></td>
+          <td><%= Unit.last&.b23 %></td>
+          <td><%= Unit.last&.b24 %></td>
+          <td><%= Unit.last&.b25 %></td>
+          <td><%= Unit.last&.b26 %></td>
+        </tr>
+
+          <td>BRR19</td>
+          <td><%= Unit.last&.b31 %></td>
+          <td><%= Unit.last&.b32 %></td>
+          <td><%= Unit.last&.b33 %></td>
+          <td><%= Unit.last&.b34 %></td>
+          <td><%= Unit.last&.b35 %></td>
+          <td><%= Unit.last&.b36 %></td>
+        </tr>
+
+          <td>BRR21</td>
+          <td><%= Unit.last&.b41 %></td>
+          <td><%= Unit.last&.b42 %></td>
+          <td><%= Unit.last&.b43 %></td>
+          <td><%= Unit.last&.b44 %></td>
+          <td><%= Unit.last&.b45 %></td>
+          <td><%= Unit.last&.b46 %></td>
+        </tr>
+
+          <td>HQ22</td>
+          <td><%= Unit.last&.b51 %></td>
+          <td><%= Unit.last&.b52 %></td>
+          <td><%= Unit.last&.b53 %></td>
+          <td><%= Unit.last&.b54 %></td>
+          <td><%= Unit.last&.b55 %></td>
+          <td><%= Unit.last&.b56 %></td>
+        </tr>
+        </tr>
+
+          <td>CA01</td>
+          <td><%= Unit.last&.b61 %></td>
+          <td><%= Unit.last&.b62 %></td>
+          <td><%= Unit.last&.b63 %></td>
+          <td><%= Unit.last&.b64 %></td>
+          <td><%= Unit.last&.b65 %></td>
+          <td><%= Unit.last&.b66 %></td>
+        </tr>
+        </tr>
+          <td>HQ03</td>
+          <td><%= Unit.last&.h11 %></td>
+          <td><%= Unit.last&.h12 %></td>
+          <td><%= Unit.last&.h13 %></td>
+          <td><%= Unit.last&.h14 %></td>
+          <td><%= Unit.last&.h15 %></td>
+          <td><%= Unit.last&.h16 %></td>
+        </tr>
+
+          <td>HQ12</td>
+          <td><%= Unit.last&.h21 %></td>
+          <td><%= Unit.last&.h22 %></td>
+          <td><%= Unit.last&.h23 %></td>
+          <td><%= Unit.last&.h24 %></td>
+          <td><%= Unit.last&.h25 %></td>
+          <td><%= Unit.last&.h26 %></td>
+        </tr>
+
+          <td>HQ13</td>
+          <td><%= Unit.last&.h31 %></td>
+          <td><%= Unit.last&.h32 %></td>
+          <td><%= Unit.last&.h33 %></td>
+          <td><%= Unit.last&.h34 %></td>
+          <td><%= Unit.last&.h35 %></td>
+          <td><%= Unit.last&.h36 %></td>
+        </tr>
+
+          <td>HQ21</td>
+          <td><%= Unit.last&.h41 %></td>
+          <td><%= Unit.last&.h42 %></td>
+          <td><%= Unit.last&.h43 %></td>
+          <td><%= Unit.last&.h44 %></td>
+          <td><%= Unit.last&.h45 %></td>
+          <td><%= Unit.last&.h46 %></td>
+        </tr>
+
+          <td>HQ23</td>
+          <td><%= Unit.last&.h51 %></td>
+          <td><%= Unit.last&.h52 %></td>
+          <td><%= Unit.last&.h53 %></td>
+          <td><%= Unit.last&.h54 %></td>
+          <td><%= Unit.last&.h55 %></td>
+          <td><%= Unit.last&.h56 %></td>
+        </tr>
+
+          <td>HQ24</td>
+          <td><%= Unit.last&.h61 %></td>
+          <td><%= Unit.last&.h62 %></td>
+          <td><%= Unit.last&.h63 %></td>
+          <td><%= Unit.last&.h64 %></td>
+          <td><%= Unit.last&.h65 %></td>
+          <td><%= Unit.last&.h66 %></td>
+        </tr>
+
+  </tbody>
+</table>
+<br>
+<strong> Observaciones:</strong><br>
+ <%= Unit.last&.observaciones %>
+</div>
+
+</div>
+</html>
