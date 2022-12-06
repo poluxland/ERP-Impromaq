@@ -14,7 +14,7 @@ class UserMailer < ApplicationMailer
   def units
     @greeting = "Reporte Diesel " + Time.now.to_s
 
-    mail to: "jose.jerez@msindustrial.cl, simon.rojas@msindustrial.cl",  subject: @greeting
+    mail to: "jose.jerez@msindustrial.cl, simon.rojas@msindustrial.cl, fernando.gonzalez@msindustrial.cl",  subject: @greeting
   end
 
 
