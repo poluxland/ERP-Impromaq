@@ -42,7 +42,7 @@
 
 <body>
   <div class="container col-6">
-    <h1><u>Reporte medidas silos y stock</u></h1>
+    <h1><u>Reporte taller Diesel</u></h1>
     <h2><%= Medida.last.created_at&.strftime("%d-%m-%y") %></h2>
 
 <table class="table table-sm">
@@ -112,313 +112,25 @@
     <td><%= Unit.last&.o65 %></td>
     <td><%= Unit.last&.o66 %></td>
   </tr>
-</tbody>
-</table><br>
-<table class="table table-sm">
-<thead class="thead-dark">
   <tr>
-    <th scope="col">Equipo</th>
-    <th scope="col">Stock (ton)</th>
-  </tr>
-</thead>
-<tbody>
-  <tr>
-    <td>Especial sacos</td>
-    <td> <%= Medida.last.especialsacos %></td>
+    <td>OK05</td>
+    <td><%= Unit.last&.o71 %></td>
+    <td><%= Unit.last&.o72 %></td>
+    <td><%= Unit.last&.o73 %></td>
+    <td><%= Unit.last&.o74 %></td>
+    <td><%= Unit.last&.o75 %></td>
+    <td><%= Unit.last&.o76 %></td>
   </tr>
   <tr>
-    <td>Extra sacos</td>
-    <td><%= Medida.last.extrsacos %></td>
-  </tr>
-  <tr>
-    <td>Bigbag extra</td>
-    <td><%= Medida.last.bigbagextra %></td>
-  </tr>
-  <tr>
-    <td>Bigbag extra 1t</td>
-    <td><%= Medida.last.bigbagextra1 %></td>
-  </tr>
-  <tr>
-    <td>Extra peba 1350 </td>
-    <td><%= Medida.last.bigbagextra1350 %></td>
-  </tr>
-  <tr>
-    <td>Bigbag especial</td>
-    <td><%= Medida.last.bigbagespecial %></td>
-
-  </tr>
-  <tr>
-    <td>Bigbag super </td>
-    <td><%= Medida.last.bigbagsuper %></td>
-  </tr>
-  <tr>
-    <td>Bigbag plus </td>
-    <td><%= Medida.last.bigbagplus %></td>
-  </tr>
-</tbody>
-</table><br>
-<table class="table table-sm">
-<thead class="thead-dark">
-  <tr>
-    <th scope="col">Equipo</th>
-    <th scope="col">Producción (sacos)</th>
-  </tr>
-</thead>
-<tbody>
-  <tr>
-    <td>Haver</td>
-    <td> <%= Medida.last.prodhaver %></td>
-  </tr>
-  <tr>
-    <td>Ventomatic </td>
-    <td><%= Medida.last.prodvento %></td>
-  </tr>
-</tbody>
-</table><br>
-<table class="table table-sm">
-<thead class="thead-dark">
-  <tr>
-    <th scope="col">Linea</th>
-    <th scope="col">Tolva</th>
-    <th scope="col">Producto</th>
-    <th scope="col">Nivel tolva %</th>
-    <th scope="col">Toneladas</th>
-  </tr>
-</thead>
-<tbody>
-  <tr>
-    <td>Silos 3000</td>
-    <td>Tolva 1 </td>
-    <td><%= Medida.last.silos3000tolva1 %></td>
-    <td><%= Medida.last.ns30001 %></td>
-    <td><%= Medida.last.ns30001.to_i * 150 / 100  %></td>
-  </tr>
-  <tr>
-    <td>Silos 3000</td>
-    <td>Tolva 4 </td>
-    <td><%= Medida.last.silos3000tolva4 %></td>
-    <td><%= Medida.last.ns30002 %></td>
-    <td><%= Medida.last.ns30002.to_i * 75 / 100  %></td>
-  </tr>
-  <tr>
-    <td>Silos 3000</td>
-    <td>Tolva 5 </td>
-    <td><%= Medida.last.silos3000tolva5 %> </td>
-    <td><%= Medida.last.ns30003 %></td>
-    <td><%= Medida.last.ns30003.to_i * 75 / 100  %></td>
-  </tr>
-  <tr>
-    <td>Bigbag </td>
-    <td>Silo 1</td>
-    <td><%= Medida.last.silosbigbag1 %></td>
-    <td><%= Medida.last.nbb1 %></td>
-    <td><%= Medida.last.nbb1.to_i * 150 / 100  %></td>
-  </tr>
-  <tr>
-    <td>Bigbag </td>
-    <td>Silo 2 </td>
-    <td><%= Medida.last.silosbigbag2 %></td>
-    <td><%= Medida.last.nbb2 %></td>
-    <td><%= Medida.last.nbb2.to_i * 150 / 100  %></td>
-  </tr>
-  <tr>
-    <td>Ventomatic </td>
-    <td>Silo 1</td>
-    <td><%= Medida.last.silosvento1 %></td>
-    <td><%= Medida.last.nvento1 %></td>
-    <td><%= Medida.last.nvento1.to_i * 150 / 100  %></td>
-  </tr>
-  <tr>
-    <td>Ventomatic</td>
-    <td>Silo 2</td>
-    <td><%= Medida.last.silovento2 %></td>
-    <td><%= Medida.last.nvento2 %></td>
-    <td><%= Medida.last.nvento2.to_i * 150 / 100  %></td>
-  </tr>
-  <tr>
-    <td>Ventomatic </td>
-    <td>Silo 3</td>
-    <td><%= Medida.last.silovento3 %></td>
-    <td><%= Medida.last.nvento3 %></td>
-    <td><%= Medida.last.nvento3.to_i * 150 / 100  %></td>
-  </tr>
-  <tr>
-    <td>Silo 28 </td>
-    <td>Calle 5</td>
-    <td><%= Medida.last.tolvacalle5 %></td>
-    <td><%= Medida.last.otros %></td>
-    <td><%= Medida.last.otros.to_i * 150 / 100  %></td>
-  </tr>
-</tbody>
-</table>
-<br>
-<table class="table table-sm">
-<thead class="thead-dark">
-  <tr>
-    <th scope="col">Calles</th>
-    <th scope="col">Operativas</th>
-  </tr>
-</thead>
-<tbody>
-  <tr>
-    <td>Silo 27</td>
-    <td><%= Medida.last.callesilo27 %></td>
-  </tr>
-  <tr>
-    <td>Silo 28 </td>
-    <td><%= Medida.last.callesilo28 %></td>
-  </tr>
-  <tr>
-    <td>Planta 1</td>
-    <td><%= Medida.last.callesplanta1 %></td>
-  </tr>
-
-</tbody>
-</table>
-</div>
-  <br>
-<table class="table table-sm">
-<thead class="thead-dark">
-  <tr>
-    <th scope="col">Calle</th>
-    <th scope="col">Estado</th>
-    <th scope="col">Cemento</th>
-    <th scope="col">Comentarios</th>
-
-  </tr>
-</thead>
-<tbody>
-  <tr>
-    <td>Silo 28 Calle 3</td>
-
-    <td><%= Medida.last.s28c3op %></td>
-    <td><%= Medida.last.s28c3cemento %></td>
-    <td><%= Medida.last.s28c3nota %></td>
-  </tr>
-  <tr>
-    <td>Silo 28 Calle 4</td>
-
-    <td><%= Medida.last.s28c4op %></td>
-    <td><%= Medida.last.s28c4cemento %></td>
-    <td><%= Medida.last.s28c4nota %></td>
-  </tr>
-  <tr>
-    <td>Silo 28 Calle 5</td>
-
-    <td><%= Medida.last.s28c5op %></td>
-    <td><%= Medida.last.s28c5cemento %></td>
-    <td><%= Medida.last.s28c5nota %></td>
-  </tr>
-  <tr>
-    <td>Silo 27 Calle 6</td>
-
-    <td><%= Medida.last.s27c6op %></td>
-    <td><%= Medida.last.s27c7cemento %></td>
-    <td><%= Medida.last.s27c7nota %></td>
-  </tr>
-  <tr>
-    <td>Silos 3000 Cale 1</td>
-
-    <td><%= Medida.last.s30c1op %></td>
-    <td><%= Medida.last.s30c1cemento %></td>
-    <td><%= Medida.last.s30c1nota %></td>
-  </tr>
-  <tr>
-    <td>Silos 3000 Calle 4</td>
-
-    <td><%= Medida.last.s30c4op %></td>
-    <td><%= Medida.last.s30c4cemento %></td>
-    <td><%= Medida.last.s30c4nota %></td>
-  </tr>
-  <tr>
-    <td>Silos 3000 Calle 5</td>
-
-    <td><%= Medida.last.s30c5op %></td>
-    <td><%= Medida.last.s30c5cemento %></td>
-    <td><%= Medida.last.s30c5nota %></td>
-  </tr>
-
-</tbody>
-</table>
-<br>
-
-  <br>
-  <br>
-  <br>
-  <br>
-
-
-</body>
-</body>
-</html>
-
-
-
-
-
-
-
-
-
-
-
-  </style>
-</head>
-
-<body>
-
-
-
-
-
-<div class="card-deck">
-<div class="card shadow">
-
-<table id="" class="table table-striped table-bordered table-sm shadow" cellspacing="0" width="100%">
-  <thead>
-      <th>Equipo</th>
-      <th>Estado</th>
-      <th>Estructural</th>
-      <th>Motor</th>
-      <th>Transmisión</th>
-      <th>Hidraulico</th>
-      <th>Electrico</th>
-    </tr>
-  </thead>
-
-  <tbody>
-
-
-        </tr>
-
-        </tr>
-
-        </tr>
-
-        </tr>
-
-        </tr>
-
-        </tr>
-
-          <td>OK05</td>
-          <td><%= Unit.last&.o71 %></td>
-          <td><%= Unit.last&.o72 %></td>
-          <td><%= Unit.last&.o73 %></td>
-          <td><%= Unit.last&.o74 %></td>
-          <td><%= Unit.last&.o75 %></td>
-          <td><%= Unit.last&.o76 %></td>
-        </tr>
-
-          <td>BBC19</td>
+    <td>BBC19</td>
           <td><%= Unit.last&.b11 %></td>
           <td><%= Unit.last&.b12 %></td>
           <td><%= Unit.last&.b13 %></td>
           <td><%= Unit.last&.b14 %></td>
           <td><%= Unit.last&.b15 %></td>
           <td><%= Unit.last&.b16 %></td>
-        </tr>
-
+    </tr>
+    <tr>
           <td>BBC20</td>
           <td><%= Unit.last&.b21 %></td>
           <td><%= Unit.last&.b22 %></td>
@@ -427,7 +139,7 @@
           <td><%= Unit.last&.b25 %></td>
           <td><%= Unit.last&.b26 %></td>
         </tr>
-
+<tr>
           <td>BRR19</td>
           <td><%= Unit.last&.b31 %></td>
           <td><%= Unit.last&.b32 %></td>
@@ -436,7 +148,7 @@
           <td><%= Unit.last&.b35 %></td>
           <td><%= Unit.last&.b36 %></td>
         </tr>
-
+<tr>
           <td>BRR21</td>
           <td><%= Unit.last&.b41 %></td>
           <td><%= Unit.last&.b42 %></td>
@@ -445,7 +157,7 @@
           <td><%= Unit.last&.b45 %></td>
           <td><%= Unit.last&.b46 %></td>
         </tr>
-
+<tr>
           <td>HQ22</td>
           <td><%= Unit.last&.b51 %></td>
           <td><%= Unit.last&.b52 %></td>
@@ -454,8 +166,7 @@
           <td><%= Unit.last&.b55 %></td>
           <td><%= Unit.last&.b56 %></td>
         </tr>
-        </tr>
-
+        <tr>
           <td>CA01</td>
           <td><%= Unit.last&.b61 %></td>
           <td><%= Unit.last&.b62 %></td>
@@ -464,7 +175,7 @@
           <td><%= Unit.last&.b65 %></td>
           <td><%= Unit.last&.b66 %></td>
         </tr>
-        </tr>
+        <tr>
           <td>HQ03</td>
           <td><%= Unit.last&.h11 %></td>
           <td><%= Unit.last&.h12 %></td>
@@ -473,7 +184,7 @@
           <td><%= Unit.last&.h15 %></td>
           <td><%= Unit.last&.h16 %></td>
         </tr>
-
+        <tr>
           <td>HQ12</td>
           <td><%= Unit.last&.h21 %></td>
           <td><%= Unit.last&.h22 %></td>
@@ -482,7 +193,7 @@
           <td><%= Unit.last&.h25 %></td>
           <td><%= Unit.last&.h26 %></td>
         </tr>
-
+        <tr>
           <td>HQ13</td>
           <td><%= Unit.last&.h31 %></td>
           <td><%= Unit.last&.h32 %></td>
@@ -491,7 +202,7 @@
           <td><%= Unit.last&.h35 %></td>
           <td><%= Unit.last&.h36 %></td>
         </tr>
-
+        <tr>
           <td>HQ21</td>
           <td><%= Unit.last&.h41 %></td>
           <td><%= Unit.last&.h42 %></td>
@@ -500,7 +211,7 @@
           <td><%= Unit.last&.h45 %></td>
           <td><%= Unit.last&.h46 %></td>
         </tr>
-
+        <tr>
           <td>HQ23</td>
           <td><%= Unit.last&.h51 %></td>
           <td><%= Unit.last&.h52 %></td>
@@ -509,7 +220,7 @@
           <td><%= Unit.last&.h55 %></td>
           <td><%= Unit.last&.h56 %></td>
         </tr>
-
+        <tr>
           <td>HQ24</td>
           <td><%= Unit.last&.h61 %></td>
           <td><%= Unit.last&.h62 %></td>
@@ -519,12 +230,15 @@
           <td><%= Unit.last&.h66 %></td>
         </tr>
 
-  </tbody>
-</table>
-<br>
-<strong> Observaciones:</strong><br>
- <%= Unit.last&.observaciones %>
-</div>
 
-</div>
+
+</tbody>
+</table><br>
+  <br>
+  <strong> Observaciones:</strong><br>
+ <%= Unit.last&.observaciones %>
+
+
+</body>
+</body>
 </html>
