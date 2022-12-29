@@ -27,14 +27,14 @@
       <td>Planta</td>
       <td>Solicita</td>
       <td>Centro de costo</td>
-      <td>Cotiza</td>
+      <td>Clasificación</td>
     </tr>
 
     <tr>
       <td><%= f.input :planta, label: false, collection: [ "La Calera", "Ventanas", "P.Montt", "P.Arenas"] %></td>
       <td><%= f.input :ito, label: false %></td>
       <td><%= f.input :centro_costo, label: false, collection: [ "Cmec", "Horno", "Ser", "Trans", "Env", "Vts", "Ext Vts", "Adm", "Ptm", "Ext Ptm", "Ngp", "PUQ", "Otro"] %></td>
-      <td><%= f.input :supervisor, label: false %></td>
+      <td><%= f.input :supervisor, label: false, collection: [ "Servicios", "Compras", "Mano de obra"] %></td>
     </tr>
     <tr class="heading">
       <td>Termino</td>
