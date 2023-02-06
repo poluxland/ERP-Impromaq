@@ -51,38 +51,46 @@
     <th scope="col">Silo</th>
     <th scope="col">Medida 1</th>
     <th scope="col">Medida 2</th>
+    <th scope="col">Ton</th>
   </tr>
 </thead>
 <tbody>
   <tr>
-    <td>19 (Super 3300)</td>
+    <td>19 (Vacio)</td>
     <td><%= Medida.last.silo19a %></td>
     <td><%= Medida.last.silo19b %></td>
+    <td><%= ((30 - ((Medida.last.silo19a.to_f + Medida.last.silo19b.to_f)/2)) * 100).to_i %></td>
   </tr>
   <tr>
     <td>20 (Super 4200)</td>
     <td><%= Medida.last.silo20a %> </td>
     <td><%= Medida.last.silo20b %></td>
+    <td><%= ((30 - ((Medida.last.silo20a.to_f + Medida.last.silo20b.to_f)/2)) * 100).to_i %></td>
   </tr>
   <tr>
     <td>21 (Extra)</td>
     <td><%= Medida.last.silo21a %></td>
     <td><%= Medida.last.silo21b %></td>
+    <td><%= ((30 - ((Medida.last.silo21a.to_f + Medida.last.silo21b.to_f)/2)) * 100).to_i %></td>
   </tr>
   <tr>
     <td>22 (Extra)</td>
     <td><%= Medida.last.silo22a %></td>
     <td><%= Medida.last.silo22b %></td>
+    <td><%= ((30 - ((Medida.last.silo22a.to_f + Medida.last.silo22b.to_f)/2)) * 100).to_i %></td>
   </tr>
   <tr>
     <td>27 (Especial)</td>
     <td><%= Medida.last.silo27 %></td>
     <td></td>
+    <td><%= (30 - Medida.last.silo27) * 460 %></td>
+
   </tr>
   <tr>
     <td>28 (Extra)</td>
     <td><%= Medida.last.silo28 %></td>
     <td></td>
+    <td><%= (20 - Medida.last.silo28) * 100 %></td>
   </tr>
 </tbody>
 </table><br>
