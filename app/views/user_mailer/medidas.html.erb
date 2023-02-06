@@ -83,7 +83,7 @@
     <td>27 (Especial)</td>
     <td><%= Medida.last.silo27 %></td>
     <td></td>
-    <td><%= (30 - Medida.last.silo27) * 460 %></td>
+    <td><%= Medida.last.silo27 ? (30 - Medida.last.silo27) * 460 : "" %></td>
 
   </tr>
   <tr>
