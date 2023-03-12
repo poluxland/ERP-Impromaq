@@ -19,6 +19,7 @@ gem 'forest_liana'
 gem 'net-smtp'
 gem 'net-imap'
 gem 'net-pop'
+gem 'rack-timeout'
 
 group :development do
   gem 'letter_opener'
