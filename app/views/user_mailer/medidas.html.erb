@@ -45,7 +45,7 @@
     <h1><u>Reporte medidas silos y stock</u></h1>
     <h2><%= Medida.last.created_at&.strftime("%d-%m-%y") %></h2>
 <h3>
-  <%= (((30 - ((Medida.last.silo21a.to_f + Medida.last.silo21b.to_f)/2)) * 100) + ((20 - Medida.last.silo28) * 100)).to_i %>t Cemento Extra en silos (21-28)<br>
+  <%= (((30 - ((Medida.last.silo21a.to_f + Medida.last.silo21b.to_f)/2)) * 100) + ((30 - ((Medida.last.silo22a.to_f + Medida.last.silo22b.to_f)/2)) * 100) + ((20 - Medida.last.silo28) * 100)).to_i %>t Cemento Extra en silos (21-22-28)<br>
   <%=((30 - ((Medida.last.silo19a.to_f + Medida.last.silo19b.to_f)/2)) * 100).to_i %> Cemento Super 3300 en silo (19)<br>
   <%= ((30 - ((Medida.last.silo20a.to_f + Medida.last.silo20b.to_f)/2)) * 100).to_i %>t Cemento Super 4200 en silo (20)<br>
   <%= Medida.last.silo27 ? (30 - Medida.last.silo27) * 460 : "" %>t Cemento Especial en silo (27)<br><br>
@@ -85,10 +85,10 @@
     <td><%= ((30 - ((Medida.last.silo21a.to_f + Medida.last.silo21b.to_f)/2)) * 100).to_i %></td>
   </tr>
   <tr>
-    <td>22 (Extra) Fuera de servicio</td>
+    <td>22 (Extra)</td>
     <td><%= Medida.last.silo22a %></td>
     <td><%= Medida.last.silo22b %></td>
-    <td></td>
+    <td><%= ((30 - ((Medida.last.silo22a.to_f + Medida.last.silo22b.to_f)/2)) * 100).to_i %></td>
   </tr>
   <tr>
     <td>27 (Especial)</td>
