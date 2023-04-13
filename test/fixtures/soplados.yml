@@ -1,0 +1,17 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  supervisor: MyString
+  fecha: 2023-04-13 12:51:47
+  presion1: 1.5
+  presion2: 1.5
+  presion3: 1.5
+  observaciones: MyString
+
+two:
+  supervisor: MyString
+  fecha: 2023-04-13 12:51:47
+  presion1: 1.5
+  presion2: 1.5
+  presion3: 1.5
+  observaciones: MyString
