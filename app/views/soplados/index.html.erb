@@ -8,11 +8,14 @@
     <tr>
       <th>Supervisor</th>
       <th>Fecha</th>
-      <th>Presión ducto ascendente</th>
-      <th>Presión ducto descarga CC54</th>
-      <th>Presión Quench</th>
-      <th>Alimentación Horno</th>
-      <th>Observaciones</th>
+      <th>Ducto P1 ascendente</th>
+      <th>Ducto P2 ascendente</th>
+      <th>CC54 P1</th>
+      <th>CC54 P2</th>
+      <th>CC54 Temp</th>
+      <th>Quench P1</th>
+      <th>Horno</th>
+      <th>Observaciones∫</th>
       <th></th>
       <th></th>
 
@@ -24,10 +27,13 @@
     <% @soplados.each do |soplado| %>
       <tr>
         <td><%= soplado.supervisor %></td>
-        <td><%= soplado.fecha.strftime("%Y/%m/%d") %></td>
+        <td><%= soplado.fecha.strftime("%Y/%m/%d %H:%M") %></td>
         <td><%= soplado.presion1 %></td>
         <td><%= soplado.presion2 %></td>
         <td><%= soplado.presion3 %></td>
+        <td><%= soplado.presion4 %></td>
+        <td><%= soplado.presion5 %></td>
+        <td><%= soplado.presion6 %></td>
         <td><%= soplado.horno %></td>
         <td><%= soplado.observaciones %></td>
         <td><%= link_to 'Ver', soplado %></td>

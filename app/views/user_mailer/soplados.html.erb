@@ -1,0 +1,100 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" style="background-color: #FFFFFF;margin: 0;padding: 0;">
+
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="x-ua-compatible" content="IE=edge,chrome=1">
+  <meta name="format-detection" content="telephone=no">
+  <!-- disable auto telephone linking in iOS -->
+  <title>Planit</title>
+  <link href="http://fonts.googleapis.com/css?family=Montserrat:400,500,600,700,800" rel="stylesheet">
+
+  <style type="text/css">
+
+    table {
+    border-collapse: collapse;
+    }
+
+    table, th, td {
+    border: 1px solid black;
+    }
+
+    table {
+    width: 70%;
+  }
+
+    th {
+    height: 20px;
+    background-color: #4CAF50;
+    color: white;
+  }
+
+  th, td {
+    padding: 5px;
+    text-align: left;
+  }
+
+
+  </style>
+</head>
+
+<body>
+  <div class="container col-6">
+
+
+
+<table class="table table-sm">
+<thead class="thead-dark">
+  <tr>
+    <th scope="col">Silo</th>
+    <th scope="col">Soplado 1</th>
+    <th scope="col">Medida 2</th>
+    <th scope="col">Ton</th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td>19 (Super 3300)</td>
+    <td><%= Soplado.last.presion1 %></td>
+    <td><%= Soplado.last.presion2 %></td>
+
+  </tr>
+  <tr>
+    <td>20 (Super 4200)</td>
+    <td><%= Soplado.last.presion3 %> </td>
+    <td><%= Soplado.last.horno %></td>
+
+  </tr>
+  <tr>
+    <td>21 (Extra)</td>
+    <td><%= Soplado.last.horno %></td>
+    <td><%= Soplado.last.horno %></td>
+
+  </tr>
+  <tr>
+    <td>22 (Extra)</td>
+    <td><%= Soplado.last.horno %></td>
+    <td><%= Soplado.last.horno %></td>
+
+  </tr>
+  <tr>
+    <td>27 (Especial)</td>
+    <td><%= Soplado.last.observaciones %></td>
+    <td></td>
+
+
+  </tr>
+  <tr>
+    <td>28 (Extra)</td>
+    <td><%= Soplado.last.observaciones %></td>
+    <td></td>
+
+  </tr>
+</tbody>
+</table><br>
+
+</body>
+</html>
+
