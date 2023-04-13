@@ -43,7 +43,7 @@
 <body>
   <div class="container col-6">
     <h1><u>Reporte medidas silos y stock</u></h1>
-    <h2><%= Medida.last.created_at&.strftime("%d-%m-%y") %></h2>
+    <h2><%= Medida.last.created_at.in_time_zone('Santiago').strftime("%Y-%m-%d %H:%M") %></h2>
 <h3>
   <%= (((30 - ((Medida.last.silo21a.to_f + Medida.last.silo21b.to_f)/2)) * 100) + ((30 - ((Medida.last.silo22a.to_f + Medida.last.silo22b.to_f)/2)) * 100) + ((20 - Medida.last.silo28) * 100)).to_i %>t Cemento Extra en silos (21-22-28)<br>
   <%=((30 - ((Medida.last.silo19a.to_f + Medida.last.silo19b.to_f)/2)) * 100).to_i %> Cemento Super 3300 en silo (19)<br>
