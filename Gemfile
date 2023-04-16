@@ -1,12 +1,12 @@
 source 'https://rubygems.org'
-ruby '~> 3.1.0'
+ruby '~> 3.2.2'
 gem 'activeadmin'
 gem 'activerecord-import'
 gem 'autoprefixer-rails'
 gem 'devise'
 gem 'font-awesome-sass' , "~> 5"
-gem "chartkick"
-gem 'groupdate'
+gem "chartkick", "~> 4.2.1"
+gem 'groupdate', "~> 6.1.0"
 gem 'jbuilder'
 gem 'pg'
 gem 'puma'
