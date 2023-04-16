@@ -19,6 +19,7 @@ gem 'net-smtp'
 gem 'net-imap'
 gem 'net-pop'
 gem 'rack-timeout'
+gem 'scout_apm'
 
 
 group :development do
