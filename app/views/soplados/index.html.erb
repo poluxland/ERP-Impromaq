@@ -6,8 +6,9 @@
 <table id="myTable" class="table table-striped table-bordered table-sm shadow">
   <thead>
     <tr>
-      <th>Supervisor</th>
+
       <th>Fecha</th>
+      <th>Supervisor</th>
       <th>Ducto P1 ascendente</th>
       <th>Ducto P2 ascendente</th>
       <th>CC54 P1</th>
@@ -16,8 +17,8 @@
       <th>Quench P1</th>
       <th>Horno</th>
       <th>Observaciones∫</th>
-      <th></th>
-      <th></th>
+
+
 
 
     </tr>
@@ -26,8 +27,9 @@
   <tbody>
     <% @soplados.each do |soplado| %>
       <tr>
-        <td><%= soplado.supervisor %></td>
+
         <td><%= soplado.fecha.strftime("%Y/%m/%d %H:%M") %></td>
+        <td><%= soplado.supervisor %></td>
         <td><%= soplado.presion1 %></td>
         <td><%= soplado.presion2 %></td>
         <td><%= soplado.presion3 %></td>
@@ -36,8 +38,8 @@
         <td><%= soplado.presion6 %></td>
         <td><%= soplado.horno %></td>
         <td><%= soplado.observaciones %></td>
-        <td><%= link_to 'Ver', soplado %></td>
-        <td><%= link_to 'Eliminar', edit_soplado_path(soplado) %></td>
+
+
 
       </tr>
     <% end %>
