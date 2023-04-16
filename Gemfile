@@ -24,6 +24,7 @@ gem 'rack-timeout'
 group :development do
   gem 'letter_opener'
   gem 'web-console', '>= 3.3.0'
+  gem 'derailed', group: :development
 end
 
 group :development, :test do
