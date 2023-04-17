@@ -48,50 +48,73 @@
 <table class="table table-sm">
 <thead class="thead-dark">
   <tr>
-    <th scope="col">Silo</th>
-    <th scope="col">Soplado 1</th>
-    <th scope="col">Medida 2</th>
-    <th scope="col">Ton</th>
+    <th>Fecha</th>
+      <th>Supervisor</th>
+      <th>Ducto P1 ascendente</th>
+      <th>Ducto P2 ascendente</th>
+      <th>CC54 P1</th>
+      <th>CC54 P2</th>
+      <th>CC54 Temp</th>
+      <th>Quench P1</th>
+      <th>Horno</th>
+      <th>Observaciones</th>
   </tr>
 </thead>
 <tbody>
   <tr>
-    <td>19 (Super 3300)</td>
-    <td><%= Soplado.last.presion1 %></td>
-    <td><%= Soplado.last.presion2 %></td>
+        <td><%= Soplado.last.fecha.strftime("%Y/%m/%d %H:%M") %></td>
+        <td><%= Soplado.last.supervisor %></td>
+        <td><%= Soplado.last.presion1 %></td>
+        <td><%= Soplado.last.presion2 %></td>
+        <td><%= Soplado.last.presion3 %></td>
+        <td><%= Soplado.last.presion4 %></td>
+        <td><%= Soplado.last.presion5 %></td>
+        <td><%= Soplado.last.presion6 %></td>
+        <td><%= Soplado.last.horno %></td>
+        <td><%= Soplado.last.observaciones %></td>
 
   </tr>
   <tr>
-    <td>20 (Super 4200)</td>
-    <td><%= Soplado.last.presion3 %> </td>
-    <td><%= Soplado.last.horno %></td>
+        <td><%= Soplado.order(:id).last(2).first.fecha.strftime("%Y/%m/%d %H:%M") %></td>
+        <td><%= Soplado.order(:id).last(2).first.supervisor %></td>
+        <td><%= Soplado.order(:id).last(2).first.presion1 %></td>
+        <td><%= Soplado.order(:id).last(2).first.presion2 %></td>
+        <td><%= Soplado.order(:id).last(2).first.presion3 %></td>
+        <td><%= Soplado.order(:id).last(2).first.presion4 %></td>
+        <td><%= Soplado.order(:id).last(2).first.presion5 %></td>
+        <td><%= Soplado.order(:id).last(2).first.presion6 %></td>
+        <td><%= Soplado.order(:id).last(2).first.horno %></td>
+        <td><%= Soplado.order(:id).last(2).first.observaciones %></td>
 
   </tr>
   <tr>
-    <td>21 (Extra)</td>
-    <td><%= Soplado.last.horno %></td>
-    <td><%= Soplado.last.horno %></td>
+        <td><%= Soplado.order(:id).last(3).first.fecha.strftime("%Y/%m/%d %H:%M") %></td>
+        <td><%= Soplado.order(:id).last(3).first.supervisor %></td>
+        <td><%= Soplado.order(:id).last(3).first.presion1 %></td>
+        <td><%= Soplado.order(:id).last(3).first.presion2 %></td>
+        <td><%= Soplado.order(:id).last(3).first.presion3 %></td>
+        <td><%= Soplado.order(:id).last(3).first.presion4 %></td>
+        <td><%= Soplado.order(:id).last(3).first.presion5 %></td>
+        <td><%= Soplado.order(:id).last(3).first.presion6 %></td>
+        <td><%= Soplado.order(:id).last(3).first.horno %></td>
+        <td><%= Soplado.order(:id).last(3).first.observaciones %></td>
 
   </tr>
   <tr>
-    <td>22 (Extra)</td>
-    <td><%= Soplado.last.horno %></td>
-    <td><%= Soplado.last.horno %></td>
+        <td><%= Soplado.order(:id).last(4).first.fecha.strftime("%Y/%m/%d %H:%M") %></td>
+        <td><%= Soplado.order(:id).last(4).first.supervisor %></td>
+        <td><%= Soplado.order(:id).last(4).first.presion1 %></td>
+        <td><%= Soplado.order(:id).last(4).first.presion2 %></td>
+        <td><%= Soplado.order(:id).last(4).first.presion3 %></td>
+        <td><%= Soplado.order(:id).last(4).first.presion4 %></td>
+        <td><%= Soplado.order(:id).last(4).first.presion5 %></td>
+        <td><%= Soplado.order(:id).last(4).first.presion6 %></td>
+        <td><%= Soplado.order(:id).last(4).first.horno %></td>
+        <td><%= Soplado.order(:id).last(4).first.observaciones %></td>
 
   </tr>
-  <tr>
-    <td>27 (Especial)</td>
-    <td><%= Soplado.last.observaciones %></td>
-    <td></td>
 
 
-  </tr>
-  <tr>
-    <td>28 (Extra)</td>
-    <td><%= Soplado.last.observaciones %></td>
-    <td></td>
-
-  </tr>
 </tbody>
 </table><br>
 

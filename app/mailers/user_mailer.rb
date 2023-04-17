@@ -18,6 +18,10 @@ class UserMailer < ApplicationMailer
   end
 
 
+def soplados
+    @greeting = "Reporte Soplado " + Time.now.to_s
 
+    mail to: "jose.jerez@msindustrial.cl, alejandro.olivares@msindustrial.cl, fernando.gonzalez@msindustrial.cl",  subject: @greeting
+  end
 
 end
