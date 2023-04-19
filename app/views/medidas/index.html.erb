@@ -38,7 +38,6 @@ class="table table-responsive table-striped table-bordered table-sm shadow" cell
       <th>Callesilo27</th>
       <th>Observaciones</th>
       <th>Otros</th>
-      <th colspan="3"></th>
     </tr>
   </thead>
 
@@ -79,9 +78,6 @@ class="table table-responsive table-striped table-bordered table-sm shadow" cell
         <td><%= medida.callesilo27 %></td>
         <td><%= medida.observaciones %></td>
         <td><%= medida.otros %></td>
-        <td><%= link_to 'Show', medida %></td>
-        <td><%= link_to 'Edit', edit_medida_path(medida) %></td>
-        <td><%= link_to 'Destroy', medida, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
