@@ -15,42 +15,27 @@
   <tbody>
     <% @trucks.each do |truck| %>
       <tr>
-      
-          <td><a href="<%= truck_path(truck.id) %>"><%= truck.codigo %></a></td> 
+          <td><a href="<%= truck_path(truck.id) %>"><%= truck.codigo %></a></td>
           <td>
-            <% if truck.checklist.present? %>
               <%= truck.checklist&.last&.operativo %>
-            <% end %>
           </td>
-       
+
         <td>
-         <% if truck.checklist.present? %>
-        <a href="<%= checklist_path(truck&.checklist&.last&.id) %>">
-          <%= truck.checklist.last&.created_at&.strftime("%d-%m") %> / 
+          <%= truck.checklist.last&.created_at&.strftime("%d-%m") %> /
           <%= truck.checklist.last&.horometro %>
-          </a>
-          <% end %>
         </td>
         <td>
-        <% if truck.equipo.present? %>
-        <a href="<%= equipo_path(truck&.equipo.last&.id) %>">
-          <%= truck.equipo.last&.created_at&.strftime("%d-%m") %> / 
+          <%= truck.equipo.last&.created_at&.strftime("%d-%m") %> /
           <%= truck.equipo.last&.horometro %>
           <%= truck.equipo.last&.operador %>
-          </a>
-          <% end %>
         </td>
         <td>
-          <% if truck.intervention.present? %>
-        <a href="<%= intervention_path(truck&.intervention.last&.id) %>">
-          <%= truck.intervention.last&.created_at&.strftime("%d-%m") %> 
-          <%= truck.intervention.last&.mecanico %> 
-          </a>
-          <% end %>
+          <%= truck.intervention.last&.created_at&.strftime("%d-%m") %>
+          <%= truck.intervention.last&.mecanico %>
         </td>
-        
 
-        
+
+
       </tr>
     <% end %>
   </tbody>
