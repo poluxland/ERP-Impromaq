@@ -6,22 +6,22 @@ class UserMailer < ApplicationMailer
   #   en.user_mailer.medidas.subject
   #
   def medidas
-    @greeting = "Reporte Impromaq medidas de silos y stock"
+    @greeting = "Reporte Impromaq medidas de silos y stock" + Time.now.in_time_zone('Santiago').to_s
 
     mail to: "jorge.frez@msindustrial.cl, jose.jerez@msindustrial.cl, fernando.gonzalez@msindustrial.cl, supervisor.envasadora@msindustrial.cl, osvaldo.silva@meloncementos.cl, jefesturno.planta@melon.cl, abigail.bustos@meloncementos.cl, rodrigo.trigo@meloncementos.cl, renzo.allendes@meloncementos.cl, alejandro.olivares@msindustrial.cl, luis.estay@meloncementos.cl, sala.controlh9m21@melon.cl, carlos.gonzalezm@meloncementos.cl, claudio.villanueva@msindustrial.cl, marianelly.villarroel@meloncementos.cl, orlando.belmar@meloncementos.cl, fiorella.cosmelli@meloncementos.cl, marcos.prospero@msindustrial.cl, gaston.guerrero@meloncementos.cl, aldo.escobar@meloncementos.cl, guillermo.roco@meloncementos.cl, roberto.leiva@meloncementos.cl", subject: @greeting
   end
 
   def units
-    @greeting = "Reporte Diesel " + Time.now.to_s
+    @greeting = "Reporte Diesel " + Time.now.in_time_zone('Santiago').to_s
 
     mail to: "jose.jerez@msindustrial.cl, simon.rojas@msindustrial.cl, fernando.gonzalez@msindustrial.cl",  subject: @greeting
   end
 
 
 def soplados
-    @greeting = "Reporte Soplado " + Time.now.to_s
+    @greeting = "Reporte Soplado " + Time.now.in_time_zone('Santiago').to_s
 
-    mail to: "jose.jerez@msindustrial.cl, alejandro.olivares@msindustrial.cl, fernando.gonzalez@msindustrial.cl",  subject: @greeting
+    mail to: "jose.jerez@msindustrial.cl, alejandro.olivares@msindustrial.cl, fernando.gonzalez@msindustrial.cl, guillermo.roco@meloncementos.cl, roberto.leiva@meloncementos.cl, jefesturno.planta@melon.cl, supervisor.envasadora@msindustrial.cl",  subject: @greeting
   end
 
 end
