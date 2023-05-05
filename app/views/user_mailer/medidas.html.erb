@@ -41,19 +41,80 @@
 </head>
 
 <body>
+
+<% if Medida.last.plastificado_especial.present? %>
   <div class="container col-6">
     <h1><u>Reporte medidas silos y stock</u></h1>
     <h2><%= Medida.last.created_at.in_time_zone('Santiago').strftime("%Y-%m-%d %H:%M") %></h2>
-<h3>
-  <%= (((30 - ((Medida.last.silo21a.to_f + Medida.last.silo21b.to_f)/2)) * 100) + ((30 - ((Medida.last.silo22a.to_f + Medida.last.silo22b.to_f)/2)) * 100) + ((20 - Medida.last.silo28) * 100)).to_i %>t Cemento Extra en silos (21-22-28)<br>
-  <%=((30 - ((Medida.last.silo19a.to_f + Medida.last.silo19b.to_f)/2)) * 100).to_i %> Cemento Super 3300 en silo (19)<br>
-  <%= ((30 - ((Medida.last.silo20a.to_f + Medida.last.silo20b.to_f)/2)) * 100).to_i %>t Cemento Super 4200 en silo (20)<br>
-  <%= Medida.last.silo27 ? (30 - Medida.last.silo27) * 460 : "" %>t Cemento Especial en silo (27)<br><br>
-  <%= (Medida.last.especialsacos ? Medida.last.especialsacos : 0) + (Medida.last.bigbagespecial ? Medida.last.bigbagespecial : 0)%>t Cemento Especial en piso (Sacos-Bigbag)<br>
-  <%= (Medida.last.extrsacos ? Medida.last.extrsacos : 0) + (Medida.last.bigbagextra ? Medida.last.bigbagextra : 0) + (Medida.last.bigbagextra1 ? Medida.last.bigbagextra1 : 0) + (Medida.last.bigbagextra1350 ? Medida.last.bigbagextra1350 : 0)%>t Cemento Extra en piso (Sacos-Bigbag-Bigbag 1t-Peba)<br>
-  <%= (Medida.last.bigbagsuper ? Medida.last.bigbagsuper : 0) %>t Cemento Super en piso (Bigbag)<br>
-  <%= (Medida.last.bigbagplus ? Medida.last.bigbagplus : 0) %>t Cemento Plus en piso (Bigbag)<br>
-</h3>
+
+
+<table class="table table-sm">
+<thead class="thead-dark">
+  <tr>
+    <th scope="col">Stock plastificado (corresponde al stock plastificado 8:00am)</th>
+    <th scope="col">pallets</th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td>Especial completo</td>
+    <td> <%= Medida.last.plastificado_especial %></td>
+  </tr>
+  <tr>
+    <td>Especial lados</td>
+    <td><%= Medida.last.plastificado_especial_lados %></td>
+  </tr>
+  <tr>
+    <td>Extra completo</td>
+    <td><%= Medida.last.plastificado_extra %></td>
+  </tr>
+  <tr>
+    <td>Extra con zunchos</td>
+    <td><%= Medida.last.plastificado_extra_zunchos %></td>
+  </tr>
+</tbody>
+</table>
+<br>
+<% end %>
+
+
+
+<table class="table table-sm">
+<thead class="thead-dark">
+  <tr>
+    <th scope="col">Cemento</th>
+    <th scope="col">en Silos (t)</th>
+    <th scope="col">en Piso (t)</th>
+  </tr>
+  </thead>
+<tbody>
+  <tr>
+    <td>Cemento Extra</td>
+    <td><%= (((30 - ((Medida.last.silo21a.to_f + Medida.last.silo21b.to_f)/2)) * 100) + ((30 - ((Medida.last.silo22a.to_f + Medida.last.silo22b.to_f)/2)) * 100) + ((20 - Medida.last.silo28) * 100)).to_i %> (Silos 21-22-28)</td>
+    <td><%= (Medida.last.extrsacos ? Medida.last.extrsacos : 0) + (Medida.last.bigbagextra ? Medida.last.bigbagextra : 0) + (Medida.last.bigbagextra1 ? Medida.last.bigbagextra1 : 0) + (Medida.last.bigbagextra1350 ? Medida.last.bigbagextra1350 : 0)%> (Sacos-Bigbag-Bigbag 1t-Peba)</td>
+  </tr>
+  <tr>
+    <td>Cemento Super 3300</td>
+    <td><%=((30 - ((Medida.last.silo19a.to_f + Medida.last.silo19b.to_f)/2)) * 100).to_i %> (Silo 19)</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>Cemento Super 4200</td>
+    <td><%= ((30 - ((Medida.last.silo20a.to_f + Medida.last.silo20b.to_f)/2)) * 100).to_i %> (Silo 20)</td>
+    <td><%= (Medida.last.bigbagsuper ? Medida.last.bigbagsuper : 0) %> (Bigbag)</td>
+  </tr>
+  <tr>
+    <td>Cemento Especial</td>
+    <td><%= Medida.last.silo27 ? (30 - Medida.last.silo27) * 460 : "" %> (Silo 27)</td>
+    <td><%= (Medida.last.especialsacos ? Medida.last.especialsacos : 0) + (Medida.last.bigbagespecial ? Medida.last.bigbagespecial : 0)%> (Sacos-Bigbag)</td>
+  </tr>
+  <tr>
+    <td>Cemento Plus</td>
+    <td></td>
+    <td><%= (Medida.last.bigbagplus ? Medida.last.bigbagplus : 0) %> (Bigbag)</td>
+  </tr>
+  </tbody>
+</table>
 
 
 <table class="table table-sm">
@@ -104,7 +165,10 @@
     <td><%= (20 - Medida.last.silo28) * 100 %></td>
   </tr>
 </tbody>
-</table><br>
+</table>
+
+
+
 <table class="table table-sm">
 <thead class="thead-dark">
   <tr>
