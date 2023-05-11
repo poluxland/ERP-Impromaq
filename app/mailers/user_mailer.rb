@@ -14,14 +14,14 @@ class UserMailer < ApplicationMailer
   def units
     @greeting = "Reporte Diesel " + Time.now.in_time_zone('Santiago').to_s
 
-    mail to: "jose.jerez@msindustrial.cl, simon.rojas@msindustrial.cl, fernando.gonzalez@msindustrial.cl",  subject: @greeting
+    mail to: "jose.jerez@msindustrial.cl, simon.rojas@msindustrial.cl, fernando.gonzalez@msindustrial.cl, supervisor.envasadora@msindustrial.cl, alejandro.olivares@msindustrial.cl, hernan.martinez@msindustrial.cl",  subject: @greeting
   end
 
 
 def soplados
     @greeting = "Reporte Soplado " + Time.now.in_time_zone('Santiago').to_s
 
-    mail to: "jose.jerez@msindustrial.cl, alejandro.olivares@msindustrial.cl, fernando.gonzalez@msindustrial.cl, guillermo.roco@meloncementos.cl, roberto.leiva@meloncementos.cl, jefesturno.planta@melon.cl, supervisor.envasadora@msindustrial.cl",  subject: @greeting
+    mail to: "jose.jerez@msindustrial.cl, alejandro.olivares@msindustrial.cl, fernando.gonzalez@msindustrial.cl, guillermo.roco@meloncementos.cl, roberto.leiva@meloncementos.cl, jefesturno.planta@melon.cl, supervisor.envasadora@msindustrial.cl, marianelly.villarroel@meloncementos.cl, rodrigo.trigo@meloncementos.cl, gaston.guerrero@meloncementos.cl, maryorie.fajardo@msindustrial.cl",  subject: @greeting
   end
 
 end
