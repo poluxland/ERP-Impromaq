@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :servicios
   resources :soplados
   resources :units
   resources :overtimes

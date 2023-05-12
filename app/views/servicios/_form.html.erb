@@ -1,0 +1,70 @@
+<%= simple_form_for(@servicio, wrapper: :vertical_form, html: { class: 'form-vertical' }) do |f| %>
+  <%= f.error_notification %>
+  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+
+
+  <h4>Recepciones</h4>
+  <div class="form-row">
+    <%= f.input :cas, wrapper_html: { class: 'col-md-2' } %>
+    <%= f.input :nfu, wrapper_html: { class: 'col-md-2' } %>
+    <%= f.input :apoyo_cas, wrapper_html: { class: 'col-md-2' } %>
+  </div>
+
+  <h4>Movimiento MMPP</h4>
+  <div class="form-row">
+    <%= f.input :kkbc_a_p2, wrapper_html: { class: 'col-md-2' } %>
+    <%= f.input :kka_a_ngp, wrapper_html: { class: 'col-md-2' } %>
+    <%= f.input :kka_a_p1, wrapper_html: { class: 'col-md-2' } %>
+    <%= f.input :yeso_a_silo, wrapper_html: { class: 'col-md-2' } %>
+    <%= f.input :conchuela_a_bru, wrapper_html: { class: 'col-md-2' } %>
+    <%= f.input :escombros, wrapper_html: { class: 'col-md-2' } %>
+  </div>
+
+  <h4>Rutinas y Otras solicitudes</h4>
+  <div class="form-row">
+    <%= f.input :residuos, wrapper_html: { class: 'col-md-2' } %>
+    <%= f.input :barrido_industrial, wrapper_html: { class: 'col-md-2' } %>
+    <%= f.input :retiro_derrames, wrapper_html: { class: 'col-md-2' } %>
+    <%= f.input :aspirado, wrapper_html: { class: 'col-md-2' } %>
+    <%= f.input :cementos, wrapper_html: { class: 'col-md-2' } %>
+    <%= f.input :transportador, wrapper_html: { class: 'col-md-2' } %>
+    <%= f.input :materia_prima, wrapper_html: { class: 'col-md-2' } %>
+    <%= f.input :harneo_o_seleccion, wrapper_html: { class: 'col-md-2' } %>
+    <%= f.input :recarga, wrapper_html: { class: 'col-md-2' } %>
+    <%= f.input :molino, wrapper_html: { class: 'col-md-2' } %>
+    <%= f.input :descarga, wrapper_html: { class: 'col-md-2' } %>
+    <%= f.input :ton, wrapper_html: { class: 'col-md-2' } %>
+  </div>
+
+  <h4>Medioambiente</h4>
+  <div class="form-row">
+    <%= f.input :lavado_cont, wrapper_html: { class: 'col-md-2' } %>
+    <%= f.input :retiro_escombros, wrapper_html: { class: 'col-md-2' } %>
+    <%= f.input :cloracion, wrapper_html: { class: 'col-md-2' } %>
+  </div>
+
+  <h4>Disponibilidad EEMM</h4>
+  <div class="form-row">
+    <%= f.input :ol01, wrapper_html: { class: 'col-md-2' } %>
+    <%= f.input :ol02, wrapper_html: { class: 'col-md-2' } %>
+    <%= f.input :ol09, wrapper_html: { class: 'col-md-2' } %>
+    <%= f.input :ol10, wrapper_html: { class: 'col-md-2' } %>
+    <%= f.input :ex01, wrapper_html: { class: 'col-md-2' } %>
+    <%= f.input :ok05, wrapper_html: { class: 'col-md-2' } %>
+    <%= f.input :ok04, wrapper_html: { class: 'col-md-2' } %>
+    <%= f.input :barr12, wrapper_html: { class: 'col-md-2' } %>
+    <%= f.input :bbc20, wrapper_html: { class: 'col-md-2' } %>
+    <%= f.input :h12, wrapper_html: { class: 'col-md-2' } %>
+    <%= f.input :ca, wrapper_html: { class: 'col-md-2' } %>
+  </div>
+
+  <h4>Comentarios del día</h4>
+  <div class="form-row">
+    <%= f.input :comentarios, wrapper_html: { class: 'col-md-12' } %>
+  </div>
+
+  <div class="form-actions">
+  <%= f.button :submit, 'Registrar', class: 'btn btn-primary' %>
+</div>
+<br>
+<% end %>

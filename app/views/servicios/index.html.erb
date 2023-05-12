@@ -1,0 +1,97 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Servicios</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Cas</th>
+      <th>Nfu</th>
+      <th>Apoyo cas</th>
+      <th>Kkbc a p2</th>
+      <th>Kka a ngp</th>
+      <th>Kka a p1</th>
+      <th>Yeso a silo</th>
+      <th>Conchuela a bru</th>
+      <th>Escombros</th>
+      <th>Residuos</th>
+      <th>Barrido industrial</th>
+      <th>Retiro derrames</th>
+      <th>Aspirado</th>
+      <th>Cementos</th>
+      <th>Transportador</th>
+      <th>Materia prima</th>
+      <th>Harneo o seleccion</th>
+      <th>Recarga</th>
+      <th>Molino</th>
+      <th>Descarga</th>
+      <th>Ton</th>
+      <th>Lavado cont</th>
+      <th>Retiro escombros</th>
+      <th>Cloracion</th>
+      <th>Ol01</th>
+      <th>Ol02</th>
+      <th>Ol09</th>
+      <th>Ol10</th>
+      <th>Ex01</th>
+      <th>Ok05</th>
+      <th>Ok04</th>
+      <th>Barr12</th>
+      <th>Bbc20</th>
+      <th>H12</th>
+      <th>Ca</th>
+      <th>Comentarios</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @servicios.each do |servicio| %>
+      <tr>
+        <td><%= servicio.cas %></td>
+        <td><%= servicio.nfu %></td>
+        <td><%= servicio.apoyo_cas %></td>
+        <td><%= servicio.kkbc_a_p2 %></td>
+        <td><%= servicio.kka_a_ngp %></td>
+        <td><%= servicio.kka_a_p1 %></td>
+        <td><%= servicio.yeso_a_silo %></td>
+        <td><%= servicio.conchuela_a_bru %></td>
+        <td><%= servicio.escombros %></td>
+        <td><%= servicio.residuos %></td>
+        <td><%= servicio.barrido_industrial %></td>
+        <td><%= servicio.retiro_derrames %></td>
+        <td><%= servicio.aspirado %></td>
+        <td><%= servicio.cementos %></td>
+        <td><%= servicio.transportador %></td>
+        <td><%= servicio.materia_prima %></td>
+        <td><%= servicio.harneo_o_seleccion %></td>
+        <td><%= servicio.recarga %></td>
+        <td><%= servicio.molino %></td>
+        <td><%= servicio.descarga %></td>
+        <td><%= servicio.ton %></td>
+        <td><%= servicio.lavado_cont %></td>
+        <td><%= servicio.retiro_escombros %></td>
+        <td><%= servicio.cloracion %></td>
+        <td><%= servicio.ol01 %></td>
+        <td><%= servicio.ol02 %></td>
+        <td><%= servicio.ol09 %></td>
+        <td><%= servicio.ol10 %></td>
+        <td><%= servicio.ex01 %></td>
+        <td><%= servicio.ok05 %></td>
+        <td><%= servicio.ok04 %></td>
+        <td><%= servicio.barr12 %></td>
+        <td><%= servicio.bbc20 %></td>
+        <td><%= servicio.h12 %></td>
+        <td><%= servicio.ca %></td>
+        <td><%= servicio.comentarios %></td>
+        <td><%= link_to 'Show', servicio %></td>
+        <td><%= link_to 'Edit', edit_servicio_path(servicio) %></td>
+        <td><%= link_to 'Destroy', servicio, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Servicio', new_servicio_path %>

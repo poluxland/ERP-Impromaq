@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_05_05_182445) do
+ActiveRecord::Schema.define(version: 2023_05_12_005932) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -331,7 +331,7 @@ ActiveRecord::Schema.define(version: 2023_05_05_182445) do
     t.string "repuestos"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.bigint "truck_id", null: false
+    t.bigint "truck_id"
     t.integer "duracion"
     t.index ["truck_id"], name: "index_interventions_on_truck_id"
   end
@@ -343,7 +343,7 @@ ActiveRecord::Schema.define(version: 2023_05_05_182445) do
     t.string "mecanico"
     t.text "descripcion"
     t.string "repuestos"
-    t.bigint "truck_id", null: false
+    t.bigint "truck_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["truck_id"], name: "index_mantencions_on_truck_id"
@@ -471,6 +471,47 @@ ActiveRecord::Schema.define(version: 2023_05_05_182445) do
     t.string "phone"
     t.string "estado"
     t.string "contact"
+  end
+
+  create_table "servicios", force: :cascade do |t|
+    t.integer "cas"
+    t.integer "nfu"
+    t.integer "apoyo_cas"
+    t.integer "kkbc_a_p2"
+    t.integer "kka_a_ngp"
+    t.integer "kka_a_p1"
+    t.integer "yeso_a_silo"
+    t.integer "conchuela_a_bru"
+    t.integer "escombros"
+    t.integer "residuos"
+    t.integer "barrido_industrial"
+    t.string "retiro_derrames"
+    t.integer "aspirado"
+    t.integer "cementos"
+    t.integer "transportador"
+    t.integer "materia_prima"
+    t.integer "harneo_o_seleccion"
+    t.integer "recarga"
+    t.integer "molino"
+    t.integer "descarga"
+    t.integer "ton"
+    t.integer "lavado_cont"
+    t.integer "retiro_escombros"
+    t.string "cloracion"
+    t.integer "ol01"
+    t.integer "ol02"
+    t.integer "ol09"
+    t.integer "ol10"
+    t.integer "ex01"
+    t.integer "ok05"
+    t.integer "ok04"
+    t.integer "barr12"
+    t.integer "bbc20"
+    t.integer "h12"
+    t.integer "ca"
+    t.text "comentarios"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "soplados", force: :cascade do |t|
