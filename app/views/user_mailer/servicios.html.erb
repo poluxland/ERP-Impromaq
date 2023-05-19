@@ -48,7 +48,7 @@
   <div class="container col-6">
 
 
-<h2>MMPP  </h2>
+<h2>Recepciones</h2>
 <table class="table table-striped">
   <tbody>
     <tr>
@@ -62,6 +62,16 @@
       <td><%= Servicio.last.nfu %> &nbsp;</td>
       <td><%= Servicio.last.apoyo_cas %> &nbsp;</td>
     </tr>
+
+
+
+  </tbody>
+</table>
+<br>
+
+<h2>Movimiento MMPP</h2>
+<table class="table table-striped">
+  <tbody>
     <tr>
       <th>KKC B/C a P2</th>
       <th>KKA a NGP</th>
@@ -77,14 +87,14 @@
       <th>Yeso a Silo</th>
       <th>Conchuela a BRU</th>
       <th>Escombros</th>
-      <th>Resdiduos</th>
+
     </tr>
      <tr>
 
       <td><%= Servicio.last.yeso_a_silo %> &nbsp;</td>
       <td><%= Servicio.last.conchuela_a_bru %> &nbsp;</td>
       <td><%= Servicio.last.escombros %> &nbsp;</td>
-      <td><%= Servicio.last.residuos %> &nbsp;</td>
+
     </tr>
 
 
@@ -94,17 +104,19 @@
 
 
 
-<h2>Otros  </h2>
+<h2>Rutinas y otras solicitudes</h2>
 
 <table class="table table-striped">
   <tbody>
     <tr>
+      <th>Resdiduos</th>
       <th>Barrido industrial</th>
       <th>Retiro derrames</th>
       <th>Aspirados</th>
 
     </tr>
     <tr>
+      <td><%= Servicio.last.residuos %> &nbsp;</td>
       <td><%= Servicio.last.barrido_industrial %> &nbsp;</td>
       <td><%= Servicio.last.retiro_derrames %> &nbsp;</td>
       <td><%= Servicio.last.aspirado%> &nbsp;</td>
@@ -113,35 +125,39 @@
       <th>Cementos</th>
       <th>Transportador</th>
       <th>Materia prima</th>
+      <th>Harneo o selección</th>
 
     </tr>
     <tr>
       <td><%= Servicio.last.cementos %> &nbsp;</td>
       <td><%= Servicio.last.transportador %> &nbsp;</td>
       <td><%= Servicio.last.materia_prima %> &nbsp;</td>
-    </tr>
-     <tr>
-      <th>Harneo o selección</th>
-      <th>Recarga</th>
-      <th>Molino</th>
-      <th>Descarga</th>
+      <td><%= Servicio.last.harneo_o_seleccion %> &nbsp;</td>
     </tr>
      <tr>
 
-      <td><%= Servicio.last.harneo_o_seleccion %> &nbsp;</td>
+      <th>Recarga</th>
+      <th>Molino</th>
+      <th>Descarga</th>
+      <th>Ton</th>
+    </tr>
+     <tr>
+
+
       <td><%= Servicio.last.recarga %> &nbsp;</td>
       <td><%= Servicio.last.molino %> &nbsp;</td>
       <td><%= Servicio.last.descarga %> &nbsp;</td>
+      <td><%= Servicio.last.ton %> &nbsp;</td>
     </tr>
       <tr>
-      <th>Ton</th>
+
       <th>Lavado</th>
       <th>Retriro escombros</th>
       <th>Cloración</th>
     </tr>
      <tr>
 
-      <td><%= Servicio.last.ton %> &nbsp;</td>
+
       <td><%= Servicio.last.lavado_cont %> &nbsp;</td>
       <td><%= Servicio.last.retiro_escombros %> &nbsp;</td>
       <td><%= Servicio.last.cloracion %> &nbsp;</td>
@@ -152,7 +168,27 @@
 </table>
 
 
+<h2>Medio ambiente</h2>
 
+<table class="table table-striped">
+  <tbody>
+      <tr>
+
+      <th>Lavado contenedores</th>
+      <th>Retiro de escombros</th>
+      <th>Cloración</th>
+    </tr>
+     <tr>
+
+
+      <td><%= Servicio.last.lavado_cont %> &nbsp;</td>
+      <td><%= Servicio.last.retiro_escombros %> &nbsp;</td>
+      <td><%= Servicio.last.cloracion %> &nbsp;</td>
+    </tr>
+
+
+  </tbody>
+</table>
 
 
   <h2>Equipos  </h2>
@@ -187,7 +223,7 @@
   </tbody>
 </table>
 
-
+<br>
 
 <table class="table table-striped">
   <tbody>

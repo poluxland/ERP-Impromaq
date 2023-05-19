@@ -1,184 +1,200 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Cas:</strong>
-  <%= @servicio.cas %>
-</p>
 
-<p>
-  <strong>Nfu:</strong>
-  <%= @servicio.nfu %>
-</p>
 
-<p>
-  <strong>Apoyo cas:</strong>
-  <%= @servicio.apoyo_cas %>
-</p>
 
-<p>
-  <strong>Kkbc a p2:</strong>
-  <%= @servicio.kkbc_a_p2 %>
-</p>
+<h2>Recepciones</h2>
+<table class="table table-striped">
+  <tbody>
+    <tr>
+      <th>CAS</th>
+      <th>NFU</th>
+      <th>Apoyo CAS</th>
 
-<p>
-  <strong>Kka a ngp:</strong>
-  <%= @servicio.kka_a_ngp %>
-</p>
+    </tr>
+    <tr>
+      <td><%= @servicio.cas %> &nbsp;</td>
+      <td><%= @servicio.nfu %> &nbsp;</td>
+      <td><%= @servicio.apoyo_cas %> &nbsp;</td>
+    </tr>
 
-<p>
-  <strong>Kka a p1:</strong>
-  <%= @servicio.kka_a_p1 %>
-</p>
 
-<p>
-  <strong>Yeso a silo:</strong>
-  <%= @servicio.yeso_a_silo %>
-</p>
 
-<p>
-  <strong>Conchuela a bru:</strong>
-  <%= @servicio.conchuela_a_bru %>
-</p>
+  </tbody>
+</table>
+<br>
 
-<p>
-  <strong>Escombros:</strong>
-  <%= @servicio.escombros %>
-</p>
+<h2>Movimiento MMPP</h2>
+<table class="table table-striped">
+  <tbody>
+    <tr>
+      <th>KKC B/C a P2</th>
+      <th>KKA a NGP</th>
+      <th>KKA a P1</th>
 
-<p>
-  <strong>Residuos:</strong>
-  <%= @servicio.residuos %>
-</p>
+    </tr>
+    <tr>
+      <td><%= @servicio.kkbc_a_p2 %> &nbsp;</td>
+      <td><%= @servicio.kka_a_ngp %> &nbsp;</td>
+      <td><%= @servicio.kka_a_p1 %> &nbsp;</td>
+    </tr>
+     <tr>
+      <th>Yeso a Silo</th>
+      <th>Conchuela a BRU</th>
+      <th>Escombros</th>
 
-<p>
-  <strong>Barrido industrial:</strong>
-  <%= @servicio.barrido_industrial %>
-</p>
+    </tr>
+     <tr>
 
-<p>
-  <strong>Retiro derrames:</strong>
-  <%= @servicio.retiro_derrames %>
-</p>
+      <td><%= @servicio.yeso_a_silo %> &nbsp;</td>
+      <td><%= @servicio.conchuela_a_bru %> &nbsp;</td>
+      <td><%= @servicio.escombros %> &nbsp;</td>
 
-<p>
-  <strong>Aspirado:</strong>
-  <%= @servicio.aspirado %>
-</p>
+    </tr>
 
-<p>
-  <strong>Cementos:</strong>
-  <%= @servicio.cementos %>
-</p>
 
-<p>
-  <strong>Transportador:</strong>
-  <%= @servicio.transportador %>
-</p>
+  </tbody>
+</table>
+<br>
 
-<p>
-  <strong>Materia prima:</strong>
-  <%= @servicio.materia_prima %>
-</p>
 
-<p>
-  <strong>Harneo o seleccion:</strong>
-  <%= @servicio.harneo_o_seleccion %>
-</p>
 
-<p>
-  <strong>Recarga:</strong>
-  <%= @servicio.recarga %>
-</p>
+<h2>Rutinas y otras solicitudes</h2>
 
-<p>
-  <strong>Molino:</strong>
-  <%= @servicio.molino %>
-</p>
+<table class="table table-striped">
+  <tbody>
+    <tr>
+      <th>Resdiduos</th>
+      <th>Barrido industrial</th>
+      <th>Retiro derrames</th>
+      <th>Aspirados</th>
 
-<p>
-  <strong>Descarga:</strong>
-  <%= @servicio.descarga %>
-</p>
+    </tr>
+    <tr>
+      <td><%= @servicio.residuos %> &nbsp;</td>
+      <td><%= @servicio.barrido_industrial %> &nbsp;</td>
+      <td><%= @servicio.retiro_derrames %> &nbsp;</td>
+      <td><%= @servicio.aspirado%> &nbsp;</td>
+    </tr>
+    <tr>
+      <th>Cementos</th>
+      <th>Transportador</th>
+      <th>Materia prima</th>
+      <th>Harneo o selección</th>
 
-<p>
-  <strong>Ton:</strong>
-  <%= @servicio.ton %>
-</p>
+    </tr>
+    <tr>
+      <td><%= @servicio.cementos %> &nbsp;</td>
+      <td><%= @servicio.transportador %> &nbsp;</td>
+      <td><%= @servicio.materia_prima %> &nbsp;</td>
+      <td><%= @servicio.harneo_o_seleccion %> &nbsp;</td>
+    </tr>
+     <tr>
 
-<p>
-  <strong>Lavado cont:</strong>
-  <%= @servicio.lavado_cont %>
-</p>
+      <th>Recarga</th>
+      <th>Molino</th>
+      <th>Descarga</th>
+      <th>Ton</th>
+    </tr>
+     <tr>
 
-<p>
-  <strong>Retiro escombros:</strong>
-  <%= @servicio.retiro_escombros %>
-</p>
 
-<p>
-  <strong>Cloracion:</strong>
-  <%= @servicio.cloracion %>
-</p>
+      <td><%= @servicio.recarga %> &nbsp;</td>
+      <td><%= @servicio.molino %> &nbsp;</td>
+      <td><%= @servicio.descarga %> &nbsp;</td>
+      <td><%= @servicio.ton %> &nbsp;</td>
+    </tr>
+      <tr>
 
-<p>
-  <strong>Ol01:</strong>
-  <%= @servicio.ol01 %>
-</p>
+      <th>Lavado</th>
+      <th>Retriro escombros</th>
+      <th>Cloración</th>
+    </tr>
+     <tr>
 
-<p>
-  <strong>Ol02:</strong>
-  <%= @servicio.ol02 %>
-</p>
 
-<p>
-  <strong>Ol09:</strong>
-  <%= @servicio.ol09 %>
-</p>
+      <td><%= @servicio.lavado_cont %> &nbsp;</td>
+      <td><%= @servicio.retiro_escombros %> &nbsp;</td>
+      <td><%= @servicio.cloracion %> &nbsp;</td>
+    </tr>
 
-<p>
-  <strong>Ol10:</strong>
-  <%= @servicio.ol10 %>
-</p>
 
-<p>
-  <strong>Ex01:</strong>
-  <%= @servicio.ex01 %>
-</p>
+  </tbody>
+</table>
 
-<p>
-  <strong>Ok05:</strong>
-  <%= @servicio.ok05 %>
-</p>
 
-<p>
-  <strong>Ok04:</strong>
-  <%= @servicio.ok04 %>
-</p>
+<h2>Medio ambiente</h2>
 
-<p>
-  <strong>Barr12:</strong>
-  <%= @servicio.barr12 %>
-</p>
+<table class="table table-striped">
+  <tbody>
+      <tr>
 
-<p>
-  <strong>Bbc20:</strong>
-  <%= @servicio.bbc20 %>
-</p>
+      <th>Lavado contenedores</th>
+      <th>Retiro de escombros</th>
+      <th>Cloración</th>
+    </tr>
+     <tr>
 
-<p>
-  <strong>H12:</strong>
-  <%= @servicio.h12 %>
-</p>
 
-<p>
-  <strong>Ca:</strong>
-  <%= @servicio.ca %>
-</p>
+      <td><%= @servicio.lavado_cont %> &nbsp;</td>
+      <td><%= @servicio.retiro_escombros %> &nbsp;</td>
+      <td><%= @servicio.cloracion %> &nbsp;</td>
+    </tr>
 
-<p>
-  <strong>Comentarios:</strong>
-  <%= @servicio.comentarios %>
-</p>
+
+  </tbody>
+</table>
+
+
+  <h2>Equipos  </h2>
+<table class="table table-striped">
+  <tbody>
+    <tr>
+      <th>OL02</th>
+      <th>OL09</th>
+      <th>OL10</th>
+      <th>EX01</th>
+      <th>OK05</th>
+      <th>OK04</th>
+      <th>Barr12</th>
+      <th>BBC20</th>
+      <th>H12</th>
+      <th>CA</th>
+    </tr>
+    <tr>
+      <td><%= @servicio.ol02 %>&nbsp;</td>
+      <td><%= @servicio.ol09 %>&nbsp;</td>
+      <td><%= @servicio.ol10 %>&nbsp;</td>
+      <td><%= @servicio.ex01 %>&nbsp;</td>
+      <td><%= @servicio.ok05 %>&nbsp;</td>
+      <td><%= @servicio.ok04 %>&nbsp;</td>
+      <td><%= @servicio.barr12 %>&nbsp;</td>
+      <td><%= @servicio.bbc20 %>&nbsp;</td>
+      <td><%= @servicio.h12 %>&nbsp;</td>
+      <td><%= @servicio.ca %>&nbsp;</td>
+
+    </tr>
+
+  </tbody>
+</table>
+
+
+
+<table class="table table-striped">
+  <tbody>
+    <tr>
+      <th>Comentarios</th>
+    </tr>
+    <tr>
+      <td><%= @servicio.comentarios %>&nbsp;</td>
+    </tr>
+
+  </tbody>
+</table>
+
+
+
+</body>
 
 <%= link_to 'Edit', edit_servicio_path(@servicio) %> |
 <%= link_to 'Back', servicios_path %>
