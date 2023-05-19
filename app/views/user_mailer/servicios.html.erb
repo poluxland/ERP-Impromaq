@@ -1,0 +1,208 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" style="background-color: #FFFFFF;margin: 0;padding: 0;">
+
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="x-ua-compatible" content="IE=edge,chrome=1">
+  <meta name="format-detection" content="telephone=no">
+  <!-- disable auto telephone linking in iOS -->
+  <title>Planit</title>
+  <link href="http://fonts.googleapis.com/css?family=Montserrat:400,500,600,700,800" rel="stylesheet">
+
+  <style type="text/css">
+
+    table {
+    border-collapse: collapse;
+    }
+
+    table, th, td {
+    border: 1px solid black;
+    }
+
+    table {
+    width: 70%;
+  }
+
+    th {
+    height: 20px;
+    background-color: #4CAF50;
+    color: white;
+  }
+
+  th, td {
+    padding: 5px;
+    text-align: left;
+  }
+
+
+  </style>
+</head>
+
+<body>
+<h1><u>Reporte Servicios <%= Servicio.last.created_at.in_time_zone('Santiago').strftime("%d-%m-%Y %H:%M")%></u></h1>
+
+
+
+  <div class="container col-6">
+
+
+<h2>MMPP  </h2>
+<table class="table table-striped">
+  <tbody>
+    <tr>
+      <th>CAS</th>
+      <th>NFU</th>
+      <th>Apoyo CAS</th>
+
+    </tr>
+    <tr>
+      <td><%= Servicio.last.cas %> &nbsp;</td>
+      <td><%= Servicio.last.nfu %> &nbsp;</td>
+      <td><%= Servicio.last.apoyo_cas %> &nbsp;</td>
+    </tr>
+    <tr>
+      <th>KKC B/C a P2</th>
+      <th>KKA a NGP</th>
+      <th>KKA a P1</th>
+
+    </tr>
+    <tr>
+      <td><%= Servicio.last.kkbc_a_p2 %> &nbsp;</td>
+      <td><%= Servicio.last.kka_a_ngp %> &nbsp;</td>
+      <td><%= Servicio.last.kka_a_p1 %> &nbsp;</td>
+    </tr>
+     <tr>
+      <th>Yeso a Silo</th>
+      <th>Conchuela a BRU</th>
+      <th>Escombros</th>
+      <th>Resdiduos</th>
+    </tr>
+     <tr>
+
+      <td><%= Servicio.last.yeso_a_silo %> &nbsp;</td>
+      <td><%= Servicio.last.conchuela_a_bru %> &nbsp;</td>
+      <td><%= Servicio.last.escombros %> &nbsp;</td>
+      <td><%= Servicio.last.residuos %> &nbsp;</td>
+    </tr>
+
+
+  </tbody>
+</table>
+<br>
+
+
+
+<h2>Otros  </h2>
+
+<table class="table table-striped">
+  <tbody>
+    <tr>
+      <th>Barrido industrial</th>
+      <th>Retiro derrames</th>
+      <th>Aspirados</th>
+
+    </tr>
+    <tr>
+      <td><%= Servicio.last.barrido_industrial %> &nbsp;</td>
+      <td><%= Servicio.last.retiro_derrames %> &nbsp;</td>
+      <td><%= Servicio.last.aspirado%> &nbsp;</td>
+    </tr>
+    <tr>
+      <th>Cementos</th>
+      <th>Transportador</th>
+      <th>Materia prima</th>
+
+    </tr>
+    <tr>
+      <td><%= Servicio.last.cementos %> &nbsp;</td>
+      <td><%= Servicio.last.transportador %> &nbsp;</td>
+      <td><%= Servicio.last.materia_prima %> &nbsp;</td>
+    </tr>
+     <tr>
+      <th>Harneo o selección</th>
+      <th>Recarga</th>
+      <th>Molino</th>
+      <th>Descarga</th>
+    </tr>
+     <tr>
+
+      <td><%= Servicio.last.harneo_o_seleccion %> &nbsp;</td>
+      <td><%= Servicio.last.recarga %> &nbsp;</td>
+      <td><%= Servicio.last.molino %> &nbsp;</td>
+      <td><%= Servicio.last.descarga %> &nbsp;</td>
+    </tr>
+      <tr>
+      <th>Ton</th>
+      <th>Lavado</th>
+      <th>Retriro escombros</th>
+      <th>Cloración</th>
+    </tr>
+     <tr>
+
+      <td><%= Servicio.last.ton %> &nbsp;</td>
+      <td><%= Servicio.last.lavado_cont %> &nbsp;</td>
+      <td><%= Servicio.last.retiro_escombros %> &nbsp;</td>
+      <td><%= Servicio.last.cloracion %> &nbsp;</td>
+    </tr>
+
+
+  </tbody>
+</table>
+
+
+
+
+
+  <h2>Equipos  </h2>
+<table class="table table-striped">
+  <tbody>
+    <tr>
+      <th>OL02</th>
+      <th>OL09</th>
+      <th>OL10</th>
+      <th>EX01</th>
+      <th>OK05</th>
+      <th>OK04</th>
+      <th>Barr12</th>
+      <th>BBC20</th>
+      <th>H12</th>
+      <th>CA</th>
+    </tr>
+    <tr>
+      <td><%= Servicio.last.ol02 %>&nbsp;</td>
+      <td><%= Servicio.last.ol09 %>&nbsp;</td>
+      <td><%= Servicio.last.ol10 %>&nbsp;</td>
+      <td><%= Servicio.last.ex01 %>&nbsp;</td>
+      <td><%= Servicio.last.ok05 %>&nbsp;</td>
+      <td><%= Servicio.last.ok04 %>&nbsp;</td>
+      <td><%= Servicio.last.barr12 %>&nbsp;</td>
+      <td><%= Servicio.last.bbc20 %>&nbsp;</td>
+      <td><%= Servicio.last.h12 %>&nbsp;</td>
+      <td><%= Servicio.last.ca %>&nbsp;</td>
+
+    </tr>
+
+  </tbody>
+</table>
+
+
+
+<table class="table table-striped">
+  <tbody>
+    <tr>
+      <th>Comentarios</th>
+    </tr>
+    <tr>
+      <td><%= Servicio.last.comentarios %>&nbsp;</td>
+    </tr>
+
+  </tbody>
+</table>
+
+
+
+</body>
+</html>
+

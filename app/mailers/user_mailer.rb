@@ -24,4 +24,10 @@ def soplados
     mail to: "jose.jerez@msindustrial.cl, alejandro.olivares@msindustrial.cl, fernando.gonzalez@msindustrial.cl, guillermo.roco@meloncementos.cl, roberto.leiva@meloncementos.cl, jefesturno.planta@melon.cl, supervisor.envasadora@msindustrial.cl, marianelly.villarroel@meloncementos.cl, rodrigo.trigo@meloncementos.cl, gaston.guerrero@meloncementos.cl, maryorie.fajardo@msindustrial.cl",  subject: @greeting
   end
 
+  def servicios
+    @greeting = "Reporte Soplado " + Time.now.in_time_zone('Santiago').to_s
+
+    mail to: "jose.jerez@msindustrial.cl, hernan.martinez@msindustrial.cl, fernando.gonzalez@msindustrial.cl",  subject: @greeting
+  end
+
 end
