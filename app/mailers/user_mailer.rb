@@ -25,7 +25,7 @@ def soplados
   end
 
   def servicios
-    @greeting = "Reporte Soplado " + Time.now.in_time_zone('Santiago').to_s
+    @greeting = "Reporte Servicios " + Time.now.in_time_zone('Santiago').to_s
 
     mail to: "jose.jerez@msindustrial.cl, hernan.martinez@msindustrial.cl, fernando.gonzalez@msindustrial.cl",  subject: @greeting
   end
