@@ -156,3 +156,28 @@
     </div>
   </div>
 </div>
+
+<!-- Cards OPs -->
+<div class="card-deck">
+  <div class="card shadow">
+    <div class="card-body">
+      <h5 class="card-title"><i class="fas fa-poll text-success"></i> Gastos segun centro de costo</h5>
+
+      <%= line_chart Gasto.group(:cc).group_by_month(:created_at).sum(:monto_neto), thousands: "." %>
+
+
+    </div>
+  </div>
+  <div class="card shadow">
+    <div class="card-body">
+      <h5 class="card-title"><i class="fas fa-poll text-success"></i> Gastos segun familia</h5>
+
+      <%= line_chart Gasto.group(:familia).group_by_month(:created_at).sum(:monto_neto), thousands: "." %>
+
+    </div>
+  </div>
+</div>
+
+
+
+</div>
