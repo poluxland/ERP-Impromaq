@@ -82,7 +82,42 @@
 <% end %>
 
 
+<table class="table table-sm">
+<thead class="thead-dark">
+  <tr>
+    <th scope="col">Despacho</th>
+    <th scope="col">Especial</th>
+    <th scope="col">Extra</th>
+    <th scope="col">Super 3300</th>
+    <th scope="col">Super 4200</th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td>Sacos</td>
+    <td><%= Medida.last.especial_sacos %></td>
+    <td><%= Medida.last.extra_sacos %></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>Bigbag</td>
+    <td><%= Medida.last.especial_bigbag %></td>
+    <td><%= Medida.last.extra_bigbag %></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>Granel</td>
+    <td><%= Medida.last.especial_granel %></td>
+    <td><%= Medida.last.extra_granel %></td>
+    <td><%= Medida.last.super_3300_granel %></td>
+    <td><%= Medida.last.super_4200_granel %></td>
+  </tr>
+</tbody>
+</table>
 
+<br>
 <table class="table table-sm">
 <thead class="thead-dark">
   <tr>
