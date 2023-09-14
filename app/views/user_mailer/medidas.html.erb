@@ -49,31 +49,7 @@
     <h1><u>Reporte medidas silos y stock</u></h1>
     <h2><%= Medida.last.created_at.in_time_zone('Santiago').strftime("%Y-%m-%d %H:%M") %></h2>
 
-<table class="table table-sm">
-<thead class="thead-dark">
-  <tr>
-    <th scope="col">Enjuague</th>
-    <th scope="col">Cantidad</th>
-    <th scope="col">Ton</th>
-  </tr>
-</thead>
-<tbody>
-  <tr>
-    <td>Super 3.300</td>
-    <td><%= Medida.last.enjuagues_super %></td>
-    <td><%= Medida.last.enjuagues_super * 12 %></td>
 
-  </tr>
-   <tr>
-    <td>Super 4.200</td>
-    <td><%= Medida.last.enjuagues_super4 %></td>
-    <td><%= Medida.last.enjuagues_super4 * 12 %></td>
-
-  </tr>
-
-</tbody>
-</table>
-<br>
 <table class="table table-sm">
     <thead class="thead-dark">
         <tr>
@@ -200,6 +176,31 @@
   </tbody>
 </table>
 
+<br>
+<table class="table table-sm">
+<thead class="thead-dark">
+  <tr>
+    <th scope="col">Enjuague</th>
+    <th scope="col">Cantidad</th>
+    <th scope="col">Ton</th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td>Super 3.300</td>
+    <td><%= Medida.last.enjuagues_super %></td>
+    <td><%= Medida.last.enjuagues_super * 12 %></td>
+
+  </tr>
+   <tr>
+    <td>Super 4.200</td>
+    <td><%= Medida.last.enjuagues_super4 %></td>
+    <td><%= Medida.last.enjuagues_super4 * 12 %></td>
+
+  </tr>
+
+</tbody>
+</table>
 <br>
 
 <table class="table table-sm">
