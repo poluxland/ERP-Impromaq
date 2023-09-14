@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_06_29_152238) do
+ActiveRecord::Schema.define(version: 2023_09_14_194601) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -430,6 +430,7 @@ ActiveRecord::Schema.define(version: 2023_06_29_152238) do
     t.integer "extra_granel"
     t.integer "super_3300_granel"
     t.integer "super_4200_granel"
+    t.integer "enjuagues_super"
   end
 
   create_table "overtimes", force: :cascade do |t|

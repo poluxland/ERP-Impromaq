@@ -4,56 +4,64 @@
   <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
   <div class="form-inputs offset-md-1">
   <!-- <div class="form-inputs"> -->
+<h2>Enjuagues</h2>
+<div class="row">
+  <div class="col-md-2 mb-2 ">
+    <%= f.input :enjuagues_super, label: 'Enjuagues Super' , required: true %>
+  </div>
+
+</div>
+
   <h2>Plastificado</h2>
 <div class="row">
     <div class="col-md-2 mb-2 ">
-      <%= f.input :plastificado_especial, label: 'Plast. especial' %>
+      <%= f.input :plastificado_especial, label: 'Plast. especial', required: true %>
     </div>
     <div class="col-md-2 mb-2 ">
-      <%= f.input :plastificado_especial_lados, label: 'Plast. especial lados' %>
+      <%= f.input :plastificado_especial_lados, label: 'Plast. especial lados', required: true %>
     </div>
      <div class="col-md-2 mb-2 ">
-      <%= f.input :plastificado_especial_zunchos, label: 'Plast. especial zuncho' %>
+      <%= f.input :plastificado_especial_zunchos, label: 'Plast. especial zuncho', required: true %>
     </div>
     <div class="col-md-2 mb-2 ">
-      <%= f.input :plastificado_extra, label: 'Plast. extra' %>
+      <%= f.input :plastificado_extra, label: 'Plast. extra', required: true %>
     </div>
     <div class="col-md-2 mb-2 ">
-      <%= f.input :plastificado_extra_zunchos, label: 'Plast. extra zunchos'%>
+      <%= f.input :plastificado_extra_zunchos, label: 'Plast. extra zunchos', required: true %>
     </div>
   </div>
 
   <h2>Despacho</h2>
 <div class="row">
   <div class="col-md-2 mb-2 ">
-    <%= f.input :especial_sacos, label: 'Especial sacos' %>
+    <%= f.input :especial_sacos, label: 'Especial sacos', required: true %>
   </div>
   <div class="col-md-2 mb-2 ">
-    <%= f.input :especial_bigbag, label: 'Especial bigbag' %>
+    <%= f.input :especial_bigbag, label: 'Especial bigbag', required: true %>
   </div>
   <div class="col-md-2 mb-2 ">
-    <%= f.input :especial_granel, label: 'Especial granel' %>
-  </div>
-</div>
-
-<div class="row">
-  <div class="col-md-2 mb-2 ">
-    <%= f.input :extra_sacos, label: 'Extra sacos' %>
-  </div>
-  <div class="col-md-2 mb-2 ">
-    <%= f.input :extra_bigbag, label: 'Extra bigbag' %>
-  </div>
-  <div class="col-md-2 mb-2 ">
-    <%= f.input :extra_granel, label: 'Extra granel' %>
+    <%= f.input :especial_granel, label: 'Especial granel', required: true %>
   </div>
 </div>
 
 <div class="row">
   <div class="col-md-2 mb-2 ">
-    <%= f.input :super_3300_granel, label: 'Super 3300 granel' %>
+    <%= f.input :extra_sacos, label: 'Extra sacos', required: true %>
   </div>
   <div class="col-md-2 mb-2 ">
-    <%= f.input :super_4200_granel, label: 'Super 4200 granel' %>
+    <%= f.input :extra_bigbag, label: 'Extra bigbag', required: true %>
+  </div>
+  <div class="col-md-2 mb-2 ">
+    <%= f.input :extra_granel, label: 'Extra granel', required: true %>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-2 mb-2 ">
+    <%= f.input :super_3300_granel, label: 'Super 3300 granel', required: true %>
+  </div>
+  <div class="col-md-2 mb-2 ">
+    <%= f.input :super_4200_granel, label: 'Super 4200 granel', required: true %>
   </div>
 </div>
 
@@ -61,77 +69,77 @@
 <h2>Nuevo registro medidas</h2>
   <div class="row">
     <div class="col-md-2 mb-2 ">
-      <%= f.input :silo19a, label: 'Silo 19 Medida 1' %>
+      <%= f.input :silo19a, label: 'Silo 19 Medida 1', required: true %>
     </div>
     <div class="col-md-2 mb-2 ">
-      <%= f.input :silo19b, label: 'Silo 19 Medida 2' %>
+      <%= f.input :silo19b, label: 'Silo 19 Medida 2', required: true %>
     </div>
     <div class="col-md-2 mb-2 ">
-      <%= f.input :silo20a, label: 'Silo 20 Medida 1' %>
+      <%= f.input :silo20a, label: 'Silo 20 Medida 1', required: true %>
     </div>
     <div class="col-md-2 mb-2 ">
-      <%= f.input :silo20b, label: 'Silo 20 Medida 2'%>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-md-2 mb-2 ">
-      <%= f.input :silo21a, label: 'Silo 21 Medida 1' %>
-    </div>
-    <div class="col-md-2 mb-2 ">
-      <%= f.input :silo21b, label: 'Silo 21 Medida 2' %>
-    </div>
-    <div class="col-md-2 mb-2 ">
-      <%= f.input :silo22a, label: 'Silo 22 Medida 1' %>
-    </div>
-    <div class="col-md-2 mb-2 ">
-      <%= f.input :silo22b, label: 'Silo 22 Medida 2' %>
+      <%= f.input :silo20b, label: 'Silo 20 Medida 2', required: true %>
     </div>
   </div>
   <div class="row">
     <div class="col-md-2 mb-2 ">
-      <%= f.input :silo27, label: 'Medida Silo 27' %>
+      <%= f.input :silo21a, label: 'Silo 21 Medida 1', required: true %>
     </div>
     <div class="col-md-2 mb-2 ">
-      <%= f.input :silo28, label: 'Medida Silo 28' %>
+      <%= f.input :silo21b, label: 'Silo 21 Medida 2', required: true %>
+    </div>
+    <div class="col-md-2 mb-2 ">
+      <%= f.input :silo22a, label: 'Silo 22 Medida 1', required: true %>
+    </div>
+    <div class="col-md-2 mb-2 ">
+      <%= f.input :silo22b, label: 'Silo 22 Medida 2', required: true %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-2 mb-2 ">
+      <%= f.input :silo27, label: 'Medida Silo 27', required: true %>
+    </div>
+    <div class="col-md-2 mb-2 ">
+      <%= f.input :silo28, label: 'Medida Silo 28', required: true %>
     </div>
   </div>
   <h2>Stock</h2>
   <div class="row">
     <div class="col-md-2 mb-2 ">
-      <%= f.input :especialsacos, label: 'Especial sacos' %>
+      <%= f.input :especialsacos, label: 'Especial sacos', required: true %>
     </div>
     <div class="col-md-2 mb-2 ">
-      <%= f.input :extrsacos, label: 'Extra sacos' %>
+      <%= f.input :extrsacos, label: 'Extra sacos', required: true %>
     </div>
   </div>
   <div class="row">
     <div class="col-md-2 mb-2 ">
-        <%= f.input :bigbagextra, label: 'Bigbag extra' %>
+        <%= f.input :bigbagextra, label: 'Bigbag extra', required: true %>
     </div>
     <div class="col-md-2 mb-2 ">
-      <%= f.input :bigbagextra1350, label: 'Bigbag extra 1350' %>
+      <%= f.input :bigbagextra1350, label: 'Bigbag extra 1350', required: true %>
     </div>
     <div class="col-md-2 mb-2 ">
-      <%= f.input :bigbagextra1, label: 'Bigbag extra 1000' %>
+      <%= f.input :bigbagextra1, label: 'Bigbag extra 1000', required: true %>
     </div>
     </div>
     <div class="row">
     <div class="col-md-2 mb-2 ">
-      <%= f.input :bigbagespecial, label: 'Bigbag especial' %>
+      <%= f.input :bigbagespecial, label: 'Bigbag especial' , required: true %>
     </div>
     <div class="col-md-2 mb-2 ">
-      <%= f.input :bigbagsuper, label: 'Bigbag super' %>
+      <%= f.input :bigbagsuper, label: 'Bigbag super', required: true %>
     </div>
     <div class="col-md-2 mb-2 ">
-      <%= f.input :bigbagplus, label: 'Bigbag plus' %>
+      <%= f.input :bigbagplus, label: 'Bigbag plus', required: true %>
     </div>
   </div>
   <div class="row">
     <div class="col-md-2 mb-2 ">
-    <%= f.input :prodhaver, label: 'Producción Haver' %>
+    <%= f.input :prodhaver, label: 'Producción Haver', required: true %>
     </div>
     <div class="col-md-2 mb-2 ">
-      <%= f.input :prodvento, label: 'Producción Vento' %>
+      <%= f.input :prodvento, label: 'Producción Vento', required: true %>
     </div>
   </div>
   <h2>Nivel tolvas</h2>
