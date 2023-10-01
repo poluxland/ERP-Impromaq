@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_09_14_202613) do
+ActiveRecord::Schema.define(version: 2023_10_01_231930) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -464,6 +464,30 @@ ActiveRecord::Schema.define(version: 2023_09_14_202613) do
     t.date "contratado"
     t.string "evaluacion"
     t.string "comentarios"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "reports", force: :cascade do |t|
+    t.integer "especial_sacos"
+    t.integer "extra_sacos"
+    t.integer "especial_soluble"
+    t.integer "extra_soluble"
+    t.integer "bb_especial"
+    t.integer "bb_extra"
+    t.integer "prod_esp_sacos"
+    t.integer "prod_extra_sacos"
+    t.integer "prod_extra_soluble"
+    t.integer "prod_esp_bb"
+    t.integer "prod_extra_bb"
+    t.integer "envases_esp"
+    t.integer "envases_ext"
+    t.integer "envases_bb"
+    t.integer "pallets_buenos"
+    t.integer "muestra_pallets"
+    t.integer "humedad_promedio"
+    t.integer "bobinas"
+    t.text "observaciones"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

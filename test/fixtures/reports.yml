@@ -1,0 +1,43 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  especial_sacos: 1
+  extra_sacos: 1
+  especial_soluble: 1
+  extra_soluble: 1
+  bb_especial: 1
+  bb_extra: 1
+  prod_esp_sacos: 1
+  prod_extra_sacos: 1
+  prod_extra_soluble: 1
+  prod_esp_bb: 1
+  prod_extra_bb: 1
+  envases_esp: 1
+  envases_ext: 1
+  envases_bb: 1
+  pallets_buenos: 1
+  muestra_pallets: 1
+  humedad_promedio: 1
+  bobinas: 1
+  observaciones: MyText
+
+two:
+  especial_sacos: 1
+  extra_sacos: 1
+  especial_soluble: 1
+  extra_soluble: 1
+  bb_especial: 1
+  bb_extra: 1
+  prod_esp_sacos: 1
+  prod_extra_sacos: 1
+  prod_extra_soluble: 1
+  prod_esp_bb: 1
+  prod_extra_bb: 1
+  envases_esp: 1
+  envases_ext: 1
+  envases_bb: 1
+  pallets_buenos: 1
+  muestra_pallets: 1
+  humedad_promedio: 1
+  bobinas: 1
+  observaciones: MyText

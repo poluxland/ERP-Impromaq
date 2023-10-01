@@ -1,0 +1,136 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" style="background-color: #FFFFFF;margin: 0;padding: 0;">
+
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="x-ua-compatible" content="IE=edge,chrome=1">
+  <meta name="format-detection" content="telephone=no">
+  <!-- disable auto telephone linking in iOS -->
+  <title>Planit</title>
+  <link href="http://fonts.googleapis.com/css?family=Montserrat:400,500,600,700,800" rel="stylesheet">
+
+  <style type="text/css">
+
+    table {
+    border-collapse: collapse;
+    }
+
+    table, th, td {
+    border: 1px solid black;
+    }
+
+    table {
+    width: 40%;
+  }
+
+    th {
+    height: 20px;
+    background-color: #4CAF50;
+    color: white;
+  }
+
+  th, td {
+    padding: 5px;
+    text-align: left;
+  }
+
+
+</style>
+</head>
+
+<body>
+  <div class="container col-6">
+    <h1><u>Informe Producción Puerto Montt</u></h1>
+    <h2><%= Report.last.created_at&.strftime("%d-%m-%y") %></h2>
+    <table class="table table-sm">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">Metric</th>
+          <th scope="col">Value</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Especial sacos</td>
+          <td><%= Report.last&.especial_sacos %></td>
+        </tr>
+        <tr>
+          <td>Extra sacos</td>
+          <td><%= Report.last&.extra_sacos %></td>
+        </tr>
+        <tr>
+          <td>Especial Soluble</td>
+          <td><%= Report.last&.especial_soluble %></td>
+        </tr>
+        <tr>
+          <td>Extra Soluble</td>
+          <td><%= Report.last&.extra_soluble %></td>
+        </tr>
+        <tr>
+          <td>BB Especial</td>
+          <td><%= Report.last&.bb_especial %></td>
+        </tr>
+        <tr>
+          <td>BB Extra</td>
+          <td><%= Report.last&.bb_extra %></td>
+        </tr>
+        <tr>
+          <td>Producción Special Sacos</td>
+          <td><%= Report.last&.prod_esp_sacos %></td>
+        </tr>
+        <tr>
+          <td>Producción Extra Sacos</td>
+          <td><%= Report.last&.prod_extra_sacos %></td>
+        </tr>
+        <tr>
+          <td>Producción Extra Soluble</td>
+          <td><%= Report.last&.prod_extra_soluble %></td>
+        </tr>
+        <tr>
+          <td>Producción Especial BB</td>
+          <td><%= Report.last&.prod_esp_bb %></td>
+        </tr>
+        <tr>
+          <td>Producción Extra BB</td>
+          <td><%= Report.last&.prod_extra_bb %></td>
+        </tr>
+        <tr>
+          <td>Envases Especial</td>
+          <td><%= Report.last&.envases_esp %></td>
+        </tr>
+        <tr>
+          <td>Envases Extra</td>
+          <td><%= Report.last&.envases_ext %></td>
+        </tr>
+        <tr>
+          <td>Envases BB</td>
+          <td><%= Report.last&.envases_bb %></td>
+        </tr>
+        <tr>
+          <td>Pallets buenos</td>
+          <td><%= Report.last&.pallets_buenos %></td>
+        </tr>
+        <tr>
+          <td>Muestra Pallets</td>
+          <td><%= Report.last&.muestra_pallets %></td>
+        </tr>
+        <tr>
+          <td>Humedad promedio</td>
+          <td><%= Report.last&.humedad_promedio %></td>
+        </tr>
+        <tr>
+          <td>Bobinas</td>
+          <td><%= Report.last&.bobinas %></td>
+        </tr>
+        <tr>
+          <td>Observaciones</td>
+          <td><%= Report.last&.observaciones %></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</body>
+
+</html>

@@ -1,0 +1,45 @@
+<%= simple_form_for(@report) do |f| %>
+  <%= f.error_notification %>
+  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+
+  <div class="form-inputs row">
+    <div class="col-md-4">
+      <%= f.input :especial_sacos %>
+      <%= f.input :extra_sacos %>
+      <%= f.input :especial_soluble %>
+      <%= f.input :extra_soluble %>
+      <%= f.input :bb_especial %>
+      <%= f.input :bb_extra %>
+    </div>
+
+    <div class="col-md-4">
+      <%= f.input :prod_esp_sacos %>
+      <%= f.input :prod_extra_sacos %>
+      <%= f.input :prod_extra_soluble %>
+      <%= f.input :prod_esp_bb %>
+      <%= f.input :prod_extra_bb %>
+      <%= f.input :bobinas %>
+    </div>
+
+    <div class="col-md-4">
+      <%= f.input :envases_esp %>
+      <%= f.input :envases_ext %>
+      <%= f.input :envases_bb %>
+      <%= f.input :pallets_buenos %>
+      <%= f.input :muestra_pallets %>
+      <%= f.input :humedad_promedio %>
+
+    </div>
+  </div>
+
+  <div class="form-row">
+    <%= f.input :observaciones, wrapper_html: { class: 'col-md-12' } %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit, 'Registrar', class: 'btn btn-primary' %>
+  </div>
+  <br>
+<% end %>
+
+

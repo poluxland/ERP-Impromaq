@@ -30,4 +30,10 @@ def soplados
     mail to: "jose.jerez@msindustrial.cl, hernan.martinez@msindustrial.cl, fernando.gonzalez@msindustrial.cl",  subject: @greeting
   end
 
+  def reports
+    @greeting = "Reporte planta Puerto Montt " + Time.now.in_time_zone('Santiago').to_s
+
+    mail to: "jose.jerez@msindustrial.cl, fernando.gonzalez@msindustrial.cl, julio.alvear@msindustrial.cl",  subject: @greeting
+  end
+
 end
