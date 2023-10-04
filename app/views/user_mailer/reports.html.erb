@@ -42,95 +42,67 @@
 
 <body>
   <div class="container col-6">
-    <h1><u>Informe Producción Puerto Montt</u></h1>
-    <h2><%= Report.last.created_at&.strftime("%d-%m-%y") %></h2>
+    <h2>Stock</h2>
     <table class="table table-sm">
-      <thead class="thead-dark">
-        <tr>
-          <th scope="col">Metric</th>
-          <th scope="col">Value</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Especial sacos</td>
-          <td><%= Report.last&.especial_sacos %></td>
-        </tr>
-        <tr>
-          <td>Extra sacos</td>
-          <td><%= Report.last&.extra_sacos %></td>
-        </tr>
-        <tr>
-          <td>Especial Soluble</td>
-          <td><%= Report.last&.especial_soluble %></td>
-        </tr>
-        <tr>
-          <td>Extra Soluble</td>
-          <td><%= Report.last&.extra_soluble %></td>
-        </tr>
-        <tr>
-          <td>BB Especial</td>
-          <td><%= Report.last&.bb_especial %></td>
-        </tr>
-        <tr>
-          <td>BB Extra</td>
-          <td><%= Report.last&.bb_extra %></td>
-        </tr>
-        <tr>
-          <td>Producción Special Sacos</td>
-          <td><%= Report.last&.prod_esp_sacos %></td>
-        </tr>
-        <tr>
-          <td>Producción Extra Sacos</td>
-          <td><%= Report.last&.prod_extra_sacos %></td>
-        </tr>
-        <tr>
-          <td>Producción Extra Soluble</td>
-          <td><%= Report.last&.prod_extra_soluble %></td>
-        </tr>
-        <tr>
-          <td>Producción Especial BB</td>
-          <td><%= Report.last&.prod_esp_bb %></td>
-        </tr>
-        <tr>
-          <td>Producción Extra BB</td>
-          <td><%= Report.last&.prod_extra_bb %></td>
-        </tr>
-        <tr>
-          <td>Envases Especial</td>
-          <td><%= Report.last&.envases_esp %></td>
-        </tr>
-        <tr>
-          <td>Envases Extra</td>
-          <td><%= Report.last&.envases_ext %></td>
-        </tr>
-        <tr>
-          <td>Envases BB</td>
-          <td><%= Report.last&.envases_bb %></td>
-        </tr>
-        <tr>
-          <td>Pallets buenos</td>
-          <td><%= Report.last&.pallets_buenos %></td>
-        </tr>
-        <tr>
-          <td>Muestra Pallets</td>
-          <td><%= Report.last&.muestra_pallets %></td>
-        </tr>
-        <tr>
-          <td>Humedad promedio</td>
-          <td><%= Report.last&.humedad_promedio %></td>
-        </tr>
-        <tr>
-          <td>Bobinas</td>
-          <td><%= Report.last&.bobinas %></td>
-        </tr>
-        <tr>
-          <td>Observaciones</td>
-          <td><%= Report.last&.observaciones %></td>
-        </tr>
-      </tbody>
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">Descripción</th>
+                <th scope="col">Toneladas</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr><td>Especial sacos</td><td><%= number_with_delimiter(Report.last&.especial_sacos) %></td></tr>
+            <tr><td>Extra sacos</td><td><%= number_with_delimiter(Report.last&.extra_sacos) %></td></tr>
+            <tr><td>Especial Soluble</td><td><%= number_with_delimiter(Report.last&.especial_soluble) %></td></tr>
+            <tr><td>Extra Soluble</td><td><%= number_with_delimiter(Report.last&.extra_soluble) %></td></tr>
+            <tr><td>BB Especial</td><td><%= number_with_delimiter(Report.last&.bb_especial) %></td></tr>
+            <tr><td>BB Extra</td><td><%= number_with_delimiter(Report.last&.bb_extra) %></td></tr>
+        </tbody>
     </table>
-  </div>
+</div>
+
+<div class="container col-6">
+    <h2>Producción</h2>
+    <table class="table table-sm">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">Descripción</th>
+                <th scope="col">Toneladas</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr><td>Producción Special Sacos</td><td><%= number_with_delimiter(Report.last&.prod_esp_sacos) %></td></tr>
+            <tr><td>Producción Extra Sacos</td><td><%= number_with_delimiter(Report.last&.prod_extra_sacos) %></td></tr>
+            <tr><td>Producción Extra Soluble</td><td><%= number_with_delimiter(Report.last&.prod_extra_soluble) %></td></tr>
+            <tr><td>Producción Especial BB</td><td><%= number_with_delimiter(Report.last&.prod_esp_bb) %></td></tr>
+            <tr><td>Producción Extra BB</td><td><%= number_with_delimiter(Report.last&.prod_extra_bb) %></td></tr>
+        </tbody>
+    </table>
+</div>
+
+<div class="container col-6">
+    <h2>Insumos</h2>
+    <table class="table table-sm">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">Descripción</th>
+                <th scope="col">Cantidad</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr><td>Envases Especial</td><td><%= number_with_delimiter(Report.last&.envases_esp) %></td></tr>
+            <tr><td>Envases Extra</td><td><%= number_with_delimiter(Report.last&.envases_ext) %></td></tr>
+            <tr><td>Envases BB</td><td><%= number_with_delimiter(Report.last&.envases_bb) %></td></tr>
+            <tr><td>Pallets buenos</td><td><%= number_with_delimiter(Report.last&.pallets_buenos) %></td></tr>
+            <tr><td>Muestra Pallets</td><td><%= number_with_delimiter(Report.last&.muestra_pallets) %></td></tr>
+            <tr><td>Humedad promedio</td><td><%= number_with_delimiter(Report.last&.humedad_promedio) %></td></tr>
+            <tr><td>Bobinas</td><td><%= number_with_delimiter(Report.last&.bobinas) %></td></tr>
+            <tr><td>Observaciones</td><td><%= Report.last&.observaciones %></td></tr>
+        </tbody>
+    </table>
+</div>
+
+
 </body>
 
 </html>
