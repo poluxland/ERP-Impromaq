@@ -33,7 +33,7 @@ def soplados
   def reports
     @greeting = "Reporte planta Puerto Montt " + Time.now.in_time_zone('Santiago').to_s
 
-    mail to: "jose.jerez@msindustrial.cl, fernando.gonzalez@msindustrial.cl, julio.alvear@msindustrial.cl, martin.llancafil@meloncementos.cl, cesar.hernandez@meloncementos.cl",  subject: @greeting
+    mail to: "jose.jerez@msindustrial.cl, fernando.gonzalez@msindustrial.cl, julio.alvear@msindustrial.cl, martin.llancafil@meloncementos.cl, cesar.hernandez@meloncementos.cl, exequiel.moya@msindustrial.cl, camila.birke@msindustrial.cl",  subject: @greeting
   end
 
 end
