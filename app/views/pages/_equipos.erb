@@ -38,6 +38,7 @@
           <%= truck.equipo.last&.created_at&.strftime("%d-%m") %> /
           <%= truck.equipo.last&.horometro %>
           <%= truck.equipo.last&.operador %>
+          <% if truck.equipo.last.comentarios.present? %><i class="fa fa-folder text-danger" aria-hidden="true"></i><% end %>
           </a>
           <% end %>
         </td>
@@ -100,6 +101,7 @@
           <%= truck.equipo.last&.created_at&.strftime("%d-%m") %> /
           <%= truck.equipo.last&.horometro %>
           <%= truck.equipo.last&.operador %>
+          <% if truck.equipo.last.comentarios.present? %><i class="fa fa-folder text-danger" aria-hidden="true"></i><% end %>
           </a>
           <% end %>
         </td>
