@@ -2,7 +2,7 @@
 
 <h1>Reports</h1>
 
-<table>
+<table id="myTable" class="table table-responsive table-striped table-bordered table-sm shadow" cellspacing="0" width="100%">
   <thead>
     <tr>
       <th>Especial sacos</th>
@@ -24,7 +24,7 @@
       <th>Humedad promedio</th>
       <th>Bobinas</th>
       <th>Observaciones</th>
-      <th colspan="3"></th>
+
     </tr>
   </thead>
 
@@ -50,9 +50,6 @@
         <td><%= report.humedad_promedio %></td>
         <td><%= report.bobinas %></td>
         <td><%= report.observaciones %></td>
-        <td><%= link_to 'Show', report %></td>
-        <td><%= link_to 'Edit', edit_report_path(report) %></td>
-        <td><%= link_to 'Destroy', report, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -60,4 +57,4 @@
 
 <br>
 
-<%= link_to 'New Report', new_report_path %>
+<%= link_to 'Nuevo reporte', new_report_path, class: "btn btn-primary shadow m-3" %>
