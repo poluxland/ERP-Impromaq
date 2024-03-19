@@ -139,9 +139,9 @@
 <tbody>
   <tr>
     <td>Cemento Extra</td>
-    <td><%= (((30 - ((Medida.last.silo21a.to_f + Medida.last.silo21b.to_f)/2)) * 100) + ((30 - ((Medida.last.silo22a.to_f + Medida.last.silo22b.to_f)/2)) * 100) + ((20 - Medida.last.silo28) * 100)).to_i + (((30 - ((Medida.last.silo20a.to_f + Medida.last.silo20b.to_f)/2)) * 100).to_i) %> (Silos 20-21-22-28)</td>
+    <td><%= (((30 - ((Medida.last.silo21a.to_f + Medida.last.silo21b.to_f)/2)) * 100) + ((30 - ((Medida.last.silo22a.to_f + Medida.last.silo22b.to_f)/2)) * 100) + ((20 - Medida.last.silo28) * 100)).to_i %> (Silos 21-22-28)</td>
     <td><%= (Medida.last.extrsacos ? Medida.last.extrsacos : 0) + (Medida.last.bigbagextra ? Medida.last.bigbagextra : 0) + (Medida.last.bigbagextra1 ? Medida.last.bigbagextra1 : 0) + (Medida.last.bigbagextra1350 ? Medida.last.bigbagextra1350 : 0)%> (Sacos-Bigbag-Bigbag 1t-Peba)</td>
-    <td>  <%= ((((30 - ((Medida.last.silo21a.to_f + Medida.last.silo21b.to_f)/2)) * 100) + ((30 - ((Medida.last.silo22a.to_f + Medida.last.silo22b.to_f)/2)) * 100) + ((20 - Medida.last.silo28) * 100)).to_i) +  (Medida.last.extrsacos ? Medida.last.extrsacos : 0) + (Medida.last.bigbagextra ? Medida.last.bigbagextra : 0) + (Medida.last.bigbagextra1 ? Medida.last.bigbagextra1 : 0) + (Medida.last.bigbagextra1350 ? Medida.last.bigbagextra1350 : 0) + ((30 - ((Medida.last.silo20a.to_f + Medida.last.silo20b.to_f)/2)) * 100).to_i %>                         </td>
+    <td>  <%= ((((30 - ((Medida.last.silo21a.to_f + Medida.last.silo21b.to_f)/2)) * 100) + ((30 - ((Medida.last.silo22a.to_f + Medida.last.silo22b.to_f)/2)) * 100) + ((20 - Medida.last.silo28) * 100)).to_i) +  (Medida.last.extrsacos ? Medida.last.extrsacos : 0) + (Medida.last.bigbagextra ? Medida.last.bigbagextra : 0) + (Medida.last.bigbagextra1 ? Medida.last.bigbagextra1 : 0) + (Medida.last.bigbagextra1350 ? Medida.last.bigbagextra1350 : 0)  %>                         </td>
   </tr>
   <tr>
     <td>Cemento Super 3300</td>
@@ -151,9 +151,9 @@
   </tr>
   <tr>
     <td>Cemento Super 4200</td>
-    <td></td>
+    <td><%= (((30 - ((Medida.last.silo20a.to_f + Medida.last.silo20b.to_f)/2)) * 100).to_i)%> (Silo 20) </td>
     <td><%= (Medida.last.bigbagsuper ? Medida.last.bigbagsuper : 0) %> (Bigbag)</td>
-    <td><%= (Medida.last.bigbagsuper ? Medida.last.bigbagsuper : 0) %></td>
+    <td><%= (Medida.last.bigbagsuper ? Medida.last.bigbagsuper : 0) + ((30 - ((Medida.last.silo20a.to_f + Medida.last.silo20b.to_f)/2)) * 100).to_i %></td>
   </tr>
   <tr>
     <td>Cemento Especial</td>
@@ -220,7 +220,7 @@
     <td><%= ((30 - ((Medida.last.silo19a.to_f + Medida.last.silo19b.to_f)/2)) * 100).to_i %></td>
   </tr>
   <tr>
-    <td>20 (Extra)</td>
+    <td>20 (Super 4200)</td>
     <td><%= Medida.last.silo20a %> </td>
     <td><%= Medida.last.silo20b %></td>
     <td><%= ((30 - ((Medida.last.silo20a.to_f + Medida.last.silo20b.to_f)/2)) * 100).to_i %></td>
