@@ -5,6 +5,7 @@
 <table id="myTable" class="table table-responsive table-striped table-bordered table-sm shadow" cellspacing="0" width="100%">
   <thead>
     <tr>
+      <th>Fecha</th>
       <th>Especial sacos</th>
       <th>Extra sacos</th>
       <th>Especial soluble</th>
@@ -31,6 +32,7 @@
   <tbody>
     <% @reports.each do |report| %>
       <tr>
+         <td><%= report&.created_at&.strftime("%d-%m-%y") %></td>
         <td><%= report.especial_sacos %></td>
         <td><%= report.extra_sacos %></td>
         <td><%= report.especial_soluble %></td>
