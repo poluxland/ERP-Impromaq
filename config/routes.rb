@@ -135,7 +135,9 @@ Rails.application.routes.draw do
   get 'ptmfact', to: 'trabajos#ptmfact'
   get 'parfact', to: 'trabajos#parfact'
   devise_for :users
+  get 'estadoequipos', to: 'pages#estadoequipos'
   root to: 'pages#home'
+
 
   # get '*path' => redirect('/')
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
