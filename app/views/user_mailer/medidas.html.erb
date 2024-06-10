@@ -139,9 +139,9 @@
 <tbody>
   <tr>
     <td>Cemento Extra</td>
-    <td><%= (((20 - Medida.last.silo28) * 100)).to_i + ((30 - ((Medida.last.silo21a.to_f + Medida.last.silo21b.to_f)/2)) * 100).to_i  %> (Silos 21-28)</td>
+    <td><%= (((20 - Medida.last.silo28) * 100)).to_i  %> (Silos 28)</td>
     <td><%= (Medida.last.extrsacos ? Medida.last.extrsacos : 0) + (Medida.last.bigbagextra ? Medida.last.bigbagextra : 0) + (Medida.last.bigbagextra1 ? Medida.last.bigbagextra1 : 0) + (Medida.last.bigbagextra1350 ? Medida.last.bigbagextra1350 : 0)%> (Sacos-Bigbag-Bigbag 1t-Peba)</td>
-    <td>  <%= ((((20 - Medida.last.silo28) * 100)).to_i) +  (Medida.last.extrsacos ? Medida.last.extrsacos : 0) + (Medida.last.bigbagextra ? Medida.last.bigbagextra : 0) + (Medida.last.bigbagextra1 ? Medida.last.bigbagextra1 : 0) + (Medida.last.bigbagextra1350 ? Medida.last.bigbagextra1350 : 0) + ((30 - ((Medida.last.silo21a.to_f + Medida.last.silo21b.to_f)/2)) * 100).to_i  %>                         </td>
+    <td>  <%= ((((20 - Medida.last.silo28) * 100)).to_i) +  (Medida.last.extrsacos ? Medida.last.extrsacos : 0) + (Medida.last.bigbagextra ? Medida.last.bigbagextra : 0) + (Medida.last.bigbagextra1 ? Medida.last.bigbagextra1 : 0) + (Medida.last.bigbagextra1350 ? Medida.last.bigbagextra1350 : 0)  %> </td>
   </tr>
   <tr>
     <td>Cemento Super 3300</td>
@@ -172,6 +172,12 @@
     <td><%=((30 - ((Medida.last.silo22a.to_f + Medida.last.silo22b.to_f)/2)) * 100).to_i %> (Silo 22)</td>
     <td></td>
      <td><%= ((30 - ((Medida.last.silo22a.to_f + Medida.last.silo22b.to_f)/2)) * 100).to_i %></td>
+  </tr>
+   <tr>
+    <td>Cemento HPM</td>
+    <td><%=((30 - ((Medida.last.silo21a.to_f + Medida.last.silo21b.to_f)/2)) * 100).to_i %> (Silo 21)</td>
+    <td></td>
+     <td><%= ((30 - ((Medida.last.silo21a.to_f + Medida.last.silo21b.to_f)/2)) * 100).to_i %></td>
   </tr>
   <tr>
     <td><strong>Total</strong></td>
@@ -232,7 +238,7 @@
     <td><%= ((30 - ((Medida.last.silo20a.to_f + Medida.last.silo20b.to_f)/2)) * 100).to_i %></td>
   </tr>
   <tr>
-    <td>21 (Extra)</td>
+    <td>21 (HPM)</td>
     <td><%= Medida.last.silo21a %></td>
     <td><%= Medida.last.silo21b %></td>
     <td><%= ((30 - ((Medida.last.silo21a.to_f + Medida.last.silo21b.to_f)/2)) * 100).to_i %></td>
