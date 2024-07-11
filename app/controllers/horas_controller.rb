@@ -16,7 +16,9 @@ class HorasController < ApplicationController
     @horas = Hora.all
   end
 
-
+  def ultimas
+    @horas = Hora.where('created_at >= ?', 1.year.ago)
+  end
 
   def mec
     #@horas = Hora.where(mandante: "Martin Llancafil")

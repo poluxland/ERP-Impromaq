@@ -94,6 +94,7 @@ Rails.application.routes.draw do
   resources :horas
   get 'mec', to: 'horas#mec'
   get 'serv', to: 'horas#serv'
+  get 'ultimas', to: 'ultimas#serv'
   get 'indexserv', to: 'horas#indexserv'
   get 'indexmant', to: 'horas#indexmant'
 
