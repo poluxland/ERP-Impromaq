@@ -8,7 +8,50 @@ class UserMailer < ApplicationMailer
   def medidas
     @greeting = "Reporte Impromaq medidas de silos y stock " + Time.now.in_time_zone('Santiago').to_s
 
-    mail to: "jorge.frez@msindustrial.cl, jose.jerez@msindustrial.cl, fernando.gonzalez@msindustrial.cl, supervisor.envasadora@msindustrial.cl, osvaldo.silva@meloncementos.cl, jefesturno.planta@melon.cl, abigail.bustos@meloncementos.cl, renzo.allendes@meloncementos.cl, alejandro.olivares@msindustrial.cl, luis.estay@meloncementos.cl, sala.controlh9m21@melon.cl, carlos.gonzalezm@meloncementos.cl, claudio.villanueva@msindustrial.cl, marianelly.villarroel@meloncementos.cl, orlando.belmar@meloncementos.cl, marcos.prospero@msindustrial.cl, gaston.guerrero@meloncementos.cl, aldo.escobar@meloncementos.cl, guillermo.roco@meloncementos.cl, isabel.tapia@meloncementos.cl, diego.garrido@meloncementos.cl, aldo.baez@meloncementos.cl, catalina.marchant-externo@meloncementos.cl, mariapaz.cobo@meloncementos.cl, Alejandra.castro@meloncementos.cl, cristian.sotomayor@meloncementos.cl, guillermo.roco@meloncementos.cl, giovanni.henriquez@meloncementos.cl, nicolas.arnau@meloncementos.cl, orlando.vasquez@meloncementos.cl, sebastian.caica@melonservicios.cl, valentina.gonzalez@melonservicios.cl, geraldinne.martinez@meloncementos.cl", subject: @greeting
+    # Default recipients
+    recipients = [
+      "jorge.frez@msindustrial.cl",
+      "jose.jerez@msindustrial.cl",
+      "fernando.gonzalez@msindustrial.cl",
+      "supervisor.envasadora@msindustrial.cl",
+      "osvaldo.silva@meloncementos.cl",
+      "jefesturno.planta@melon.cl",
+      "abigail.bustos@meloncementos.cl",
+      "renzo.allendes@meloncementos.cl",
+      "alejandro.olivares@msindustrial.cl",
+      "luis.estay@meloncementos.cl",
+      "sala.controlh9m21@melon.cl",
+      "carlos.gonzalezm@meloncementos.cl",
+      "claudio.villanueva@msindustrial.cl",
+      "marianelly.villarroel@meloncementos.cl",
+      "orlando.belmar@meloncementos.cl",
+      "marcos.prospero@msindustrial.cl",
+      "gaston.guerrero@meloncementos.cl",
+      "aldo.escobar@meloncementos.cl",
+      "guillermo.roco@meloncementos.cl",
+      "isabel.tapia@meloncementos.cl",
+      "diego.garrido@meloncementos.cl",
+      "aldo.baez@meloncementos.cl",
+      "catalina.marchant-externo@meloncementos.cl",
+      "mariapaz.cobo@meloncementos.cl",
+      "Alejandra.castro@meloncementos.cl",
+      "cristian.sotomayor@meloncementos.cl",
+      "guillermo.roco@meloncementos.cl",
+      "giovanni.henriquez@meloncementos.cl",
+      "nicolas.arnau@meloncementos.cl",
+      "orlando.vasquez@meloncementos.cl",
+      "sebastian.caica@melonservicios.cl",
+      "valentina.gonzalez@melonservicios.cl",
+      "geraldinne.martinez@meloncementos.cl"
+    ]
+
+    # Check if the current time is in the morning (6 AM to 12 PM)
+    current_hour = Time.now.in_time_zone('Santiago').hour
+    if current_hour >= 5 && current_hour < 10
+      recipients << "helmut.brandau@meloncementos.cl"
+    end
+
+    mail to: recipients.join(", "), subject: @greeting
   end
 
   def units
