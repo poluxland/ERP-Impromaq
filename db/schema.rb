@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2024_02_11_113213) do
+ActiveRecord::Schema.define(version: 2024_08_01_000734) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -562,6 +562,7 @@ ActiveRecord::Schema.define(version: 2024_02_11_113213) do
     t.float "presion4"
     t.float "presion5"
     t.float "presion6"
+    t.boolean "jetin"
   end
 
   create_table "trabajos", force: :cascade do |t|
