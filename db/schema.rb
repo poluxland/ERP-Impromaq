@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2024_08_01_000734) do
+ActiveRecord::Schema.define(version: 2024_09_17_124248) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -433,6 +433,8 @@ ActiveRecord::Schema.define(version: 2024_08_01_000734) do
     t.integer "enjuagues_super"
     t.integer "enjuagues_super4"
     t.integer "bigbag_extra_retiro"
+    t.integer "plastificado_especial_soluble_completo"
+    t.integer "plastificado_extra_soluble_completo"
   end
 
   create_table "overtimes", force: :cascade do |t|
