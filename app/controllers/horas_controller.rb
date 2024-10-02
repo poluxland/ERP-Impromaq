@@ -9,7 +9,7 @@ class HorasController < ApplicationController
   end
 
   def indexmant
-    @horas = Hora.where(mandante: ["Martin Llancafil", "Sergio Miranda", "Johnny Rute", "Oscar Garrido"]).where(estado: "Pendiente revisión")
+    @horas = Hora.where(mandante: ["Martin Llancafil", "Sergio Miranda", "Johnny Rute", "Oscar Garrido", "Daniel Garrido"]).where(estado: "Pendiente revisión")
   end
 
   def index
