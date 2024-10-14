@@ -16,7 +16,7 @@ class UserMailer < ApplicationMailer
       "supervisor.envasadora@msindustrial.cl",
       "osvaldo.silva@meloncementos.cl",
       "jefesturno.planta@melon.cl",
-      "abigail.bustos@meloncementos.cl",
+      "pedro.guzman@meloncementos.cl",
       "renzo.allendes@meloncementos.cl",
       "alejandro.olivares@msindustrial.cl",
       "luis.estay@meloncementos.cl",
