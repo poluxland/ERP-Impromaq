@@ -4,7 +4,7 @@ class SopladosController < InheritedResources::Base
   private
 
     def soplado_params
-      params.require(:soplado).permit(:supervisor, :fecha, :presion1, :presion2, :presion3, :presion4, :presion5, :presion6, :observaciones, :horno, :jetin)
+      params.require(:soplado).permit(:supervisor, :fecha, :presion1, :presion2, :presion3, :presion4, :presion5, :presion6, :observaciones, :horno, :jetin, :mirillas, :so3)
     end
 
 end

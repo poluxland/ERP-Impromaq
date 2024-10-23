@@ -58,6 +58,8 @@
       <th>Quench P1</th>
       <th>Horno</th>
       <th>Jetin</th>
+      <th>Mirillas</th>
+      <th>SO3</th>
       <th>Observaciones</th>
   </tr>
 </thead>
@@ -73,6 +75,8 @@
         <td><%= Soplado.last.presion6 %></td>
         <td><%= Soplado.last.horno %></td>
         <td><%= Soplado.last.jetin ? 'Sí' : 'No' %></td>
+        <td><%= Soplado.last.mirillas %></td>
+        <td><%= Soplado.last.so3 %></td>
         <td><%= Soplado.last.observaciones %></td>
 
   </tr>
@@ -87,6 +91,8 @@
         <td><%= Soplado.order(:id).last(2).first.presion6 %></td>
         <td><%= Soplado.order(:id).last(2).first.horno %></td>
         <td><%= Soplado.order(:id).last(2).first.jetin ? 'Sí' : 'No' %></td>
+        <td><%= Soplado.order(:id).last(2).first.mirillas %></td>
+        <td><%= Soplado.order(:id).last(2).first.so3 %></td>
         <td><%= Soplado.order(:id).last(2).first.observaciones %></td>
 
   </tr>
@@ -101,6 +107,8 @@
         <td><%= Soplado.order(:id).last(3).first.presion6 %></td>
         <td><%= Soplado.order(:id).last(3).first.horno %></td>
         <td><%= Soplado.order(:id).last(3).first.jetin ? 'Sí' : 'No' %></td>
+        <td><%= Soplado.order(:id).last(3).first.mirillas %></td>
+        <td><%= Soplado.order(:id).last(3).first.so3 %></td>
         <td><%= Soplado.order(:id).last(3).first.observaciones %></td>
 
   </tr>
@@ -115,6 +123,8 @@
         <td><%= Soplado.order(:id).last(4).first.presion6 %></td>
         <td><%= Soplado.order(:id).last(4).first.horno %></td>
         <td><%= Soplado.order(:id).last(4).first.jetin ? 'Sí' : 'No' %></td>
+        <td><%= Soplado.order(:id).last(4).first.mirillas %></td>
+        <td><%= Soplado.order(:id).last(4).first.so3 %></td>
         <td><%= Soplado.order(:id).last(4).first.observaciones %></td>
 
   </tr>
