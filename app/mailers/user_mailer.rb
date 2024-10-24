@@ -61,10 +61,31 @@ class UserMailer < ApplicationMailer
   end
 
 
-def soplados
+  def soplados
     @greeting = "Reporte Soplado " + Time.now.in_time_zone('Santiago').to_s
 
-    mail to: "diego.garrido@meloncementos.cl, jose.jerez@msindustrial.cl, alejandro.olivares@msindustrial.cl, fernando.gonzalez@msindustrial.cl, guillermo.roco@meloncementos.cl, jefesturno.planta@melon.cl, supervisor.envasadora@msindustrial.cl, marianelly.villarroel@meloncementos.cl, gaston.guerrero@meloncementos.cl, maryorie.fajardo@msindustrial.cl",  subject: @greeting
+    # Default recipients for soplados report
+    recipients = [
+      "diego.garrido@meloncementos.cl",
+      "pedro.guzman@meloncementos.cl",
+      "jose.jerez@msindustrial.cl",
+      "alejandro.olivares@msindustrial.cl",
+      "fernando.gonzalez@msindustrial.cl",
+      "guillermo.roco@meloncementos.cl",
+      "jefesturno.planta@melon.cl",
+      "supervisor.envasadora@msindustrial.cl",
+      "marianelly.villarroel@meloncementos.cl",
+      "gaston.guerrero@meloncementos.cl",
+      "maryorie.fajardo@msindustrial.cl"
+    ]
+
+    # Check if the current time is in the morning (5 AM to 10 AM)
+    current_hour = Time.now.in_time_zone('Santiago').hour
+    if current_hour >= 5 && current_hour < 10
+      recipients << "helmut.brandau@meloncementos.cl"
+    end
+
+    mail to: recipients.join(", "), subject: @greeting
   end
 
   def servicios
