@@ -60,6 +60,7 @@
       <th>Jetin</th>
       <th>Mirillas</th>
       <th>SO3</th>
+      <th>Tiempo(m)</th>
       <th>Observaciones</th>
   </tr>
 </thead>
@@ -77,6 +78,7 @@
         <td><%= Soplado.last.jetin ? 'Sí' : 'No' %></td>
         <td><%= Soplado.last.mirillas %></td>
         <td><%= Soplado.last.so3 %></td>
+         <td><%= Soplado.last.tiempo %></td>
         <td><%= Soplado.last.observaciones %></td>
 
   </tr>
@@ -93,6 +95,7 @@
         <td><%= Soplado.order(:id).last(2).first.jetin ? 'Sí' : 'No' %></td>
         <td><%= Soplado.order(:id).last(2).first.mirillas %></td>
         <td><%= Soplado.order(:id).last(2).first.so3 %></td>
+        <td><%= Soplado.order(:id).last(2).first.tiempo %></td>
         <td><%= Soplado.order(:id).last(2).first.observaciones %></td>
 
   </tr>
@@ -109,6 +112,7 @@
         <td><%= Soplado.order(:id).last(3).first.jetin ? 'Sí' : 'No' %></td>
         <td><%= Soplado.order(:id).last(3).first.mirillas %></td>
         <td><%= Soplado.order(:id).last(3).first.so3 %></td>
+        <td><%= Soplado.order(:id).last(3).first.tiempo %></td>
         <td><%= Soplado.order(:id).last(3).first.observaciones %></td>
 
   </tr>
@@ -125,6 +129,7 @@
         <td><%= Soplado.order(:id).last(4).first.jetin ? 'Sí' : 'No' %></td>
         <td><%= Soplado.order(:id).last(4).first.mirillas %></td>
         <td><%= Soplado.order(:id).last(4).first.so3 %></td>
+        <td><%= Soplado.order(:id).last(4).first.tiempo %></td>
         <td><%= Soplado.order(:id).last(4).first.observaciones %></td>
 
   </tr>
