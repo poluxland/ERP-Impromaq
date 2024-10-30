@@ -24,7 +24,7 @@
   <tbody>
     <% @codigos.each do |codigo| %>
       <% ultimo_status = codigo.codigo_statuses.last %>
-      <% average_value = [ultimo_status&.ruidio, ultimo_status&.fuga, ultimo_status&.estructura, ultimo_status&.housekeep, ultimo_status&.vibracion, ultimo_status&.temp].compact.sum / 6.0 if ultimo_status %>
+      <% average_value = ([ultimo_status&.ruidio, ultimo_status&.fuga, ultimo_status&.estructura, ultimo_status&.housekeep, ultimo_status&.vibracion, ultimo_status&.temp].compact.sum / 6.0).round(1) if ultimo_status %>
       <tr>
         <td><%= codigo.tag %></td>
         <td><%= codigo.area %></td>
