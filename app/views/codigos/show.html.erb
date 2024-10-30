@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Tag:</strong>
+  <%= @codigo.tag %>
+</p>
+
+<p>
+  <strong>Area:</strong>
+  <%= @codigo.area %>
+</p>
+
+<p>
+  <strong>Descripcion:</strong>
+  <%= @codigo.descripcion %>
+</p>
+
+<%= link_to 'Edit', edit_codigo_path(@codigo) %> |
+<%= link_to 'Back', codigos_path %>

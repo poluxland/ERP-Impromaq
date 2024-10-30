@@ -1,0 +1,23 @@
+
+<%= simple_form_for(@codigo_status) do |f| %>
+  <%= f.error_notification %>
+  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+
+  <div class="form-inputs">
+
+     <%= f.association :codigo, label_method: :tag, collection: Codigo.order('tag ASC'), label: 'Equipo' %>
+
+    <%= f.input :ruidio, label: 'Ruido' %>
+    <%= f.input :fuga %>
+    <%= f.input :estructura %>
+    <%= f.input :housekeep %>
+    <%= f.input :vibracion %>
+    <%= f.input :temp %>
+    <%= f.input :estado %>
+    <%= f.input :fecha %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :codigo_statuses
+  resources :codigos
   resources :reports
   resources :servicios
   resources :soplados

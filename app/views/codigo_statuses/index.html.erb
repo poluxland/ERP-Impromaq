@@ -1,0 +1,44 @@
+<h1>Registro diario</h1>
+
+<table class="table table-striped table-bordered">
+  <thead class="thead-dark">
+    <tr>
+      <th>Registrado</th>
+      <th>Codigo</th>
+      <th>Ruidio</th>
+      <th>Fuga</th>
+      <th>Estructura</th>
+      <th>Housekeep</th>
+      <th>Vibración</th>
+      <th>Temp</th>
+      <th>Estado</th>
+      <th>Fecha</th>
+      <th colspan="3">Actions</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @codigo_statuses.each do |codigo_status| %>
+      <tr>
+        <td><%= codigo_status.created_at.strftime('%Y-%m-%d %H:%M:%S') %></td>
+        <td><%= codigo_status.codigo.tag %></td>
+        <td><%= codigo_status.ruidio %></td>
+        <td><%= codigo_status.fuga %></td>
+        <td><%= codigo_status.estructura %></td>
+        <td><%= codigo_status.housekeep %></td>
+        <td><%= codigo_status.vibracion %></td>
+        <td><%= codigo_status.temp %></td>
+        <td><%= codigo_status.estado %></td>
+        <td><%= codigo_status.fecha %></td>
+        <td><%= link_to 'Show', codigo_status, class: 'btn btn-primary btn-sm' %></td>
+        <td><%= link_to 'Edit', edit_codigo_status_path(codigo_status), class: 'btn btn-warning btn-sm' %></td>
+        <td><%= link_to 'Destroy', codigo_status, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger btn-sm' %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Nuevo registro', new_codigo_status_path, class: 'btn btn-success' %>
+<%= link_to 'Volver a cuadro resumen', codigos_path, class: 'btn btn-secondary' %>

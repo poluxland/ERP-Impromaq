@@ -1,0 +1,23 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  codigo: one
+  ruidio: 1
+  fuga: 1
+  estructura: 1
+  housekeep: 1
+  vibracion: 1
+  temp: 1
+  estado: MyString
+  fecha: 2024-10-29
+
+two:
+  codigo: two
+  ruidio: 1
+  fuga: 1
+  estructura: 1
+  housekeep: 1
+  vibracion: 1
+  temp: 1
+  estado: MyString
+  fecha: 2024-10-29

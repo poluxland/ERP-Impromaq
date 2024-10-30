@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2024_10_23_002029) do
+ActiveRecord::Schema.define(version: 2024_10_30_014250) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -105,6 +105,29 @@ ActiveRecord::Schema.define(version: 2024_10_23_002029) do
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "truck_id"
     t.index ["truck_id"], name: "index_checklists_on_truck_id"
+  end
+
+  create_table "codigo_statuses", force: :cascade do |t|
+    t.bigint "codigo_id", null: false
+    t.integer "ruidio"
+    t.integer "fuga"
+    t.integer "estructura"
+    t.integer "housekeep"
+    t.integer "vibracion"
+    t.integer "temp"
+    t.string "estado"
+    t.date "fecha"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["codigo_id"], name: "index_codigo_statuses_on_codigo_id"
+  end
+
+  create_table "codigos", force: :cascade do |t|
+    t.string "tag"
+    t.string "area"
+    t.string "descripcion"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "entregas", force: :cascade do |t|
@@ -852,6 +875,7 @@ ActiveRecord::Schema.define(version: 2024_10_23_002029) do
   end
 
   add_foreign_key "checklists", "trucks"
+  add_foreign_key "codigo_statuses", "codigos"
   add_foreign_key "equipos", "trucks"
   add_foreign_key "interventions", "trucks"
   add_foreign_key "mantencions", "trucks"
