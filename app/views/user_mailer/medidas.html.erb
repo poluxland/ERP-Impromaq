@@ -200,48 +200,48 @@
             <tr>
                 <th scope="col" class="no-color">Silo (producto)</th>
                 <th scope="col" class="no-color">T (Ton)</th>
-                <th scope="col" class="no-color"></th>
-                <th scope="col" class="no-color"></th>
+                <th scope="col" class="no-color">M1</th>
+                <th scope="col" class="no-color">M2</th>
             </tr>
         </thead>
 <tbody>
   <tr>
     <td>19 (S3300)</td>
     <td><%= ((30 - ((Medida.last.silo19a.to_f + Medida.last.silo19b.to_f)/2)) * 100).to_i %></td>
-    <td></td>
-    <td></td>
+    <td><%= Medida.last.silo19a   %></td>
+    <td><%= Medida.last.silo19b   %></td>
 
   </tr>
   <tr>
     <td>20 (S4200)</td>
     <td><%= ((30 - ((Medida.last.silo20a.to_f + Medida.last.silo20b.to_f)/2)) * 100).to_i %></td>
-    <td></td>
-    <td></td>
+    <td><%=  Medida.last.silo20a  %></td>
+    <td><%=  Medida.last.silo20b  %></td>
 
   </tr>
   <tr>
     <td>21 (Extra)</td>
     <td><%= ((30 - ((Medida.last.silo21a.to_f + Medida.last.silo21b.to_f)/2)) * 100).to_i %></td>
-    <td></td>
-    <td></td>
+    <td><%= Medida.last.silo21a   %></td>
+    <td><%= Medida.last.silo21b   %></td>
   </tr>
   <tr>
     <td>22 (Extra)</td>
     <td><%= ((30 - ((Medida.last.silo22a.to_f + Medida.last.silo22b.to_f)/2)) * 100).to_i %></td>
-    <td></td>
-    <td></td>
+    <td><%= Medida.last.silo22a  %></td>
+    <td><%= Medida.last.silo22b   %></td>
   </tr>
 
   <tr>
     <td>28 (Extra)</td>
      <td><%= ((20 - Medida.last.silo28) * 100).clamp(0, Float::INFINITY) %></td>
-    <td></td>
+    <td><%= Medida.last.silo28   %></td>
     <td></td>
   </tr>
   <tr>
     <td>27 (Especial)</td>
     <td><%= Medida.last.silo27 ? (30 - Medida.last.silo27) * 460 : "" %></td>
-    <td></td>
+    <td><%= Medida.last.silo27   %></td>
     <td></td>
   </tr>
 </tbody>
