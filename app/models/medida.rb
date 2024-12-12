@@ -7,7 +7,7 @@ class Medida < ApplicationRecord
             :silo20a, :silo20b, :silo21a, :silo21b, :silo22a, :silo22b,
             :silo27, :silo28, :especialsacos, :extrsacos, :bigbagextra,
             :bigbagextra1350, :bigbagextra1, :bigbagespecial, :bigbagsuper,
-            :bigbagplus, :prodhaver, :prodvento, :otros, :ns30001, :ns30002,
+            :bigbagplus, :prodhaver, :prodvento, :otros, :ns30001, :ns30002, :prodbb,
             :ns30003, :nbb1, :nbb2, :nvento1, :nvento2, :nvento3, :callesilo28,
             :callesplanta1, :callesilo27, :bigbag_extra_retiro, presence: true
 

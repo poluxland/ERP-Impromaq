@@ -394,8 +394,8 @@
             </tr>
             <tr>
                 <th scope="col" class="no-color">Equipo</th>
-                <th scope="col" class="no-color"></th>
-                <th scope="col" class="no-color"></th>
+                <th scope="col" class="no-color">Turno</th>
+                <th scope="col" class="no-color">Cumplimiento</th>
                 <th scope="col" class="no-color"></th>
 
             </tr>
@@ -404,13 +404,19 @@
   <tr>
     <td>Haver</td>
     <td><%= Medida.last.prodhaver %></td>
-    <td></td>
+    <td><%= (Medida.last.prodhaver * 100) / 12000 %>%</td>
     <td></td>
   </tr>
   <tr>
     <td>Ventomatic </td>
     <td><%= Medida.last.prodvento %></td>
+    <td><%= (Medida.last.prodvento * 100) / 7000 %>%</td>
     <td></td>
+  </tr>
+  <tr>
+    <td>Bigbag </td>
+    <td><%= Medida.last.prodbb %></td>
+    <td><%= (Medida.last.prodbb * 100) / 125 %>%</td>
     <td></td>
   </tr>
 </tbody>
