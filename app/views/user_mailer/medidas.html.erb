@@ -404,19 +404,19 @@
   <tr>
     <td>Haver</td>
     <td><%= Medida.last.prodhaver %></td>
-    <td><%= (Medida.last.prodhaver * 100) / 12000 %>%</td>
+    <td><%= [(Medida.last.prodhaver * 100) / 12000, 100].min %></td>
     <td></td>
   </tr>
   <tr>
     <td>Ventomatic </td>
     <td><%= Medida.last.prodvento %></td>
-    <td><%= (Medida.last.prodvento * 100) / 7000 %>%</td>
+    <td><%= [(Medida.last.prodvento * 100) / 7000, 100].min %></td>
     <td></td>
   </tr>
   <tr>
     <td>Bigbag </td>
     <td><%= Medida.last.prodbb %></td>
-    <td><%= (Medida.last.prodbb * 100) / 125 %>%</td>
+    <td><%= [(Medida.last.prodbb * 100) / 125, 100].min %></td>
     <td></td>
   </tr>
 </tbody>
