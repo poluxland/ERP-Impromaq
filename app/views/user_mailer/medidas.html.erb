@@ -52,7 +52,81 @@
     <h1><u>Reporte medidas silos y stock</u></h1>
     <h2><%= Medida.last.created_at.in_time_zone('Santiago').strftime("%Y-%m-%d %H:%M") %></h2>
 
-
+<table class="table table-sm">
+  <thead>
+    <tr>
+      <th colspan="4">Inventario por Tipo</th>
+    </tr>
+    <tr>
+      <th scope="col" class="no-color">Producto</th>
+      <th scope="col" class="no-color">T(Ton)</th>
+      <th scope="col" class="no-color"></th>
+      <th scope="col" class="no-color"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% total = 0 %>
+    <tr>
+      <td>Cemento Extra Silo y Piso</td>
+      <td>
+        <% extra = (((20 - Medida.last.silo28) * 100)).to_i +
+                  ((30 - ((Medida.last.silo21a.to_f + Medida.last.silo21b.to_f) / 2)) * 100).to_i +
+                  ((30 - ((Medida.last.silo22a.to_f + Medida.last.silo22b.to_f) / 2)) * 100).to_i +
+                  (Medida.last.extrsacos || 0) +
+                  (Medida.last.bigbagextra || 0) +
+                  (Medida.last.bigbagextra1 || 0) +
+                  (Medida.last.bigbagextra1350 || 0)
+        %>
+        <%= extra %>
+        <% total += extra %>
+      </td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Cemento Especial Silo y Piso</td>
+      <td>
+        <% especial = ((30 - Medida.last.silo27) * 460) +
+                      (Medida.last.especialsacos || 0) +
+                      (Medida.last.bigbagespecial || 0)
+        %>
+        <%= especial %>
+        <% total += especial %>
+      </td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Cemento S3300 en Silo</td>
+      <td>
+        <% s3300 = ((30 - ((Medida.last.silo19a.to_f + Medida.last.silo19b.to_f) / 2)) * 100).to_i %>
+        <%= s3300 %>
+        <% total += s3300 %>
+      </td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Cemento S4200 Silo y Piso</td>
+      <td>
+        <% s4200 = (((30 - ((Medida.last.silo20a.to_f + Medida.last.silo20b.to_f) / 2)) * 100).to_i) +
+                   (Medida.last.bigbagsuper || 0)
+        %>
+        <%= s4200 %>
+        <% total += s4200 %>
+      </td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Total</td>
+      <td><%= total %></td>
+      <td></td>
+      <td></td>
+    </tr>
+  </tbody>
+</table>
+<br>
 <table class="table table-sm">
  <thead>
             <tr>
@@ -309,48 +383,7 @@
 </table>
 <br>
 
-<table class="table table-sm">
-<thead>
-            <tr>
-                <th colspan="4">Inventario por Tipo</th>
-            </tr>
-            <tr>
-                <th scope="col" class="no-color">Producto</th>
-                <th scope="col" class="no-color">T(Ton)</th>
-                <th scope="col" class="no-color"></th>
-                <th scope="col" class="no-color"></th>
-            </tr>
-        </thead>
-<tbody>
-  <tr>
-    <td>Cemento Extra Silo y Piso</td>
-    <td><%= (((20 - Medida.last.silo28) * 100)).to_i + ((30 - ((Medida.last.silo21a.to_f + Medida.last.silo21b.to_f)/2)) * 100).to_i + ((30 - ((Medida.last.silo22a.to_f + Medida.last.silo22b.to_f)/2)) * 100).to_i + (Medida.last.extrsacos ? Medida.last.extrsacos : 0) + (Medida.last.bigbagextra ? Medida.last.bigbagextra : 0) + (Medida.last.bigbagextra1 ? Medida.last.bigbagextra1 : 0) + (Medida.last.bigbagextra1350 ? Medida.last.bigbagextra1350 : 0) %> </td>
-    <td></td>
-    <td></td>
-  </tr>
-   <tr>
-    <td>Cemento Especial Silo y Piso</td>
-    <td><%= ((30 - Medida.last.silo27) * 460 ) + (Medida.last.especialsacos ? Medida.last.especialsacos : 0) + (Medida.last.bigbagespecial ? Medida.last.bigbagespecial : 0) %></td>
-     <td></td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>Cemento S3300 en Silo</td>
-    <td><%=((30 - ((Medida.last.silo19a.to_f + Medida.last.silo19b.to_f)/2)) * 100).to_i %> </td>
-    <td></td>
-    <td></td>
 
-  </tr>
-  <tr>
-    <td>Cemento S4200 Silo y Piso</td>
-    <td><%= (((30 - ((Medida.last.silo20a.to_f + Medida.last.silo20b.to_f)/2)) * 100).to_i) + (Medida.last.bigbagsuper ? Medida.last.bigbagsuper : 0)%> </td>
-    <td></td>
-    <td></td>
-  </tr>
-
-  </tbody>
-</table>
-<br>
 
 <table class="table table-sm">
 <thead>
