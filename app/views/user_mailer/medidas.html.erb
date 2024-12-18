@@ -183,12 +183,7 @@
     <td></td>
     <td></td>
   </tr>
-  <tr>
-    <td>Bigbag plus </td>
-    <td><%= Medida.last.bigbagplus %></td>
-     <td></td>
-      <td></td>
-  </tr>
+
 </tbody>
 </table><br>
 
@@ -306,18 +301,55 @@
     <td></td>
   </tr>
 
-  <tr>
-    <td>Cemento Plus en Piso</td>
-    <td><%= (Medida.last.bigbagplus ? Medida.last.bigbagplus : 0) %> </td>
-    <td></td>
-    <td></td>
-  </tr>
+
 
 
 
   </tbody>
 </table>
+<br>
 
+<table class="table table-sm">
+<thead>
+            <tr>
+                <th colspan="4">Inventario por Tipo</th>
+            </tr>
+            <tr>
+                <th scope="col" class="no-color">Producto</th>
+                <th scope="col" class="no-color">T(Ton)</th>
+                <th scope="col" class="no-color"></th>
+                <th scope="col" class="no-color"></th>
+            </tr>
+        </thead>
+<tbody>
+  <tr>
+    <td>Cemento Extra Silo y Piso</td>
+    <td><%= (((20 - Medida.last.silo28) * 100)).to_i + ((30 - ((Medida.last.silo21a.to_f + Medida.last.silo21b.to_f)/2)) * 100).to_i + ((30 - ((Medida.last.silo22a.to_f + Medida.last.silo22b.to_f)/2)) * 100).to_i + (Medida.last.extrsacos ? Medida.last.extrsacos : 0) + (Medida.last.bigbagextra ? Medida.last.bigbagextra : 0) + (Medida.last.bigbagextra1 ? Medida.last.bigbagextra1 : 0) + (Medida.last.bigbagextra1350 ? Medida.last.bigbagextra1350 : 0) %> </td>
+    <td></td>
+    <td></td>
+  </tr>
+   <tr>
+    <td>Cemento Especial Silo y Piso</td>
+    <td><%= ((30 - Medida.last.silo27) * 460 ) + (Medida.last.especialsacos ? Medida.last.especialsacos : 0) + (Medida.last.bigbagespecial ? Medida.last.bigbagespecial : 0) %></td>
+     <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>Cemento S3300 en Silo</td>
+    <td><%=((30 - ((Medida.last.silo19a.to_f + Medida.last.silo19b.to_f)/2)) * 100).to_i %> </td>
+    <td></td>
+    <td></td>
+
+  </tr>
+  <tr>
+    <td>Cemento S4200 Silo y Piso</td>
+    <td><%= (((30 - ((Medida.last.silo20a.to_f + Medida.last.silo20b.to_f)/2)) * 100).to_i) + (Medida.last.bigbagsuper ? Medida.last.bigbagsuper : 0)%> </td>
+    <td></td>
+    <td></td>
+  </tr>
+
+  </tbody>
+</table>
 <br>
 
 <table class="table table-sm">
