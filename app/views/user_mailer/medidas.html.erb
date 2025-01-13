@@ -49,7 +49,7 @@
 
 
   <div class="container col-6">
-    <h1><u>Reporte medidas silos y stock</u></h1>
+    <h1><u>Reporte medidas silos y stock <%=Medida.last.turno %></u></h1>
     <h2><%= Medida.last.created_at.in_time_zone('Santiago').strftime("%Y-%m-%d %H:%M") %></h2>
 
 <table class="table table-sm">

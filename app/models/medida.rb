@@ -1,5 +1,5 @@
 class Medida < ApplicationRecord
-  validates :enjuagues_super, :enjuagues_super4, :plastificado_especial, :plastificado_especial_lados,
+  validates :turno, :enjuagues_super, :enjuagues_super4, :plastificado_especial, :plastificado_especial_lados,
             :plastificado_especial_zunchos, :plastificado_extra,
             :plastificado_extra_zunchos, :especial_sacos, :especial_bigbag,
             :especial_granel, :extra_sacos, :extra_bigbag, :extra_granel,

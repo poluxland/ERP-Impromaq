@@ -2,8 +2,15 @@
 <%= simple_form_for(@medida) do |f| %>
   <%= f.error_notification %>
   <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
-  <div class="form-inputs offset-md-1">
-  <!-- <div class="form-inputs"> -->
+<div class="form-inputs offset-md-1">
+<!-- <div class="form-inputs"> -->
+<div class="row">
+  <div class="col-md-3 mb-3">
+    <%= f.input :turno, collection: { "Turno Mañana" => "TM", "Turno Tarde" => "TT", "Turno Noche" => "TN" }, label: 'Turno', required: true, include_blank: "Seleccionar Turno" %>
+  </div>
+</div>
+
+
 <h2>Enjuagues</h2>
 <div class="row">
   <div class="col-md-2 mb-2 ">
