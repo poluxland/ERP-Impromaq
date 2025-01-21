@@ -216,139 +216,98 @@
   </tbody>
 </table>
 <br>
-<table class="table table-sm">
- <thead>
-            <tr>
-                <th colspan="4">Inventario de Sacos</th>
-            </tr>
-            <tr>
-                <th scope="col" class="no-color">Producto</th>
-                <th scope="col" class="no-color">T(Ton)</th>
-                <th scope="col" class="no-color"></th>
-                <th scope="col" class="no-color"></th>
-            </tr>
-        </thead>
-    <tbody>
-      <tr>
-    <td>Especial</td>
-    <td> <%= medida.especialsacos %></td>
-     <td></td>
-      <td></td>
-  </tr>
-  <tr>
-    <td>Especial Soluble</td>
-    <td> <%= medida.especial_sacos_soluble %></td>
-     <td></td>
-      <td></td>
-  </tr>
 
-        <tr>
-            <td>Especial Plastificado completo</td>
-            <td><%= (medida.plastificado_especial * 1.8).round %></td>
-            <td></td>
-            <td></td>
-        </tr>
-        <tr>
-            <td>Especial Plastificado soluble completo</td>
-            <td><%= (medida.plastificado_especial_soluble_completo * 1.8).round %></td>
-            <td></td>
-            <td></td>
-        </tr>
-        <tr>
-            <td>Especial Plastificado lados</td>
-            <td><%= (medida.plastificado_especial_lados * 1.8).round %></td>
-            <td></td>
-            <td></td>
-        </tr>
-        <tr>
-            <td>Especial Plastificado zuncho</td>
-            <td><%= (medida.plastificado_especial_zunchos * 1.8).round %></td>
-            <td></td>
-            <td></td>
-        </tr>
-        <tr>
-    <td>Extra</td>
-    <td><%= medida.extrsacos %></td>
-     <td></td>
-      <td></td>
-  </tr>
-  <tr>
+
+<table class="table table-sm table-striped table-hover">
+  <thead>
     <tr>
-    <td>Extra soluble</td>
-    <td><%= medida.extra_sacos_soluble %></td>
-     <td></td>
-      <td></td>
-  </tr>
-        <tr>
-            <td>Extra Plastificado completo</td>
-            <td><%= (medida.plastificado_extra * 1.8).round %></td>
-            <td></td>
-            <td></td>
-        </tr>
-        <tr>
-            <td>Extra Plastificado soluble completo</td>
-            <td><%= (medida.plastificado_extra_soluble_completo * 1.8).round %></td>
-            <td></td>
-            <td></td>
-        </tr>
-        <tr>
-            <td>Extra Plastificado zunchos</td>
-            <td><%= (medida.plastificado_extra_zunchos * 1.8).round %></td>
-            <td></td>
-            <td></td>
-        </tr>
-    </tbody>
+      <th colspan="4">Inventario de Sacos</th>
+    </tr>
+    <tr>
+      <th scope="col" class="no-color">Producto (ton)</th>
+      <th scope="col" class="no-color">TM</th>
+      <th scope="col" class="no-color">TT</th>
+      <th scope="col" class="no-color">TN</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% productos = [
+      { nombre: "Especial", campos: [:especialsacos, :especialsacos, :especialsacos] },
+      { nombre: "Especial Soluble", campos: [:especial_sacos_soluble, :especial_sacos_soluble, :especial_sacos_soluble] },
+      { nombre: "Especial Plastificado completo", campos: [:plastificado_especial, :plastificado_especial, :plastificado_especial], factor: 1.8 },
+      { nombre: "Especial Plastificado soluble completo", campos: [:plastificado_especial_soluble_completo, :plastificado_especial_soluble_completo, :plastificado_especial_soluble_completo], factor: 1.8 },
+      { nombre: "Especial Plastificado lados", campos: [:plastificado_especial_lados, :plastificado_especial_lados, :plastificado_especial_lados], factor: 1.8 },
+      { nombre: "Especial Plastificado zuncho", campos: [:plastificado_especial_zunchos, :plastificado_especial_zunchos, :plastificado_especial_zunchos], factor: 1.8 },
+      { nombre: "Extra", campos: [:extrsacos, :extrsacos, :extrsacos] },
+      { nombre: "Extra soluble", campos: [:extra_sacos_soluble, :extra_sacos_soluble, :extra_sacos_soluble] },
+      { nombre: "Extra Plastificado completo", campos: [:plastificado_extra, :plastificado_extra, :plastificado_extra], factor: 1.8 },
+      { nombre: "Extra Plastificado soluble completo", campos: [:plastificado_extra_soluble_completo, :plastificado_extra_soluble_completo, :plastificado_extra_soluble_completo], factor: 1.8 },
+      { nombre: "Extra Plastificado zunchos", campos: [:plastificado_extra_zunchos, :plastificado_extra_zunchos, :plastificado_extra_zunchos], factor: 1.8 }
+    ] %>
+
+    <% productos.each do |producto| %>
+      <tr>
+        <td><%= producto[:nombre] %></td>
+        <% [tm, tt, tn].each_with_index do |obj, idx| %>
+          <td>
+            <% if producto[:factor] %>
+              <%= obj&.send(producto[:campos][idx]) ? (obj.send(producto[:campos][idx]) * producto[:factor]).round : nil %>
+            <% else %>
+              <%= obj&.send(producto[:campos][idx]) %>
+            <% end %>
+          </td>
+        <% end %>
+      </tr>
+    <% end %>
+  </tbody>
 </table>
 
+
+
+
+
+
 <br>
-<table class="table table-sm">
-<thead>
-            <tr>
-                <th colspan="4">Inventario de Big Bags</th>
-            </tr>
-            <tr>
-                <th scope="col" class="no-color">Producto</th>
-                <th scope="col" class="no-color">T (Ton)</th>
-                <th scope="col" class="no-color"></th>
-                <th scope="col" class="no-color"></th>
-            </tr>
-        </thead>
-<tbody>
+<table class="table table-sm table-striped table-hover">
+  <thead>
+    <tr>
+      <th colspan="4">Inventario de Big Bags</th>
+    </tr>
+    <tr>
+      <th scope="col" class="no-color">Producto (ton)</th>
+      <th scope="col" class="no-color">TM</th>
+      <th scope="col" class="no-color">TT</th>
+      <th scope="col" class="no-color">TN</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% bigbags = [
+      { nombre: "Bigbag extra piso (BB extra para retiro)", campos: [:bigbagextra, :bigbagextra, :bigbagextra] },
+      { nombre: "Bigbag extra 1t", campos: [:bigbagextra1, :bigbagextra1, :bigbagextra1] },
+      { nombre: "Extra peba 1350", campos: [:bigbagextra1350, :bigbagextra1350, :bigbagextra1350] },
+      { nombre: "Bigbag especial", campos: [:bigbagespecial, :bigbagespecial, :bigbagespecial] },
+      { nombre: "Bigbag super", campos: [:bigbagsuper, :bigbagsuper, :bigbagsuper] }
+    ] %>
 
-  <tr>
-    <td>Bigbag extra piso (BB extra para retiro)</td>
-    <td><%= medida.bigbagextra %> (<%= medida.bigbag_extra_retiro %>)</td>
-     <td></td>
-      <td></td>
-  </tr>
-  <tr>
-    <td>Bigbag extra 1t</td>
-    <td><%= medida.bigbagextra1 %></td>
-     <td></td>
-      <td></td>
-  </tr>
-  <tr>
-    <td>Extra peba 1350 </td>
-    <td><%= medida.bigbagextra1350 %></td>
-    <td></td>
-    <td></td>
-   </tr>
-  <tr>
-    <td>Bigbag especial</td>
-    <td><%= medida.bigbagespecial %></td>
-    <td></td>
-    <td></td>
+    <% bigbags.each do |bag| %>
+      <tr>
+        <td><%= bag[:nombre] %></td>
+        <% [tm, tt, tn].each_with_index do |obj, idx| %>
+          <td>
+            <%= obj&.send(bag[:campos][idx]) || nil %>
+          </td>
+        <% end %>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
 
-  </tr>
-  <tr>
-    <td>Bigbag super </td>
-    <td><%= medida.bigbagsuper %></td>
-    <td></td>
-    <td></td>
-  </tr>
 
-</tbody>
-</table><br>
+
+
+
+
+<br>
 
 <table class="table table-sm">
 <thead>
