@@ -19,6 +19,7 @@ class UserMailer < ApplicationMailer
       "pedro.guzman@meloncementos.cl",
       "renzo.allendes@meloncementos.cl",
       "alejandro.olivares@msindustrial.cl",
+      "simon.rojas@msindustrial.cl",
       "luis.estay@meloncementos.cl",
       "sala.controlh9m21@melon.cl",
       "carlos.gonzalezm@meloncementos.cl",
@@ -70,6 +71,7 @@ class UserMailer < ApplicationMailer
       "pedro.guzman@meloncementos.cl",
       "jose.jerez@msindustrial.cl",
       "alejandro.olivares@msindustrial.cl",
+      "simon.rojas@msindustrial.cl",
       "fernando.gonzalez@msindustrial.cl",
       "guillermo.roco@meloncementos.cl",
       "jefesturno.planta@melon.cl",
@@ -91,13 +93,13 @@ class UserMailer < ApplicationMailer
   def servicios
     @greeting = "Reporte Servicios " + Time.now.in_time_zone('Santiago').to_s
 
-    mail to: "jose.jerez@msindustrial.cl, hernan.martinez@msindustrial.cl, fernando.gonzalez@msindustrial.cl",  subject: @greeting
+    mail to: "jose.jerez@msindustrial.cl, hernan.martinez@msindustrial.cl, fernando.gonzalez@msindustrial.cl, simon.rojas@msindustrial.cl",  subject: @greeting
   end
 
   def reports
     @greeting = "Reporte planta Puerto Montt " + Time.now.in_time_zone('Santiago').to_s
 
-    mail to: "jose.jerez@msindustrial.cl, fernando.gonzalez@msindustrial.cl, julio.alvear@msindustrial.cl, martin.llancafil@meloncementos.cl, cesar.hernandez@meloncementos.cl, exequiel.moya@msindustrial.cl, camila.birke@msindustrial.cl",  subject: @greeting
+    mail to: "jose.jerez@msindustrial.cl, fernando.gonzalez@msindustrial.cl, julio.alvear@msindustrial.cl, martin.llancafil@meloncementos.cl, cesar.hernandez@meloncementos.cl, exequiel.moya@msindustrial.cl, camila.birke@msindustrial.cl, simon.rojas@msindustrial.cl",  subject: @greeting
   end
 
 end
