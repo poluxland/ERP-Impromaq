@@ -9,6 +9,7 @@ class Medida < ApplicationRecord
             :bigbagextra1350, :bigbagextra1, :bigbagespecial, :bigbagsuper,
             :bigbagplus, :prodhaver, :prodvento, :otros, :ns30001, :ns30002, :prodbb,
             :ns30003, :nbb1, :nbb2, :nvento1, :nvento2, :nvento3, :callesilo28,
+            :horas_haver, :horas_vento, :horas_bigbag,
             :callesplanta1, :callesilo27, :bigbag_extra_retiro, presence: true
 
   after_create :send_medidas_email

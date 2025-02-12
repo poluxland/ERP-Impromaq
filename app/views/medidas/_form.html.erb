@@ -171,6 +171,18 @@
       <%= f.input :prodbb, label: 'Producción Bigbag', required: true %>
     </div>
   </div>
+  <div class="row">
+  <div class="col-md-2 mb-2">
+    <%= f.input :horas_haver, label: 'Horas prod. Haver', required: true, as: :decimal, input_html: { min: 0, step: 0.1, type: 'number' } %>
+  </div>
+  <div class="col-md-2 mb-2">
+    <%= f.input :horas_vento, label: 'Horas prod. Vento', required: true, as: :decimal, input_html: { min: 0, step: 0.1, type: 'number' } %>
+  </div>
+  <div class="col-md-2 mb-2">
+    <%= f.input :horas_bigbag, label: 'Horas prod. Bigbag', required: true, as: :decimal, input_html: { min: 0, step: 0.1, type: 'number' } %>
+  </div>
+</div>
+
   <h2>Nivel tolvas</h2>
   <div class="row">
     <div class="col-md-2 mb-2 ">
