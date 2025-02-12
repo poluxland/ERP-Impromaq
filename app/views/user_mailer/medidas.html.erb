@@ -510,7 +510,7 @@
         <th scope="col" class="no-color">Unidades turno</th>
         <th scope="col" class="no-color">Cumplimiento (%)</th>
         <th scope="col" class="no-color">Horas prod.</th>
-        <th scope="col" class="no-color">Rend.(Unidades/h)</th>
+        <th scope="col" class="no-color">Rend.(Ton/h)</th>
     </tr>
 </thead>
 <tbody>
@@ -519,21 +519,21 @@
         <td><%= medida.prodhaver %></td>
         <td><%= [(medida.prodhaver * 100) / 12000, 100].min %></td>
         <td><%= medida.horas_haver %></td>
-        <td><%= medida.horas_haver.to_i > 0 ? (medida.prodhaver / medida.horas_haver).round(0) : 0 %></td>
+        <td><%= medida.horas_haver.to_i > 0 ? (medida.prodhaver * 0.025 / medida.horas_haver).round(0) : 0 %></td>
     </tr>
     <tr>
         <td>Ventomatic</td>
         <td><%= medida.prodvento %></td>
         <td><%= [(medida.prodvento * 100) / 7000, 100].min %></td>
         <td><%= medida.horas_vento %></td>
-        <td><%= medida.horas_vento.to_i > 0 ? (medida.prodvento / medida.horas_vento).round(0) : 0 %></td>
+        <td><%= medida.horas_vento.to_i > 0 ? (medida.prodvento * 0.025 / medida.horas_vento).round(0) : 0 %></td>
     </tr>
     <tr>
         <td>Bigbag</td>
         <td><%= medida.prodbb %></td>
         <td><%= [(medida.prodbb * 100) / 125, 100].min %></td>
         <td><%= medida.horas_bigbag %></td>
-        <td><%= medida.horas_bigbag.to_i > 0 ? (medida.prodbb / medida.horas_bigbag).round(0) : 0 %></td>
+        <td><%= medida.horas_bigbag.to_i > 0 ? (medida.prodbb * 1.5 / medida.horas_bigbag).round(0) : 0 %></td>
     </tr>
 </tbody>
 </table>
