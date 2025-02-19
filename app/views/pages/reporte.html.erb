@@ -1,0 +1,9 @@
+<%= line_chart [
+  { name: "Turno Mañana", data: @prodhaver_tm, color: "#FF5733" },
+  { name: "Turno Tarde", data: @prodhaver_tt, color: "#33FF57" },
+  { name: "Turno Noche", data: @prodhaver_tn, color: "#3357FF" }
+],
+xtitle: "Fecha",
+ytitle: "Producción Haver",
+curve: false,
+points: true %>

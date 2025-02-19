@@ -139,7 +139,9 @@ Rails.application.routes.draw do
   get 'parfact', to: 'trabajos#parfact'
   devise_for :users
   get 'estadoequipos', to: 'pages#estadoequipos'
+  get 'reporte', to: 'pages#reporte'
   root to: 'pages#home'
+
 
 
   # get '*path' => redirect('/')
