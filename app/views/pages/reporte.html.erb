@@ -123,7 +123,7 @@
           <tr>
             <td>
               <%# Suponiendo que el equipo tiene un atributo "nombre". Si no, usa "id" u otro identificador %>
-              <%= data[:equipo].try(:nombre) || "Equipo ##{data[:equipo].id}" %>
+              <%= data[:equipo].try(:nombre) || "Equipo ##{data[:equipo].codigo}" %>
             </td>
             <td><%= number_with_precision(data[:promedio_mensual] || 0, precision: 2) %></td>
             <td><%= number_with_precision(data[:consumido_mes]   || 0, precision: 2) %></td>
