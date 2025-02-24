@@ -1,9 +1,136 @@
-<%= line_chart [
-  { name: "Turno Mañana", data: @prodhaver_tm, color: "#FF5733" },
-  { name: "Turno Tarde", data: @prodhaver_tt, color: "#33FF57" },
-  { name: "Turno Noche", data: @prodhaver_tn, color: "#3357FF" }
-],
-xtitle: "Fecha",
-ytitle: "Producción Haver",
-curve: false,
-points: true %>
+
+
+<div class="row">
+  <div class="col-md-8">
+    <%= line_chart [
+      { name: "Turno Mañana", data: @prodhaver_tm, color: "#FF5733" },
+      { name: "Turno Tarde", data: @prodhaver_tt, color: "#33FF57" },
+      { name: "Turno Noche", data: @prodhaver_tn, color: "#3357FF" }
+    ],
+    xtitle: "Fecha",
+    ytitle: "Producción Haver",
+    curve: false,
+    points: true %>
+  </div>
+  <div class="col-md-4">
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th>Turno</th>
+          <th>Promedio de Producción Haver</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>TM</td>
+          <td><%= number_with_precision(@prodhaver_avg_tm, precision: 2) %></td>
+        </tr>
+        <tr>
+          <td>TT</td>
+          <td><%= number_with_precision(@prodhaver_avg_tt, precision: 2) %></td>
+        </tr>
+        <tr>
+          <td>TN</td>
+          <td><%= number_with_precision(@prodhaver_avg_tn, precision: 2) %></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+
+<div class="row mt-4">
+  <div class="col-md-6">
+    <h3>Envasadora</h3>
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th>Campo</th>
+          <th>Último Valor</th>
+          <th>Promedio</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Especial Sacos</td>
+          <td><%= @ultimo_especialsacos %></td>
+          <td><%= number_with_precision(@promedio_especialsacos, precision: 2) %></td>
+        </tr>
+        <tr>
+          <td>Bigbag Extra</td>
+          <td><%= @ultimo_bigbagextra %></td>
+          <td><%= number_with_precision(@promedio_bigbagextra, precision: 2) %></td>
+        </tr>
+        <tr>
+          <td>Extra Sacos</td>
+          <td><%= @ultimo_extrsacos %></td>
+          <td><%= number_with_precision(@promedio_extrsacos, precision: 2) %></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="col-md-6">
+    <h3>Soplado</h3>
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th>Campo</th>
+          <th>Último Valor</th>
+          <th>Promedio</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>CC54 P1</td>
+          <td><%= @ultimo_presion3 %></td>
+          <td><%= number_with_precision(@promedio_presion3, precision: 2) %></td>
+        </tr>
+        <tr>
+          <td>CC54 P2</td>
+          <td><%= @ultimo_presion4 %></td>
+          <td><%= number_with_precision(@promedio_presion4, precision: 2) %></td>
+        </tr>
+        <tr>
+          <td>CC54 Temp</td>
+          <td><%= @ultimo_presion5 %></td>
+          <td><%= number_with_precision(@promedio_presion5, precision: 2) %></td>
+        </tr>
+        <tr>
+          <td>Al.Horno</td>
+          <td><%= @ultimo_horno %></td>
+          <td><%= number_with_precision(@promedio_horno, precision: 2) %></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div class="row mt-4">
+  <div class="col-md-12">
+    <h3>Consumo de Combustible por Equipo</h3>
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th>Equipo</th>
+          <th>Promedio Mensual</th>
+          <th>Consumido en este Mes</th>
+          <th>Último Valor</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @equipos_consumo.each do |data| %>
+          <tr>
+            <td>
+              <%# Suponiendo que el equipo tiene un atributo "nombre". Si no, usa "id" u otro identificador %>
+              <%= data[:equipo].try(:nombre) || "Equipo ##{data[:equipo].id}" %>
+            </td>
+            <td><%= number_with_precision(data[:promedio_mensual] || 0, precision: 2) %></td>
+            <td><%= number_with_precision(data[:consumido_mes]   || 0, precision: 2) %></td>
+            <td><%= data[:ultimo_valor] || 0 %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>
