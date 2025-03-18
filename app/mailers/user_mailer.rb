@@ -46,6 +46,8 @@ class UserMailer < ApplicationMailer
       "luis.penailillo@msindustrial.cl",
       "valentina.gonzalez@melonservicios.cl",
       "javiera.gonzalezp@meloncementos.cl",
+      "javiera.gonzalezp@meloncementos.cl",
+      "patricio.vidal@meloncementos.cl",
       "geraldinne.martinez@meloncementos.cl"
     ]
 
