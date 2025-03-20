@@ -1,0 +1,129 @@
+<h2>Checklist Puerto Montt</h2>
+<div class="card-deck">
+<div class="card shadow">
+
+<table id="" class="table table-striped table-bordered table-sm shadow" cellspacing="0" width="100%">
+  <thead>
+    <tr>
+      <th>Codigo</th>
+      <th>Estado</th>
+      <th>Checklist Mantenedor</th>
+      <th>Checklist Operador</th>
+      <th>Intervenciones</th>
+    </tr>
+  </thead>
+
+ <tbody>
+  <% if @trucks_ptm.present? %>
+    <% @trucks_ptm.each do |truck| %>
+      <tr>
+        <td><a href="<%= truck_path(truck.id) %>"><%= truck.codigo %></a></td>
+        <td>
+          <% if truck.checklist.present? %>
+            <%= truck.checklist&.last&.operativo %>
+          <% end %>
+        </td>
+        <td>
+          <% if truck.checklist.present? %>
+            <a href="<%= checklist_path(truck.checklist.last.id) %>">
+              <%= truck.checklist.last.created_at.strftime("%d-%m") %> /
+              <%= truck.checklist.last.horometro %>
+            </a>
+          <% end %>
+        </td>
+        <td>
+          <% if truck.equipo.present? %>
+            <a href="<%= equipo_path(truck.equipo.last.id) %>">
+              <%= truck.equipo.last.created_at.strftime("%d-%m") %> /
+              <%= truck.equipo.last.horometro %>
+              <%= truck.equipo.last.operador %>
+              <% if truck.equipo.last.comentarios.present? %>
+                <i class="fa fa-folder text-danger"></i>
+              <% end %>
+            </a>
+          <% end %>
+        </td>
+        <td>
+          <% if truck.intervention.present? %>
+            <a href="<%= intervention_path(truck.intervention.last.id) %>">
+              <%= truck.intervention.last.created_at.strftime("%d-%m") %>
+              <%= truck.intervention.last.mecanico %>
+            </a>
+          <% end %>
+        </td>
+      </tr>
+    <% end %>
+  <% else %>
+    <tr><td colspan="5">No hay equipos registrados en Puerto Montt.</td></tr>
+  <% end %>
+</tbody>
+</table>
+
+</div>
+</div>
+<h2>Checklist La Calera</h2>
+
+<div class="card-deck">
+<div class="card shadow">
+
+<table id="" class="table table-striped table-bordered table-sm shadow" cellspacing="0" width="100%">
+  <thead>
+    <tr>
+      <th>Codigo</th>
+      <th>Estado</th>
+      <th>Checklist Mantenedor</th>
+      <th>Checklist Operador</th>
+      <th>Intervenciones</th>
+    </tr>
+  </thead>
+
+  <tbody>
+  <% if @trucks_lca.present? %>
+    <% @trucks_lca.each do |truck| %>
+      <tr>
+        <td><a href="<%= truck_path(truck.id) %>"><%= truck.codigo %></a></td>
+        <td>
+          <% if truck.checklist.present? %>
+            <%= truck.checklist.last.operativo %>
+          <% end %>
+        </td>
+        <td>
+          <% if truck.checklist.present? %>
+            <a href="<%= checklist_path(truck.checklist.last.id) %>">
+              <%= truck.checklist.last.created_at.strftime("%d-%m") %> /
+              <%= truck.checklist.last.horometro %>
+            </a>
+          <% end %>
+        </td>
+        <td>
+          <% if truck.equipo.present? %>
+            <a href="<%= equipo_path(truck.equipo.last.id) %>">
+              <%= truck.equipo.last.created_at.strftime("%d-%m") %> /
+              <%= truck.equipo.last.horometro %>
+              <%= truck.equipo.last.operador %>
+              <% if truck.equipo.last.comentarios.present? %>
+                <i class="fa fa-folder text-danger"></i>
+              <% end %>
+            </a>
+          <% end %>
+        </td>
+        <td>
+          <% if truck.intervention.present? %>
+            <a href="<%= intervention_path(truck.intervention.last.id) %>">
+              <%= truck.intervention.last.created_at.strftime("%d-%m") %>
+              <%= truck.intervention.last.mecanico %>
+            </a>
+          <% end %>
+        </td>
+      </tr>
+    <% end %>
+  <% else %>
+    <tr>
+      <td colspan="5">No hay equipos registrados en La Calera.</td>
+    </tr>
+  <% end %>
+</tbody>
+</table>
+
+</div>
+</div>
