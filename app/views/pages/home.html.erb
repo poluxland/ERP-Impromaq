@@ -1,7 +1,7 @@
 
 
 <% if user_signed_in?  %>
-<%= render 'estadoequipos' %>
+
   <% if current_user.superadmin_role?  %>
     <%= render 'op' %>
     <%= render 'terminado' %>
@@ -9,6 +9,7 @@
     <%= render 'grafico' %>
     <%= render 'soplado' %>
   <% end %>
+  <%= render 'estadoequipos' %>
 <% end %>
 
 
