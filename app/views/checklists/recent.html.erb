@@ -1,0 +1,101 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Checklist Operador</h1>
+
+<table id="myTable" class="table table-responsive table-striped table-bordered table-sm shadow" cellspacing="0" width="100%">
+
+  <thead>
+    <tr>
+      <th>Fecha</th>
+      <th>Nombre</th>
+      <th>Equipo</th>
+      <th>Operativo</th>
+      <th>Horometro</th>
+      <th>C1</th>
+      <th>C2</th>
+      <th>C3</th>
+      <th>C4</th>
+      <th>C5</th>
+      <th>C6</th>
+      <th>C7</th>
+      <th>C8</th>
+      <th>C9</th>
+      <th>C10</th>
+      <th>C11</th>
+      <th>C12</th>
+      <th>C13</th>
+      <th>C14</th>
+      <th>C15</th>
+      <th>C16</th>
+      <th>C17</th>
+      <th>C18</th>
+      <th>C19</th>
+      <th>Combustible</th>
+      <th>Acmotor</th>
+      <th>Achidraulico</th>
+      <th>Actrans</th>
+      <th>Acatf</th>
+      <th>Acnuto</th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @checklists.each do |checklist| %>
+      <tr>
+        <td><%= checklist.created_at.strftime("%m/%d/%y") %></td>
+        <td><%= checklist.nombre %></td>
+        <td><%= checklist.truck&.codigo %></td>
+        <td><%= checklist.operativo %></td>
+        <td><%= checklist.horometro %></td>
+        <td><%= checklist.c1 ? 'Si' : 'No'%></td>
+        <td><%= checklist.c2 ? 'Si' : 'No'%></td>
+        <td><%= checklist.c3 ? 'Si' : 'No'%></td>
+        <td><%= checklist.c4 ? 'Si' : 'No'%></td>
+        <td><%= checklist.c5 ? 'Si' : 'No'%></td>
+        <td><%= checklist.c6 ? 'Si' : 'No'%></td>
+        <td><%= checklist.c7 ? 'Si' : 'No'%></td>
+        <td><%= checklist.c8 ? 'Si' : 'No'%></td>
+        <td><%= checklist.c9 ? 'Si' : 'No'%></td>
+        <td><%= checklist.c10 ? 'Si' : 'No'%></td>
+        <td><%= checklist.c11 ? 'Si' : 'No'%></td>
+        <td><%= checklist.c12 ? 'Si' : 'No'%></td>
+        <td><%= checklist.c13 ? 'Si' : 'No'%></td>
+        <td><%= checklist.c14 ? 'Si' : 'No'%></td>
+        <td><%= checklist.c15 ? 'Si' : 'No'%></td>
+        <td><%= checklist.c16 ? 'Si' : 'No'%></td>
+        <td><%= checklist.c17 ? 'Si' : 'No'%></td>
+        <td><%= checklist.c18 ? 'Si' : 'No'%></td>
+        <td><%= checklist.c19 ? 'Si' : 'No'%></td>
+        <td><%= checklist.combustible %></td>
+        <td><%= checklist.acmotor %></td>
+        <td><%= checklist.achidraulico %></td>
+        <td><%= checklist.actrans %></td>
+        <td><%= checklist.acatf %></td>
+        <td><%= checklist.acnuto %></td>
+
+
+
+        <td class="text-center">
+          <button type="button" class="btn btn-sm btn-secondary command-edit shadow p-1 rounded">
+          <%= link_to "", checklist, class: 'fa fa-eye fa-fw text-light'%>
+          </button>
+
+
+          <!-- <% if current_user.superadmin_role? %>
+          <button type="button" class="btn btn-sm btn-danger command-delete shadow p-1 rounded">
+            <%= link_to "", checklist, method: :delete, data: { confirm: "Are you sure?" }, class: "fa fa-trash fa-fw text-light" %>
+          </button>
+
+          <% end %> -->
+
+          </td>
+
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Nuevo checklist', new_checklist_path, class: "btn btn-primary shadow m-3" %>

@@ -24,7 +24,7 @@
               <td>
                 <% if truck.checklists&.last %>
                   <a href="<%= checklist_path(truck.checklists.last.id) %>">
-                    <%= truck.checklists.last.created_at.strftime("%d-%m") %> /
+                    <%= truck.checklists.last.created_at.strftime("%d-%m-%Y") %> /
                     <%= truck.checklists.last.horometro %>
                   </a>
                 <% end %>
@@ -32,11 +32,15 @@
               <td>
                 <% if truck.equipos&.last %>
                   <a href="<%= equipo_path(truck.equipos.last.id) %>">
-                    <%= truck.equipos.last.created_at.strftime("%d-%m") %> /
+                    <%= truck.equipos.last.created_at.strftime("%d-%m-%Y") %> /
                     <%= truck.equipos.last.horometro %>
                     <%= truck.equipos.last.operador %>
                     <% if truck.equipos.last.comentarios.present? %>
                       <i class="fa fa-folder text-danger"></i>
+                    <% end %>
+                    <% equipo = truck.equipos.last %>
+                    <% if equipo && [equipo.c1, equipo.c2, equipo.c3, equipo.c4, equipo.c5, equipo.c6, equipo.c7, equipo.c8, equipo.c9, equipo.c10, equipo.c11, equipo.c12, equipo.c13, equipo.c14, equipo.c15, equipo.c16].any? { |c| ["No(leve)", "No(grave)"].include?(c) } %>
+                      <i class="fa fa-cogs text-primary"></i>
                     <% end %>
                   </a>
                 <% end %>
@@ -44,7 +48,7 @@
               <td>
                 <% if truck.interventions&.last %>
                   <a href="<%= intervention_path(truck.interventions.last.id) %>">
-                    <%= truck.interventions.last.created_at.strftime("%d-%m") %>
+                    <%= truck.interventions.last.created_at.strftime("%d-%m-%Y") %>
                     <%= truck.interventions.last.mecanico %>
                   </a>
                 <% end %>

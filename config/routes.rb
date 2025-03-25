@@ -18,6 +18,7 @@ Rails.application.routes.draw do
   resources :medidas
   resources :barcos
   resources :checklists
+  get 'recent', to: 'checklists#recent'
   resources :envasadoras
   resources :requerimientos
   resources :entregas

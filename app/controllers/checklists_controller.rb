@@ -8,6 +8,11 @@ class ChecklistsController < ApplicationController
     @checklists = Checklist.last(5000)
   end
 
+def recent
+  @checklists = Checklist.where('created_at >= ?', 2.months.ago).order(created_at: :desc)
+end
+
+
   # GET /checklists/1
   # GET /checklists/1.json
   def show
