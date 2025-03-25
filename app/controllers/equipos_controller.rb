@@ -8,6 +8,10 @@ class EquiposController < ApplicationController
     @equipos = Equipo.all
   end
 
+  def recenteq
+  @equipos = Equipo.where('created_at >= ?', 2.months.ago).order(created_at: :desc)
+  end
+
   def lcacheck
     # @equipos = Equipo.where(planta: "La Calera")
     @equipos = Equipo.where("c17 LIKE (?)", "L%")

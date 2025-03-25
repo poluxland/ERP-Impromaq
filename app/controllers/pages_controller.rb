@@ -1,10 +1,10 @@
 class PagesController < ApplicationController
   # skip_before_action :authenticate_user!, only: [:home]
 
-  def home
-    @trucks = Truck.includes(:checklists, :equipos, :interventions).all
-
-  end
+ def home
+  @trucks = Truck.includes(:checklists, :equipos, :interventions)
+                 .where.not(planta: 'X')
+end
 
  def reporte
   @prodhaver_tm = Medida.where(turno: "TM").group_by_day(:created_at).sum(:prodhaver)
