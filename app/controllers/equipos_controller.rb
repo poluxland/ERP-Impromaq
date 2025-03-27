@@ -13,11 +13,13 @@ class EquiposController < ApplicationController
   end
 
   def observaciones
-  condiciones = (1..16).map { |i| "c#{i} IN ('No(leve)', 'No(grave)')" }.join(' OR ')
-  @equipos = Equipo.where('created_at >= ?', 1.months.ago)
-                   .where("(#{condiciones}) OR (comentarios IS NOT NULL AND comentarios != '')")
-                   .order(created_at: :desc)
+    condiciones = (1..16).map { |i| "c#{i} IN ('No(leve)', 'No(grave)')" }.join(' OR ')
+    fecha_inicio = Date.new(2025, 3, 24)  # Lunes 24 de marzo de 2025
+    @equipos = Equipo.where('created_at >= ?', fecha_inicio)
+                    .where("(#{condiciones}) OR (comentarios IS NOT NULL AND comentarios != '')")
+                    .order(created_at: :desc)
   end
+
 
 
 
