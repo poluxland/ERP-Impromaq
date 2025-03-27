@@ -12,6 +12,16 @@ class EquiposController < ApplicationController
   @equipos = Equipo.where('created_at >= ?', 2.months.ago).order(created_at: :desc)
   end
 
+  def observaciones
+  condiciones = (1..16).map { |i| "c#{i} IN ('No(leve)', 'No(grave)')" }.join(' OR ')
+  @equipos = Equipo.where('created_at >= ?', 1.months.ago)
+                   .where("(#{condiciones}) OR (comentarios IS NOT NULL AND comentarios != '')")
+                   .order(created_at: :desc)
+  end
+
+
+
+
   def lcacheck
     # @equipos = Equipo.where(planta: "La Calera")
     @equipos = Equipo.where("c17 LIKE (?)", "L%")

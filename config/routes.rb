@@ -24,6 +24,7 @@ Rails.application.routes.draw do
   resources :entregas
   resources :equipos
   get 'recenteq', to: 'equipos#recenteq'
+  get 'observaciones', to: 'equipos#observaciones'
   get 'brr17check', to: 'equipos#brr17check'
   get 'brr20check', to: 'equipos#brr20check'
   get 'ol03check', to: 'equipos#ol03check'
