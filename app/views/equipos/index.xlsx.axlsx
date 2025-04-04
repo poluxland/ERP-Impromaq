@@ -1,0 +1,50 @@
+wb = xlsx_package.workbook
+wb.add_worksheet(name: "Equipos") do |sheet|
+  # Encabezado
+  sheet.add_row [
+    "Equipo", "Operador", "Horómetro", "Planta",
+    "Equipo libre de fugas",
+    "Equipo libre de pernos sueltos o quebraduras",
+    "Responden todos los movimientos",
+    "Funcionan correctamente los frenos",
+    "Pasadores en buen estado",
+    "Espejos operativos",
+    "Cinturón operativo",
+    "Neumáticos en buen estado",
+    "Alarma de retroceso",
+    "Bocina",
+    "Luces",
+    "Libre de alarmas",
+    "Engrase realizado",
+    "Parabrisas en perfecto estado",
+    "Cuenta con pértiga",
+    "Extintor operativo",
+    "Comentarios"
+  ]
+
+  @equipos.each do |e|
+    sheet.add_row [
+      e.truck&.codigo,
+      e.operador,
+      e.horometro,
+      e.c17,
+      e.c1,
+      e.c2,
+      e.c3,
+      e.c4,
+      e.c5,
+      e.c6,
+      e.c7,
+      e.c8,
+      e.c9,
+      e.c10,
+      e.c11,
+      e.c12,
+      e.c13,
+      e.c14,
+      e.c15,
+      e.c16,
+      e.comentarios
+    ]
+  end
+end

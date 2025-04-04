@@ -5,8 +5,16 @@ class EquiposController < ApplicationController
   # GET /equipos
   # GET /equipos.json
   def index
-    @equipos = Equipo.all
+  @equipos = Equipo.includes(:truck).all
+
+  respond_to do |format|
+    format.html
+    format.xlsx {
+      response.headers['Content-Disposition'] = 'attachment; filename="equipos.xlsx"'
+    }
   end
+end
+
 
   def recenteq
   @equipos = Equipo.where('created_at >= ?', 2.months.ago).order(created_at: :desc)

@@ -1,20 +1,47 @@
 wb = xlsx_package.workbook
 wb.add_worksheet(name: "Checklists") do |sheet|
+  # Encabezado con etiquetas iguales al formulario
   sheet.add_row [
-    "Nombre", "Fecha", "Equipo", "Horómetro", "Planta",
-    "Fugas", "Pernos/Qbrd.", "Movimientos", "Frenos", "Pasadores",
-    "Espejos", "Cinturón", "Neumáticos", "Alarma retro.", "Bocina",
-    "Luces", "Alarmas", "Engrase", "Parabrisas", "Pértiga",
-    "Extintor", "Comentarios"
+    "Nombre",
+    "Equipo",
+    "Operativo",
+    "Horómetro",
+
+    "Revisó nivel de aceite motor",
+    "Revisó nivel de aceite hidráulico",
+    "Revisó nivel de aceite transmisión",
+    "Revisó nivel de líquido refrigerante",
+    "Revisó nivel de líquido limpia parabrisas",
+    "Revisó o coordinó el engrase diario",
+    "Revisó el estado de filtro y válvula de aire",
+    "Revisó el filtro separador de combustible",
+    "Revisó el estado general del panel del radiador",
+    "Revisó el equipo en búsqueda de fugas",
+    "Revisó el equipo en búsqueda de pernos sueltos",
+    "Revisó el estado general de pasadores y pantógrafo",
+    "Realizó limpieza del antefiltro de motor",
+    "Consultó al operador por estado de luces",
+    "Consultó al operador por bocina y alarma de retroceso",
+    "Consultó al operador por posibles alarmas en panel",
+    "Consultó al operador por estado de freno del equipo",
+    "Consultó al operador por estado de dirección y marcha",
+    "¿Se encuentran artículos de limpieza en cabina?",
+
+    "Combustible",
+    "Aceite motor Super 1400",
+    "Aceite hidráulico HD10",
+    "Aceite transmisión 1340",
+    "Aceite ATF 220",
+    "Aceite NUTOH46"
   ]
 
   @checklists.each do |c|
     sheet.add_row [
       c.nombre,
-      c.created_at.strftime("%d/%m/%Y"),
-      c.equipo,
+      c.truck&.codigo,
+      c.operativo,
       c.horometro,
-      c.c17,
+
       c.c1 ? "✔" : "✘",
       c.c2 ? "✔" : "✘",
       c.c3 ? "✔" : "✘",
@@ -31,7 +58,16 @@ wb.add_worksheet(name: "Checklists") do |sheet|
       c.c14 ? "✔" : "✘",
       c.c15 ? "✔" : "✘",
       c.c16 ? "✔" : "✘",
-      c.operativo # si este campo contiene comentarios
+      c.c17 ? "✔" : "✘",
+      c.c18 ? "✔" : "✘",
+      c.c19 ? "✔" : "✘",
+
+      c.combustible,
+      c.acmotor,
+      c.achidraulico,
+      c.actrans,
+      c.acatf,
+      c.acnuto
     ]
   end
 end

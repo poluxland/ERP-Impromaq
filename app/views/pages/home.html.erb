@@ -10,9 +10,17 @@
     <%= render 'soplado' %>
   <% end %>
   <%= render 'estadoequipos' %>
-  <%= link_to checklists_path(format: :xlsx), class: "btn btn-primary" do %>
-  📥 Descargar Excel operador
+
+  <%= link_to equipos_path(format: :xlsx), class: "btn btn-primary" do %>
+  📥 Descargar checklist operador
 <% end %>
+
+  <%= link_to checklists_path(format: :xlsx), class: "btn btn-secondary" do %>
+  📥 Descargar checklist mecánico
+<% end %>
+
+
+
 
 
 
