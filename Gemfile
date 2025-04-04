@@ -20,6 +20,9 @@ gem 'net-imap'
 gem 'net-pop'
 gem 'rack-timeout'
 gem 'scout_apm'
+gem 'caxlsx'
+gem 'caxlsx_rails'
+
 
 
 group :development do

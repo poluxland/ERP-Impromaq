@@ -1,0 +1,37 @@
+wb = xlsx_package.workbook
+wb.add_worksheet(name: "Checklists") do |sheet|
+  sheet.add_row [
+    "Nombre", "Fecha", "Equipo", "Horómetro", "Planta",
+    "Fugas", "Pernos/Qbrd.", "Movimientos", "Frenos", "Pasadores",
+    "Espejos", "Cinturón", "Neumáticos", "Alarma retro.", "Bocina",
+    "Luces", "Alarmas", "Engrase", "Parabrisas", "Pértiga",
+    "Extintor", "Comentarios"
+  ]
+
+  @checklists.each do |c|
+    sheet.add_row [
+      c.nombre,
+      c.created_at.strftime("%d/%m/%Y"),
+      c.equipo,
+      c.horometro,
+      c.c17,
+      c.c1 ? "✔" : "✘",
+      c.c2 ? "✔" : "✘",
+      c.c3 ? "✔" : "✘",
+      c.c4 ? "✔" : "✘",
+      c.c5 ? "✔" : "✘",
+      c.c6 ? "✔" : "✘",
+      c.c7 ? "✔" : "✘",
+      c.c8 ? "✔" : "✘",
+      c.c9 ? "✔" : "✘",
+      c.c10 ? "✔" : "✘",
+      c.c11 ? "✔" : "✘",
+      c.c12 ? "✔" : "✘",
+      c.c13 ? "✔" : "✘",
+      c.c14 ? "✔" : "✘",
+      c.c15 ? "✔" : "✘",
+      c.c16 ? "✔" : "✘",
+      c.operativo # si este campo contiene comentarios
+    ]
+  end
+end
