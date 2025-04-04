@@ -5,8 +5,16 @@ class ChecklistsController < ApplicationController
   # GET /checklists
   # GET /checklists.json
   def index
-    @checklists = Checklist.last(5000)
+  @checklists = Checklist.includes(:truck).all
+
+  respond_to do |format|
+    format.html
+    format.xlsx {
+      response.headers['Content-Disposition'] = 'attachment; filename="checklists.xlsx"'
+    }
   end
+end
+
 
 def recent
   @checklists = Checklist.where('created_at >= ?', 2.months.ago).order(created_at: :desc)
