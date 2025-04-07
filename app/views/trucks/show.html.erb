@@ -32,20 +32,28 @@
       <thead class="thead-dark">
         <tr>
           <th>Fecha</th>
+          <th>Mantenedor</th>
           <th>Operativo</th>
           <th>Horómetro</th>
           <th>Combustible</th>
-          <th>Comentarios</th>
+          <th>A.Motor</th>
+          <th>A.Hidraulico</th>
+          <th>A.Trans.</th>
+
         </tr>
       </thead>
       <tbody>
         <% @checklists.each do |checklist| %>
           <tr>
             <td><%= link_to checklist.created_at&.strftime("%d/%m/%Y %H:%M"), checklist_path(checklist) %></td>
+            <td><%= checklist.nombre %></td>
             <td><%= checklist.operativo %></td>
             <td><%= checklist.horometro %></td>
             <td><%= checklist.combustible %></td>
-            <td><%= checklist.nombre %></td>
+            <td><%= checklist.acmotor %></td>
+            <td><%= checklist.achidraulico %></td>
+            <td><%= checklist.actrans %></td>
+
           </tr>
         <% end %>
       </tbody>
