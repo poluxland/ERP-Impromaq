@@ -115,7 +115,7 @@
         <% @interventions.each do |intervention| %>
           <tr>
             <td><%= link_to intervention.created_at&.strftime("%d/%m/%Y %H:%M"), intervention_path(intervention) %></td>
-            <td><%= intervention.hasta&.strftime("%d/%m/%Y %H:%M") %></td>
+
             <td><%= intervention.mecanico %></td>
             <td><%= intervention.descripcion %></td>
             <td><%= intervention.duracion %></td>
