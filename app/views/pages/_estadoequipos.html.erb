@@ -36,11 +36,15 @@
                     <%= truck.equipos.last.horometro %>
                     <%= truck.equipos.last.operador %>
                     <% if truck.equipos.last.comentarios.present? %>
-                      <i class="fa fa-folder text-danger"></i>
+                      <i class="fa fa-folder text-success"></i>
                     <% end %>
                     <% equipo = truck.equipos.last %>
-                    <% if equipo && [equipo.c1, equipo.c2, equipo.c3, equipo.c4, equipo.c5, equipo.c6, equipo.c7, equipo.c8, equipo.c9, equipo.c10, equipo.c11, equipo.c12, equipo.c13, equipo.c14, equipo.c15, equipo.c16].any? { |c| ["No(leve)", "No(grave)"].include?(c) } %>
+                    <% if equipo && [equipo.c1, equipo.c2, equipo.c3, equipo.c4, equipo.c5, equipo.c6, equipo.c7, equipo.c8, equipo.c9, equipo.c10, equipo.c11, equipo.c12, equipo.c13, equipo.c14, equipo.c15, equipo.c16].any? { |c| ["No(leve)"].include?(c) } %>
                       <i class="fa fa-cogs text-primary"></i>
+                      <% equipo = truck.equipos.last %>
+                    <% if equipo && [equipo.c1, equipo.c2, equipo.c3, equipo.c4, equipo.c5, equipo.c6, equipo.c7, equipo.c8, equipo.c9, equipo.c10, equipo.c11, equipo.c12, equipo.c13, equipo.c14, equipo.c15, equipo.c16].any? { |c| ["No(grave)"].include?(c) } %>
+                      <i class="fa fa-cog text-danger"></i>
+                    <% end %>
                     <% end %>
                   </a>
                 <% end %>
