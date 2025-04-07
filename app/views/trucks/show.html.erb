@@ -40,7 +40,7 @@
             <td><%= link_to checklist.created_at&.strftime("%d/%m/%Y %H:%M"), checklist_path(checklist) %></td>
             <td><%= checklist.operativo %></td>
             <td><%= checklist.horometro %></td>
-            <td><%= checklist.combustible %>%</td>
+            <td><%= checklist.combustible %></td>
             <td><%= checklist.nombre %></td>
           </tr>
         <% end %>
@@ -103,8 +103,8 @@
     <table class="table table-striped">
       <thead class="thead-dark">
         <tr>
-          <th>Desde</th>
-          <th>Hasta</th>
+          <th>Fecha</th>
+
           <th>Mecánico</th>
           <th>Descripción</th>
           <th>Duración (min)</th>
@@ -114,7 +114,7 @@
       <tbody>
         <% @interventions.each do |intervention| %>
           <tr>
-            <td><%= link_to intervention.desde&.strftime("%d/%m/%Y %H:%M"), intervention_path(intervention) %></td>
+            <td><%= link_to intervention.created_at&.strftime("%d/%m/%Y %H:%M"), intervention_path(intervention) %></td>
             <td><%= intervention.hasta&.strftime("%d/%m/%Y %H:%M") %></td>
             <td><%= intervention.mecanico %></td>
             <td><%= intervention.descripcion %></td>
