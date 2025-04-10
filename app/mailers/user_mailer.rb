@@ -48,6 +48,7 @@ class UserMailer < ApplicationMailer
       "javiera.gonzalezp@meloncementos.cl",
       "javiera.gonzalezp@meloncementos.cl",
       "patricio.vidal@meloncementos.cl",
+      "maria.palacios@meloncementos.cl",
       "geraldinne.martinez@meloncementos.cl"
     ]
 
