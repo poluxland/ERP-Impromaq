@@ -1,0 +1,97 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" style="background-color: #FFFFFF;margin: 0;padding: 0;">
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="x-ua-compatible" content="IE=edge,chrome=1">
+  <meta name="format-detection" content="telephone=no">
+  <title>Reporte Equipos</title>
+  <style type="text/css">
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      font-family: Arial, sans-serif;
+      font-size: 12px;
+    }
+    table, th, td {
+      border: 1px solid black;
+    }
+    th {
+      height: 25px;
+      background-color: #4CAF50;
+      color: white;
+    }
+    th, td {
+      padding: 4px;
+      text-align: left;
+    }
+  </style>
+</head>
+
+<body>
+  <h2 style="font-family: Montserrat, sans-serif;">Checklist Equipos <%= @date.strftime('%d-%m-%Y') %></h2>
+
+  <% if @equipos.any? %>
+    <table>
+      <thead>
+        <tr>
+          <th>Nombre</th>
+          <th>Fecha</th>
+          <th>Operador</th>
+          <th>Horómetro</th>
+          <th>Planta</th>
+          <th>Fugas</th>
+          <th>Pernos/Qbrd.</th>
+          <th>Movimientos</th>
+          <th>Frenos</th>
+          <th>Pasadores</th>
+          <th>Espejos</th>
+          <th>Cinturón</th>
+          <th>Neumáticos</th>
+          <th>Alarma retro.</th>
+          <th>Bocina</th>
+          <th>Luces</th>
+          <th>Alarmas</th>
+          <th>Engrase</th>
+          <th>Parabrisas</th>
+          <th>Pértiga</th>
+          <th>Extintor</th>
+          <th>Comentarios</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% @equipos.each do |equipo| %>
+          <tr>
+            <td><%= equipo.truck&.codigo || 'N/A' %></td>
+            <td><%= equipo.created_at.in_time_zone("Santiago").strftime("%d-%m-%Y %H:%M") %></td>
+            <td><%= equipo.operador %></td>
+            <td><%= equipo.horometro %></td>
+            <td><%= equipo.c17 %></td>
+            <td><%= equipo.c1 %></td>
+            <td><%= equipo.c2 %></td>
+            <td><%= equipo.c3 %></td>
+            <td><%= equipo.c4 %></td>
+            <td><%= equipo.c5 %></td>
+            <td><%= equipo.c6 %></td>
+            <td><%= equipo.c7 %></td>
+            <td><%= equipo.c8 %></td>
+            <td><%= equipo.c9 %></td>
+            <td><%= equipo.c10 %></td>
+            <td><%= equipo.c11 %></td>
+            <td><%= equipo.c12 %></td>
+            <td><%= equipo.c13 %></td>
+            <td><%= equipo.c14 %></td>
+            <td><%= equipo.c15 %></td>
+            <td><%= equipo.c16 %></td>
+            <td><%= equipo.comentarios %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  <% else %>
+    <p>No se registraron equipos ayer.</p>
+  <% end %>
+</body>
+</html>

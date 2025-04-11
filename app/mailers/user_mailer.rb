@@ -108,9 +108,9 @@ class UserMailer < ApplicationMailer
     mail to: "jose.jerez@msindustrial.cl, fernando.gonzalez@msindustrial.cl, julio.alvear@msindustrial.cl, martin.llancafil@meloncementos.cl, cesar.hernandez@meloncementos.cl, exequiel.moya@msindustrial.cl, camila.birke@msindustrial.cl, simon.rojas@msindustrial.cl",  subject: @greeting
   end
 
-  def daily_checklist_report
+  def daily_equipos_report
   @date = Date.yesterday
-  @checklists = Checklist.where(created_at: @date.beginning_of_day..@date.end_of_day)
+  @equipos = Equipo.where(created_at: @date.beginning_of_day..@date.end_of_day)
 
   mail(
     to: [
@@ -118,9 +118,10 @@ class UserMailer < ApplicationMailer
       "simon.rojas@msindustrial.cl",
       "fernando.gonzalez@msindustrial.cl"
     ],
-    subject: "Checklists creados el #{@date.strftime('%d-%m-%Y')}"
+    subject: "Equipos creados el #{@date.strftime('%d-%m-%Y')}"
   )
   end
+
 
 
 end
