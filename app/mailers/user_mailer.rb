@@ -118,7 +118,7 @@ class UserMailer < ApplicationMailer
       "simon.rojas@msindustrial.cl",
       "fernando.gonzalez@msindustrial.cl"
     ],
-    subject: "Equipos creados el #{@date.strftime('%d-%m-%Y')}"
+    subject: "Checklist realizados el #{@date.strftime('%d-%m-%Y')}"
   )
   end
 
