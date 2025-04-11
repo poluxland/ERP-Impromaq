@@ -1,0 +1,13 @@
+<h1>Checklists del <%= @date.strftime('%d-%m-%Y') %></h1>
+
+<% if @checklists.any? %>
+  <ul>
+    <% @checklists.each do |c| %>
+      <li>
+        <strong><%= c.nombre %></strong> - <%= c.equipo %> - Operativo: <%= c.operativo %> - Horómetro: <%= c.horometro %>
+      </li>
+    <% end %>
+  </ul>
+<% else %>
+  <p>No se registraron checklists ayer.</p>
+<% end %>
