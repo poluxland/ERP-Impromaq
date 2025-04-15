@@ -112,10 +112,13 @@ class UserMailer < ApplicationMailer
   @date = Date.yesterday
   @equipos = Equipo.where(created_at: @date.beginning_of_day..@date.end_of_day)
 
+  attachments.inline['logo.png'] = File.read(Rails.root.join("app/assets/images/logo.png"))
+
   mail(
     to: [
       "jose.jerez@msindustrial.cl",
       "simon.rojas@msindustrial.cl",
+      "marcos.prospero@msindustrial.cl",
       "fernando.gonzalez@msindustrial.cl"
     ],
     subject: "Checklist realizados el #{@date.strftime('%d-%m-%Y')}"
