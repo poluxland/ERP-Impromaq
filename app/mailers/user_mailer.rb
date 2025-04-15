@@ -20,9 +20,7 @@ class UserMailer < ApplicationMailer
       "renzo.allendes@meloncementos.cl",
       "alejandro.olivares@msindustrial.cl",
       "simon.rojas@msindustrial.cl",
-      "luis.estay@meloncementos.cl",
       "sala.controlh9m21@melon.cl",
-      "carlos.gonzalezm@meloncementos.cl",
       "claudio.villanueva@msindustrial.cl",
       "marianelly.villarroel@meloncementos.cl",
       "orlando.belmar@meloncementos.cl",
@@ -38,7 +36,6 @@ class UserMailer < ApplicationMailer
       "Alejandra.castro@meloncementos.cl",
       "cristian.sotomayor@meloncementos.cl",
       "guillermo.roco@meloncementos.cl",
-      "giovanni.henriquez@meloncementos.cl",
       "nicolas.arnau@meloncementos.cl",
       "orlando.vasquez@meloncementos.cl",
       "sebastian.caica@melonservicios.cl",
@@ -110,20 +107,42 @@ class UserMailer < ApplicationMailer
 
   def daily_equipos_report
   @date = Date.yesterday
-  @equipos = Equipo.where(created_at: @date.beginning_of_day..@date.end_of_day)
-
-  attachments.inline['logo.png'] = File.read(Rails.root.join("app/assets/images/logo.png"))
+  @equipos = Equipo.joins(:truck)
+                   .where(created_at: @date.beginning_of_day..@date.end_of_day)
+                   .where(trucks: { planta: "LCA" })
 
   mail(
     to: [
       "jose.jerez@msindustrial.cl",
       "simon.rojas@msindustrial.cl",
       "marcos.prospero@msindustrial.cl",
+      "supervisor.envasadora@msindustrial.cl",
+      "maryorie.fajardo@msindustrial.cl",
       "fernando.gonzalez@msindustrial.cl"
     ],
-    subject: "Checklist realizados el #{@date.strftime('%d-%m-%Y')}"
+    subject: "Checklist LCA realizados el #{@date.strftime('%d-%m-%Y')}"
   )
   end
+
+  def daily_equipos_report_ptm
+  @date = Date.yesterday
+  @equipos = Equipo.joins(:truck)
+                   .where(created_at: @date.beginning_of_day..@date.end_of_day)
+                   .where(trucks: { planta: "PTM" })
+
+  mail(
+    to: [
+      "jose.jerez@msindustrial.cl",
+      "simon.rojas@msindustrial.cl",
+      "marcos.prospero@msindustrial.cl",
+      "supervisor.envasadora@msindustrial.cl",
+      "maryorie.fajardo@msindustrial.cl",
+      "julio.alvear@msindustrial.cl",
+      "fernando.gonzalez@msindustrial.cl"
+    ],
+    subject: "Checklist PTM realizados el #{@date.strftime('%d-%m-%Y')}"
+  )
+end
 
 
 

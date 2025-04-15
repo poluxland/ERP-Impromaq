@@ -7,4 +7,9 @@ def self.send_yesterdays_report
   UserMailer.daily_equipos_report.deliver_now
 end
 
+def self.send_yesterdays_report_ptm
+  UserMailer.daily_equipos_report_ptm.deliver_now
+end
+
+
 end
