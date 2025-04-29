@@ -12,6 +12,25 @@ class Medida < ApplicationRecord
             :horas_haver, :horas_vento, :horas_bigbag,
             :callesplanta1, :callesilo27, :bigbag_extra_retiro, presence: true
 
+
+
+   # Validación para silos 19, 20, 21, 22 y 27 - máximo 30
+  validates :silo19a, :silo19b, :silo20a, :silo20b,
+            :silo21a, :silo21b, :silo22a, :silo22b, :silo27,
+            numericality: {
+              less_than_or_equal_to: 30,
+              greater_than_or_equal_to: 0,
+              message: "debe estar entre 0 y 30"
+            }
+
+  # Validación específica para silo28 - máximo 20
+  validates :silo28,
+            numericality: {
+              less_than_or_equal_to: 20,
+              greater_than_or_equal_to: 0,
+              message: "debe estar entre 0 y 20"
+            }
+
   after_create :send_medidas_email
 
   private
