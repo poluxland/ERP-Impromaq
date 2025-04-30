@@ -1,9 +1,13 @@
+ActionMailer::Base.delivery_method       = :smtp
+ActionMailer::Base.perform_deliveries    = true
+ActionMailer::Base.raise_delivery_errors = true
+
 ActionMailer::Base.smtp_settings = {
-  :port           => ENV['MAILGUN_SMTP_PORT'],
-  :address        => ENV['MAILGUN_SMTP_SERVER'],
-  :user_name      => ENV['MAILGUN_SMTP_LOGIN'],
-  :password       => ENV['MAILGUN_SMTP_PASSWORD'],
-  :domain         => 'rails-impromaq.herokuapp.com',
-  :authentication => :plain,
+  address:              'smtp-mail.outlook.com',
+  port:                 587,
+  domain:               'outlook.com',
+  user_name:            ENV['OUTLOOK_USER'],    # impromaq.ltda@outlook.com
+  password:             ENV['OUTLOOK_PASS'],    # la App Password de Microsoft
+  authentication:       :login,
+  enable_starttls_auto: true
 }
-ActionMailer::Base.delivery_method = :smtp
