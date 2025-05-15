@@ -16,6 +16,14 @@
   <h2>Horas Pendientes de Revisión - <%= Date.current.year %></h2>
 
   <% if @horas.any? %>
+
+   <h3>Total de Horas pendientes por Mandante (ITO):</h3>
+    <ul>
+      <% @horas.group_by(&:mandante).each do |mandante, horas| %>
+        <li><strong><%= mandante %></strong>: <%= horas.sum(&:he) %> horas pendientes</li>
+      <% end %>
+    </ul>
+
     <table>
       <thead>
         <tr>
