@@ -138,6 +138,9 @@ class UserMailer < ApplicationMailer
       "supervisor.envasadora@msindustrial.cl",
       "maryorie.fajardo@msindustrial.cl",
       "julio.alvear@msindustrial.cl",
+      "victor.gallardo@msindustrial.cl",
+      "pedro.pichaud@msindustrial.cl",
+      "exequiel.moya@msindustrial.cl",
       "fernando.gonzalez@msindustrial.cl"
     ],
     subject: "Checklist PTM realizados el #{@date.strftime('%d-%m-%Y')}"
