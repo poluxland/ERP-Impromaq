@@ -149,4 +149,25 @@ end
 
 
 
+def horas_pendientes_revision
+  @date = Date.current
+  @horas = Hora.where(
+    estado: 'Pendiente revisión',
+    fecha: @date.beginning_of_year..@date.end_of_year
+  ).order(:fecha)
+
+  mail(
+    to: [
+      "camila.birke@msindustrial.cl",
+      "julio.alvear@msindustrial.cl",
+      "fernando.gonzalez@msindustrial.cl",
+      "jose.jerez@msindustrial.cl"
+    ],
+    subject: "Horas extras pendientes de revisión PTM"
+  )
+end
+
+
+
+
 end
