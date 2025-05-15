@@ -145,7 +145,7 @@ class UserMailer < ApplicationMailer
     ],
     subject: "Checklist PTM realizados el #{@date.strftime('%d-%m-%Y')}"
   )
-end
+  end
 
 
 
@@ -158,6 +158,10 @@ def horas_pendientes_revision
       "camila.birke@msindustrial.cl",
       "julio.alvear@msindustrial.cl",
       "fernando.gonzalez@msindustrial.cl",
+      "martin.llancafil@meloncementos.cl",
+      "daniel.garrido@meloncementos.cl",
+      "Johnny.Rute@meloncementos.cl",
+      "cesar.hernandez@meloncementos.cl",
       "jose.jerez@msindustrial.cl"
     ],
     subject: "Horas extras pendientes de revisión PTM"
