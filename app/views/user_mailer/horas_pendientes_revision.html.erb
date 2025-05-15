@@ -17,12 +17,13 @@
 
   <% if @horas.any? %>
 
-  <h3>Total de Horas pendientes por Mandante (ITO):</h3>
-    <ul>
-      <% @horas.select { |hora| hora.fecha.year == Date.current.year }.group_by(&:mandante).each do |mandante, horas| %>
-        <li><strong><%= mandante %></strong>: <%= horas.sum(&:he) %> horas pendientes</li>
-      <% end %>
-    </ul>
+  <h3>Total de trabajos pendientes por Mandante (ITO):</h3>
+<ul>
+  <% @horas.group_by(&:mandante).each do |mandante, registros| %>
+    <li><strong><%= mandante %></strong>: <%= registros.size %> trabajos pendientes</li>
+  <% end %>
+</ul>
+
 
     <table>
       <thead>

@@ -151,10 +151,7 @@ end
 
 def horas_pendientes_revision
   @date = Date.current
-  @horas = Hora.where(
-    estado: 'Pendiente revisión',
-    fecha: @date.beginning_of_year..@date.end_of_year
-  ).order(:fecha)
+  @horas = Hora.where(estado: 'Pendiente revisión').order(:fecha)
 
   mail(
     to: [
@@ -166,6 +163,7 @@ def horas_pendientes_revision
     subject: "Horas extras pendientes de revisión PTM"
   )
 end
+
 
 
 
