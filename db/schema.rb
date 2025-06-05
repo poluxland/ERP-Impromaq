@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2025_02_12_004925) do
+ActiveRecord::Schema.define(version: 2025_06_05_232446) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -598,6 +598,8 @@ ActiveRecord::Schema.define(version: 2025_02_12_004925) do
     t.string "mirillas"
     t.float "so3"
     t.integer "tiempo"
+    t.float "carbon_horno"
+    t.float "carbon_precalcinador"
   end
 
   create_table "trabajos", force: :cascade do |t|

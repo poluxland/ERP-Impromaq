@@ -49,93 +49,47 @@
 <thead class="thead-dark">
   <tr>
     <th>Fecha</th>
-      <th>Supervisor</th>
-      <th>Ducto P1 ascendente</th>
-      <th>Ducto P2 ascendente</th>
-      <th>CC54 P1</th>
-      <th>CC54 P2</th>
-      <th>CC54 Temp</th>
-      <th>Quench P1</th>
-      <th>Horno</th>
-      <th>Jetin</th>
-      <th>Mirillas</th>
-      <th>SO3</th>
-      <th>Tiempo(m)</th>
-      <th>Observaciones</th>
+    <th>Supervisor</th>
+    <th>Ducto P1 ascendente</th>
+    <th>Ducto P2 ascendente</th>
+    <th>CC54 P1</th>
+    <th>CC54 P2</th>
+    <th>CC54 Temp</th>
+    <th>Quench P1</th>
+    <th>Horno</th>
+    <th>Carbón Horno (t/h)</th>
+    <th>Carbón Precalcinador (t/h)</th>
+    <th>Jetin</th>
+    <th>Mirillas</th>
+    <th>SO3</th>
+    <th>Tiempo(m)</th>
+    <th>Observaciones</th>
   </tr>
 </thead>
+
 <tbody>
-  <tr>
-        <td><%= Soplado.last.fecha.strftime("%Y/%m/%d %H:%M") %></td>
-        <td><%= Soplado.last.supervisor %></td>
-        <td><%= Soplado.last.presion1 %></td>
-        <td><%= Soplado.last.presion2 %></td>
-        <td><%= Soplado.last.presion3 %></td>
-        <td><%= Soplado.last.presion4 %></td>
-        <td><%= Soplado.last.presion5 %></td>
-        <td><%= Soplado.last.presion6 %></td>
-        <td><%= Soplado.last.horno %></td>
-        <td><%= Soplado.last.jetin ? 'Sí' : 'No' %></td>
-        <td><%= Soplado.last.mirillas %></td>
-        <td><%= Soplado.last.so3 %></td>
-         <td><%= Soplado.last.tiempo %></td>
-        <td><%= Soplado.last.observaciones %></td>
-
-  </tr>
-  <tr>
-        <td><%= Soplado.order(:id).last(2).first.fecha.strftime("%Y/%m/%d %H:%M") %></td>
-        <td><%= Soplado.order(:id).last(2).first.supervisor %></td>
-        <td><%= Soplado.order(:id).last(2).first.presion1 %></td>
-        <td><%= Soplado.order(:id).last(2).first.presion2 %></td>
-        <td><%= Soplado.order(:id).last(2).first.presion3 %></td>
-        <td><%= Soplado.order(:id).last(2).first.presion4 %></td>
-        <td><%= Soplado.order(:id).last(2).first.presion5 %></td>
-        <td><%= Soplado.order(:id).last(2).first.presion6 %></td>
-        <td><%= Soplado.order(:id).last(2).first.horno %></td>
-        <td><%= Soplado.order(:id).last(2).first.jetin ? 'Sí' : 'No' %></td>
-        <td><%= Soplado.order(:id).last(2).first.mirillas %></td>
-        <td><%= Soplado.order(:id).last(2).first.so3 %></td>
-        <td><%= Soplado.order(:id).last(2).first.tiempo %></td>
-        <td><%= Soplado.order(:id).last(2).first.observaciones %></td>
-
-  </tr>
-  <tr>
-        <td><%= Soplado.order(:id).last(3).first.fecha.strftime("%Y/%m/%d %H:%M") %></td>
-        <td><%= Soplado.order(:id).last(3).first.supervisor %></td>
-        <td><%= Soplado.order(:id).last(3).first.presion1 %></td>
-        <td><%= Soplado.order(:id).last(3).first.presion2 %></td>
-        <td><%= Soplado.order(:id).last(3).first.presion3 %></td>
-        <td><%= Soplado.order(:id).last(3).first.presion4 %></td>
-        <td><%= Soplado.order(:id).last(3).first.presion5 %></td>
-        <td><%= Soplado.order(:id).last(3).first.presion6 %></td>
-        <td><%= Soplado.order(:id).last(3).first.horno %></td>
-        <td><%= Soplado.order(:id).last(3).first.jetin ? 'Sí' : 'No' %></td>
-        <td><%= Soplado.order(:id).last(3).first.mirillas %></td>
-        <td><%= Soplado.order(:id).last(3).first.so3 %></td>
-        <td><%= Soplado.order(:id).last(3).first.tiempo %></td>
-        <td><%= Soplado.order(:id).last(3).first.observaciones %></td>
-
-  </tr>
-  <tr>
-        <td><%= Soplado.order(:id).last(4).first.fecha.strftime("%Y/%m/%d %H:%M") %></td>
-        <td><%= Soplado.order(:id).last(4).first.supervisor %></td>
-        <td><%= Soplado.order(:id).last(4).first.presion1 %></td>
-        <td><%= Soplado.order(:id).last(4).first.presion2 %></td>
-        <td><%= Soplado.order(:id).last(4).first.presion3 %></td>
-        <td><%= Soplado.order(:id).last(4).first.presion4 %></td>
-        <td><%= Soplado.order(:id).last(4).first.presion5 %></td>
-        <td><%= Soplado.order(:id).last(4).first.presion6 %></td>
-        <td><%= Soplado.order(:id).last(4).first.horno %></td>
-        <td><%= Soplado.order(:id).last(4).first.jetin ? 'Sí' : 'No' %></td>
-        <td><%= Soplado.order(:id).last(4).first.mirillas %></td>
-        <td><%= Soplado.order(:id).last(4).first.so3 %></td>
-        <td><%= Soplado.order(:id).last(4).first.tiempo %></td>
-        <td><%= Soplado.order(:id).last(4).first.observaciones %></td>
-
-  </tr>
-
-
+  <% Soplado.order(id: :desc).limit(4).each do |soplado| %>
+    <tr>
+      <td><%= soplado.fecha.strftime("%Y/%m/%d %H:%M") %></td>
+      <td><%= soplado.supervisor %></td>
+      <td><%= soplado.presion1 %></td>
+      <td><%= soplado.presion2 %></td>
+      <td><%= soplado.presion3 %></td>
+      <td><%= soplado.presion4 %></td>
+      <td><%= soplado.presion5 %></td>
+      <td><%= soplado.presion6 %></td>
+      <td><%= soplado.horno %></td>
+      <td><%= soplado.carbon_horno %></td>
+      <td><%= soplado.carbon_precalcinador %></td>
+      <td><%= soplado.jetin ? 'Sí' : 'No' %></td>
+      <td><%= soplado.mirillas %></td>
+      <td><%= soplado.so3 %></td>
+      <td><%= soplado.tiempo %></td>
+      <td><%= soplado.observaciones %></td>
+    </tr>
+  <% end %>
 </tbody>
+
 </table><br>
 
 </body>
