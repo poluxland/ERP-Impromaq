@@ -35,7 +35,6 @@ class UserMailer < ApplicationMailer
       "mariapaz.cobo@meloncementos.cl",
       "Alejandra.castro@meloncementos.cl",
       "cristian.sotomayor@meloncementos.cl",
-      "guillermo.roco@meloncementos.cl",
       "nicolas.arnau@meloncementos.cl",
       "orlando.vasquez@meloncementos.cl",
       "sebastian.caica@melonservicios.cl",
@@ -43,9 +42,13 @@ class UserMailer < ApplicationMailer
       "luis.penailillo@msindustrial.cl",
       "valentina.gonzalez@melonservicios.cl",
       "javiera.gonzalezp@meloncementos.cl",
-      "javiera.gonzalezp@meloncementos.cl",
       "patricio.vidal@meloncementos.cl",
       "maria.palacios@meloncementos.cl",
+      "rodolfo.tobar-externo@meloncementos.cl",
+      "diego.espinoza@meloncementos.cl",
+      "patricio.ramirez@meloncementos.cl",
+      "juan.arriaza@meloncementos.cl",
+      "moira.cisternas@meloncementos.cl",
       "geraldinne.martinez@meloncementos.cl"
     ]
 
