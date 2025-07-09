@@ -6,6 +6,8 @@
         <th>Area</th>
         <th>Autoriza</th>
         <th>He</th>
+        <td>HI</td>
+        <td>HT</td>
         <th>Ot</th>
         <th>Lugar</th>
         <th>Descripcion</th>
@@ -22,6 +24,8 @@
         <td><%= hora.area %></td>
         <td><%= hora.mandante %></td>
         <td><%= hora.he %></td>
+        <td><%= hora.inicio.strftime('%H:%M') if hora.inicio.present? %></td>
+        <td><%= hora.termino.strftime('%H:%M') if hora.termino.present? %></td>
         <td><%= hora.ot %></td>
         <td><%= hora.lugar %></td>
         <td><%= hora.descripcion %></td>
