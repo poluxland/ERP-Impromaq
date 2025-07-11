@@ -1,10 +1,33 @@
 class PagesController < ApplicationController
   # skip_before_action :authenticate_user!, only: [:home]
 
- def home
-  @trucks = Truck.includes(:checklists, :equipos, :interventions)
-                 .where.not(planta: 'X')
-end
+  def home
+    @trucks = Truck.includes(:checklists, :equipos, :interventions)
+                   .where.not(planta: 'X')
+
+    # Definir el rango de meses (actual y 3 anteriores)
+    meses = (0..3).map { |i| Date.today.beginning_of_month - i.month }
+
+    # Cargar ventas en ejecucción agrupadas por planta
+    @ventas_en_ejecucion = Trabajo
+      .where(avance: "En ejecucción")
+      .group(:planta)
+      .sum(:total)
+
+    # Cargar ventas terminadas/facturadas agrupadas por planta y mes
+    trabajos_finalizados = Trabajo
+      .where(avance: ["Terminado", "Facturado"])
+      .where(fecha_termino: meses.min..Date.today.end_of_month)
+
+    @ventas_por_mes = trabajos_finalizados.group_by do |t|
+      [t.planta, t.fecha_termino.beginning_of_month]
+    end.transform_values { |trabajos| trabajos.sum(&:total) }
+
+    # Alternativamente, si prefieres usar centro_costo en vez de planta:
+    @ventas_cc_por_mes = trabajos_finalizados.group_by do |t|
+      [t.centro_costo, t.fecha_termino.beginning_of_month]
+    end.transform_values { |trabajos| trabajos.sum(&:total) }
+  end
 
  def reporte
   @prodhaver_tm = Medida.where(turno: "TM").group_by_day(:created_at).sum(:prodhaver)

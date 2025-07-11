@@ -1,93 +1,76 @@
-
-
 <!-- Cards OPs -->
 <div class="card-deck pt-0">
+
+  <!-- Venta LCA (usa :planta) -->
   <div class="card shadow">
     <div class="card-body">
       <h5 class="card-title"><i class="fas fa-file-invoice-dollar text-success"></i> Venta LCA </h5>
-        <p class="card-text">
-          <a href="<%= lcaejec_path %>">
-          <%= number_to_currency(Trabajo.where(avance: "En ejecucción").where(planta: "La Calera").sum(:total), delimiter: ".", precision: 0) %> En ejecucción
-          </a><br>
-          <a href="<%= lcaventames_path %>">
-            <%= number_to_currency(Trabajo.where(avance:[ "Terminado", "Facturado" ]).where(centro_costo: [ "Cmec", "Horno", "Ser", "Trans", "Env", "Adm", "Ngp", "Otro"]).where(:fecha_termino => Date.today.beginning_of_month..Date.today.end_of_month).sum(:total), delimiter: ".", precision: 0) %> <%= (Date.today - 0.month).strftime("%B") %> <br>
+      <p class="card-text">
+        <a href="<%= lcaejec_path %>">
+          <%= number_to_currency(@ventas_en_ejecucion["La Calera"] || 0, delimiter: ".", precision: 0) %> En ejecucción
+        </a><br>
+        <% (0..3).each do |i| %>
+          <% mes = Date.today.beginning_of_month - i.month %>
+          <a href="<%= send("lcaventames#{i.zero? ? '' : "#{i}m"}_path") %>">
+            <%= number_to_currency(@ventas_cc_por_mes[["La Calera", mes]] || 0, delimiter: ".", precision: 0) %> <%= mes.strftime("%B") %><br>
           </a>
-          <a href="<%= lcaventames1m_path %>">
-          <%= number_to_currency(Trabajo.where(avance:[ "Terminado", "Facturado" ]).where(centro_costo: [ "Cmec", "Horno", "Ser", "Trans", "Env", "Adm", "Ngp", "Otro"]).where(:fecha_termino => ((Date.today.beginning_of_month) - 1.month)..((Date.today.end_of_month) - 1.month)).sum(:total), delimiter: ".", precision: 0) %> <%= (Date.today - 1.month).strftime("%B") %><br>
-          </a>
-          <a href="<%= lcaventames2m_path %>">
-            <%= number_to_currency(Trabajo.where(avance:[ "Terminado", "Facturado" ]).where(centro_costo: [ "Cmec", "Horno", "Ser", "Trans", "Env", "Adm", "Ngp", "Otro"]).where(:fecha_termino => ((Date.today.beginning_of_month) - 2.month)..((Date.today.end_of_month) - 2.month)).sum(:total), delimiter: ".", precision: 0) %> <%= (Date.today - 2.month).strftime("%B") %><br>
-          </a>
-          <a href="<%= lcaventames3m_path %>">
-            <%= number_to_currency(Trabajo.where(avance:[ "Terminado", "Facturado" ]).where(centro_costo: [ "Cmec", "Horno", "Ser", "Trans", "Env", "Adm", "Ngp", "Otro"]).where(:fecha_termino => ((Date.today.beginning_of_month) - 3.month)..((Date.today.end_of_month) - 3.month)).sum(:total), delimiter: ".", precision: 0) %> <%= (Date.today - 3.month).strftime("%B") %>
-          </a>
-        </p>
+        <% end %>
+      </p>
     </div>
   </div>
+
+  <!-- Venta VTS (usa :centro_costo) -->
   <div class="card shadow">
     <div class="card-body">
       <h5 class="card-title"><i class="fas fa-file-invoice-dollar text-success"></i> Venta VTS</h5>
       <p class="card-text">
         <a href="<%= vtsejec_path %>">
-        <%= number_to_currency(Trabajo.where(avance: "En ejecucción").where(planta: "Ventanas").sum(:total), delimiter: ".", precision: 0) %> En ejecucción
+          <%= number_to_currency(@ventas_en_ejecucion["Ventanas"] || 0, delimiter: ".", precision: 0) %> En ejecucción
         </a><br>
-        <a href="<%= vtsventames_path %>">
-          <%= number_to_currency(Trabajo.where(avance:[ "Terminado", "Facturado" ]).where(centro_costo: [ "Vts", "Ext Vts" ]).where('fecha_termino >= ? AND fecha_termino < ?', Date.today.beginning_of_month, Date.today.end_of_month).sum(:total), delimiter: ".", precision: 0) %> <%= (Date.today - 0.month).strftime("%B") %><br>
-        </a>
-        <a href="<%= vtsventames1m_path %>">
-        <%= number_to_currency(Trabajo.where(avance:[ "Terminado", "Facturado" ]).where(centro_costo: [ "Vts", "Ext Vts" ]).where(:fecha_termino => ((Date.today.beginning_of_month) - 1.month)..((Date.today.end_of_month) - 1.month)).sum(:total), delimiter: ".", precision: 0) %><%= (Date.today - 1.month).strftime("%B") %><br>
-        </a>
-        <a href="<%= vtsventames2m_path %>">
-        <%= number_to_currency(Trabajo.where(avance:[ "Terminado", "Facturado" ]).where(centro_costo: [ "Vts", "Ext Vts" ]).where(:fecha_termino => ((Date.today.beginning_of_month) - 2.month)..((Date.today.end_of_month) - 2.month)).sum(:total), delimiter: ".", precision: 0) %> <%= (Date.today - 2.month).strftime("%B") %><br>
-        </a>
-        <a href="<%= vtsventames3m_path %>">
-        <%= number_to_currency(Trabajo.where(avance:[ "Terminado", "Facturado" ]).where(centro_costo: [ "Vts", "Ext Vts" ]).where(:fecha_termino => ((Date.today.beginning_of_month) - 3.month)..((Date.today.end_of_month) - 3.month)).sum(:total), delimiter: ".", precision: 0) %> <%= (Date.today - 3.month).strftime("%B") %>
-        </a>
+        <% (0..3).each do |i| %>
+          <% mes = Date.today.beginning_of_month - i.month %>
+          <a href="<%= send("vtsventames#{i.zero? ? '' : "#{i}m"}_path") %>">
+            <%= number_to_currency(@ventas_cc_por_mes[["VTS", mes]] || 0, delimiter: ".", precision: 0) %> <%= mes.strftime("%B") %><br>
+          </a>
+        <% end %>
       </p>
     </div>
   </div>
+
+  <!-- Venta PTM (usa :planta) -->
   <div class="card shadow">
     <div class="card-body">
       <h5 class="card-title"><i class="fas fa-file-invoice-dollar text-success"></i> Venta PTM</h5>
       <p class="card-text">
         <a href="<%= ptmejec_path %>">
-        <%= number_to_currency(Trabajo.where(avance: "En ejecucción").where(planta: "P.Montt").sum(:total), delimiter: ".", precision: 0) %> En ejecucción
+          <%= number_to_currency(@ventas_en_ejecucion["P.Montt"] || 0, delimiter: ".", precision: 0) %> En ejecucción
         </a><br>
-        <a href="<%= ptmventames_path %>">
-          <%= number_to_currency(Trabajo.where(avance:[ "Terminado", "Facturado" ]).where(planta: "P.Montt").where('fecha_termino >= ? AND fecha_termino < ?', Date.today.beginning_of_month, Date.today.end_of_month).sum(:total), delimiter: ".", precision: 0) %> <%= (Date.today - 0.month).strftime("%B") %><br>
-        </a>
-        <a href="<%= ptmventames1m_path %>">
-          <%= number_to_currency(Trabajo.where(avance:[ "Terminado", "Facturado" ]).where(planta: "P.Montt").where(:fecha_termino => ((Date.today.beginning_of_month) - 1.month)..((Date.today.end_of_month) - 1.month)).sum(:total), delimiter: ".", precision: 0) %><%= (Date.today - 1.month).strftime("%B") %><br>
-        </a>
-        <a href="<%= ptmventames2m_path %>">
-          <%= number_to_currency(Trabajo.where(avance:[ "Terminado", "Facturado" ]).where(planta: "P.Montt").where(:fecha_termino => ((Date.today.beginning_of_month) - 2.month)..((Date.today.end_of_month) - 2.month)).sum(:total), delimiter: ".", precision: 0) %> <%= (Date.today - 2.month).strftime("%B") %><br>
-        </a>
-        <a href="<%= ptmventames3m_path %>">
-          <%= number_to_currency(Trabajo.where(avance:[ "Terminado", "Facturado" ]).where(planta: "P.Montt").where(:fecha_termino => ((Date.today.beginning_of_month) - 3.month)..((Date.today.end_of_month) - 3.month)).sum(:total), delimiter: ".", precision: 0) %> <%= (Date.today - 3.month).strftime("%B") %>
-        </a>
+        <% (0..3).each do |i| %>
+          <% mes = Date.today.beginning_of_month - i.month %>
+          <a href="<%= send("ptmventames#{i.zero? ? '' : "#{i}m"}_path") %>">
+            <%= number_to_currency(@ventas_por_mes[["P.Montt", mes]] || 0, delimiter: ".", precision: 0) %> <%= mes.strftime("%B") %><br>
+          </a>
+        <% end %>
       </p>
     </div>
   </div>
+
+  <!-- Venta PUQ (usa :centro_costo) -->
   <div class="card shadow">
     <div class="card-body">
       <h5 class="card-title"><i class="fas fa-file-invoice-dollar text-success"></i> Venta PUQ </h5>
       <p class="card-text">
         <a href="<%= parejec_path %>">
-      <%= number_to_currency(Trabajo.where(avance: "En ejecucción").where(planta: "P.Arenas").sum(:total), delimiter: ".", precision: 0) %> En ejecucción
-      </a><br>
-        <a href="<%= parventames_path %>">
-        <%= number_to_currency(Trabajo.where(avance:[ "Terminado", "Facturado" ]).where(centro_costo: "PUQ").where('fecha_termino >= ? AND fecha_termino < ?', Date.today.beginning_of_month, Date.today.end_of_month).sum(:total), delimiter: ".", precision: 0) %> <%= (Date.today - 0.month).strftime("%B") %><br>
-        </a>
-        <a href="<%= parventames1m_path %>">
-        <%= number_to_currency(Trabajo.where(avance:[ "Terminado", "Facturado" ]).where(centro_costo: "PUQ").where(:fecha_termino => ((Date.today.beginning_of_month) - 1.month)..((Date.today.end_of_month) - 1.month)).sum(:total), delimiter: ".", precision: 0) %><%= (Date.today - 1.month).strftime("%B") %><br>
-        </a>
-        <a href="<%= parventames2m_path %>">
-        <%= number_to_currency(Trabajo.where(avance:[ "Terminado", "Facturado" ]).where(centro_costo: "PUQ").where(:fecha_termino => ((Date.today.beginning_of_month) - 2.month)..((Date.today.end_of_month) - 2.month)).sum(:total), delimiter: ".", precision: 0) %> <%= (Date.today - 2.month).strftime("%B") %><br>
-        </a>
-        <a href="<%= parventames3m_path %>">
-        <%= number_to_currency(Trabajo.where(avance:[ "Terminado", "Facturado" ]).where(centro_costo: "PUQ").where(:fecha_termino => ((Date.today.beginning_of_month) - 3.month)..((Date.today.end_of_month) - 3.month)).sum(:total), delimiter: ".", precision: 0) %> <%= (Date.today - 3.month).strftime("%B") %>
-        </a>
+          <%= number_to_currency(@ventas_en_ejecucion["P.Arenas"] || 0, delimiter: ".", precision: 0) %> En ejecucción
+        </a><br>
+        <% (0..3).each do |i| %>
+          <% mes = Date.today.beginning_of_month - i.month %>
+          <a href="<%= send("parventames#{i.zero? ? '' : "#{i}m"}_path") %>">
+            <%= number_to_currency(@ventas_cc_por_mes[["PUQ", mes]] || 0, delimiter: ".", precision: 0) %> <%= mes.strftime("%B") %><br>
+          </a>
+        <% end %>
       </p>
     </div>
   </div>
+
 </div>
