@@ -5,28 +5,22 @@ class PagesController < ApplicationController
     @trucks = Truck.includes(:checklists, :equipos, :interventions)
                    .where.not(planta: 'X')
 
-    # Definir el rango de meses (actual y 3 anteriores)
     meses = (0..3).map { |i| Date.today.beginning_of_month - i.month }
 
-    # Cargar ventas en ejecucción agrupadas por planta
+    # En ejecución por planta
     @ventas_en_ejecucion = Trabajo
       .where(avance: "En ejecucción")
       .group(:planta)
       .sum(:total)
 
-    # Cargar ventas terminadas/facturadas agrupadas por planta y mes
+    # Terminados y facturados, agrupados por planta y mes de fecha_termino
     trabajos_finalizados = Trabajo
       .where(avance: ["Terminado", "Facturado"])
       .where(fecha_termino: meses.min..Date.today.end_of_month)
 
-    @ventas_por_mes = trabajos_finalizados.group_by do |t|
-      [t.planta, t.fecha_termino.beginning_of_month]
-    end.transform_values { |trabajos| trabajos.sum(&:total) }
-
-    # Alternativamente, si prefieres usar centro_costo en vez de planta:
-    @ventas_cc_por_mes = trabajos_finalizados.group_by do |t|
-      [t.centro_costo, t.fecha_termino.beginning_of_month]
-    end.transform_values { |trabajos| trabajos.sum(&:total) }
+    @ventas_por_mes = trabajos_finalizados
+      .group_by { |t| [t.planta.to_s.strip, t.fecha_termino.beginning_of_month] }
+      .transform_values { |ts| ts.sum(&:total) }
   end
 
  def reporte

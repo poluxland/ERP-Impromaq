@@ -1,76 +1,36 @@
-<!-- Cards OPs -->
 <div class="card-deck pt-0">
 
-  <!-- Venta LCA (usa :planta) -->
-  <div class="card shadow">
-    <div class="card-body">
-      <h5 class="card-title"><i class="fas fa-file-invoice-dollar text-success"></i> Venta LCA </h5>
-      <p class="card-text">
-        <a href="<%= lcaejec_path %>">
-          <%= number_to_currency(@ventas_en_ejecucion["La Calera"] || 0, delimiter: ".", precision: 0) %> En ejecucción
-        </a><br>
-        <% (0..3).each do |i| %>
-          <% mes = Date.today.beginning_of_month - i.month %>
-          <a href="<%= send("lcaventames#{i.zero? ? '' : "#{i}m"}_path") %>">
-            <%= number_to_currency(@ventas_cc_por_mes[["La Calera", mes]] || 0, delimiter: ".", precision: 0) %> <%= mes.strftime("%B") %><br>
-          </a>
-        <% end %>
-      </p>
-    </div>
-  </div>
+  <% [
+    { nombre: "LCA", planta: "La Calera", path_prefix: "lca" },
+    { nombre: "VTS", planta: "Ventanas",  path_prefix: "vts" },
+    { nombre: "PTM", planta: "P.Montt",   path_prefix: "ptm" },
+    { nombre: "PUQ", planta: "P.Arenas",  path_prefix: "par" }
+  ].each do |planta_info| %>
 
-  <!-- Venta VTS (usa :centro_costo) -->
-  <div class="card shadow">
-    <div class="card-body">
-      <h5 class="card-title"><i class="fas fa-file-invoice-dollar text-success"></i> Venta VTS</h5>
-      <p class="card-text">
-        <a href="<%= vtsejec_path %>">
-          <%= number_to_currency(@ventas_en_ejecucion["Ventanas"] || 0, delimiter: ".", precision: 0) %> En ejecucción
-        </a><br>
-        <% (0..3).each do |i| %>
-          <% mes = Date.today.beginning_of_month - i.month %>
-          <a href="<%= send("vtsventames#{i.zero? ? '' : "#{i}m"}_path") %>">
-            <%= number_to_currency(@ventas_cc_por_mes[["VTS", mes]] || 0, delimiter: ".", precision: 0) %> <%= mes.strftime("%B") %><br>
-          </a>
-        <% end %>
-      </p>
-    </div>
-  </div>
+    <div class="card shadow">
+      <div class="card-body">
+        <h5 class="card-title">
+          <i class="fas fa-file-invoice-dollar text-success"></i> Venta <%= planta_info[:nombre] %>
+        </h5>
+        <p class="card-text">
+          <!-- En ejecución -->
+          <a href="<%= send("#{planta_info[:path_prefix]}ejec_path") %>">
+            <%= number_to_currency(@ventas_en_ejecucion[planta_info[:planta]] || 0, delimiter: ".", precision: 0) %> En ejecucción
+          </a><br>
 
-  <!-- Venta PTM (usa :planta) -->
-  <div class="card shadow">
-    <div class="card-body">
-      <h5 class="card-title"><i class="fas fa-file-invoice-dollar text-success"></i> Venta PTM</h5>
-      <p class="card-text">
-        <a href="<%= ptmejec_path %>">
-          <%= number_to_currency(@ventas_en_ejecucion["P.Montt"] || 0, delimiter: ".", precision: 0) %> En ejecucción
-        </a><br>
-        <% (0..3).each do |i| %>
-          <% mes = Date.today.beginning_of_month - i.month %>
-          <a href="<%= send("ptmventames#{i.zero? ? '' : "#{i}m"}_path") %>">
-            <%= number_to_currency(@ventas_por_mes[["P.Montt", mes]] || 0, delimiter: ".", precision: 0) %> <%= mes.strftime("%B") %><br>
-          </a>
-        <% end %>
-      </p>
+          <!-- Últimos 4 meses -->
+          <% (0..3).each do |i| %>
+            <% mes = Date.today.beginning_of_month - i.month %>
+            <a href="<%= send("#{planta_info[:path_prefix]}ventames#{i.zero? ? '' : "#{i}m"}_path") %>">
+              <%= number_to_currency(@ventas_por_mes[[planta_info[:planta], mes]] || 0, delimiter: ".", precision: 0) %>
+              <%= mes.strftime("%B") %><br>
+            </a>
+          <% end %>
+        </p>
+      </div>
     </div>
-  </div>
 
-  <!-- Venta PUQ (usa :centro_costo) -->
-  <div class="card shadow">
-    <div class="card-body">
-      <h5 class="card-title"><i class="fas fa-file-invoice-dollar text-success"></i> Venta PUQ </h5>
-      <p class="card-text">
-        <a href="<%= parejec_path %>">
-          <%= number_to_currency(@ventas_en_ejecucion["P.Arenas"] || 0, delimiter: ".", precision: 0) %> En ejecucción
-        </a><br>
-        <% (0..3).each do |i| %>
-          <% mes = Date.today.beginning_of_month - i.month %>
-          <a href="<%= send("parventames#{i.zero? ? '' : "#{i}m"}_path") %>">
-            <%= number_to_currency(@ventas_cc_por_mes[["PUQ", mes]] || 0, delimiter: ".", precision: 0) %> <%= mes.strftime("%B") %><br>
-          </a>
-        <% end %>
-      </p>
-    </div>
-  </div>
+  <% end %>
 
 </div>
+
