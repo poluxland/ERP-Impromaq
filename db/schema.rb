@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2025_06_05_232446) do
+ActiveRecord::Schema.define(version: 2025_08_27_151933) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -465,6 +465,9 @@ ActiveRecord::Schema.define(version: 2025_06_05_232446) do
     t.float "horas_haver"
     t.float "horas_vento"
     t.float "horas_bigbag"
+    t.string "comentarios_haver"
+    t.string "comentarios_vento"
+    t.string "comentarios_bigbag"
   end
 
   create_table "overtimes", force: :cascade do |t|
