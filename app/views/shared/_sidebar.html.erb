@@ -162,11 +162,15 @@
                         <a href="<%= soplados_path %>">Soplado</a>
                       </li>
                     </ul>
-                    <ul>
-                      <li>
-                        <a href="<%= soplados_path %>">Soplado</a>
-                      </li>
-                    </ul>
+                        <ul>
+                          <% if current_user&.superadmin_role? %>
+                            <li>
+                              <a href="https://impromaq-dashboard-e00010b0db83.herokuapp.com/" target="_blank" rel="noopener">
+                                Soplado
+                              </a>
+                            </li>
+                          <% end %>
+                        </ul>
 
                   </div>
                 </li>
@@ -268,33 +272,34 @@
                       <i class="fa fa-chart-line"></i>
                       <span>Gastos</span>
                     </a>
-                      <div class="sidebar-submenu">
-                        <ul>
-                          <li>
-                            <a href="<%= envasadoras_path %>">Reporte ENV</a>
-                          </li>
-                        </ul>
-                        <ul>
-                          <li>
-                            <a href="<%= medidas_path %>">Medidas Silos</a>
-                          </li>
-                        </ul>
-                        <ul>
-                          <li>
-                            <a href="<%= soplados_path %>">Soplado</a>
-                          </li>
-                        </ul>
-                        <ul>
-                          <% if current_user&.superadmin_role? %>
-                            <li>
-                              <a href="https://impromaq-dashboard-e00010b0db83.herokuapp.com/" target="_blank" rel="noopener">
-                                Estadísticas
-                              </a>
-                            </li>
-                          <% end %>
-                        </ul>
-                      </div>
-
+                    <div class="sidebar-submenu">
+                      <ul>
+                        <li>
+                          <a href="<%= gastosduplicados_path %>">Duplicados</a>
+                        </li>
+                        <li>
+                          <a href="<%= gastosfull_path %>">Completo</a>
+                        </li>
+                        <li>
+                          <a href="<%= gastos_path %>">Indice</a>
+                        </li>
+                        <li>
+                          <a href="<%= gastosunasigned_path %>">No asignados</a>
+                        </li>
+                        <li>
+                          <a href="<%= gastoslcarend_path %>">Rendición LCA</a>
+                        </li>
+                        <li>
+                          <a href="<%= gastosvtsrend_path %>">Rendición VTS</a>
+                        </li>
+                        <li>
+                          <a href="<%= gastosptmrend_path %>">Rendición PTM</a>
+                        </li>
+                        <li>
+                          <a href="<%= gastospuq_path %>">Gastos PUQ</a>
+                        </li>
+                      </ul>
+                    </div>
                   </li>
                 <% end %>
               <% end %>
