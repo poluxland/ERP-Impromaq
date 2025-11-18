@@ -1,136 +1,353 @@
+<h1>Reporte Medidas <%= @year %></h1>
 
+<hr>
+
+<!-- ============================= -->
+<!-- 1. STOCKS PROMEDIO MENSUALES -->
+<!-- ============================= -->
+
+<h2>Stocks promedio mensuales (<%= @year %>)</h2>
+
+<%= line_chart [
+  { name: "Extra",    data: @stock_extra_prom },
+  { name: "Especial", data: @stock_especial_prom },
+  { name: "S3300",    data: @stock_s3300_prom },
+  { name: "S4200",    data: @stock_s4200_prom },
+  { name: "Total",    data: @stock_total_prom }
+],
+xtitle: "Mes",
+ytitle: "Stock promedio (Ton)",
+curve: false,
+points: true %>
+
+<br>
+
+<h3>Promedio anual de stock (<%= @year %>)</h3>
+<table class="table table-sm table-bordered">
+  <thead>
+    <tr>
+      <th>Producto</th>
+      <th>Stock promedio (Ton)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Extra</td>
+      <td>
+        <%= number_with_precision(
+              @stock_extra_prom.values.sum.to_f / [@stock_extra_prom.size, 1].max,
+              precision: 0
+            ) %>
+      </td>
+    </tr>
+    <tr>
+      <td>Especial</td>
+      <td>
+        <%= number_with_precision(
+              @stock_especial_prom.values.sum.to_f / [@stock_especial_prom.size, 1].max,
+              precision: 0
+            ) %>
+      </td>
+    </tr>
+    <tr>
+      <td>S3300</td>
+      <td>
+        <%= number_with_precision(
+              @stock_s3300_prom.values.sum.to_f / [@stock_s3300_prom.size, 1].max,
+              precision: 0
+            ) %>
+      </td>
+    </tr>
+    <tr>
+      <td>S4200</td>
+      <td>
+        <%= number_with_precision(
+              @stock_s4200_prom.values.sum.to_f / [@stock_s4200_prom.size, 1].max,
+              precision: 0
+            ) %>
+      </td>
+    </tr>
+    <tr>
+      <td>Total</td>
+      <td>
+        <%= number_with_precision(
+              @stock_total_prom.values.sum.to_f / [@stock_total_prom.size, 1].max,
+              precision: 0
+            ) %>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<br>
+
+<% total_mix = @stock_extra_prom.values.sum.to_f +
+               @stock_especial_prom.values.sum.to_f +
+               @stock_s3300_prom.values.sum.to_f +
+               @stock_s4200_prom.values.sum.to_f %>
+
+<% if total_mix > 0 %>
+  <h3>Composición promedio anual de stock</h3>
+  <%= pie_chart({
+    "Extra"    => @stock_extra_prom.values.sum,
+    "Especial" => @stock_especial_prom.values.sum,
+    "S3300"    => @stock_s3300_prom.values.sum,
+    "S4200"    => @stock_s4200_prom.values.sum
+  }) %>
+<% end %>
+
+<hr>
+
+<!-- ========================================= -->
+<!-- 2. PRODUCCIÓN MENSUAL POR EQUIPO        -->
+<!-- ========================================= -->
+
+<h2>Producción mensual total por equipo (<%= @year %>)</h2>
+
+<%= column_chart [
+  { name: "Haver",     data: @prodhaver_month },
+  { name: "Ventomatic", data: @prodvento_month },
+  { name: "Bigbag",    data: @prodbb_month }
+],
+xtitle: "Mes",
+ytitle: "Producción promedio (unid/turno)",
+legend: true %>
+
+<hr>
+
+<!-- ========================================= -->
+<!-- 3. HORAS DE FUNCIONAMIENTO MENSUALES     -->
+<!-- ========================================= -->
+
+<h2>Horas de funcionamiento mensuales por equipo</h2>
+
+<%= column_chart [
+  { name: "Haver",     data: @horas_haver_month },
+  { name: "Ventomatic", data: @horas_vento_month },
+  { name: "Bigbag",    data: @horas_bigbag_month }
+],
+xtitle: "Mes",
+ytitle: "Horas",
+legend: true %>
+
+<hr>
+
+<!-- ============================== -->
+<!-- 4. DESPACHOS TOTALES MENSUALES -->
+<!-- ============================== -->
+
+<h2>Despachos totales mensuales</h2>
+
+<%= column_chart [
+  { name: "Especial sacos",   data: @desp_especial_sacos_month },
+  { name: "Extra sacos",      data: @desp_extra_sacos_month },
+  { name: "Especial Bigbag",  data: @desp_especial_bigbag_month },
+  { name: "Extra Bigbag",     data: @desp_extra_bigbag_month },
+  { name: "Especial granel",  data: @desp_especial_granel_month },
+  { name: "Extra granel",     data: @desp_extra_granel_month },
+  { name: "S3300 granel",     data: @desp_s3300_granel_month },
+  { name: "S4200 granel",     data: @desp_s4200_granel_month }
+],
+stacked: true,
+xtitle: "Mes",
+ytitle: "Ton despachadas" %>
+
+<br>
+
+<h3>Despachos totales año <%= @year %> (Ton)</h3>
+
+<table class="table table-sm table-bordered">
+  <thead>
+    <tr>
+      <th>Producto</th>
+      <th>Toneladas despachadas</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Especial sacos</td>
+      <td><%= @desp_especial_sacos_month.values.sum %></td>
+    </tr>
+    <tr>
+      <td>Extra sacos</td>
+      <td><%= @desp_extra_sacos_month.values.sum %></td>
+    </tr>
+    <tr>
+      <td>Especial Bigbag</td>
+      <td><%= @desp_especial_bigbag_month.values.sum %></td>
+    </tr>
+    <tr>
+      <td>Extra Bigbag</td>
+      <td><%= @desp_extra_bigbag_month.values.sum %></td>
+    </tr>
+    <tr>
+      <td>Especial granel</td>
+      <td><%= @desp_especial_granel_month.values.sum %></td>
+    </tr>
+    <tr>
+      <td>Extra granel</td>
+      <td><%= @desp_extra_granel_month.values.sum %></td>
+    </tr>
+    <tr>
+      <td>S3300 granel</td>
+      <td><%= @desp_s3300_granel_month.values.sum %></td>
+    </tr>
+    <tr>
+      <td>S4200 granel</td>
+      <td><%= @desp_s4200_granel_month.values.sum %></td>
+    </tr>
+  </tbody>
+</table>
+
+<hr>
+
+<!-- ================================= -->
+<!-- 5. PRODUCCIÓN DIARIA POR EQUIPO   -->
+<!-- ================================= -->
+
+<h2>Producción diaria por equipo y turno</h2>
 
 <div class="row">
-  <div class="col-md-8">
+  <div class="col-md-4">
+    <h3>Haver</h3>
     <%= line_chart [
-      { name: "Turno Mañana", data: @prodhaver_tm, color: "#FF5733" },
-      { name: "Turno Tarde", data: @prodhaver_tt, color: "#33FF57" },
-      { name: "Turno Noche", data: @prodhaver_tn, color: "#3357FF" }
+      { name: "TM", data: @prodhaver_tm, color: "#FF5733" },
+      { name: "TT", data: @prodhaver_tt, color: "#33FF57" },
+      { name: "TN", data: @prodhaver_tn, color: "#3357FF" }
     ],
     xtitle: "Fecha",
-    ytitle: "Producción Haver",
+    ytitle: "Prod. Haver",
     curve: false,
     points: true %>
-  </div>
-  <div class="col-md-4">
-    <table class="table table-bordered">
+
+    <table class="table table-sm table-bordered mt-2">
       <thead>
         <tr>
           <th>Turno</th>
-          <th>Promedio de Producción Haver</th>
+          <th>Promedio</th>
         </tr>
       </thead>
       <tbody>
         <tr>
           <td>TM</td>
-          <td><%= number_with_precision(@prodhaver_avg_tm, precision: 2) %></td>
+          <td><%= number_with_precision(@prodhaver_avg_tm || 0, precision: 2) %></td>
         </tr>
         <tr>
           <td>TT</td>
-          <td><%= number_with_precision(@prodhaver_avg_tt, precision: 2) %></td>
+          <td><%= number_with_precision(@prodhaver_avg_tt || 0, precision: 2) %></td>
         </tr>
         <tr>
           <td>TN</td>
-          <td><%= number_with_precision(@prodhaver_avg_tn, precision: 2) %></td>
+          <td><%= number_with_precision(@prodhaver_avg_tn || 0, precision: 2) %></td>
         </tr>
       </tbody>
     </table>
   </div>
-</div>
 
+  <div class="col-md-4">
+    <h3>Ventomatic</h3>
+    <%= line_chart [
+      { name: "TM", data: @prodvento_tm },
+      { name: "TT", data: @prodvento_tt },
+      { name: "TN", data: @prodvento_tn }
+    ],
+    xtitle: "Fecha",
+    ytitle: "Prod. Vento",
+    curve: false,
+    points: true %>
 
-<div class="row mt-4">
-  <div class="col-md-6">
-    <h3>Envasadora</h3>
-    <table class="table table-bordered">
+    <table class="table table-sm table-bordered mt-2">
       <thead>
         <tr>
-          <th>Campo</th>
-          <th>Último Valor</th>
+          <th>Turno</th>
           <th>Promedio</th>
         </tr>
       </thead>
       <tbody>
         <tr>
-          <td>Especial Sacos</td>
-          <td><%= @ultimo_especialsacos %></td>
-          <td><%= number_with_precision(@promedio_especialsacos, precision: 2) %></td>
+          <td>TM</td>
+          <td><%= number_with_precision(@prodvento_avg_tm || 0, precision: 2) %></td>
         </tr>
         <tr>
-          <td>Bigbag Extra</td>
-          <td><%= @ultimo_bigbagextra %></td>
-          <td><%= number_with_precision(@promedio_bigbagextra, precision: 2) %></td>
+          <td>TT</td>
+          <td><%= number_with_precision(@prodvento_avg_tt || 0, precision: 2) %></td>
         </tr>
         <tr>
-          <td>Extra Sacos</td>
-          <td><%= @ultimo_extrsacos %></td>
-          <td><%= number_with_precision(@promedio_extrsacos, precision: 2) %></td>
+          <td>TN</td>
+          <td><%= number_with_precision(@prodvento_avg_tn || 0, precision: 2) %></td>
         </tr>
       </tbody>
     </table>
   </div>
 
-  <div class="col-md-6">
-    <h3>Soplado</h3>
-    <table class="table table-bordered">
+  <div class="col-md-4">
+    <h3>Bigbag</h3>
+    <%= line_chart [
+      { name: "TM", data: @prodbb_tm },
+      { name: "TT", data: @prodbb_tt },
+      { name: "TN", data: @prodbb_tn }
+    ],
+    xtitle: "Fecha",
+    ytitle: "Prod. Bigbag",
+    curve: false,
+    points: true %>
+
+    <table class="table table-sm table-bordered mt-2">
       <thead>
         <tr>
-          <th>Campo</th>
-          <th>Último Valor</th>
+          <th>Turno</th>
           <th>Promedio</th>
         </tr>
       </thead>
       <tbody>
         <tr>
-          <td>CC54 P1</td>
-          <td><%= @ultimo_presion3 %></td>
-          <td><%= number_with_precision(@promedio_presion3, precision: 2) %></td>
+          <td>TM</td>
+          <td><%= number_with_precision(@prodbb_avg_tm || 0, precision: 2) %></td>
         </tr>
         <tr>
-          <td>CC54 P2</td>
-          <td><%= @ultimo_presion4 %></td>
-          <td><%= number_with_precision(@promedio_presion4, precision: 2) %></td>
+          <td>TT</td>
+          <td><%= number_with_precision(@prodbb_avg_tt || 0, precision: 2) %></td>
         </tr>
         <tr>
-          <td>CC54 Temp</td>
-          <td><%= @ultimo_presion5 %></td>
-          <td><%= number_with_precision(@promedio_presion5, precision: 2) %></td>
-        </tr>
-        <tr>
-          <td>Al.Horno</td>
-          <td><%= @ultimo_horno %></td>
-          <td><%= number_with_precision(@promedio_horno, precision: 2) %></td>
+          <td>TN</td>
+          <td><%= number_with_precision(@prodbb_avg_tn || 0, precision: 2) %></td>
         </tr>
       </tbody>
     </table>
   </div>
 </div>
 
-<div class="row mt-4">
-  <div class="col-md-12">
-    <h3>Consumo de Combustible por Equipo</h3>
-    <table class="table table-bordered">
-      <thead>
-        <tr>
-          <th>Equipo</th>
-          <th>Promedio Mensual</th>
-          <th>Consumido en este Mes</th>
-          <th>Último Valor</th>
-        </tr>
-      </thead>
-      <tbody>
-        <% @equipos_consumo.each do |data| %>
-          <tr>
-            <td>
-              <%# Suponiendo que el equipo tiene un atributo "nombre". Si no, usa "id" u otro identificador %>
-              <%= data[:equipo].try(:nombre) || "Equipo ##{data[:equipo].codigo}" %>
-            </td>
-            <td><%= number_with_precision(data[:promedio_mensual] || 0, precision: 2) %></td>
-            <td><%= number_with_precision(data[:consumido_mes]   || 0, precision: 2) %></td>
-            <td><%= data[:ultimo_valor] || 0 %></td>
-          </tr>
-        <% end %>
-      </tbody>
-    </table>
-  </div>
-</div>
+<hr>
+
+<!-- ====================== -->
+<!-- 6. ENVASADORA          -->
+<!-- ====================== -->
+
+<h2>Envasadora</h2>
+
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>Campo</th>
+      <th>Último Valor</th>
+      <th>Promedio</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Especial Sacos</td>
+      <td><%= @ultimo_especialsacos %></td>
+      <td><%= number_with_precision(@promedio_especialsacos || 0, precision: 2) %></td>
+    </tr>
+    <tr>
+      <td>Bigbag Extra</td>
+      <td><%= @ultimo_bigbagextra %></td>
+      <td><%= number_with_precision(@promedio_bigbagextra || 0, precision: 2) %></td>
+    </tr>
+    <tr>
+      <td>Extra Sacos</td>
+      <td><%= @ultimo_extrsacos %></td>
+      <td><%= number_with_precision(@promedio_extrsacos || 0, precision: 2) %></td>
+    </tr>
+  </tbody>
+</table>
