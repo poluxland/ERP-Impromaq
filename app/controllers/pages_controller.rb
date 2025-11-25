@@ -114,6 +114,17 @@ def reporte
   @horas_vento_month   = {}
   @horas_bigbag_month  = {}
 
+    # ---- Producción por hora (mensual) ----
+  @prod_haver_por_hora_month = {}
+  @prod_vento_por_hora_month = {}
+  @prod_bb_por_hora_month    = {}
+
+  # ---- % de utilización mensual (horas reales vs 8 h por turno) ----
+  @util_haver_month = {}
+  @util_vento_month = {}
+  @util_bb_month    = {}
+
+
     # ---- Despachos totales mensuales (sumas) ----
   @desp_especial_sacos_month  = {}
   @desp_extra_sacos_month     = {}
@@ -176,6 +187,36 @@ def reporte
     @horas_vento_month[month]  = vento_tm_h + vento_tt_h + vento_tn_h
     @horas_bigbag_month[month] = bb_tm_h    + bb_tt_h    + bb_tn_h
 
+
+        # =========================
+    # Producción por hora (unid/hora)
+    # =========================
+    @prod_haver_por_hora_month[month] =
+      safe_div(@prodhaver_month[month], @horas_haver_month[month])
+
+    @prod_vento_por_hora_month[month] =
+      safe_div(@prodvento_month[month], @horas_vento_month[month])
+
+    @prod_bb_por_hora_month[month] =
+      safe_div(@prodbb_month[month], @horas_bigbag_month[month])
+
+    # =========================
+    # % de utilización (horas reales vs 8h por turno)
+    # =========================
+    turnos_mes = medidas.size                 # 1 Medida = 1 turno
+    capacidad_horas_mes = turnos_mes * 8.0   # 8 horas posibles por turno
+
+    @util_haver_month[month] =
+      safe_pct(@horas_haver_month[month], capacidad_horas_mes)
+
+    @util_vento_month[month] =
+      safe_pct(@horas_vento_month[month], capacidad_horas_mes)
+
+    @util_bb_month[month] =
+      safe_pct(@horas_bigbag_month[month], capacidad_horas_mes)
+
+
+
         # Despachos: usar los métodos del modelo
     @desp_especial_sacos_month[month]  = medidas.sum(&:desp_especial_sacos_ton)
     @desp_extra_sacos_month[month]     = medidas.sum(&:desp_extra_sacos_ton)
@@ -200,6 +241,18 @@ def avg(values)
   values = values.compact.map(&:to_f)
   return 0 if values.empty?
   (values.sum / values.size).round(0)
+end
+
+def safe_div(num, den)
+  den = den.to_f
+  return 0 if den == 0
+  (num.to_f / den).round(2)
+end
+
+def safe_pct(num, den)
+  den = den.to_f
+  return 0 if den == 0
+  ((num.to_f / den) * 100).round(1)
 end
 
 

@@ -9,7 +9,7 @@
 <div class="row align-items-start">
   <!-- Gráfico -->
   <div class="col-md-9">
-    <h2>Stocks promedio mensuales (<%= @year %>)</h2>
+    <h2>Stocks promedio mensuales </h2>
 
     <%= line_chart [
       { name: "Extra",    data: @stock_extra_prom },
@@ -26,7 +26,7 @@
 
   <!-- Tabla pequeña -->
   <div class="col-md-3">
-    <h3 style="font-size: 1.1rem;">Promedio anual (<%= @year %>)</h3>
+    <h3 style="font-size: 1.1rem;">Promedio anual </h3>
 
     <table class="table table-sm table-bordered" style="">
       <thead>
@@ -98,7 +98,41 @@ xtitle: "Mes",
 ytitle: "Horas",
 legend: true %>
 
-<hr>
+<br>
+<!-- ========================================= -->
+<!-- 3b. PRODUCCIÓN POR HORA MENSUAL          -->
+<!-- ========================================= -->
+
+<h2>Producción por hora mensual por equipo</h2>
+
+<%= line_chart [
+  { name: "Haver",     data: @prod_haver_por_hora_month },
+  { name: "Ventomatic", data: @prod_vento_por_hora_month },
+  { name: "Bigbag",    data: @prod_bb_por_hora_month }
+],
+xtitle: "Mes",
+ytitle: "Unidades por hora",
+legend: true %>
+
+<br>
+<!-- ========================================= -->
+<!-- 3c. % DE UTILIZACIÓN MENSUAL POR EQUIPO  -->
+<!-- ========================================= -->
+
+<h2>Porcentaje de utilización mensual por equipo</h2>
+
+<%= line_chart [
+  { name: "Haver",     data: @util_haver_month },
+  { name: "Ventomatic", data: @util_vento_month },
+  { name: "Bigbag",    data: @util_bb_month }
+],
+xtitle: "Mes",
+ytitle: "% utilización",
+legend: true %>
+
+<br>
+
+
 
 <!-- ============================== -->
 <!-- 4. DESPACHOS TOTALES MENSUALES -->
