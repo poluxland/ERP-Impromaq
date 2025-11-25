@@ -67,21 +67,62 @@
 
 
 <!-- ========================================= -->
-<!-- 2. PRODUCCIÓN MENSUAL POR EQUIPO        -->
+<!-- 2. Producción mensual total por equipo        -->
 <!-- ========================================= -->
 
-<h2>Producción mensual total por equipo (<%= @year %>)</h2>
+<h2>Producción mensual total por equipo</h2>
 
 <%= line_chart [
-  { name: "Haver",     data: @prodhaver_month },
+  { name: "Haver",      data: @prodhaver_month },
   { name: "Ventomatic", data: @prodvento_month },
-  { name: "Bigbag",    data: @prodbb_month }
+  { name: "Bigbag",     data: @prodbb_month }
 ],
 xtitle: "Mes",
-ytitle: "Producción promedio (unid/turno)",
+ytitle: "Producción total (unid)",
 legend: true %>
 
-<hr>
+
+<br>
+<h2>Producción mensual PROMEDIO por turno</h2>
+
+<div class="row">
+  <div class="col-md-4">
+    <h3>Haver</h3>
+    <%= line_chart [
+      { name: "TM", data: @prodhaver_tm_month },
+      { name: "TT", data: @prodhaver_tt_month },
+      { name: "TN", data: @prodhaver_tn_month }
+    ],
+    xtitle: "Mes",
+    ytitle: "Promedio (unid/turno)",
+    legend: true %>
+  </div>
+
+  <div class="col-md-4">
+    <h3>Ventomatic</h3>
+    <%= line_chart [
+      { name: "TM", data: @prodvento_tm_month },
+      { name: "TT", data: @prodvento_tt_month },
+      { name: "TN", data: @prodvento_tn_month }
+    ],
+    xtitle: "Mes",
+    ytitle: "Promedio (unid/turno)",
+    legend: true %>
+  </div>
+
+  <div class="col-md-4">
+    <h3>Bigbag</h3>
+    <%= line_chart [
+      { name: "TM", data: @prodbb_tm_month },
+      { name: "TT", data: @prodbb_tt_month },
+      { name: "TN", data: @prodbb_tn_month }
+    ],
+    xtitle: "Mes",
+    ytitle: "Promedio (unid/turno)",
+    legend: true %>
+  </div>
+</div>
+
 
 <!-- ========================================= -->
 <!-- 3. HORAS DE FUNCIONAMIENTO MENSUALES     -->

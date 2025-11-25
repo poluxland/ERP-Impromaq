@@ -150,25 +150,26 @@ def reporte
     tt = por_turno["TT"] || []
     tn = por_turno["TN"] || []
 
-    # Producción promedio mensual por turno (Haver)
-    @prodhaver_tm_month[month] = avg(tm.map { |m| m.prodhaver.to_i })
-    @prodhaver_tt_month[month] = avg(tt.map { |m| m.prodhaver.to_i })
-    @prodhaver_tn_month[month] = avg(tn.map { |m| m.prodhaver.to_i })
+     # Producción promedio mensual por turno (Haver)
+  @prodhaver_tm_month[month] = avg(tm.map { |m| m.prodhaver.to_i })
+  @prodhaver_tt_month[month] = avg(tt.map { |m| m.prodhaver.to_i })
+  @prodhaver_tn_month[month] = avg(tn.map { |m| m.prodhaver.to_i })
 
-    # Producción promedio mensual por turno (Ventomatic)
-    @prodvento_tm_month[month] = avg(tm.map { |m| m.prodvento.to_i })
-    @prodvento_tt_month[month] = avg(tt.map { |m| m.prodvento.to_i })
-    @prodvento_tn_month[month] = avg(tn.map { |m| m.prodvento.to_i })
+  # Producción promedio mensual por turno (Ventomatic)
+  @prodvento_tm_month[month] = avg(tm.map { |m| m.prodvento.to_i })
+  @prodvento_tt_month[month] = avg(tt.map { |m| m.prodvento.to_i })
+  @prodvento_tn_month[month] = avg(tn.map { |m| m.prodvento.to_i })
 
-    # Producción promedio mensual por turno (Bigbag)
-    @prodbb_tm_month[month] = avg(tm.map { |m| m.prodbb.to_i })
-    @prodbb_tt_month[month] = avg(tt.map { |m| m.prodbb.to_i })
-    @prodbb_tn_month[month] = avg(tn.map { |m| m.prodbb.to_i })
+  # Producción promedio mensual por turno (Bigbag)
+  @prodbb_tm_month[month] = avg(tm.map { |m| m.prodbb.to_i })
+  @prodbb_tt_month[month] = avg(tt.map { |m| m.prodbb.to_i })
+  @prodbb_tn_month[month] = avg(tn.map { |m| m.prodbb.to_i })
 
-    # Producción mensual total por equipo (sumando turnos)
-    @prodhaver_month[month] = @prodhaver_tm_month[month] + @prodhaver_tt_month[month] + @prodhaver_tn_month[month]
-    @prodvento_month[month] = @prodvento_tm_month[month] + @prodvento_tt_month[month] + @prodvento_tn_month[month]
-    @prodbb_month[month]    = @prodbb_tm_month[month]    + @prodbb_tt_month[month]    + @prodbb_tn_month[month]
+  # 🔴 AQUÍ cambiamos: ahora sí total mensual real
+  @prodhaver_month[month] = medidas.sum { |m| m.prodhaver.to_i }
+  @prodvento_month[month] = medidas.sum { |m| m.prodvento.to_i }
+  @prodbb_month[month]    = medidas.sum { |m| m.prodbb.to_i }
+
 
     # Horas de funcionamiento por equipo (sumando turnos)
     haver_tm_h = tm.sum { |m| m.horas_haver.to_f }
@@ -192,13 +193,14 @@ def reporte
     # Producción por hora (unid/hora)
     # =========================
     @prod_haver_por_hora_month[month] =
-      safe_div(@prodhaver_month[month], @horas_haver_month[month])
+  safe_div(@prodhaver_month[month], @horas_haver_month[month])
 
-    @prod_vento_por_hora_month[month] =
-      safe_div(@prodvento_month[month], @horas_vento_month[month])
+@prod_vento_por_hora_month[month] =
+  safe_div(@prodvento_month[month], @horas_vento_month[month])
 
-    @prod_bb_por_hora_month[month] =
-      safe_div(@prodbb_month[month], @horas_bigbag_month[month])
+@prod_bb_por_hora_month[month] =
+  safe_div(@prodbb_month[month], @horas_bigbag_month[month])
+
 
     # =========================
     # % de utilización (horas reales vs 8h por turno)
