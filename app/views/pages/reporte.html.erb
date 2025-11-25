@@ -6,97 +6,65 @@
 <!-- 1. STOCKS PROMEDIO MENSUALES -->
 <!-- ============================= -->
 
-<h2>Stocks promedio mensuales (<%= @year %>)</h2>
+<div class="row align-items-start">
+  <!-- Gráfico -->
+  <div class="col-md-9">
+    <h2>Stocks promedio mensuales (<%= @year %>)</h2>
 
-<%= line_chart [
-  { name: "Extra",    data: @stock_extra_prom },
-  { name: "Especial", data: @stock_especial_prom },
-  { name: "S3300",    data: @stock_s3300_prom },
-  { name: "S4200",    data: @stock_s4200_prom },
-  { name: "Total",    data: @stock_total_prom }
-],
-xtitle: "Mes",
-ytitle: "Stock promedio (Ton)",
-curve: false,
-points: true %>
+    <%= line_chart [
+      { name: "Extra",    data: @stock_extra_prom },
+      { name: "Especial", data: @stock_especial_prom },
+      { name: "S3300",    data: @stock_s3300_prom },
+      { name: "S4200",    data: @stock_s4200_prom },
+      { name: "Total",    data: @stock_total_prom }
+    ],
+    xtitle: "Mes",
+    ytitle: "Stock promedio (Ton)",
+    curve: false,
+    points: true %>
+  </div>
 
-<br>
+  <!-- Tabla pequeña -->
+  <div class="col-md-3">
+    <h3 style="font-size: 1.1rem;">Promedio anual (<%= @year %>)</h3>
 
-<h3>Promedio anual de stock (<%= @year %>)</h3>
-<table class="table table-sm table-bordered">
-  <thead>
-    <tr>
-      <th>Producto</th>
-      <th>Stock promedio (Ton)</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Extra</td>
-      <td>
-        <%= number_with_precision(
-              @stock_extra_prom.values.sum.to_f / [@stock_extra_prom.size, 1].max,
-              precision: 0
-            ) %>
-      </td>
-    </tr>
-    <tr>
-      <td>Especial</td>
-      <td>
-        <%= number_with_precision(
-              @stock_especial_prom.values.sum.to_f / [@stock_especial_prom.size, 1].max,
-              precision: 0
-            ) %>
-      </td>
-    </tr>
-    <tr>
-      <td>S3300</td>
-      <td>
-        <%= number_with_precision(
-              @stock_s3300_prom.values.sum.to_f / [@stock_s3300_prom.size, 1].max,
-              precision: 0
-            ) %>
-      </td>
-    </tr>
-    <tr>
-      <td>S4200</td>
-      <td>
-        <%= number_with_precision(
-              @stock_s4200_prom.values.sum.to_f / [@stock_s4200_prom.size, 1].max,
-              precision: 0
-            ) %>
-      </td>
-    </tr>
-    <tr>
-      <td>Total</td>
-      <td>
-        <%= number_with_precision(
-              @stock_total_prom.values.sum.to_f / [@stock_total_prom.size, 1].max,
-              precision: 0
-            ) %>
-      </td>
-    </tr>
-  </tbody>
-</table>
+    <table class="table table-sm table-bordered" style="">
+      <thead>
+        <tr>
+          <th>Producto</th>
+          <th>Prom.</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Extra</td>
+          <td><%= number_with_precision(@stock_extra_prom.values.sum.to_f / [@stock_extra_prom.size, 1].max, precision: 0) %></td>
+        </tr>
+        <tr>
+          <td>Especial</td>
+          <td><%= number_with_precision(@stock_especial_prom.values.sum.to_f / [@stock_especial_prom.size, 1].max, precision: 0) %></td>
+        </tr>
+        <tr>
+          <td>S3300</td>
+          <td><%= number_with_precision(@stock_s3300_prom.values.sum.to_f / [@stock_s3300_prom.size, 1].max, precision: 0) %></td>
+        </tr>
+        <tr>
+          <td>S4200</td>
+          <td><%= number_with_precision(@stock_s4200_prom.values.sum.to_f / [@stock_s4200_prom.size, 1].max, precision: 0) %></td>
+        </tr>
+        <tr>
+          <td>Total</td>
+          <td><%= number_with_precision(@stock_total_prom.values.sum.to_f / [@stock_total_prom.size, 1].max, precision: 0) %></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
 
 <br>
 
-<% total_mix = @stock_extra_prom.values.sum.to_f +
-               @stock_especial_prom.values.sum.to_f +
-               @stock_s3300_prom.values.sum.to_f +
-               @stock_s4200_prom.values.sum.to_f %>
 
-<% if total_mix > 0 %>
-  <h3>Composición promedio anual de stock</h3>
-  <%= pie_chart({
-    "Extra"    => @stock_extra_prom.values.sum,
-    "Especial" => @stock_especial_prom.values.sum,
-    "S3300"    => @stock_s3300_prom.values.sum,
-    "S4200"    => @stock_s4200_prom.values.sum
-  }) %>
-<% end %>
-
-<hr>
 
 <!-- ========================================= -->
 <!-- 2. PRODUCCIÓN MENSUAL POR EQUIPO        -->

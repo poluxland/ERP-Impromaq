@@ -1,186 +1,181 @@
 
 
-<table id="myTable"
-class="table table-responsive table-striped table-bordered table-sm shadow" cellspacing="0" width="100%">
-  <thead>
+
+  <div class="table-responsive shadow">
+<table class="table table-striped table-bordered table-sm" id="myTable">
+  <thead class="table-light">
     <tr>
       <th>Fecha</th>
-      <th>Silo 19a</th>
-      <th>Silo 19b</th>
-      <th>Silo 20a</th>
-      <th>Silo 20b</th>
-      <th>Silo 21a</th>
-      <th>Silo 21b</th>
-      <th>Silo 22a</th>
-      <th>Silo 22b</th>
-      <th>Silo 27</th>
-      <th>Silo 28</th>
-      <th>Especial sacos</th>
-      <th>Extra sacos</th>
-      <th>Bigbag extra</th>
-      <th>Bigbag extra 1350</th>
-      <th>Bigbag extra 1</th>
-      <th>Bigbag especial</th>
+
+      <!-- Silos principales -->
+      <th>Silo 19a</th><th>Silo 19b</th>
+      <th>Silo 20a</th><th>Silo 20b</th>
+      <th>Silo 21a</th><th>Silo 21b</th>
+      <th>Silo 22a</th><th>Silo 22b</th>
+      <th>Silo 27</th><th>Silo 28</th>
+
+      <!-- Producción básica -->
+      <th>Especial sacos</th><th>Extra sacos</th>
+      <th>Bigbag extra</th><th>Bigbag extra 1350</th>
+      <th>Bigbag extra 1</th><th>Bigbag especial</th>
       <th>Bigbag super</th>
-      <th>Prod. haver</th>
-      <th>Prod. vento</th>
-      <th>Tolva calle5</th>
-      <th>Silos 3000 tolva1</th>
-      <th>Silos 3000 tolva4</th>
-      <th>Silos 3000 tolva5</th>
-      <th>Silos bigbag1</th>
-      <th>Silos bigbag2</th>
-      <th>Silos vento1</th>
-      <th>Silov ento2</th>
-      <th>Silov ento3</th>
-      <th>Calle silo28</th>
-      <th>Calles planta1</th>
-      <th>Calle silo27</th>
+      <th>Prod. Haver</th><th>Prod. Vento</th>
+      <th>Prod. Bigbag (prodbb)</th>
+
+      <!-- Tolvas / Silos 3000 -->
+      <th>Tolva Calle 5</th>
+      <th>S3000 Tolva1</th><th>S3000 Tolva4</th><th>S3000 Tolva5</th>
+
+      <!-- Silos Bigbag / Vento -->
+      <th>Silos Bigbag1</th><th>Silos Bigbag2</th>
+      <th>Silos Vento1</th><th>Silo Vento2</th><th>Silo Vento3</th>
+
+      <!-- Calles -->
+      <th>Calle Silo 28</th>
+      <th>Calles Planta1</th>
+      <th>Calle Silo 27</th>
+
+      <!-- Observaciones -->
       <th>Observaciones</th>
-      <th>Silo 28 tolva calle 5</th>
-      <th>Ns28</th>
-      <th>Nbb1</th>
-      <th>Nbb2</th>
-      <th>Nvento1</th>
-      <th>Nvento2</th>
-      <th>Nvento3</th>
-      <th>Nivel tolva 1</th>
-      <th>Nivel tolva 4</th>
-      <th>Nivel tolva 5</th>
+      <th>Otros</th>
+
+      <!-- Niveles -->
+      <th>Ns28</th><th>Nbb1</th><th>Nbb2</th>
+      <th>Nvento1</th><th>Nvento2</th><th>Nvento3</th>
+      <th>Ns3000-1</th><th>Ns3000-2</th><th>Ns3000-3</th>
       <th>Nivel9</th>
-      <th>Bigbagplus</th>
-      <th>Silo 28 Calle 3</th>
-      <th>S28c3cemento</th>
-      <th>S28c3nota</th>
-      <th>Silo 28 Calle 4</th>
-      <th>S28c4cemento</th>
-      <th>S28c4nota</th>
-      <th>Silo 28 Calle 5</th>
-      <th>S28c5cemento</th>
-      <th>S28c5nota</th>
-      <th>Silo 27 Calle 6</th>
-      <th>S27c7cemento</th>
-      <th>S27c7nota</th>
-      <th>S30c1op</th>
-      <th>S30c1cemento</th>
-      <th>S30c1nota</th>
-      <th>Silos 3000 Calle 4</th>
-      <th>S30c4cemento</th>
-      <th>S30c4nota</th>
-      <th>Silos 3000 Calle 5</th>
-      <th>S30c5cemento</th>
-      <th>S30c5nota</th>
-      <th>Plastificado Especial</th>
-      <th>Plastificado Especial soluble</th>
-      <th>Plastificado Especial Lados</th>
-      <th>Plastificado Extra</th>
-      <th>Plastificado extra soluble</th>
-      <th>Plastificado Extra Zunchos</th>
-      <th>Plastificado Especial Zunchos</th>
-      <th>Especial Sacos</th>
-      <th>Especial Bigbag</th>
-      <th>Especial Granel</th>
-      <th>Extra Sacos</th>
-      <th>Extra Bigbag</th>
-      <th>Extra Granel</th>
-      <th>Super 3300 Granel</th>
-      <th>Super 4200 Granel</th>
-      <th>Enjuagues Super 3.300</th>
-      <th>Enjuagues Super 4.2000</th>
+      <th>Bigbag Plus</th>
+
+      <!-- Silo 28 (C3-C5) -->
+      <th>S28C3 Op</th><th>S28C3 Cemento</th><th>S28C3 Nota</th>
+      <th>S28C4 Op</th><th>S28C4 Cemento</th><th>S28C4 Nota</th>
+      <th>S28C5 Op</th><th>S28C5 Cemento</th><th>S28C5 Nota</th>
+
+      <!-- Silo 27 -->
+      <th>S27C6 Op</th>
+      <th>S27C7 Cemento</th><th>S27C7 Nota</th>
+
+      <!-- Silo 30 -->
+      <th>S30C1 Op</th><th>S30C1 Cemento</th><th>S30C1 Nota</th>
+      <th>S30C4 Op</th><th>S30C4 Cemento</th><th>S30C4 Nota</th>
+      <th>S30C5 Op</th><th>S30C5 Cemento</th><th>S30C5 Nota</th>
+
+      <!-- Plastificados -->
+      <th>Plast. Especial</th>
+      <th>Plast. Especial Soluble Completo</th>
+      <th>Plast. Especial Lados</th>
+      <th>Plast. Extra</th>
+      <th>Plast. Extra Soluble Completo</th>
+      <th>Plast. Extra Zunchos</th>
+      <th>Plast. Especial Zunchos</th>
+
+      <!-- Producción final -->
+      <th>Especial Sacos</th><th>Especial Bigbag</th><th>Especial Granel</th>
+      <th>Extra Sacos</th><th>Extra Bigbag</th><th>Extra Granel</th>
+      <th>Super 3300</th><th>Super 4200</th>
+      <th>Enjuagues Super</th><th>Enjuagues Super4</th>
+
+      <!-- Turnos y Horas -->
+      <th>Turno</th>
+      <th>Horas Haver</th>
+      <th>Horas Vento</th>
+      <th>Horas Bigbag</th>
+
+      <!-- Comentarios -->
+      <th>Comentarios Haver</th>
+      <th>Comentarios Vento</th>
+      <th>Comentarios Bigbag</th>
     </tr>
   </thead>
 
   <tbody>
-    <% @medidas.each do |medida| %>
+    <% @medidas.each do |m| %>
       <tr>
-        <td><%= medida.created_at.strftime("%m/%d/%y") %></td>
-        <td><%= medida.silo19a %></td>
-        <td><%= medida.silo19b %></td>
-        <td><%= medida.silo20a %></td>
-        <td><%= medida.silo20b %></td>
-        <td><%= medida.silo21a %></td>
-        <td><%= medida.silo21b %></td>
-        <td><%= medida.silo22a %></td>
-        <td><%= medida.silo22b %></td>
-        <td><%= medida.silo27 %></td>
-        <td><%= medida.silo28 %></td>
-        <td><%= medida.especialsacos %></td>
-        <td><%= medida.extrsacos %></td>
-        <td><%= medida.bigbagextra %></td>
-        <td><%= medida.bigbagextra1350 %></td>
-        <td><%= medida.bigbagextra1 %></td>
-        <td><%= medida.bigbagespecial %></td>
-        <td><%= medida.bigbagsuper %></td>
-        <td><%= medida.prodhaver %></td>
-        <td><%= medida.prodvento %></td>
-        <td><%= medida.tolvacalle5 %></td>
-        <td><%= medida.silos3000tolva1 %></td>
-        <td><%= medida.silos3000tolva4 %></td>
-        <td><%= medida.silos3000tolva5 %></td>
-        <td><%= medida.silosbigbag1 %></td>
-        <td><%= medida.silosbigbag2 %></td>
-        <td><%= medida.silosvento1 %></td>
-        <td><%= medida.silovento2 %></td>
-        <td><%= medida.silovento3 %></td>
-        <td><%= medida.callesilo28 %></td>
-        <td><%= medida.callesplanta1 %></td>
-        <td><%= medida.callesilo27 %></td>
-        <td><%= medida.observaciones %></td>
-        <td><%= medida.otros %></td>
-        <td><%= medida.ns28 %></td>
-        <td><%= medida.nbb1 %></td>
-        <td><%= medida.nbb2 %></td>
-        <td><%= medida.nvento1 %></td>
-        <td><%= medida.nvento2 %></td>
-        <td><%= medida.nvento3 %></td>
-        <td><%= medida.ns30001 %></td>
-        <td><%= medida.ns30002 %></td>
-        <td><%= medida.ns30003 %></td>
-        <td><%= medida.nivel9 %></td>
-        <td><%= medida.bigbagplus %></td>
-        <td><%= medida.s28c3op %></td>
-        <td><%= medida.s28c3cemento %></td>
-        <td><%= medida.s28c3nota %></td>
-        <td><%= medida.s28c4op %></td>
-        <td><%= medida.s28c4cemento %></td>
-        <td><%= medida.s28c4nota %></td>
-        <td><%= medida.s28c5op %></td>
-        <td><%= medida.s28c5cemento %></td>
-        <td><%= medida.s28c5nota %></td>
-        <td><%= medida.s27c6op %></td>
-        <td><%= medida.s27c7cemento %></td>
-        <td><%= medida.s27c7nota %></td>
-        <td><%= medida.s30c1op %></td>
-        <td><%= medida.s30c1cemento %></td>
-        <td><%= medida.s30c1nota %></td>
-        <td><%= medida.s30c4op %></td>
-        <td><%= medida.s30c4cemento %></td>
-        <td><%= medida.s30c4nota %></td>
-        <td><%= medida.s30c5op %></td>
-        <td><%= medida.s30c5cemento %></td>
-        <td><%= medida.s30c5nota %></td>
-        <td><%= medida.plastificado_especial %></td>
-        <td><%= medida.plastificado_especial_lados %></td>
-        <td><%= medida.plastificado_especial_soluble_completo %></td>
-        <td><%= medida.plastificado_extra %></td>
-        <td><%= medida.plastificado_extra_zunchos %></td>
-        <td><%= medida.plastificado_extra_soluble_completo %></td>
-        <td><%= medida.plastificado_especial_zunchos %></td>
-        <td><%= medida.especial_sacos %></td>
-        <td><%= medida.especial_bigbag %></td>
-        <td><%= medida.especial_granel %></td>
-        <td><%= medida.extra_sacos %></td>
-        <td><%= medida.extra_bigbag %></td>
-        <td><%= medida.extra_granel %></td>
-        <td><%= medida.super_3300_granel %></td>
-        <td><%= medida.super_4200_granel %></td>
-        <td><%= medida.enjuagues_super %></td>
-        <td><%= medida.enjuagues_super4 %></td>
+        <td><%= m.created_at.strftime("%d-%m-%Y") %></td>
+
+        <!-- Silos -->
+        <td><%= m.silo19a %></td><td><%= m.silo19b %></td>
+        <td><%= m.silo20a %></td><td><%= m.silo20b %></td>
+        <td><%= m.silo21a %></td><td><%= m.silo21b %></td>
+        <td><%= m.silo22a %></td><td><%= m.silo22b %></td>
+        <td><%= m.silo27 %></td><td><%= m.silo28 %></td>
+
+        <!-- Producción -->
+        <td><%= m.especialsacos %></td><td><%= m.extrsacos %></td>
+        <td><%= m.bigbagextra %></td><td><%= m.bigbagextra1350 %></td>
+        <td><%= m.bigbagextra1 %></td>
+        <td><%= m.bigbagespecial %></td><td><%= m.bigbagsuper %></td>
+        <td><%= m.prodhaver %></td><td><%= m.prodvento %></td>
+        <td><%= m.prodbb %></td>
+
+        <!-- Tolvas -->
+        <td><%= m.tolvacalle5 %></td>
+        <td><%= m.silos3000tolva1 %></td><td><%= m.silos3000tolva4 %></td><td><%= m.silos3000tolva5 %></td>
+
+        <!-- Bigbag/Vento -->
+        <td><%= m.silosbigbag1 %></td><td><%= m.silosbigbag2 %></td>
+        <td><%= m.silosvento1 %></td><td><%= m.silovento2 %></td><td><%= m.silovento3 %></td>
+
+        <!-- Calles -->
+        <td><%= m.callesilo28 %></td><td><%= m.callesplanta1 %></td><td><%= m.callesilo27 %></td>
+
+        <!-- Obs -->
+        <td><%= m.observaciones %></td>
+        <td><%= m.otros %></td>
+
+        <!-- Niveles -->
+        <td><%= m.ns28 %></td><td><%= m.nbb1 %></td><td><%= m.nbb2 %></td>
+        <td><%= m.nvento1 %></td><td><%= m.nvento2 %></td><td><%= m.nvento3 %></td>
+        <td><%= m.ns30001 %></td><td><%= m.ns30002 %></td><td><%= m.ns30003 %></td>
+        <td><%= m.nivel9 %></td>
+        <td><%= m.bigbagplus %></td>
+
+        <!-- Silo 28 -->
+        <td><%= m.s28c3op %></td><td><%= m.s28c3cemento %></td><td><%= m.s28c3nota %></td>
+        <td><%= m.s28c4op %></td><td><%= m.s28c4cemento %></td><td><%= m.s28c4nota %></td>
+        <td><%= m.s28c5op %></td><td><%= m.s28c5cemento %></td><td><%= m.s28c5nota %></td>
+
+        <!-- Silo 27 -->
+        <td><%= m.s27c6op %></td>
+        <td><%= m.s27c7cemento %></td><td><%= m.s27c7nota %></td>
+
+        <!-- Silo 30 -->
+        <td><%= m.s30c1op %></td><td><%= m.s30c1cemento %></td><td><%= m.s30c1nota %></td>
+        <td><%= m.s30c4op %></td><td><%= m.s30c4cemento %></td><td><%= m.s30c4nota %></td>
+        <td><%= m.s30c5op %></td><td><%= m.s30c5cemento %></td><td><%= m.s30c5nota %></td>
+
+        <!-- Plastificados -->
+        <td><%= m.plastificado_especial %></td>
+        <td><%= m.plastificado_especial_soluble_completo %></td>
+        <td><%= m.plastificado_especial_lados %></td>
+        <td><%= m.plastificado_extra %></td>
+        <td><%= m.plastificado_extra_soluble_completo %></td>
+        <td><%= m.plastificado_extra_zunchos %></td>
+        <td><%= m.plastificado_especial_zunchos %></td>
+
+        <!-- Producción final -->
+        <td><%= m.especial_sacos %></td><td><%= m.especial_bigbag %></td><td><%= m.especial_granel %></td>
+        <td><%= m.extra_sacos %></td><td><%= m.extra_bigbag %></td><td><%= m.extra_granel %></td>
+        <td><%= m.super_3300_granel %></td><td><%= m.super_4200_granel %></td>
+        <td><%= m.enjuagues_super %></td><td><%= m.enjuagues_super4 %></td>
+
+        <!-- Turnos / Horas -->
+        <td><%= m.turno %></td>
+        <td><%= m.horas_haver %></td>
+        <td><%= m.horas_vento %></td>
+        <td><%= m.horas_bigbag %></td>
+
+        <!-- Comentarios -->
+        <td><%= m.comentarios_haver %></td>
+        <td><%= m.comentarios_vento %></td>
+        <td><%= m.comentarios_bigbag %></td>
 
       </tr>
     <% end %>
   </tbody>
 </table>
+</div>
+
 
 <br>
 
