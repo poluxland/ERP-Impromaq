@@ -1,9 +1,12 @@
 require 'test_helper'
 
 class MantencionsControllerTest < ActionDispatch::IntegrationTest
+  fixtures :mantencions, :trucks
+
   setup do
     @mantencion = mantencions(:one)
   end
+
 
   test "should get index" do
     get mantencions_url
