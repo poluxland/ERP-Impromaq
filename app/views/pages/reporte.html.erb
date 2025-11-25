@@ -118,7 +118,21 @@ legend: true %>
 ],
 stacked: true,
 xtitle: "Mes",
-ytitle: "Ton despachadas" %>
+ytitle: "Ton despachadas",
+library: {
+  plugins: {
+    tooltip: {
+      mode: 'index',     
+      intersect: false   
+    }
+  },
+  interaction: {
+    mode: 'index',
+    intersect: false
+  }
+} %>
+
+
 
 <br>
 
