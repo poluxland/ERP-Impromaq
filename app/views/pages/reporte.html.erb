@@ -72,7 +72,7 @@
 
 <h2>Producción mensual total por equipo (<%= @year %>)</h2>
 
-<%= column_chart [
+<%= line_chart [
   { name: "Haver",     data: @prodhaver_month },
   { name: "Ventomatic", data: @prodvento_month },
   { name: "Bigbag",    data: @prodbb_month }
@@ -89,7 +89,7 @@ legend: true %>
 
 <h2>Horas de funcionamiento mensuales por equipo</h2>
 
-<%= column_chart [
+<%= line_chart [
   { name: "Haver",     data: @horas_haver_month },
   { name: "Ventomatic", data: @horas_vento_month },
   { name: "Bigbag",    data: @horas_bigbag_month }
@@ -122,52 +122,9 @@ ytitle: "Ton despachadas" %>
 
 <br>
 
-<h3>Despachos totales año <%= @year %> (Ton)</h3>
 
-<table class="table table-sm table-bordered">
-  <thead>
-    <tr>
-      <th>Producto</th>
-      <th>Toneladas despachadas</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Especial sacos</td>
-      <td><%= @desp_especial_sacos_month.values.sum %></td>
-    </tr>
-    <tr>
-      <td>Extra sacos</td>
-      <td><%= @desp_extra_sacos_month.values.sum %></td>
-    </tr>
-    <tr>
-      <td>Especial Bigbag</td>
-      <td><%= @desp_especial_bigbag_month.values.sum %></td>
-    </tr>
-    <tr>
-      <td>Extra Bigbag</td>
-      <td><%= @desp_extra_bigbag_month.values.sum %></td>
-    </tr>
-    <tr>
-      <td>Especial granel</td>
-      <td><%= @desp_especial_granel_month.values.sum %></td>
-    </tr>
-    <tr>
-      <td>Extra granel</td>
-      <td><%= @desp_extra_granel_month.values.sum %></td>
-    </tr>
-    <tr>
-      <td>S3300 granel</td>
-      <td><%= @desp_s3300_granel_month.values.sum %></td>
-    </tr>
-    <tr>
-      <td>S4200 granel</td>
-      <td><%= @desp_s4200_granel_month.values.sum %></td>
-    </tr>
-  </tbody>
-</table>
 
-<hr>
+
 
 <!-- ================================= -->
 <!-- 5. PRODUCCIÓN DIARIA POR EQUIPO   -->
