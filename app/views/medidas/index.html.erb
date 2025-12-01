@@ -85,6 +85,9 @@
       <th>Comentarios Haver</th>
       <th>Comentarios Vento</th>
       <th>Comentarios Bigbag</th>
+      <% if user_signed_in? && current_user.email == "joseignaciojerez@gmail.com" %>
+  <th>Acciones</th>
+<% end %>
     </tr>
   </thead>
 
@@ -169,6 +172,16 @@
         <td><%= m.comentarios_haver %></td>
         <td><%= m.comentarios_vento %></td>
         <td><%= m.comentarios_bigbag %></td>
+        <% if user_signed_in? && current_user.email == "joseignaciojerez@gmail.com" %>
+  <td>
+    <%= link_to 'Editar', edit_medida_path(m), class: "btn btn-sm btn-warning" %>
+    <%= link_to 'Eliminar', m,
+          method: :delete,
+          data: { confirm: "¿Seguro?" },
+          class: "btn btn-sm btn-danger" %>
+  </td>
+<% end %>
+
 
       </tr>
     <% end %>
