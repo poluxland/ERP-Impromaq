@@ -5,8 +5,9 @@ class MedidasController < ApplicationController
   # GET /medidas
   # GET /medidas.json
   def index
-    @medidas = Medida.all
+    @medidas = Medida.order(created_at: :desc)
   end
+
 
   # GET /medidas/1
   # GET /medidas/1.json
