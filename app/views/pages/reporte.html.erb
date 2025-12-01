@@ -9,7 +9,7 @@
 <div class="row align-items-start">
   <!-- Gráfico -->
   <div class="col-md-9">
-    <h2>Stocks promedio mensuales </h2>
+    <h2>Stock en silos mas piso </h2>
 
     <%= line_chart [
       { name: "Extra",    data: @stock_extra_prom },
@@ -333,35 +333,4 @@ library: {
 
 <hr>
 
-<!-- ====================== -->
-<!-- 6. ENVASADORA          -->
-<!-- ====================== -->
 
-<h2>Envasadora</h2>
-
-<table class="table table-bordered">
-  <thead>
-    <tr>
-      <th>Campo</th>
-      <th>Último Valor</th>
-      <th>Promedio</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Especial Sacos</td>
-      <td><%= @ultimo_especialsacos %></td>
-      <td><%= number_with_precision(@promedio_especialsacos || 0, precision: 2) %></td>
-    </tr>
-    <tr>
-      <td>Bigbag Extra</td>
-      <td><%= @ultimo_bigbagextra %></td>
-      <td><%= number_with_precision(@promedio_bigbagextra || 0, precision: 2) %></td>
-    </tr>
-    <tr>
-      <td>Extra Sacos</td>
-      <td><%= @ultimo_extrsacos %></td>
-      <td><%= number_with_precision(@promedio_extrsacos || 0, precision: 2) %></td>
-    </tr>
-  </tbody>
-</table>

@@ -29,9 +29,11 @@ def reporte
   # A) PRODUCCIÓN DIARIA POR EQUIPO Y TURNO
   # ==============================
 
-  scope_tm = Medida.where(turno: "TM")
-  scope_tt = Medida.where(turno: "TT")
-  scope_tn = Medida.where(turno: "TN")
+# Filtrar lunes a viernes (wday: 1..5)
+scope_tm = Medida.where(turno: "TM").where("EXTRACT(DOW FROM created_at) BETWEEN 1 AND 5")
+scope_tt = Medida.where(turno: "TT").where("EXTRACT(DOW FROM created_at) BETWEEN 1 AND 5")
+scope_tn = Medida.where(turno: "TN").where("EXTRACT(DOW FROM created_at) BETWEEN 1 AND 5")
+
 
   # Haver diario por turno
   @prodhaver_tm = scope_tm.group_by_day(:created_at).sum(:prodhaver)
@@ -150,20 +152,21 @@ def reporte
     tt = por_turno["TT"] || []
     tn = por_turno["TN"] || []
 
-     # Producción promedio mensual por turno (Haver)
-  @prodhaver_tm_month[month] = avg(tm.map { |m| m.prodhaver.to_i })
-  @prodhaver_tt_month[month] = avg(tt.map { |m| m.prodhaver.to_i })
-  @prodhaver_tn_month[month] = avg(tn.map { |m| m.prodhaver.to_i })
+# Producción promedio mensual por turno (Haver)
+@prodhaver_tm_month[month] = avg_no_zero(tm.map { |m| m.prodhaver })
+@prodhaver_tt_month[month] = avg_no_zero(tt.map { |m| m.prodhaver })
+@prodhaver_tn_month[month] = avg_no_zero(tn.map { |m| m.prodhaver })
 
-  # Producción promedio mensual por turno (Ventomatic)
-  @prodvento_tm_month[month] = avg(tm.map { |m| m.prodvento.to_i })
-  @prodvento_tt_month[month] = avg(tt.map { |m| m.prodvento.to_i })
-  @prodvento_tn_month[month] = avg(tn.map { |m| m.prodvento.to_i })
+# Producción promedio mensual por turno (Ventomatic)
+@prodvento_tm_month[month] = avg_no_zero(tm.map { |m| m.prodvento })
+@prodvento_tt_month[month] = avg_no_zero(tt.map { |m| m.prodvento })
+@prodvento_tn_month[month] = avg_no_zero(tn.map { |m| m.prodvento })
 
-  # Producción promedio mensual por turno (Bigbag)
-  @prodbb_tm_month[month] = avg(tm.map { |m| m.prodbb.to_i })
-  @prodbb_tt_month[month] = avg(tt.map { |m| m.prodbb.to_i })
-  @prodbb_tn_month[month] = avg(tn.map { |m| m.prodbb.to_i })
+# Producción promedio mensual por turno (Bigbag)
+@prodbb_tm_month[month] = avg_no_zero(tm.map { |m| m.prodbb })
+@prodbb_tt_month[month] = avg_no_zero(tt.map { |m| m.prodbb })
+@prodbb_tn_month[month] = avg_no_zero(tn.map { |m| m.prodbb })
+
 
   # 🔴 AQUÍ cambiamos: ahora sí total mensual real
   @prodhaver_month[month] = medidas.sum { |m| m.prodhaver.to_i }
@@ -259,4 +262,28 @@ end
 
 
 
+end
+
+def avg(values)
+  values = values.compact.map(&:to_f)
+  return 0 if values.empty?
+  (values.sum / values.size).round(0)
+end
+
+def avg_no_zero(values)
+  values = values.compact.map(&:to_f).reject { |v| v.zero? }
+  return 0 if values.empty?
+  (values.sum / values.size).round(0)
+end
+
+def safe_div(num, den)
+  den = den.to_f
+  return 0 if den == 0
+  (num.to_f / den).round(2)
+end
+
+def safe_pct(num, den)
+  den = den.to_f
+  return 0 if den == 0
+  ((num.to_f / den) * 100).round(1)
 end
