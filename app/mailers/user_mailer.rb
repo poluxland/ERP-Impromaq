@@ -84,7 +84,7 @@ class UserMailer < ApplicationMailer
       "jefesturno.planta@melon.cl",
       "supervisor.envasadora@msindustrial.cl",
       "marianelly.villarroel@meloncementos.cl",
-      "gaston.guerrero@meloncementos.cl",
+      "gerardo.mahana@meloncementos.cl",
       "maryorie.fajardo@msindustrial.cl"
     ]
 
