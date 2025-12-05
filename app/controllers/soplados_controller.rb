@@ -20,6 +20,7 @@ class SopladosController < InheritedResources::Base
       :mirillas,
       :so3,
       :tiempo,
+      :operadores,
       :observaciones
     )
   end
