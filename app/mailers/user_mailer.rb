@@ -50,6 +50,7 @@ class UserMailer < ApplicationMailer
       "juan.arriaza@meloncementos.cl",
       "moira.cisternas@meloncementos.cl",
       "geraldinne.martinez@meloncementos.cl",
+      "camila.ramirez@meloncementos.cl",
       "gerardo.mahana@meloncementos.cl"
     ]
 
