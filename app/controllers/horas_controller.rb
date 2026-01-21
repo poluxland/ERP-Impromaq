@@ -13,7 +13,7 @@ class HorasController < ApplicationController
   end
 
   def index
-    @horas = Hora.all
+    @horas = Hora.order(created_at: :desc).limit(1600)
   end
 
   def ultimas
