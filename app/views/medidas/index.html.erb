@@ -1,9 +1,13 @@
 <%# app/views/medidas/index.html.erb %>
 
-<% factor_saco_ton = 0.025 %>
-<% factor_bb_ton   = 1.5   %>
-<% objetivo = { haver: 12000.0, vento: 7000.0, bigbag: 125.0 } %>
+<% FACTOR_SACO_TON = 0.025 %>  <%# 25kg -> 0.025 ton %>
+<% FACTOR_BB_TON   = 1.5   %>  <%# según tu reporte: bigbag * 1.5 ton %>
 
+<% OBJETIVO = {
+  haver: 12000,  # sacos/turno
+  vento: 7000,   # sacos/turno
+  bigbag: 125    # bigbags/turno
+} %>
 
 <table id="myTable"
        class="table table-responsive table-striped table-bordered table-sm shadow"
@@ -142,24 +146,25 @@
   <tbody>
     <% @medidas.each do |medida| %>
       <% # ---- calculados producción ----
-         haver_unid = medida.prodhaver.to_f
-         haver_hrs  = medida.horas_haver.to_f
-         haver_ton  = haver_unid * FACTOR_SACO_TON
-         haver_tonh = haver_hrs > 0 ? (haver_ton / haver_hrs) : 0
-         haver_cumpl = OBJETIVO[:haver].to_f > 0 ? [(haver_unid * 100 / OBJETIVO[:haver]), 100].min : 0
+   haver_unid = medida.prodhaver.to_f
+   haver_hrs  = medida.horas_haver.to_f
+   haver_ton  = haver_unid * factor_saco_ton
+   haver_tonh = haver_hrs > 0 ? (haver_ton / haver_hrs) : 0
+   haver_cumpl = objetivo[:haver].to_f > 0 ? [(haver_unid * 100 / objetivo[:haver]), 100].min : 0
 
-         vento_unid = medida.prodvento.to_f
-         vento_hrs  = medida.horas_vento.to_f
-         vento_ton  = vento_unid * FACTOR_SACO_TON
-         vento_tonh = vento_hrs > 0 ? (vento_ton / vento_hrs) : 0
-         vento_cumpl = OBJETIVO[:vento].to_f > 0 ? [(vento_unid * 100 / OBJETIVO[:vento]), 100].min : 0
+   vento_unid = medida.prodvento.to_f
+   vento_hrs  = medida.horas_vento.to_f
+   vento_ton  = vento_unid * factor_saco_ton
+   vento_tonh = vento_hrs > 0 ? (vento_ton / vento_hrs) : 0
+   vento_cumpl = objetivo[:vento].to_f > 0 ? [(vento_unid * 100 / objetivo[:vento]), 100].min : 0
 
-         bb_unid = medida.prodbb.to_f
-         bb_hrs  = medida.horas_bigbag.to_f
-         bb_ton  = bb_unid * FACTOR_BB_TON
-         bb_tonh = bb_hrs > 0 ? (bb_ton / bb_hrs) : 0
-         bb_cumpl = OBJETIVO[:bigbag].to_f > 0 ? [(bb_unid * 100 / OBJETIVO[:bigbag]), 100].min : 0
-      %>
+   bb_unid = medida.prodbb.to_f
+   bb_hrs  = medida.horas_bigbag.to_f
+   bb_ton  = bb_unid * factor_bb_ton
+   bb_tonh = bb_hrs > 0 ? (bb_ton / bb_hrs) : 0
+   bb_cumpl = objetivo[:bigbag].to_f > 0 ? [(bb_unid * 100 / objetivo[:bigbag]), 100].min : 0
+%>
+
 
       <tr>
         <td><%= medida.created_at.strftime("%d/%m/%y") %></td>
@@ -297,3 +302,4 @@
 </table>
 
 <br>
+
