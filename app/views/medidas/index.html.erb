@@ -1,13 +1,9 @@
 <%# app/views/medidas/index.html.erb %>
 
-<% FACTOR_SACO_TON = 0.025 %>  <%# 25kg -> 0.025 ton %>
-<% FACTOR_BB_TON   = 1.5   %>  <%# según tu reporte: bigbag * 1.5 ton %>
+<% factor_saco_ton = 0.025 %>
+<% factor_bb_ton   = 1.5   %>
+<% objetivo = { haver: 12000.0, vento: 7000.0, bigbag: 125.0 } %>
 
-<% OBJETIVO = {
-  haver: 12000,  # sacos/turno
-  vento: 7000,   # sacos/turno
-  bigbag: 125    # bigbags/turno
-} %>
 
 <table id="myTable"
        class="table table-responsive table-striped table-bordered table-sm shadow"
