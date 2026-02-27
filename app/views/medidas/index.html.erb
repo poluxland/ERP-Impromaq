@@ -174,7 +174,7 @@
 
 
       <tr>
-        <td><%= medida.created_at.strftime("%d/%m/%y") %></td>
+        <td><%= medida.created_at.to_date.iso8601 %></td>
         <td><%= medida.turno %></td>
 
         <td><%= medida.silo19a %></td>
