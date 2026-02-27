@@ -1,0 +1,345 @@
+# app/views/medidas/index.xlsx.axlsx
+
+factor_saco_ton = 0.025 # 25kg -> 0.025 ton
+factor_bb_ton   = 1.5   # bigbag * 1.5 ton
+
+objetivo = {
+  haver: 12000.0,
+  vento: 7000.0,
+  bigbag: 125.0
+}
+
+wb = xlsx_package.workbook
+
+styles = wb.styles
+header_style = styles.add_style(b: true)
+date_style   = styles.add_style(format_code: "dd/mm/yy")
+text_wrap    = styles.add_style(alignment: { wrap_text: true, vertical: :top })
+number_1d    = styles.add_style(format_code: "0.0")
+number_0d    = styles.add_style(format_code: "0")
+
+wb.add_worksheet(name: "Medidas") do |sheet|
+  # --- Encabezados (idénticos al index.html.erb) ---
+  headers = [
+    "Fecha",
+    "Turno",
+
+    "Silo 19a",
+    "Silo 19b",
+    "Silo 20a",
+    "Silo 20b",
+    "Silo 21a",
+    "Silo 21b",
+    "Silo 22a",
+    "Silo 22b",
+    "Silo 27",
+    "Silo 28",
+
+    "Stock Especial sacos",
+    "Stock Especial sacos soluble",
+    "Stock Extra sacos",
+    "Stock Extra sacos soluble",
+
+    "Bigbag extra piso",
+    "Bigbag extra retiro",
+    "Bigbag extra 1350",
+    "Bigbag extra 1000",
+    "Bigbag especial",
+    "Bigbag super",
+    "Bigbag plus",
+
+    "Prod. Haver (unid)",
+    "Horas Haver",
+    "Haver Ton turno",
+    "Haver Ton/h",
+    "Haver Cumpl %",
+    "Com. Haver",
+
+    "Prod. Vento (unid)",
+    "Horas Vento",
+    "Vento Ton turno",
+    "Vento Ton/h",
+    "Vento Cumpl %",
+    "Com. Vento",
+
+    "Prod. Bigbag (unid)",
+    "Horas Bigbag",
+    "Bigbag Ton turno",
+    "Bigbag Ton/h",
+    "Bigbag Cumpl %",
+    "Com. Bigbag",
+
+    "Tolva calle 5 (producto)",
+    "Silo 28 tolva calle 5 (nivel %)",
+
+    "Silos 3000 tolva 1 (producto)",
+    "Nivel tolva 1",
+    "Silos 3000 tolva 4 (producto)",
+    "Nivel tolva 4",
+    "Silos 3000 tolva 5 (producto)",
+    "Nivel tolva 5",
+
+    "Silos bigbag 1 (producto)",
+    "Nivel bigbag 1",
+    "Silos bigbag 2 (producto)",
+    "Nivel bigbag 2",
+
+    "Silos vento 1 (producto)",
+    "Nivel vento 1",
+    "Silos vento 2 (producto)",
+    "Nivel vento 2",
+    "Silos vento 3 (producto)",
+    "Nivel vento 3",
+
+    "Calles silo 28",
+    "Calles planta 1",
+    "Calles silo 27",
+
+    "Observaciones",
+    "Ns28",
+    "Nivel9",
+
+    "Plast. especial",
+    "Plast. especial soluble completo",
+    "Plast. especial lados",
+    "Plast. especial zuncho",
+
+    "Plast. extra",
+    "Plast. extra soluble completo",
+    "Plast. extra zunchos",
+
+    "Despacho Especial sacos",
+    "Despacho Especial bigbag",
+    "Despacho Especial granel",
+    "Despacho Extra sacos",
+    "Despacho Extra bigbag",
+    "Despacho Extra granel",
+    "Despacho Super 3300 granel",
+    "Despacho Super 4200 granel",
+
+    "Enjuagues Super 3.300",
+    "Enjuagues Super 4.200",
+
+    "Silo 28 Calle 3 (estado)",
+    "Silo 28 Calle 3 (cemento)",
+    "Silo 28 Calle 3 (nota)",
+
+    "Silo 28 Calle 4 (estado)",
+    "Silo 28 Calle 4 (cemento)",
+    "Silo 28 Calle 4 (nota)",
+
+    "Silo 28 Calle 5 (estado)",
+    "Silo 28 Calle 5 (cemento)",
+    "Silo 28 Calle 5 (nota)",
+
+    "Silo 27 Calle 6 (estado)",
+    "Silo 27 Calle 6 (cemento)",
+    "Silo 27 Calle 6 (nota)",
+
+    "Silos 3000 Calle 1 (estado)",
+    "Silos 3000 Calle 1 (cemento)",
+    "Silos 3000 Calle 1 (nota)",
+
+    "Silos 3000 Calle 4 (estado)",
+    "Silos 3000 Calle 4 (cemento)",
+    "Silos 3000 Calle 4 (nota)",
+
+    "Silos 3000 Calle 5 (estado)",
+    "Silos 3000 Calle 5 (cemento)",
+    "Silos 3000 Calle 5 (nota)"
+  ]
+
+  sheet.add_row headers, style: header_style
+
+  # --- Filas ---
+  @medidas.each do |m|
+    # calculados producción (mismos que en tu vista)
+    haver_unid  = m.prodhaver.to_f
+    haver_hrs   = m.horas_haver.to_f
+    haver_ton   = haver_unid * factor_saco_ton
+    haver_tonh  = haver_hrs > 0 ? (haver_ton / haver_hrs) : 0
+    haver_cumpl = objetivo[:haver].to_f > 0 ? [(haver_unid * 100 / objetivo[:haver]), 100].min : 0
+
+    vento_unid  = m.prodvento.to_f
+    vento_hrs   = m.horas_vento.to_f
+    vento_ton   = vento_unid * factor_saco_ton
+    vento_tonh  = vento_hrs > 0 ? (vento_ton / vento_hrs) : 0
+    vento_cumpl = objetivo[:vento].to_f > 0 ? [(vento_unid * 100 / objetivo[:vento]), 100].min : 0
+
+    bb_unid  = m.prodbb.to_f
+    bb_hrs   = m.horas_bigbag.to_f
+    bb_ton   = bb_unid * factor_bb_ton
+    bb_tonh  = bb_hrs > 0 ? (bb_ton / bb_hrs) : 0
+    bb_cumpl = objetivo[:bigbag].to_f > 0 ? [(bb_unid * 100 / objetivo[:bigbag]), 100].min : 0
+
+    row = [
+      m.created_at, # Fecha (formato aplicado abajo)
+      m.turno,
+
+      m.silo19a,
+      m.silo19b,
+      m.silo20a,
+      m.silo20b,
+      m.silo21a,
+      m.silo21b,
+      m.silo22a,
+      m.silo22b,
+      m.silo27,
+      m.silo28,
+
+      m.especialsacos,
+      m.especial_sacos_soluble,
+      m.extrsacos,
+      m.extra_sacos_soluble,
+
+      m.bigbagextra,
+      m.bigbag_extra_retiro,
+      m.bigbagextra1350,
+      m.bigbagextra1,
+      m.bigbagespecial,
+      m.bigbagsuper,
+      m.bigbagplus,
+
+      m.prodhaver,
+      m.horas_haver,
+      haver_ton.round(1),
+      haver_tonh.round(1),
+      haver_cumpl.round(0),
+      m.comentarios_haver,
+
+      m.prodvento,
+      m.horas_vento,
+      vento_ton.round(1),
+      vento_tonh.round(1),
+      vento_cumpl.round(0),
+      m.comentarios_vento,
+
+      m.prodbb,
+      m.horas_bigbag,
+      bb_ton.round(1),
+      bb_tonh.round(1),
+      bb_cumpl.round(0),
+      m.comentarios_bigbag,
+
+      m.tolvacalle5,
+      m.otros, # (en tu vista lo usas como "nivel %")
+
+      m.silos3000tolva1,
+      m.ns30001,
+      m.silos3000tolva4,
+      m.ns30002,
+      m.silos3000tolva5,
+      m.ns30003,
+
+      m.silosbigbag1,
+      m.nbb1,
+      m.silosbigbag2,
+      m.nbb2,
+
+      m.silosvento1,
+      m.nvento1,
+      m.silovento2,
+      m.nvento2,
+      m.silovento3,
+      m.nvento3,
+
+      m.callesilo28,
+      m.callesplanta1,
+      m.callesilo27,
+
+      m.observaciones,
+      m.ns28,
+      m.nivel9,
+
+      # plastificado (orden correcto vs headers)
+      m.plastificado_especial,
+      m.plastificado_especial_soluble_completo,
+      m.plastificado_especial_lados,
+      m.plastificado_especial_zunchos,
+
+      m.plastificado_extra,
+      m.plastificado_extra_soluble_completo,
+      m.plastificado_extra_zunchos,
+
+      # despachos
+      m.especial_sacos,
+      m.especial_bigbag,
+      m.especial_granel,
+      m.extra_sacos,
+      m.extra_bigbag,
+      m.extra_granel,
+      m.super_3300_granel,
+      m.super_4200_granel,
+
+      m.enjuagues_super,
+      m.enjuagues_super4,
+
+      # estado calles
+      m.s28c3op,
+      m.s28c3cemento,
+      m.s28c3nota,
+
+      m.s28c4op,
+      m.s28c4cemento,
+      m.s28c4nota,
+
+      m.s28c5op,
+      m.s28c5cemento,
+      m.s28c5nota,
+
+      m.s27c6op,
+      m.s27c7cemento,
+      m.s27c7nota,
+
+      m.s30c1op,
+      m.s30c1cemento,
+      m.s30c1nota,
+
+      m.s30c4op,
+      m.s30c4cemento,
+      m.s30c4nota,
+
+      m.s30c5op,
+      m.s30c5cemento,
+      m.s30c5nota
+    ]
+
+    # Estilos por columna (para que fecha / textos largos / decimales queden bien)
+    # Nota: el array debe calzar 1:1 con la cantidad de columnas.
+    styles_row = []
+    styles_row << date_style      # Fecha
+    styles_row << nil            # Turno
+
+    # resto por defecto nil, y luego ajustamos algunos textos/decimales específicos
+    (headers.length - 2).times { styles_row << nil }
+
+    # Columnas calculadas con decimales:
+    # indices (0-based): fecha=0, turno=1
+    # Haver: Ton turno(25), Ton/h(26), Cumpl%(27) según el orden del header
+    styles_row[25] = number_1d
+    styles_row[26] = number_1d
+    styles_row[27] = number_0d
+
+    # Vento: Ton turno(31), Ton/h(32), Cumpl%(33)
+    styles_row[31] = number_1d
+    styles_row[32] = number_1d
+    styles_row[33] = number_0d
+
+    # Bigbag: Ton turno(37), Ton/h(38), Cumpl%(39)
+    styles_row[37] = number_1d
+    styles_row[38] = number_1d
+    styles_row[39] = number_0d
+
+    # comentarios y observaciones wrap
+    # Com Haver(29), Com Vento(35), Com Bigbag(41), Observaciones(66)
+    styles_row[29] = text_wrap
+    styles_row[35] = text_wrap
+    styles_row[41] = text_wrap
+    styles_row[66] = text_wrap
+
+    sheet.add_row row, style: styles_row
+  end
+
+  sheet.freeze_panes = "A2"
+  sheet.auto_filter = "A1:#{Axlsx::col_ref(headers.length - 1)}1"
+end
