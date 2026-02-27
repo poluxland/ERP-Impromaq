@@ -4,9 +4,17 @@ class MedidasController < ApplicationController
 
   # GET /medidas
   # GET /medidas.json
-  def index
-    @medidas = Medida.order(created_at: :desc)
+# app/controllers/medidas_controller.rb
+def index
+  @medidas = Medida.order(created_at: :desc)
+
+  respond_to do |format|
+    format.html
+    format.xlsx do
+      response.headers['Content-Disposition'] = "attachment; filename=medidas.xlsx"
+    end
   end
+end
 
 
   # GET /medidas/1
