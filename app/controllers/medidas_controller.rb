@@ -12,7 +12,7 @@ def index
     end
 
     format.xlsx do
-      @medidas = Medida.order(created_at: :desc).limit(1000)
+      @medidas = Medida.order(created_at: :desc).limit(400)
       response.headers['Content-Disposition'] = "attachment; filename=medidas.xlsx"
     end
   end
