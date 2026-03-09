@@ -5,7 +5,7 @@ class HorasController < ApplicationController
   # GET /horas
   # GET /horas.json
   def indexserv
-    @horas = Hora.where(mandante: "Cesar Hernandez").where(estado: "Pendiente revisión")
+    @horas = Hora.where(mandante: ["Cesar Hernandez", "Carolina Vera", "Mario Santibañez"]).where(estado: "Pendiente revisión")
   end
 
   def indexmant
@@ -33,9 +33,9 @@ class HorasController < ApplicationController
 
   def serv
     if Date.today.day > 20
-      @horas = Hora.where(mandante: "Cesar Hernandez").where(fecha: ((Date.new((Date.today.year),(Date.today.month),20)))..(Date.today + 1.day))
+      @horas = Hora.where(mandante: ["Cesar Hernandez", "Carolina Vera", "Mario Santibañez"]).where(fecha: ((Date.new((Date.today.year),(Date.today.month),20)))..(Date.today + 1.day))
     else
-      @horas = Hora.where(mandante: "Cesar Hernandez").where(fecha: ((Date.new((Date.today.year),(Date.today.month),20)) - 1.month)..(Date.today + 1.day))
+      @horas = Hora.where(mandante: ["Cesar Hernandez", "Carolina Vera", "Mario Santibañez"]).where(fecha: ((Date.new((Date.today.year),(Date.today.month),20)) - 1.month)..(Date.today + 1.day))
     end
   end
   # GET /horas/1
