@@ -379,8 +379,8 @@
         </thead>
 <tbody>
   <tr>
-    <td>Cemento Extra en Silo (21-22-28)</td>
-    <td><%= (((20 - medida.silo28) * 100)).to_i + ((30 - ((medida.silo21a.to_f + medida.silo21b.to_f)/2)) * 100).to_i + ((30 - ((medida.silo22a.to_f + medida.silo22b.to_f)/2)) * 100).to_i %> </td>
+    <td>Cemento Extra en Silo (19-21-22-28)</td>
+    <td><%= (((20 - medida.silo28) * 100)).to_i + ((30 - ((medida.silo21a.to_f + medida.silo21b.to_f)/2)) * 100).to_i + ((30 - ((medida.silo22a.to_f + medida.silo22b.to_f)/2)) * 100).to_i + ((30 - ((medida.silo19a.to_f + medida.silo19b.to_f)/2)) * 100).to_i %> </td>
     <td></td>
     <td></td>
   </tr>
@@ -401,13 +401,6 @@
     <td><%= (medida.especialsacos ? medida.especialsacos : 0) + (medida.bigbagespecial ? medida.bigbagespecial : 0)%></td>
     <td></td>
     <td></td>
-  </tr>
-  <tr>
-    <td>Cemento S3300 en Silo (19)</td>
-    <td><%=((30 - ((medida.silo19a.to_f + medida.silo19b.to_f)/2)) * 100).to_i %> </td>
-    <td></td>
-    <td></td>
-
   </tr>
   <tr>
     <td>Cemento S4200 en Silo (20)</td>
