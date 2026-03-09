@@ -75,108 +75,51 @@
     <% totaltt = 0 %>
     <% totaltn = 0 %>
     <tr>
-      <td>Cemento Extra Silo y Piso</td>
-      <td>
-        <% extra = (((20 - tm.silo28) * 100)).to_i +
-                  ((30 - ((tm.silo21a.to_f + tm.silo21b.to_f) / 2)) * 100).to_i +
-                  ((30 - ((tm.silo22a.to_f + tm.silo22b.to_f) / 2)) * 100).to_i +
-                  (tm.extrsacos || 0) +
-                  (tm.bigbagextra || 0) +
-                  (tm.bigbagextra1 || 0) +
-                  (tm.bigbagextra1350 || 0)
-        %>
-        <%= extra %>
-        <% totaltm += extra %>
-      </td>
-       <td>
-        <% extra = nil %>
-<% if tt %>
-  <% extra = (((20 - tt.silo28) * 100)).to_i +
-             ((30 - ((tt.silo21a.to_f + tt.silo21b.to_f) / 2)) * 100).to_i +
-             ((30 - ((tt.silo22a.to_f + tt.silo22b.to_f) / 2)) * 100).to_i +
-             (tt.extrsacos || 0) +
-             (tt.bigbagextra || 0) +
-             (tt.bigbagextra1 || 0) +
-             (tt.bigbagextra1350 || 0) %>
-<% end %>
-<%= extra %>
-<% totaltt += extra if extra %>
-      </td>
-       <td>
-       <% extra = nil %>
-<% if tn %>
-  <% extra = (((20 - tn.silo28) * 100)).to_i +
-             ((30 - ((tn.silo21a.to_f + tn.silo21b.to_f) / 2)) * 100).to_i +
-             ((30 - ((tn.silo22a.to_f + tn.silo22b.to_f) / 2)) * 100).to_i +
-             (tn.extrsacos || 0) +
-             (tn.bigbagextra || 0) +
-             (tn.bigbagextra1 || 0) +
-             (tn.bigbagextra1350 || 0) %>
-<% end %>
-<%= extra %>
-<% totaltn += extra if extra %>
-      </td>
-    </tr>
-    <tr>
-      <td>Cemento Especial Silo y Piso</td>
-      <td>
-        <% especial = ((30 - tm.silo27) * 460) +
-                      (tm.especialsacos || 0) +
-                      (tm.bigbagespecial || 0)
-        %>
-        <%= especial %>
-        <% totaltm += especial %>
-      </td>
-      <td>
-        <% especial = nil %>
-<% if tt %>
-  <% especial = ((30 - tt.silo27) * 460) +
-                (tt.especialsacos || 0) +
-                (tt.bigbagespecial || 0) %>
-<% end %>
-<%= especial %>
-<% totaltt += especial if especial %>
-
-      </td>
-      <td>
-        <% especial = nil %>
-<% if tn %>
-  <% especial = ((30 - tn.silo27) * 460) +
-                (tn.especialsacos || 0) +
-                (tn.bigbagespecial || 0) %>
-<% end %>
-<%= especial %>
-<% totaltn += especial if especial %>
-
-      </td>
-    </tr>
-    <tr>
-      <td>Cemento S3300 en Silo</td>
-      <td>
-        <% s3300 = ((30 - ((tm.silo19a.to_f + tm.silo19b.to_f) / 2)) * 100).to_i %>
-        <%= s3300 %>
-        <% totaltm += s3300 %>
-      </td>
-      <td>
-       <% s3300 = nil %>
-<% if tt %>
-  <% s3300 = ((30 - ((tt.silo19a.to_f + tt.silo19b.to_f) / 2)) * 100).to_i %>
-<% end %>
-<%= s3300 %>
-<% totaltt += s3300 if s3300 %>
-
-      </td>
-      <td>
-       <% s3300 = nil %>
-<% if tn %>
-  <% s3300 = ((30 - ((tn.silo19a.to_f + tn.silo19b.to_f) / 2)) * 100).to_i %>
-<% end %>
-<%= s3300 %>
-<% totaltn += s3300 if s3300 %>
-
-      </td>
-
-    </tr>
+  <td>Cemento Extra Silo y Piso</td>
+  <td>
+    <% extra = ((20 - tm.silo28) * 100).to_i +
+               ((30 - ((tm.silo21a.to_f + tm.silo21b.to_f) / 2)) * 100).to_i +
+               ((30 - ((tm.silo22a.to_f + tm.silo22b.to_f) / 2)) * 100).to_i +
+               ((30 - ((tm.silo19a.to_f + tm.silo19b.to_f) / 2)) * 100).to_i +
+               (tm.extrsacos || 0) +
+               (tm.bigbagextra || 0) +
+               (tm.bigbagextra1 || 0) +
+               (tm.bigbagextra1350 || 0)
+    %>
+    <%= extra %>
+    <% totaltm += extra %>
+  </td>
+  <td>
+    <% extra = nil %>
+    <% if tt %>
+      <% extra = ((20 - tt.silo28) * 100).to_i +
+                 ((30 - ((tt.silo21a.to_f + tt.silo21b.to_f) / 2)) * 100).to_i +
+                 ((30 - ((tt.silo22a.to_f + tt.silo22b.to_f) / 2)) * 100).to_i +
+                 ((30 - ((tt.silo19a.to_f + tt.silo19b.to_f) / 2)) * 100).to_i +
+                 (tt.extrsacos || 0) +
+                 (tt.bigbagextra || 0) +
+                 (tt.bigbagextra1 || 0) +
+                 (tt.bigbagextra1350 || 0) %>
+    <% end %>
+    <%= extra %>
+    <% totaltt += extra if extra %>
+  </td>
+  <td>
+    <% extra = nil %>
+    <% if tn %>
+      <% extra = ((20 - tn.silo28) * 100).to_i +
+                 ((30 - ((tn.silo21a.to_f + tn.silo21b.to_f) / 2)) * 100).to_i +
+                 ((30 - ((tn.silo22a.to_f + tn.silo22b.to_f) / 2)) * 100).to_i +
+                 ((30 - ((tn.silo19a.to_f + tn.silo19b.to_f) / 2)) * 100).to_i +
+                 (tn.extrsacos || 0) +
+                 (tn.bigbagextra || 0) +
+                 (tn.bigbagextra1 || 0) +
+                 (tn.bigbagextra1350 || 0) %>
+    <% end %>
+    <%= extra %>
+    <% totaltn += extra if extra %>
+  </td>
+</tr>
     <tr>
       <td>Cemento S4200 Silo y Piso</td>
       <td>
