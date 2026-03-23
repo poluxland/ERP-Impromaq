@@ -75,7 +75,7 @@ class UserMailer < ApplicationMailer
 
     # Default recipients for soplados report
     recipients = [
-      "diego.garrido@meloncementos.cl",
+      "geraldinne.martinez@meloncementos.cl",
       "pedro.guzman@meloncementos.cl",
       "jose.jerez@msindustrial.cl",
       "alejandro.olivares@msindustrial.cl",
@@ -101,7 +101,7 @@ class UserMailer < ApplicationMailer
   def servicios
     @greeting = "Reporte Servicios " + Time.now.in_time_zone('Santiago').to_s
 
-    mail to: "jose.jerez@msindustrial.cl, hernan.martinez@msindustrial.cl, fernando.gonzalez@msindustrial.cl, simon.rojas@msindustrial.cl",  subject: @greeting
+    mail to: "jose.jerez@msindustrial.cl, hernan.martinez@msindustrial.cl, fernando.gonzalez@msindustrial.cl, simon.rojas@msindustrial.cl, geraldinne.martinez@meloncementos.cl",  subject: @greeting
   end
 
   def reports
