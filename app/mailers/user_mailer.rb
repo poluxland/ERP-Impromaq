@@ -53,7 +53,7 @@ class UserMailer < ApplicationMailer
       "camila.ramirez@meloncementos.cl",
       "gerardo.mahana@meloncementos.cl",
       "karime.merino@meloncementos.cl",
-      "mauricio.collador@msindustrial.cl"
+      "mauricio.collado@msindustrial.cl"
     ]
 
     # Check if the current time is in the morning (6 AM to 12 PM)
