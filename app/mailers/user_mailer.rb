@@ -53,6 +53,7 @@ class UserMailer < ApplicationMailer
       "camila.ramirez@meloncementos.cl",
       "gerardo.mahana@meloncementos.cl",
       "karime.merino@meloncementos.cl",
+      "jeanval@ecmenergy.cl",
       "mauricio.collado@msindustrial.cl"
     ]
 
