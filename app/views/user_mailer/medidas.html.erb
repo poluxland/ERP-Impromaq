@@ -78,77 +78,55 @@
     <tr>
       <td>Cemento Extra Silo y Piso</td>
       <td>
-        <% extra = ((20 - tm.silo28) * 100).to_i +
-                   ((30 - ((tm.silo21a.to_f + tm.silo21b.to_f) / 2)) * 100).to_i +
-                   ((30 - ((tm.silo22a.to_f + tm.silo22b.to_f) / 2)) * 100).to_i +
-                   ((30 - ((tm.silo19a.to_f + tm.silo19b.to_f) / 2)) * 100).to_i +
-                   (tm.extrsacos || 0) +
-                   (tm.bigbagextra || 0) +
-                   (tm.bigbagextra1 || 0) +
-                   (tm.bigbagextra1350 || 0)
-        %>
+        <% extra = tm.stock_extra_ton %>
         <%= extra %>
         <% totaltm += extra %>
       </td>
       <td>
-        <% extra = nil %>
-        <% if tt %>
-          <% extra = ((20 - tt.silo28) * 100).to_i +
-                     ((30 - ((tt.silo21a.to_f + tt.silo21b.to_f) / 2)) * 100).to_i +
-                     ((30 - ((tt.silo22a.to_f + tt.silo22b.to_f) / 2)) * 100).to_i +
-                     ((30 - ((tt.silo19a.to_f + tt.silo19b.to_f) / 2)) * 100).to_i +
-                     (tt.extrsacos || 0) +
-                     (tt.bigbagextra || 0) +
-                     (tt.bigbagextra1 || 0) +
-                     (tt.bigbagextra1350 || 0) %>
-        <% end %>
+        <% extra = tt&.stock_extra_ton %>
         <%= extra %>
         <% totaltt += extra if extra %>
       </td>
       <td>
-        <% extra = nil %>
-        <% if tn %>
-          <% extra = ((20 - tn.silo28) * 100).to_i +
-                     ((30 - ((tn.silo21a.to_f + tn.silo21b.to_f) / 2)) * 100).to_i +
-                     ((30 - ((tn.silo22a.to_f + tn.silo22b.to_f) / 2)) * 100).to_i +
-                     ((30 - ((tn.silo19a.to_f + tn.silo19b.to_f) / 2)) * 100).to_i +
-                     (tn.extrsacos || 0) +
-                     (tn.bigbagextra || 0) +
-                     (tn.bigbagextra1 || 0) +
-                     (tn.bigbagextra1350 || 0) %>
-        <% end %>
+        <% extra = tn&.stock_extra_ton %>
         <%= extra %>
         <% totaltn += extra if extra %>
       </td>
     </tr>
 
     <tr>
+      <td>Cemento Ultra en Silo</td>
+      <td>
+        <% ultra = tm.stock_ultra_ton %>
+        <%= ultra %>
+        <% totaltm += ultra %>
+      </td>
+      <td>
+        <% ultra = tt&.stock_ultra_ton %>
+        <%= ultra %>
+        <% totaltt += ultra if ultra %>
+      </td>
+      <td>
+        <% ultra = tn&.stock_ultra_ton %>
+        <%= ultra %>
+        <% totaltn += ultra if ultra %>
+      </td>
+    </tr>
+
+    <tr>
       <td>Cemento Especial Silo y Piso</td>
       <td>
-        <% especial = ((30 - tm.silo27) * 460) +
-                      (tm.especialsacos || 0) +
-                      (tm.bigbagespecial || 0)
-        %>
+        <% especial = tm.stock_especial_ton %>
         <%= especial %>
         <% totaltm += especial %>
       </td>
       <td>
-        <% especial = nil %>
-        <% if tt %>
-          <% especial = ((30 - tt.silo27) * 460) +
-                        (tt.especialsacos || 0) +
-                        (tt.bigbagespecial || 0) %>
-        <% end %>
+        <% especial = tt&.stock_especial_ton %>
         <%= especial %>
         <% totaltt += especial if especial %>
       </td>
       <td>
-        <% especial = nil %>
-        <% if tn %>
-          <% especial = ((30 - tn.silo27) * 460) +
-                        (tn.especialsacos || 0) +
-                        (tn.bigbagespecial || 0) %>
-        <% end %>
+        <% especial = tn&.stock_especial_ton %>
         <%= especial %>
         <% totaltn += especial if especial %>
       </td>
@@ -157,27 +135,17 @@
     <tr>
       <td>Cemento S4200 Silo y Piso</td>
       <td>
-        <% s4200 = (((30 - ((tm.silo20a.to_f + tm.silo20b.to_f) / 2)) * 100).to_i) +
-                   (tm.bigbagsuper || 0)
-        %>
+        <% s4200 = tm.stock_s4200_ton %>
         <%= s4200 %>
         <% totaltm += s4200 %>
       </td>
       <td>
-        <% s4200 = nil %>
-        <% if tt %>
-          <% s4200 = (((30 - ((tt.silo20a.to_f + tt.silo20b.to_f) / 2)) * 100).to_i) +
-                     (tt.bigbagsuper || 0) %>
-        <% end %>
+        <% s4200 = tt&.stock_s4200_ton %>
         <%= s4200 %>
         <% totaltt += s4200 if s4200 %>
       </td>
       <td>
-        <% s4200 = nil %>
-        <% if tn %>
-          <% s4200 = (((30 - ((tn.silo20a.to_f + tn.silo20b.to_f) / 2)) * 100).to_i) +
-                     (tn.bigbagsuper || 0) %>
-        <% end %>
+        <% s4200 = tn&.stock_s4200_ton %>
         <%= s4200 %>
         <% totaltn += s4200 if s4200 %>
       </td>
@@ -319,14 +287,14 @@
     <td><%= medida.silo21b   %></td>
   </tr>
   <tr>
-    <td>22 (Extra)</td>
+    <td>22 (Ultra)</td>
     <td><%= ((30 - ((medida.silo22a.to_f + medida.silo22b.to_f)/2)) * 100).to_i %></td>
     <td><%= medida.silo22a  %></td>
     <td><%= medida.silo22b   %></td>
   </tr>
 
   <tr>
-    <td>28 (Extra)</td>
+    <td>28 (Ultra)</td>
      <td><%= ((20 - medida.silo28) * 100).clamp(0, Float::INFINITY) %></td>
     <td><%= medida.silo28   %></td>
     <td></td>
@@ -355,15 +323,21 @@
         </thead>
 <tbody>
   <tr>
-    <td>Cemento Extra en Silo (19-21-22-28)</td>
-    <td><%= (((20 - medida.silo28) * 100)).to_i + ((30 - ((medida.silo21a.to_f + medida.silo21b.to_f)/2)) * 100).to_i + ((30 - ((medida.silo22a.to_f + medida.silo22b.to_f)/2)) * 100).to_i + ((30 - ((medida.silo19a.to_f + medida.silo19b.to_f)/2)) * 100).to_i %> </td>
+    <td>Cemento Extra en Silo (19-21)</td>
+    <td><%= medida.stock_extra_silo_ton %></td>
     <td></td>
     <td></td>
   </tr>
   <tr>
     <td>Cemento Extra en Piso </td>
-    <td><%= (medida.extrsacos ? medida.extrsacos : 0) + (medida.bigbagextra ? medida.bigbagextra : 0) + (medida.bigbagextra1 ? medida.bigbagextra1 : 0) + (medida.bigbagextra1350 ? medida.bigbagextra1350 : 0)%> </td>
+    <td><%= medida.stock_extra_piso_ton %></td>
      <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>Cemento Ultra en Silo (22-28)</td>
+    <td><%= medida.stock_ultra_ton %></td>
+    <td></td>
     <td></td>
   </tr>
    <tr>
@@ -697,4 +671,3 @@
 </body>
 </body>
 </html>
-

@@ -13,8 +13,8 @@
 
     <%= line_chart [
       { name: "Extra",    data: @stock_extra_prom },
+      { name: "Ultra",    data: @stock_ultra_prom },
       { name: "Especial", data: @stock_especial_prom },
-      { name: "S3300",    data: @stock_s3300_prom },
       { name: "S4200",    data: @stock_s4200_prom },
       { name: "Total",    data: @stock_total_prom }
     ],
@@ -41,12 +41,12 @@
           <td><%= number_with_precision(@stock_extra_prom.values.sum.to_f / [@stock_extra_prom.size, 1].max, precision: 0) %></td>
         </tr>
         <tr>
-          <td>Especial</td>
-          <td><%= number_with_precision(@stock_especial_prom.values.sum.to_f / [@stock_especial_prom.size, 1].max, precision: 0) %></td>
+          <td>Ultra</td>
+          <td><%= number_with_precision(@stock_ultra_prom.values.sum.to_f / [@stock_ultra_prom.size, 1].max, precision: 0) %></td>
         </tr>
         <tr>
-          <td>S3300</td>
-          <td><%= number_with_precision(@stock_s3300_prom.values.sum.to_f / [@stock_s3300_prom.size, 1].max, precision: 0) %></td>
+          <td>Especial</td>
+          <td><%= number_with_precision(@stock_especial_prom.values.sum.to_f / [@stock_especial_prom.size, 1].max, precision: 0) %></td>
         </tr>
         <tr>
           <td>S4200</td>
@@ -332,5 +332,4 @@ library: {
 </div>
 
 <hr>
-
 

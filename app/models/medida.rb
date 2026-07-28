@@ -36,28 +36,37 @@ class Medida < ApplicationRecord
   # ============================================================
 
   def stock_extra_ton
-    extra_silo =
-      ((20 - silo28.to_f) * 100) +
-      ((30 - ((silo21a.to_f + silo21b.to_f) / 2)) * 100) +
-      ((30 - ((silo22a.to_f + silo22b.to_f) / 2)) * 100)
+    stock_extra_silo_ton + stock_extra_piso_ton
+  end
 
-    extra_piso =
+  def stock_extra_silo_ton
+    (
+      ((30 - ((silo19a.to_f + silo19b.to_f) / 2)) * 100) +
+      ((30 - ((silo21a.to_f + silo21b.to_f) / 2)) * 100)
+    ).to_i
+  end
+
+  def stock_extra_piso_ton
+    (
       (extrsacos || 0) +
       (bigbagextra || 0) +
       (bigbagextra1 || 0) +
       (bigbagextra1350 || 0)
+    ).to_i
+  end
 
-    (extra_silo + extra_piso).to_i
+  def stock_ultra_ton
+    ultra_silo =
+      ((20 - silo28.to_f) * 100) +
+      ((30 - ((silo22a.to_f + silo22b.to_f) / 2)) * 100)
+
+    ultra_silo.to_i
   end
 
   def stock_especial_ton
     especial_silo = silo27 ? (30 - silo27.to_f) * 460 : 0
     especial_piso = (especialsacos || 0) + (bigbagespecial || 0)
     (especial_silo + especial_piso).to_i
-  end
-
-  def stock_s3300_ton
-    ((30 - ((silo19a.to_f + silo19b.to_f) / 2)) * 100).to_i
   end
 
   def stock_s4200_ton
@@ -67,7 +76,7 @@ class Medida < ApplicationRecord
   end
 
   def stock_total_ton
-    stock_extra_ton + stock_especial_ton + stock_s3300_ton + stock_s4200_ton
+    stock_extra_ton + stock_ultra_ton + stock_especial_ton + stock_s4200_ton
   end
 
   # ============================================================

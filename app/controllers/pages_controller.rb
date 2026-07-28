@@ -88,8 +88,8 @@ scope_tn = Medida.where(turno: "TN").where("EXTRACT(DOW FROM created_at) BETWEEN
 
   # ---- Stocks promedio por mes ----
   @stock_extra_prom    = {}
+  @stock_ultra_prom    = {}
   @stock_especial_prom = {}
-  @stock_s3300_prom    = {}
   @stock_s4200_prom    = {}
   @stock_total_prom    = {}
 
@@ -141,8 +141,8 @@ scope_tn = Medida.where(turno: "TN").where("EXTRACT(DOW FROM created_at) BETWEEN
   medidas_by_month.each do |month, medidas|
     # Stocks (usan los métodos del modelo Medida)
     @stock_extra_prom[month]    = avg(medidas.map(&:stock_extra_ton))
+    @stock_ultra_prom[month]    = avg(medidas.map(&:stock_ultra_ton))
     @stock_especial_prom[month] = avg(medidas.map(&:stock_especial_ton))
-    @stock_s3300_prom[month]    = avg(medidas.map(&:stock_s3300_ton))
     @stock_s4200_prom[month]    = avg(medidas.map(&:stock_s4200_ton))
     @stock_total_prom[month]    = avg(medidas.map(&:stock_total_ton))
 

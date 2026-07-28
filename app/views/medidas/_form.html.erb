@@ -89,38 +89,38 @@
 <h2>Nuevo registro medidas</h2>
   <div class="row">
     <div class="col-md-2 mb-2 ">
-      <%= f.input :silo19a, label: 'Silo 19 Medida 1', required: true %>
+      <%= f.input :silo19a, label: 'Silo 19 Extra - Medida 1', required: true %>
     </div>
     <div class="col-md-2 mb-2 ">
-      <%= f.input :silo19b, label: 'Silo 19 Medida 2', required: true %>
+      <%= f.input :silo19b, label: 'Silo 19 Extra - Medida 2', required: true %>
     </div>
     <div class="col-md-2 mb-2 ">
-      <%= f.input :silo20a, label: 'Silo 20 Medida 1', required: true %>
+      <%= f.input :silo20a, label: 'Silo 20 S4200 - Medida 1', required: true %>
     </div>
     <div class="col-md-2 mb-2 ">
-      <%= f.input :silo20b, label: 'Silo 20 Medida 2', required: true %>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-md-2 mb-2 ">
-      <%= f.input :silo21a, label: 'Silo 21 Medida 1', required: true %>
-    </div>
-    <div class="col-md-2 mb-2 ">
-      <%= f.input :silo21b, label: 'Silo 21 Medida 2', required: true %>
-    </div>
-    <div class="col-md-2 mb-2 ">
-      <%= f.input :silo22a, label: 'Silo 22 Medida 1', required: true %>
-    </div>
-    <div class="col-md-2 mb-2 ">
-      <%= f.input :silo22b, label: 'Silo 22 Medida 2', required: true %>
+      <%= f.input :silo20b, label: 'Silo 20 S4200 - Medida 2', required: true %>
     </div>
   </div>
   <div class="row">
     <div class="col-md-2 mb-2 ">
-      <%= f.input :silo27, label: 'Medida Silo 27', required: true %>
+      <%= f.input :silo21a, label: 'Silo 21 Extra - Medida 1', required: true %>
     </div>
     <div class="col-md-2 mb-2 ">
-      <%= f.input :silo28, label: 'Medida Silo 28', required: true %>
+      <%= f.input :silo21b, label: 'Silo 21 Extra - Medida 2', required: true %>
+    </div>
+    <div class="col-md-2 mb-2 ">
+      <%= f.input :silo22a, label: 'Silo 22 Ultra - Medida 1', required: true %>
+    </div>
+    <div class="col-md-2 mb-2 ">
+      <%= f.input :silo22b, label: 'Silo 22 Ultra - Medida 2', required: true %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-2 mb-2 ">
+      <%= f.input :silo27, label: 'Silo 27 Especial - Medida', required: true %>
+    </div>
+    <div class="col-md-2 mb-2 ">
+      <%= f.input :silo28, label: 'Silo 28 Ultra - Medida', required: true %>
     </div>
   </div>
   <h2>Stock</h2>
@@ -200,7 +200,7 @@
   <h2>Nivel tolvas</h2>
   <div class="row">
     <div class="col-md-2 mb-2 ">
-      <%= f.input :tolvacalle5, collection: [ "Especial", "Extra", "S3300", "S4200", "Plus", "S3300 (AR)", "HPM" ], label: 'Tolva calle 5'  %>
+      <%= f.input :tolvacalle5, collection: [ "Especial", "Extra", "Ultra", "S3300", "S4200", "Plus", "S3300 (AR)", "HPM" ], label: 'Tolva calle 5'  %>
     </div>
     <div class="col-md-2 mb-2 ">
       <%= f.input :otros, collection: [ 0, 25, 50, 75, 100 ], label: 'Silo 28 tolva calle 5'  %>
@@ -208,7 +208,7 @@
   </div>
   <div class="row">
     <div class="col-md-2 mb-2 ">
-      <%= f.input :silos3000tolva1, collection: [ "Extramix", "Especial", "Extra", "S3300", "S4200", "Plus", "S3300 (AR)", "HPM" ], label: 'Silos 3000 tolva 1'  %>
+      <%= f.input :silos3000tolva1, collection: [ "Extramix", "Especial", "Extra", "Ultra", "S3300", "S4200", "Plus", "S3300 (AR)", "HPM" ], label: 'Silos 3000 tolva 1'  %>
 
     </div>
     <div class="col-md-2 mb-2 ">
@@ -217,7 +217,7 @@
   </div>
   <div class="row">
     <div class="col-md-2 mb-2 ">
-      <%= f.input :silos3000tolva4, collection: [ "Especial", "Extra", "S3300", "S4200", "Plus", "S3300 (AR)", "HPM" ], label: 'Silos 3000 tolva 4'  %>
+      <%= f.input :silos3000tolva4, collection: [ "Especial", "Extra", "Ultra", "S3300", "S4200", "Plus", "S3300 (AR)", "HPM" ], label: 'Silos 3000 tolva 4'  %>
 
     </div>
     <div class="col-md-2 mb-2 ">
@@ -226,7 +226,7 @@
   </div>
   <div class="row">
     <div class="col-md-2 mb-2 ">
-      <%= f.input :silos3000tolva5, collection: [ "Especial", "Extra", "S3300", "S4200", "Plus", "S3300 (AR)", "HPM" ], label: 'Silos 3000 tolva 5'  %>
+      <%= f.input :silos3000tolva5, collection: [ "Especial", "Extra", "Ultra", "S3300", "S4200", "Plus", "S3300 (AR)", "HPM" ], label: 'Silos 3000 tolva 5'  %>
 
     </div>
     <div class="col-md-2 mb-2 ">
@@ -235,7 +235,7 @@
   </div>
   <div class="row">
     <div class="col-md-2 mb-2 ">
-      <%= f.input :silosbigbag1, collection: [ "Especial", "Extra", "S3300", "S4200", "Plus", "S3300 (AR)", "HPM" ], label: 'Silos bigbag 1'  %>
+      <%= f.input :silosbigbag1, collection: [ "Especial", "Extra", "Ultra", "S3300", "S4200", "Plus", "S3300 (AR)", "HPM" ], label: 'Silos bigbag 1'  %>
 
     </div>
     <div class="col-md-2 mb-2 ">
@@ -244,7 +244,7 @@
   </div>
   <div class="row">
     <div class="col-md-2 mb-2 ">
-      <%= f.input :silosbigbag2, collection: [ "Especial", "Extra", "S3300", "S4200", "Plus", "S3300 (AR)", "HPM" ], label: 'Silos bigbag 2'  %>
+      <%= f.input :silosbigbag2, collection: [ "Especial", "Extra", "Ultra", "S3300", "S4200", "Plus", "S3300 (AR)", "HPM" ], label: 'Silos bigbag 2'  %>
 
     </div>
     <div class="col-md-2 mb-2 ">
@@ -253,7 +253,7 @@
   </div>
   <div class="row">
     <div class="col-md-2 mb-2 ">
-      <%= f.input :silosvento1, collection: [ "Especial", "Extra", "S3300", "S4200", "Plus", "S3300 (AR)", "HPM" ], label: 'Silos vento 1'  %>
+      <%= f.input :silosvento1, collection: [ "Especial", "Extra", "Ultra", "S3300", "S4200", "Plus", "S3300 (AR)", "HPM" ], label: 'Silos vento 1'  %>
 
     </div>
     <div class="col-md-2 mb-2 ">
@@ -262,7 +262,7 @@
   </div>
   <div class="row">
     <div class="col-md-2 mb-2 ">
-      <%= f.input :silovento2, collection: [ "Especial", "Extra", "S3300", "S4200", "Plus", "S3300 (AR)", "HPM" ], label: 'Silos vento 2'  %>
+      <%= f.input :silovento2, collection: [ "Especial", "Extra", "Ultra", "S3300", "S4200", "Plus", "S3300 (AR)", "HPM" ], label: 'Silos vento 2'  %>
 
     </div>
     <div class="col-md-2 mb-2 ">
@@ -271,7 +271,7 @@
   </div>
   <div class="row">
     <div class="col-md-2 mb-2 ">
-        <%= f.input :silovento3, collection: [ "Especial", "Extra", "S3300", "S4200", "Plus", "S3300 (AR)", "HPM" ], label: 'Silos vento 3'  %>
+        <%= f.input :silovento3, collection: [ "Especial", "Extra", "Ultra", "S3300", "S4200", "Plus", "S3300 (AR)", "HPM" ], label: 'Silos vento 3'  %>
     </div>
     <div class="col-md-2 mb-2 ">
         <%= f.input :nvento3, collection: [ 0, 25, 50, 75, 100 ], label: 'Nivel Silo 3'  %>
@@ -296,7 +296,7 @@
           <%= f.input :s28c3op, collection: [ "Operativa", "Fuera de servicio"], label: 'Silo 28 Calle 3'  %>
     </div>
     <div class="col-md-2 mb-2 ">
-        <%= f.input :s28c3cemento, collection: [ "Extra", "Especial", "S3300", "S4200", "HPM" ], label: 'Cemento'  %>
+        <%= f.input :s28c3cemento, collection: [ "Extra", "Ultra", "Especial", "S3300", "S4200", "HPM" ], label: 'Cemento'  %>
     </div>
      <div class="col-md-2 mb-2 ">
       <%= f.input :s28c3nota, label: 'Comentarios'  %>
@@ -308,7 +308,7 @@
           <%= f.input :s28c4op, collection: [ "Operativa", "Fuera de servicio"], label: 'Silo 28 Calle 4'  %>
     </div>
     <div class="col-md-2 mb-2 ">
-        <%= f.input :s28c4cemento, collection: [ "Extra", "Especial", "S3300", "S4200", "HPM" ], label: 'Cemento'  %>
+        <%= f.input :s28c4cemento, collection: [ "Extra", "Ultra", "Especial", "S3300", "S4200", "HPM" ], label: 'Cemento'  %>
     </div>
      <div class="col-md-2 mb-2 ">
       <%= f.input :s28c4nota, label: 'Comentarios'  %>
@@ -320,7 +320,7 @@
           <%= f.input :s28c5op, collection: [ "Operativa", "Fuera de servicio"], label: 'Silo 28 Calle 5'  %>
     </div>
     <div class="col-md-2 mb-2 ">
-        <%= f.input :s28c5cemento, collection: [ "Extra", "Especial", "S3300", "S4200", "HPM" ], label: 'Cemento'  %>
+        <%= f.input :s28c5cemento, collection: [ "Extra", "Ultra", "Especial", "S3300", "S4200", "HPM" ], label: 'Cemento'  %>
     </div>
      <div class="col-md-2 mb-2 ">
       <%= f.input :s28c5nota, label: 'Comentarios'  %>
@@ -332,7 +332,7 @@
           <%= f.input :s27c6op, collection: [ "Operativa", "Fuera de servicio"], label: 'Silo 27 Calle 6'  %>
     </div>
     <div class="col-md-2 mb-2 ">
-        <%= f.input :s27c7cemento, collection: [ "Extra", "Especial", "S3300", "S4200", "HPM" ], label: 'Cemento'  %>
+        <%= f.input :s27c7cemento, collection: [ "Extra", "Ultra", "Especial", "S3300", "S4200", "HPM" ], label: 'Cemento'  %>
     </div>
      <div class="col-md-2 mb-2 ">
       <%= f.input :s27c7nota, label: 'Comentarios'  %>
@@ -344,7 +344,7 @@
           <%= f.input :s30c1op, collection: [ "Operativa", "Fuera de servicio"], label: 'Silos 3000 Calle 1'  %>
     </div>
     <div class="col-md-2 mb-2 ">
-        <%= f.input :s30c1cemento, collection: [ "Extra", "Especial", "S3300", "S4200", "HPM" ], label: 'Cemento'  %>
+        <%= f.input :s30c1cemento, collection: [ "Extra", "Ultra", "Especial", "S3300", "S4200", "HPM" ], label: 'Cemento'  %>
     </div>
      <div class="col-md-2 mb-2 ">
       <%= f.input :s30c1nota, label: 'Comentarios'  %>
@@ -356,7 +356,7 @@
           <%= f.input :s30c4op, collection: [ "Operativa", "Fuera de servicio"], label: 'Silos 3000 Calle 4'  %>
     </div>
     <div class="col-md-2 mb-2 ">
-        <%= f.input :s30c4cemento, collection: [ "Extra", "Especial", "S3300", "S4200", "HPM" ], label: 'Cemento'  %>
+        <%= f.input :s30c4cemento, collection: [ "Extra", "Ultra", "Especial", "S3300", "S4200", "HPM" ], label: 'Cemento'  %>
     </div>
      <div class="col-md-2 mb-2 ">
       <%= f.input :s30c4nota, label: 'Comentarios'  %>
@@ -368,7 +368,7 @@
           <%= f.input :s30c5op, collection: [ "Operativa", "Fuera de servicio"], label: 'Silos 3000 Calle 5'  %>
     </div>
     <div class="col-md-2 mb-2 ">
-        <%= f.input :s30c5cemento, collection: [ "Extra", "Especial", "S3300", "S4200", "HPM" ], label: 'Cemento'  %>
+        <%= f.input :s30c5cemento, collection: [ "Extra", "Ultra", "Especial", "S3300", "S4200", "HPM" ], label: 'Cemento'  %>
     </div>
      <div class="col-md-2 mb-2 ">
       <%= f.input :s30c5nota, label: 'Comentarios'  %>
