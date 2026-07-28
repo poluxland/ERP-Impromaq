@@ -107,7 +107,7 @@ class Medida < ApplicationRecord
     (extra_granel || 0)
   end
 
-  def desp_s3300_granel_ton
+  def desp_ultra_granel_ton
     (super_3300_granel || 0)
   end
 

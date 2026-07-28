@@ -19,7 +19,8 @@ class MedidaTest < ActiveSupport::TestCase
       bigbagextra1350: 40,
       especialsacos: 30,
       bigbagespecial: 20,
-      bigbagsuper: 50
+      bigbagsuper: 50,
+      super_3300_granel: 75
     )
   end
 
@@ -33,5 +34,9 @@ class MedidaTest < ActiveSupport::TestCase
 
   test "calcula stock total sin duplicar silos" do
     assert_equal 10_300, @medida.stock_total_ton
+  end
+
+  test "utiliza el campo super 3300 para despacho ultra" do
+    assert_equal 75, @medida.desp_ultra_granel_ton
   end
 end

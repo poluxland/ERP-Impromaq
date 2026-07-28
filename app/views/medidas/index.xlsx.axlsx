@@ -114,7 +114,7 @@ wb.add_worksheet(name: "Medidas") do |sheet|
     "Despacho Extra sacos",
     "Despacho Extra bigbag",
     "Despacho Extra granel",
-    "Despacho Super 3300 granel",
+    "Despacho Ultra granel",
     "Despacho Super 4200 granel",
 
     "Enjuagues Super 3.300",
