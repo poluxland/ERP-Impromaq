@@ -56,11 +56,18 @@ class Medida < ApplicationRecord
   end
 
   def stock_ultra_ton
-    ultra_silo =
+    stock_ultra_silo_ton + stock_ultra_piso_ton
+  end
+
+  def stock_ultra_silo_ton
+    (
       ((20 - silo28.to_f) * 100) +
       ((30 - ((silo22a.to_f + silo22b.to_f) / 2)) * 100)
+    ).to_i
+  end
 
-    ultra_silo.to_i
+  def stock_ultra_piso_ton
+    (bigbag_extra_retiro || 0).to_i
   end
 
   def stock_especial_ton
@@ -97,6 +104,14 @@ class Medida < ApplicationRecord
 
   def desp_extra_bigbag_ton
     (extra_bigbag || 0)
+  end
+
+  def desp_super_bigbag_ton
+    (super_bigbag || 0)
+  end
+
+  def desp_ultra_bigbag_ton
+    (ultra_bigbag || 0)
   end
 
   def desp_especial_granel_ton

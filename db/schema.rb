@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2025_12_17_010052) do
+ActiveRecord::Schema.define(version: 2026_07_28_120000) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -469,6 +469,7 @@ ActiveRecord::Schema.define(version: 2025_12_17_010052) do
     t.string "comentarios_vento"
     t.string "comentarios_bigbag"
     t.integer "super_bigbag", default: 0, null: false
+    t.integer "ultra_bigbag", default: 0, null: false
   end
 
   create_table "overtimes", force: :cascade do |t|

@@ -95,7 +95,7 @@
     </tr>
 
     <tr>
-      <td>Cemento Ultra en Silo</td>
+      <td>Cemento Ultra Silo y Piso</td>
       <td>
         <% ultra = tm.stock_ultra_ton %>
         <%= ultra %>
@@ -226,7 +226,8 @@
   </thead>
   <tbody>
     <% bigbags = [
-      { nombre: "Bigbag extra piso (BB extra para retiro)", campos: [:bigbagextra, :bigbagextra, :bigbagextra] },
+      { nombre: "Bigbag extra piso", campos: [:bigbagextra, :bigbagextra, :bigbagextra] },
+      { nombre: "Bigbag Ultra", campos: [:bigbag_extra_retiro, :bigbag_extra_retiro, :bigbag_extra_retiro] },
       { nombre: "Bigbag extra 1t", campos: [:bigbagextra1, :bigbagextra1, :bigbagextra1] },
       { nombre: "Extra peba 1350", campos: [:bigbagextra1350, :bigbagextra1350, :bigbagextra1350] },
       { nombre: "Bigbag especial", campos: [:bigbagespecial, :bigbagespecial, :bigbagespecial] },
@@ -336,7 +337,13 @@
   </tr>
   <tr>
     <td>Cemento Ultra en Silo (22-28)</td>
-    <td><%= medida.stock_ultra_ton %></td>
+    <td><%= medida.stock_ultra_silo_ton %></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>Cemento Ultra en Piso (Bigbag Ultra)</td>
+    <td><%= medida.stock_ultra_piso_ton %></td>
     <td></td>
     <td></td>
   </tr>
@@ -415,7 +422,13 @@
   </tr>
   <tr>
   <td>Super Bigbag</td>
-  <td><%= medida.super_bigbag %></td>
+  <td><%= medida.desp_super_bigbag_ton %></td>
+  <td></td>
+  <td></td>
+</tr>
+  <tr>
+  <td>Ultra Bigbag</td>
+  <td><%= medida.desp_ultra_bigbag_ton %></td>
   <td></td>
   <td></td>
 </tr>

@@ -20,7 +20,10 @@ class MedidaTest < ActiveSupport::TestCase
       especialsacos: 30,
       bigbagespecial: 20,
       bigbagsuper: 50,
-      super_3300_granel: 75
+      bigbag_extra_retiro: 60,
+      super_3300_granel: 75,
+      super_bigbag: 45,
+      ultra_bigbag: 35
     )
   end
 
@@ -28,15 +31,22 @@ class MedidaTest < ActiveSupport::TestCase
     assert_equal 3_100, @medida.stock_extra_ton
   end
 
-  test "calcula stock ultra con silos 22 y 28" do
-    assert_equal 3_000, @medida.stock_ultra_ton
+  test "calcula stock ultra con silos 22 y 28 mas bigbag ultra" do
+    assert_equal 3_000, @medida.stock_ultra_silo_ton
+    assert_equal 60, @medida.stock_ultra_piso_ton
+    assert_equal 3_060, @medida.stock_ultra_ton
   end
 
   test "calcula stock total sin duplicar silos" do
-    assert_equal 10_300, @medida.stock_total_ton
+    assert_equal 10_360, @medida.stock_total_ton
   end
 
   test "utiliza el campo super 3300 para despacho ultra" do
     assert_equal 75, @medida.desp_ultra_granel_ton
+  end
+
+  test "mantiene separados los despachos super y ultra bigbag" do
+    assert_equal 45, @medida.desp_super_bigbag_ton
+    assert_equal 35, @medida.desp_ultra_bigbag_ton
   end
 end
