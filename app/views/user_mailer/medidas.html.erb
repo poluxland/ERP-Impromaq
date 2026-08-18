@@ -114,6 +114,25 @@
     </tr>
 
     <tr>
+      <td>Cemento Ultra Metro en Silo</td>
+      <td>
+        <% ultra_metro = tm.stock_ultra_metro_ton %>
+        <%= ultra_metro %>
+        <% totaltm += ultra_metro %>
+      </td>
+      <td>
+        <% ultra_metro = tt&.stock_ultra_metro_ton %>
+        <%= ultra_metro %>
+        <% totaltt += ultra_metro if ultra_metro %>
+      </td>
+      <td>
+        <% ultra_metro = tn&.stock_ultra_metro_ton %>
+        <%= ultra_metro %>
+        <% totaltn += ultra_metro if ultra_metro %>
+      </td>
+    </tr>
+
+    <tr>
       <td>Cemento Especial Silo y Piso</td>
       <td>
         <% especial = tm.stock_especial_ton %>
@@ -288,7 +307,7 @@
     <td><%= medida.silo21b   %></td>
   </tr>
   <tr>
-    <td>22 (Ultra)</td>
+    <td>22 (Ultra Metro)</td>
     <td><%= ((30 - ((medida.silo22a.to_f + medida.silo22b.to_f)/2)) * 100).to_i %></td>
     <td><%= medida.silo22a  %></td>
     <td><%= medida.silo22b   %></td>
@@ -336,8 +355,14 @@
     <td></td>
   </tr>
   <tr>
-    <td>Cemento Ultra en Silo (22-28)</td>
+    <td>Cemento Ultra en Silo (28)</td>
     <td><%= medida.stock_ultra_silo_ton %></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>Cemento Ultra Metro en Silo (22)</td>
+    <td><%= medida.stock_ultra_metro_ton %></td>
     <td></td>
     <td></td>
   </tr>

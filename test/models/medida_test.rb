@@ -31,10 +31,14 @@ class MedidaTest < ActiveSupport::TestCase
     assert_equal 3_100, @medida.stock_extra_ton
   end
 
-  test "calcula stock ultra con silos 22 y 28 mas bigbag ultra" do
-    assert_equal 3_000, @medida.stock_ultra_silo_ton
+  test "calcula stock ultra con silo 28 mas bigbag ultra" do
+    assert_equal 1_500, @medida.stock_ultra_silo_ton
     assert_equal 60, @medida.stock_ultra_piso_ton
-    assert_equal 3_060, @medida.stock_ultra_ton
+    assert_equal 1_560, @medida.stock_ultra_ton
+  end
+
+  test "calcula stock ultra metro con silo 22" do
+    assert_equal 1_500, @medida.stock_ultra_metro_ton
   end
 
   test "calcula stock total sin duplicar silos" do
