@@ -22,6 +22,7 @@ class MedidaTest < ActiveSupport::TestCase
       bigbagsuper: 50,
       bigbag_extra_retiro: 60,
       super_3300_granel: 75,
+      nivel9: 55,
       super_bigbag: 45,
       ultra_bigbag: 35
     )
@@ -47,6 +48,10 @@ class MedidaTest < ActiveSupport::TestCase
 
   test "utiliza el campo super 3300 para despacho ultra" do
     assert_equal 75, @medida.desp_ultra_granel_ton
+  end
+
+  test "utiliza el campo nivel9 para despacho ultra metro" do
+    assert_equal 55, @medida.desp_ultra_metro_granel_ton
   end
 
   test "mantiene separados los despachos super y ultra bigbag" do

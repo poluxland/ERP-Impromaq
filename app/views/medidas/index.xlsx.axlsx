@@ -97,7 +97,6 @@ wb.add_worksheet(name: "Medidas") do |sheet|
 
     "Observaciones",
     "Ns28",
-    "Nivel9",
 
     "Plast. especial",
     "Plast. especial soluble completo",
@@ -117,6 +116,7 @@ wb.add_worksheet(name: "Medidas") do |sheet|
     "Despacho Ultra bigbag",
     "Despacho Extra granel",
     "Despacho Ultra granel",
+    "Despacho Ultra Metro granel",
     "Despacho Super 4200 granel",
 
     "Enjuagues Super 3.300",
@@ -251,7 +251,6 @@ wb.add_worksheet(name: "Medidas") do |sheet|
 
       m.observaciones,
       m.ns28,
-      m.nivel9,
 
       # plastificado (orden correcto vs headers)
       m.plastificado_especial,
@@ -273,6 +272,7 @@ wb.add_worksheet(name: "Medidas") do |sheet|
       m.ultra_bigbag,
       m.extra_granel,
       m.super_3300_granel,
+      m.nivel9,
       m.super_4200_granel,
 
       m.enjuagues_super,

@@ -3,7 +3,7 @@ class Medida < ApplicationRecord
             :plastificado_especial_zunchos, :plastificado_extra,
             :plastificado_extra_zunchos, :especial_sacos, :especial_bigbag,
             :especial_granel, :extra_sacos, :extra_bigbag, :extra_granel,
-            :super_3300_granel, :super_4200_granel, :silo19a, :silo19b,
+            :super_3300_granel, :nivel9, :super_4200_granel, :silo19a, :silo19b,
             :silo20a, :silo20b, :silo21a, :silo21b, :silo22a, :silo22b,
             :silo27, :silo28, :especialsacos, :extrsacos, :bigbagextra,
             :bigbagextra1350, :bigbagextra1, :bigbagespecial, :bigbagsuper,
@@ -125,6 +125,10 @@ class Medida < ApplicationRecord
 
   def desp_ultra_granel_ton
     (super_3300_granel || 0)
+  end
+
+  def desp_ultra_metro_granel_ton
+    (nivel9 || 0)
   end
 
   def desp_s4200_granel_ton

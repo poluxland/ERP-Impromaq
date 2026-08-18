@@ -138,6 +138,7 @@ scope_tn = Medida.where(turno: "TN").where("EXTRACT(DOW FROM created_at) BETWEEN
   @desp_especial_granel_month = {}
   @desp_extra_granel_month    = {}
   @desp_ultra_granel_month    = {}
+  @desp_ultra_metro_granel_month = {}
   @desp_s4200_granel_month    = {}
 
 
@@ -236,6 +237,7 @@ scope_tn = Medida.where(turno: "TN").where("EXTRACT(DOW FROM created_at) BETWEEN
     @desp_especial_granel_month[month] = medidas.sum(&:desp_especial_granel_ton)
     @desp_extra_granel_month[month]    = medidas.sum(&:desp_extra_granel_ton)
     @desp_ultra_granel_month[month]    = medidas.sum(&:desp_ultra_granel_ton)
+    @desp_ultra_metro_granel_month[month] = medidas.sum(&:desp_ultra_metro_granel_ton)
     @desp_s4200_granel_month[month]    = medidas.sum(&:desp_s4200_granel_ton)
 
 
