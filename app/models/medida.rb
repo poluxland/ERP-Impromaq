@@ -40,10 +40,7 @@ class Medida < ApplicationRecord
   end
 
   def stock_extra_silo_ton
-    (
-      ((30 - ((silo19a.to_f + silo19b.to_f) / 2)) * 100) +
-      ((30 - ((silo21a.to_f + silo21b.to_f) / 2)) * 100)
-    ).to_i
+    ((30 - ((silo21a.to_f + silo21b.to_f) / 2)) * 100).to_i
   end
 
   def stock_extra_piso_ton
@@ -68,7 +65,10 @@ class Medida < ApplicationRecord
   end
 
   def stock_ultra_metro_ton
-    ((30 - ((silo22a.to_f + silo22b.to_f) / 2)) * 100).to_i
+    (
+      ((30 - ((silo19a.to_f + silo19b.to_f) / 2)) * 100) +
+      ((30 - ((silo22a.to_f + silo22b.to_f) / 2)) * 100)
+    ).to_i
   end
 
   def stock_especial_ton
