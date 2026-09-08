@@ -32,26 +32,18 @@ class MedidaTest < ActiveSupport::TestCase
     assert_equal 1_100, @medida.stock_extra_ton
   end
 
-  test "calcula stock ultra con silo 28 mas bigbag ultra" do
-    assert_equal 1_500, @medida.stock_ultra_silo_ton
+  test "calcula stock ultra con silos 19, 22, 28 y bigbag ultra" do
+    assert_equal 5_000, @medida.stock_ultra_silo_ton
     assert_equal 60, @medida.stock_ultra_piso_ton
-    assert_equal 1_560, @medida.stock_ultra_ton
-  end
-
-  test "calcula stock ultra metro con silos 19 y 22" do
-    assert_equal 3_500, @medida.stock_ultra_metro_ton
+    assert_equal 5_060, @medida.stock_ultra_ton
   end
 
   test "calcula stock total sin duplicar silos" do
     assert_equal 10_360, @medida.stock_total_ton
   end
 
-  test "utiliza el campo super 3300 para despacho ultra" do
-    assert_equal 75, @medida.desp_ultra_granel_ton
-  end
-
-  test "utiliza el campo nivel9 para despacho ultra metro" do
-    assert_equal 55, @medida.desp_ultra_metro_granel_ton
+  test "suma los despachos historicos de ultra" do
+    assert_equal 130, @medida.desp_ultra_granel_ton
   end
 
   test "mantiene separados los despachos super y ultra bigbag" do

@@ -24,14 +24,14 @@ wb.add_worksheet(name: "Medidas") do |sheet|
     "Fecha",
     "Turno",
 
-    "Silo 19a Ultra Metro",
-    "Silo 19b Ultra Metro",
+    "Silo 19a Ultra",
+    "Silo 19b Ultra",
     "Silo 20a S4200",
     "Silo 20b S4200",
     "Silo 21a Extra",
     "Silo 21b Extra",
-    "Silo 22a Ultra Metro",
-    "Silo 22b Ultra Metro",
+    "Silo 22a Ultra",
+    "Silo 22b Ultra",
     "Silo 27 Especial",
     "Silo 28 Ultra",
 
@@ -116,7 +116,6 @@ wb.add_worksheet(name: "Medidas") do |sheet|
     "Despacho Ultra bigbag",
     "Despacho Extra granel",
     "Despacho Ultra granel",
-    "Despacho Ultra Metro granel",
     "Despacho Super 4200 granel",
 
     "Enjuagues Super 3.300",
@@ -271,8 +270,7 @@ wb.add_worksheet(name: "Medidas") do |sheet|
       m.super_bigbag,
       m.ultra_bigbag,
       m.extra_granel,
-      m.super_3300_granel,
-      m.nivel9,
+      m.desp_ultra_granel_ton,
       m.super_4200_granel,
 
       m.enjuagues_super,
