@@ -1,12 +1,12 @@
 require 'test_helper'
 
 class UserMailerTest < ActionMailer::TestCase
+  fixtures :medidas
+
   test "medidas" do
-    mail = UserMailer.medidas
-    assert_equal "Medidas", mail.subject
-    assert_equal ["to@example.org"], mail.to
-    assert_equal ["from@example.com"], mail.from
-    assert_match "Hi", mail.body.encoded
+    mail = UserMailer.with(user: medidas(:one)).medidas
+    assert_includes mail.to, "andrea.gongora-externo@meloncementos.cl"
+    assert_includes mail.to, "miguel.basulto@meloncementos.cl"
   end
 
 end

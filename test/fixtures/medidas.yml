@@ -1,6 +1,7 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
+  turno: TM
   silo19a: 1
   silo19b: 1
   silo20a: 1
@@ -20,6 +21,7 @@ one:
   bigbagsuper: 1
   prodhaver: 1
   prodvento: 1
+  prodbb: 1
   tolvacalle5: MyString
   silos3000tolva1: MyString
   silos3000tolva4: MyString
@@ -55,6 +57,7 @@ two:
   bigbagsuper: 1
   prodhaver: 1
   prodvento: 1
+  prodbb: 1
   tolvacalle5: MyString
   silos3000tolva1: MyString
   silos3000tolva4: MyString
