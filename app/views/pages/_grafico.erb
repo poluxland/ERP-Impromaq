@@ -6,7 +6,7 @@
     <div class="card-body">
       <h5 class="card-title"><i class="fas fa-poll text-success"></i> Ventas adicionales por planta</h5>
 
-      <%= line_chart Trabajo.where(avance: ["Terminado", "Facturado"]).group(:planta).group(:fecha_termino).sum(:total), thousands: "." %>
+      <%= line_chart @ventas_chart, thousands: "." %>
 
 
     </div>

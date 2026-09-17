@@ -3,10 +3,21 @@ class PagesController < ApplicationController
 
 
   def home
-    @trucks = Truck.includes(:checklists, :equipos, :interventions)
-                   .where.not(planta: 'X')
+    # The public landing page does not render dashboard data for signed-out users,
+    # so avoid running the dashboard's expensive queries for bots and health checks.
+    return unless user_signed_in?
+
+    @trucks = Truck.where.not(planta: 'X').order(:planta).to_a
+    truck_ids = @trucks.map(&:id)
+
+    @latest_checklists_by_truck = latest_records_by_truck(Checklist, truck_ids)
+    @latest_equipos_by_truck = latest_records_by_truck(Equipo, truck_ids)
+    @latest_interventions_by_truck = latest_records_by_truck(Intervention, truck_ids)
+
+    return unless current_user.superadmin_role?
 
     meses = (0..3).map { |i| Date.today.beginning_of_month - i.month }
+    chart_start = 1.year.ago.beginning_of_day
 
     # En ejecución por planta
     @ventas_en_ejecucion = Trabajo
@@ -22,6 +33,14 @@ class PagesController < ApplicationController
     @ventas_por_mes = trabajos_finalizados
       .group_by { |t| [t.planta.to_s.strip, t.fecha_termino.beginning_of_month] }
       .transform_values { |ts| ts.sum(&:total) }
+
+    @ventas_chart = Trabajo
+      .where(avance: ["Terminado", "Facturado"])
+      .where(fecha_termino: chart_start.to_date..Date.current)
+      .group(:planta, :fecha_termino)
+      .sum(:total)
+
+    load_soplado_chart_data(chart_start)
   end
 
 def reporte
@@ -245,6 +264,41 @@ end
 
 
 private
+
+def latest_records_by_truck(model, truck_ids)
+  return {} if truck_ids.empty?
+
+  table_name = model.table_name
+  model
+    .where(truck_id: truck_ids)
+    .select("DISTINCT ON (#{table_name}.truck_id) #{table_name}.*")
+    .order("#{table_name}.truck_id ASC, #{table_name}.created_at DESC, #{table_name}.id DESC")
+    .index_by(&:truck_id)
+end
+
+def load_soplado_chart_data(chart_start)
+  @soplado_horno = []
+  @soplado_presion1 = []
+  @soplado_presion2 = []
+  @soplado_presion3 = []
+  @soplado_presion4 = []
+  @soplado_presion5 = []
+  @soplado_presion6 = []
+
+  Soplado
+    .where(fecha: chart_start..Time.current)
+    .order(:fecha)
+    .pluck(:fecha, :horno, :presion1, :presion2, :presion3, :presion4, :presion5, :presion6)
+    .each do |fecha, horno, presion1, presion2, presion3, presion4, presion5, presion6|
+      @soplado_horno << [fecha, horno]
+      @soplado_presion1 << [fecha, presion1] unless presion1.nil?
+      @soplado_presion2 << [fecha, presion2] unless presion2.nil?
+      @soplado_presion3 << [fecha, presion3] unless presion3.nil?
+      @soplado_presion4 << [fecha, presion4] unless presion4.nil?
+      @soplado_presion5 << [fecha, presion5]
+      @soplado_presion6 << [fecha, presion6] unless presion6.nil?
+    end
+end
 
 def avg(values)
   values = values.compact.map(&:to_f)

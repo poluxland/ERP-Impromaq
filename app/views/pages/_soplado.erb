@@ -4,7 +4,7 @@
     <div class="card-body">
       <h5 class="card-title"><i class="fas fa-poll text-success"></i> Producción horno</h5>
 
-      <%= line_chart Soplado.pluck(:fecha, :horno), thousands: "." %>
+      <%= line_chart @soplado_horno, thousands: "." %>
 
 
 
@@ -17,7 +17,7 @@
     <div class="card-body">
       <h5 class="card-title"><i class="fas fa-poll text-success"></i> CC54 Temp</h5>
 
-      <%= line_chart Soplado.pluck(:fecha, :presion5), thousands: "." %>
+      <%= line_chart @soplado_presion5, thousands: "." %>
 
 
 
@@ -30,11 +30,11 @@
       <h5 class="card-title"><i class="fas fa-poll text-success"></i> Presiones</h5>
 
      <%= line_chart [
-  {name: "Ducto P1 ascendente", data: Soplado.where.not(presion1: nil).pluck(:fecha, :presion1)},
-  {name: "Ducto P2 ascendente", data: Soplado.where.not(presion2: nil).pluck(:fecha, :presion2)},
-  {name: "CC54 P1", data: Soplado.where.not(presion2: nil).pluck(:fecha, :presion3)},
-  {name: "CC54 P2", data: Soplado.where.not(presion2: nil).pluck(:fecha, :presion4)},
-  {name: "Quench P1", data: Soplado.where.not(presion2: nil).pluck(:fecha, :presion6)}
+  {name: "Ducto P1 ascendente", data: @soplado_presion1},
+  {name: "Ducto P2 ascendente", data: @soplado_presion2},
+  {name: "CC54 P1", data: @soplado_presion3},
+  {name: "CC54 P2", data: @soplado_presion4},
+  {name: "Quench P1", data: @soplado_presion6}
 ] %>
 
 

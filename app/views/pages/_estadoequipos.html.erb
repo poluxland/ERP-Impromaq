@@ -15,33 +15,34 @@
 
       <tbody>
         <% if @trucks.present? %>
-          <% @trucks.sort_by(&:planta).each do |truck| %>
+          <% @trucks.each do |truck| %>
+            <% checklist = @latest_checklists_by_truck[truck.id] %>
+            <% equipo = @latest_equipos_by_truck[truck.id] %>
+            <% intervention = @latest_interventions_by_truck[truck.id] %>
             <tr>
               <td><a href="<%= truck_path(truck.id) %>"><%= truck.codigo %></a></td>
               <td>
-                <%= truck.checklists&.last&.operativo %>
+                <%= checklist&.operativo %>
               </td>
               <td>
-                <% if truck.checklists&.last %>
-                  <a href="<%= checklist_path(truck.checklists.last.id) %>">
-                    <%= truck.checklists.last.created_at.strftime("%d-%m-%Y") %> /
-                    <%= truck.checklists.last.horometro %>
+                <% if checklist %>
+                  <a href="<%= checklist_path(checklist.id) %>">
+                    <%= checklist.created_at.strftime("%d-%m-%Y") %> /
+                    <%= checklist.horometro %>
                   </a>
                 <% end %>
               </td>
               <td>
-                <% if truck.equipos&.last %>
-                  <a href="<%= equipo_path(truck.equipos.last.id) %>">
-                    <%= truck.equipos.last.created_at.strftime("%d-%m-%Y") %> /
-                    <%= truck.equipos.last.horometro %>
-                    <%= truck.equipos.last.operador %>
-                    <% if truck.equipos.last.comentarios.present? %>
+                <% if equipo %>
+                  <a href="<%= equipo_path(equipo.id) %>">
+                    <%= equipo.created_at.strftime("%d-%m-%Y") %> /
+                    <%= equipo.horometro %>
+                    <%= equipo.operador %>
+                    <% if equipo.comentarios.present? %>
                       <i class="fa fa-folder text-success"></i>
                     <% end %>
-                    <% equipo = truck.equipos.last %>
                     <% if equipo && [equipo.c1, equipo.c2, equipo.c3, equipo.c4, equipo.c5, equipo.c6, equipo.c7, equipo.c8, equipo.c9, equipo.c10, equipo.c11, equipo.c12, equipo.c13, equipo.c14, equipo.c15, equipo.c16].any? { |c| ["No(leve)"].include?(c) } %>
                       <i class="fa fa-cogs text-primary"></i>
-                      <% equipo = truck.equipos.last %>
                     <% if equipo && [equipo.c1, equipo.c2, equipo.c3, equipo.c4, equipo.c5, equipo.c6, equipo.c7, equipo.c8, equipo.c9, equipo.c10, equipo.c11, equipo.c12, equipo.c13, equipo.c14, equipo.c15, equipo.c16].any? { |c| ["No(grave)"].include?(c) } %>
                       <i class="fa fa-cog text-danger"></i>
                     <% end %>
@@ -50,10 +51,10 @@
                 <% end %>
               </td>
               <td>
-                <% if truck.interventions&.last %>
-                  <a href="<%= intervention_path(truck.interventions.last.id) %>">
-                    <%= truck.interventions.last.created_at.strftime("%d-%m-%Y") %>
-                    <%= truck.interventions.last.mecanico %>
+                <% if intervention %>
+                  <a href="<%= intervention_path(intervention.id) %>">
+                    <%= intervention.created_at.strftime("%d-%m-%Y") %>
+                    <%= intervention.mecanico %>
                   </a>
                 <% end %>
               </td>
