@@ -171,7 +171,7 @@ def horas_pendientes_revision
       "martin.llancafil@meloncementos.cl",
       "daniel.garrido@meloncementos.cl",
       "Johnny.Rute@meloncementos.cl",
-      "cesar.hernandez@meloncementos.cl",
+      "carolina.vera@meloncementos.cl",
       "jose.jerez@msindustrial.cl"
     ],
     subject: "Horas extras pendientes de revisión PTM"
