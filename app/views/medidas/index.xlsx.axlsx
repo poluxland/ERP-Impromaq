@@ -24,8 +24,8 @@ wb.add_worksheet(name: "Medidas") do |sheet|
     "Fecha",
     "Turno",
 
-    "Silo 19a Ultra",
-    "Silo 19b Ultra",
+    "Silo 19a Extra",
+    "Silo 19b Extra",
     "Silo 20a S4200",
     "Silo 20b S4200",
     "Silo 21a Extra",
